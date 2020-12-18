@@ -1,6 +1,6 @@
 <template>
-  <div class="question-wrap desp-wrap">
-    <h6 class="question-heading">{{ dimLayout.name||'段落描述' }}</h6>
+  <div class="dee-question-wrap dee-desp-wrap">
+    <h6 class="dee-question-heading">{{ dimLayout.name||'段落描述' }}</h6>
   </div>
 </template>
 <script>
@@ -49,8 +49,8 @@ export default {
 }
 </script>
 <style lang="scss">
-.desp-wrap{
-  // float: left;
-  width: 100%;
-}
+// .dee-desp-wrap{
+//   // float: left;
+//   width: 100%;
+// }
 </style>

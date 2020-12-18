@@ -1,7 +1,10 @@
 <template>
-  <div class="question-wrap long-text-wrap" :type="dimLayout.type">
-    <h6 class="question-heading">{{ dimLayout.name }}</h6>
-    <div class="control-wrap">
+  <div class="dee-question-wrap dee-long-text-wrap" :type="dimLayout.type">
+    <h6 class="dee-question-heading">
+      <span class="question-no">{{ index+1 }}.</span>
+      {{ dimLayout.name }}
+    </h6>
+    <div class="dee-control-wrap">
       <el-input v-model="textarea" :row="2" type="textarea" size="small" @change="changeHandle" />
     </div>
   </div>
@@ -19,6 +22,10 @@ export default {
     dimLayout: {
       default: () => { return {} },
       type: Object
+    },
+    index: {
+      default: null,
+      type: Number
     }
   },
   data() {
@@ -27,41 +34,34 @@ export default {
     }
   },
   watch: {
-    dimData(n) {
-      console.log('111111111111', n)
-      this.textarea = n.value
+    dimData: {
+      handler: function(n) {
+        console.log('============')
+        console.log(n)
+        this.textarea = n[this.dimLayout.en_name]
+      }
     }
   },
   created() {
-    console.log(this.dimData)
-    this.textarea = this.dimData.value
-    // console.log()
   },
   methods: {
     getRealValue(v) {
       return v
     },
-    changeHandle() {
-      this.log(this.dimData)
-    },
-    clickHandle(v) {
-      v = this.getRealValue(v)
-
-      this.textarea = v === this.textarea ? '' : v
-      // console.log(this.dimData.value, '!!!!!!!!!!', v)
+    changeHandle(v) {
+      const en = this.dimLayout.en_name
       this.$emit('modify', {
-        type: 'textarea',
-        en: 'en',
-        value: this.textarea,
-        dim_type: 1
+        type: 'long_text',
+        en: en,
+        value: this.textarea
       })
     }
   }
 }
 </script>
 <style lang="scss">
-.long-text-wrap{
-  // float: left;
-  width: 100%;
-}
+// .dee-long-text-wrap{
+//   // float: left;
+//   width: 100%;
+// }
 </style>

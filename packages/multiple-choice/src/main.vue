@@ -1,11 +1,14 @@
 <template>
-  <div class="question-wrap multiple-choice-wrap">
-    <h6 class="question-heading">{{ dimLayout.name }}</h6>
-    <div class="control-wrap">
+  <div class="dee-question-wrap dee-multiple-choice-wrap">
+    <h6 class="dee-question-heading">
+      <span class="question-no">{{ index+1 }}.</span>
+      {{ dimLayout.name }}
+    </h6>
+    <div class="dee-control-wrap">
       <el-checkbox-group
-
         v-model="checkbox"
         class="me-checkbox-group"
+        @change="changeHandle"
       >
         <el-checkbox
           v-for="(item,index) in dimLayout.options"
@@ -28,6 +31,10 @@ export default {
     dimLayout: {
       default: () => { return {} },
       type: Object
+    },
+    index: {
+      default: null,
+      type: Number
     }
   },
   data() {
@@ -36,36 +43,34 @@ export default {
     }
   },
   watch: {
-    dimData(n) {
-      // this.checkbox = n.value
+    dimData: {
+      handler: function(n) {
+        console.log('============')
+        console.log(n)
+        this.textarea = n[this.dimLayout.en_name]
+      }
     }
   },
   created() {
-    // this.checkbox = this.dimData.value
-    // console.log()
   },
   methods: {
     getRealValue(v) {
       return v
     },
-    clickHandle(v) {
-      v = this.getRealValue(v)
-
-      this.checkbox = v === this.checkbox ? '' : v
-      // console.log(this.dimData.value, '!!!!!!!!!!', v)
+    changeHandle(v) {
+      const en = this.dimLayout.en_name
       this.$emit('modify', {
-        type: 'checkbox',
-        en: 'en',
-        value: this.checkbox,
-        dim_type: 1
+        type: 'multiple_choice',
+        en: en,
+        value: this.checkbox
       })
     }
   }
 }
 </script>
 <style lang="scss">
-.multiple-choice-wrap{
-  // float: left;
-  width: 100%;
-}
+// .multiple-choice-wrap{
+//   // float: left;
+//   width: 100%;
+// }
 </style>

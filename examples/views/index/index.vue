@@ -2,7 +2,10 @@
   <div>
     <section v-for="(item,index) in group_list" :key="item.id+index">
       <h2 class="dim-heading">{{ item.name }}</h2>
-      <dee-preview-model :field-temp="item.items" :dim-data="{}" />
+      <dee-preview-model
+        :field-temp="item.items"
+        :dim-data="dimData"
+      />
     </section>
   </div>
 </template>
@@ -12,7 +15,8 @@ export default {
   data() {
     return {
       previewVisible: false,
-      group_list: []
+      group_list: [],
+      dimData: {}
     }
   },
   created() {
@@ -33,6 +37,11 @@ export default {
         })
       })
       // console.log(group_list)
+      setTimeout(() => {
+        this.dimData = {
+          pat_name: '江夏'
+        }
+      }, 3000)
     }
   }
 }

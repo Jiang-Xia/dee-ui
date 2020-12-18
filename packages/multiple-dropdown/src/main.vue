@@ -1,9 +1,8 @@
 <template>
-  <div class="question-wrap multiple-dropdown-wrap">
-    <h6 class="question-heading">{{ dimLayout.name }}</h6>
-    <div class="control-wrap">
+  <div class="dee-question-wrap dee-multiple-dropdown-wrap">
+    <h6 class="dee-question-heading">{{ dimLayout.name }}</h6>
+    <div class="dee-control-wrap">
       <el-select
-
         v-model="select"
         size="small"
         multiple
@@ -67,9 +66,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.multiple-dropdown-wrap{
-  // float: left;
-  // width: 50%;
-  width: 100%;
-}
+// .multiple-dropdown-wrap{
+//   // float: left;
+//   // width: 50%;
+//   width: 100%;
+// }
 </style>

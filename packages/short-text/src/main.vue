@@ -1,8 +1,11 @@
 <template>
-  <div class="question-wrap short-text-wrap">
-    <h6 class="question-heading">{{ dimLayout.name }}</h6>
-    <div class="control-wrap">
-      <el-input v-model="input" size="small" />
+  <div class="dee-question-wrap dee-short-text-wrap">
+    <h6 class="dee-question-heading">
+      <span class="question-no">{{ index+1 }}.</span>
+      {{ dimLayout.name }}
+    </h6>
+    <div class="dee-control-wrap">
+      <el-input v-model="input" size="small" @change="changeHandle" />
     </div>
   </div>
 </template>
@@ -18,6 +21,10 @@ export default {
     dimLayout: {
       default: () => { return {} },
       type: Object
+    },
+    index: {
+      default: null,
+      type: Number
     }
   },
   data() {
@@ -26,37 +33,35 @@ export default {
     }
   },
   watch: {
-    dimData(n) {
-      this.input = n.value
+    dimData: {
+      handler: function(n) {
+        // console.log('============')
+        // console.log(n)
+        this.input = n[this.dimLayout.en_name]
+      }
     }
   },
   created() {
-    this.input = this.dimData.value
-    // console.log()
   },
   methods: {
     getRealValue(v) {
       return v
     },
-    clickHandle(v) {
-      v = this.getRealValue(v)
-
-      this.input = v === this.input ? '' : v
-      // console.log(this.dimData.value, '!!!!!!!!!!', v)
+    changeHandle(v) {
+      const en = this.dimLayout.en_name
       this.$emit('modify', {
-        type: 'input',
-        en: 'en',
-        value: this.input,
-        dim_type: 1
+        type: 'long_text',
+        en: en,
+        value: this.input
       })
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-.short-text-wrap{
-  // float: left;
-  // width: 50%;
-  width: 100%;
-}
+// .short-text-wrap{
+//   // float: left;
+//   // width: 50%;
+//   width: 100%;
+// }
 </style>

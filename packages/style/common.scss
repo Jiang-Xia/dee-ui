@@ -1,0 +1,55 @@
+// 所有提示公用样式
+.dee-question-wrap{
+
+}
+.dee-question-heading{
+
+}
+.dee-control-wrap{
+
+}
+
+
+
+// 每个提示样式
+.dee-desp-wrap{
+    width: 100%;
+}
+.dee-long-text-wrap{
+    width: 100%;
+}
+.dee-short-text-wrap{
+    width: 50%;
+}
+.dee-multiple-choice-wrap{
+    width: 100%;
+}
+.dee-multiple-dropdown-wrap{
+    width: 50%;
+}
+.dee-single-dropdown-wrap{
+    width: 50%;
+}
+.dee-single-choice-wrap{
+    width: 100%;
+}
+
+// 模板
+.dee-preview-model-container{
+    border-radius: 5px;
+    border:1px solid #ccc;
+    padding: .5rem 1rem;
+    margin-left: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    .dee-question-wrap{
+        margin-top: 1rem;
+    }
+    .dee-question-heading{
+        font-size: 14px;
+        margin: .8rem  0 .4rem;
+    }
+    .dee-control-wrap{
+        margin-left: .5rem;
+    }
+}

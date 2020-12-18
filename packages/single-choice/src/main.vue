@@ -1,7 +1,7 @@
 <template>
-  <div class="question-wrap single-choice-wrap">
-    <h6 class="question-heading">{{ dimLayout.name }}</h6>
-    <div class="control-wrap">
+  <div class="dee-question-wrap dee-single-choice-wrap">
+    <h6 class="dee-question-heading">{{ dimLayout.name }}</h6>
+    <div class="dee-control-wrap">
       <el-radio-group
         v-model="radio"
         class="me-radio-group"
@@ -63,7 +63,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.single-choice-wrap{
-  width: 100%;
-}
+// .single-choice-wrap{
+//   width: 100%;
+// }
 </style>
