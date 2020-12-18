@@ -1,19 +1,23 @@
 // 引入编写的组件
-import Test from './test'
 import Desp from './desp'
 import LongText from './long-text'
 import ShortText from './short-text'
-// import LongText from './long-text'
-// import LongText from './long-text'
-// import LongText from './long-text'
-// import LongText from './long-text'
+import MultipleChoice from './multiple-choice'
+import MultipleDropdown from './multiple-dropdown'
+import SingleChoice from './single-choice'
+import SingleDropdown from './single-dropdown'
+import PreviewModel from './preview-model'
 
 // 所有组件列表
 const components = [
-  Test,
   Desp,
   LongText,
-  ShortText
+  ShortText,
+  MultipleChoice,
+  MultipleDropdown,
+  SingleChoice,
+  SingleDropdown,
+  PreviewModel
 ]
 
 // 定义 install 方法，接收 Vue 作为参数

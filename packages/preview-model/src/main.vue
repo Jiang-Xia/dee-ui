@@ -55,13 +55,13 @@
 </template>
 
 <script>
-import LongText from './long-text'
-import ShortText from './short-text'
-import MultipleChoice from './multiple-choice'
-import MultipleDropdown from './multiple-dropdown'
-import SingleChoice from './single-choice'
-import SingleDropdown from './single-dropdown'
-import Desp from './desp'
+import LongText from '#/long-text'
+import ShortText from '#/short-text'
+import MultipleChoice from '#/multiple-choice'
+import MultipleDropdown from '#/multiple-dropdown'
+import SingleChoice from '#/single-choice'
+import SingleDropdown from '#/single-dropdown'
+import Desp from '#/desp'
 export default {
   name: 'DeePreviewModel',
   components: {
