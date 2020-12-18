@@ -1,11 +1,16 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <Test/>
-    <router-view/>
+    <el-container>
+      <el-header>
+        <div id="nav">
+          <router-link to="/">首页</router-link> |
+          <router-link to="/demo">测试</router-link>
+        </div>
+      </el-header>
+      <el-main>
+        <router-view />
+      </el-main>
+    </el-container>
   </div>
 </template>
 
@@ -19,8 +24,7 @@
 }
 
 #nav {
-  padding: 30px;
-
+  padding: 10px;
   a {
     font-weight: bold;
     color: #2c3e50;

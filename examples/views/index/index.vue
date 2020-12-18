@@ -1,14 +1,14 @@
 <template>
   <div>
-    {{ data }}
+    <dee-desp />
+    <dee-long-text />
   </div>
 </template>
 <script>
 export default {
-  name: 'DeeTest',
   data() {
     return {
-      data: '测试组件'
+      data: ''
     }
   }
 }

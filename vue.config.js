@@ -25,7 +25,7 @@ module.exports = {
     // subpage: 'src/subpage/main.js'
   },
   configureWebpack: {
-    plugins: [],
+    plugins: []
     // resolve: {
     //   alias: {
     //     '@': resolve('examples'),
@@ -37,19 +37,19 @@ module.exports = {
     // @ 默认指向 src 目录，这里要改成 examples
     // 另外也可新增一个 ~ 指向 packages
     config.resolve.alias
-        .set('@', resolve('examples'))
-        .set('#', resolve('packages'))
+      .set('@', resolve('examples'))
+      .set('#', resolve('packages'))
     // 把 packages 和 examples 加入编译，因为新增的文件默认是不被 webpack 处理的
     config.module
-        .rule('js')
-        .include.add(/packages/).end()
-        .include.add(/examples/).end()
-        .use('babel')
-        .loader('babel-loader')
-        .tap(options => {
-            // 修改它的选项
-            return options
-        })
+      .rule('js')
+      .include.add(/packages/).end()
+      .include.add(/examples/).end()
+      .use('babel')
+      .loader('babel-loader')
+      .tap(options => {
+        // 修改它的选项
+        return options
+      })
   },
   outputDir: process.env.outputDir,
   publicPath: process.env.NODE_ENV === 'production' ? './' : './',

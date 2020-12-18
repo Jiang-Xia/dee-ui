@@ -1,14 +1,11 @@
 <template>
-  <div>
-    {{ data }}
-  </div>
+  <div>2</div>
 </template>
 <script>
 export default {
-  name: 'DeeTest',
   data() {
     return {
-      data: '测试组件'
+      data: ''
     }
   }
 }
