@@ -4,6 +4,7 @@ import DeeUI from '../packages'
 Vue.use(DeeUI)
 Vue.config.productionTip = false
 
+
 new Vue({
   router,
   store,
