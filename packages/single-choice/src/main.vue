@@ -1,15 +1,18 @@
 <template>
   <div class="dee-question-wrap dee-single-choice-wrap">
-    <h6 class="dee-question-heading">{{ dimLayout.name }}</h6>
+    <h6 class="dee-question-heading">
+      <span class="dee-question-no">{{ questionNo }}</span>
+      {{ dimLayout.name }}
+    </h6>
+    <!-- @change="changeHandle" -->
     <div class="dee-control-wrap">
       <el-radio-group
         v-model="radio"
-        class="me-radio-group"
       >
         <el-radio
           v-for="(item,index) in dimLayout.options"
           :key="index"
-          :label="getRealValue(item.option_value)"
+          :label="item.option_value"
           @click.native.prevent="clickHandle(item.option_value)"
         >{{ item.option_name }}</el-radio>
       </el-radio-group>
@@ -28,6 +31,10 @@ export default {
     dimLayout: {
       default: () => { return {} },
       type: Object
+    },
+    questionIndex: {
+      default: null,
+      type: Number
     }
   },
   data() {
@@ -35,28 +42,34 @@ export default {
       radio: ''
     }
   },
+  computed: {
+    questionNo() {
+      const index = this.questionIndex
+      return (index < 9) ? (0 + String(index + 1)) : index + 1
+    }
+  },
   watch: {
-    dimData(n) {
-      this.radio = n.value
+    dimData: {
+      handler: function(n) {
+        console.log('============')
+        console.log(n)
+        this.radio = n[this.dimLayout.en_name]
+      }
     }
   },
   created() {
-    this.radio = this.dimData.value
-    // console.log()
   },
   methods: {
     getRealValue(v) {
       return v
     },
     clickHandle(v) {
-      v = this.getRealValue(v)
+      const en = this.dimLayout.en_name
       this.radio = v === this.radio ? '' : v
-      // console.log(this.dimData.value, '!!!!!!!!!!', v)
       this.$emit('modify', {
-        type: 'radio',
-        en: 'en',
-        value: this.radio,
-        dim_type: 1
+        type: 'single_choice',
+        en: en,
+        value: this.radio
       })
     }
   }

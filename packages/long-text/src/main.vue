@@ -1,7 +1,7 @@
 <template>
   <div class="dee-question-wrap dee-long-text-wrap" :type="dimLayout.type">
     <h6 class="dee-question-heading">
-      <span class="question-no">{{ index+1 }}.</span>
+      <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
     </h6>
     <div class="dee-control-wrap">
@@ -23,7 +23,7 @@ export default {
       default: () => { return {} },
       type: Object
     },
-    index: {
+    questionIndex: {
       default: null,
       type: Number
     }
@@ -31,6 +31,12 @@ export default {
   data() {
     return {
       textarea: ''
+    }
+  },
+  computed: {
+    questionNo() {
+      const index = this.questionIndex
+      return (index < 9) ? (0 + String(index + 1)) : index + 1
     }
   },
   watch: {

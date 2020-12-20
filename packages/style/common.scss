@@ -1,12 +1,17 @@
 // 所有提示公用样式
 .dee-question-wrap{
-
+    margin-top: 1rem;
 }
 .dee-question-heading{
-
+    font-size: 18px;
+    margin: .8rem 0 .4rem;
+}
+.dee-question-no{
+    font-weight: 600;
+    margin-right: .5rem;
 }
 .dee-control-wrap{
-
+    margin-left: .5rem;
 }
 
 
@@ -17,18 +22,30 @@
 }
 .dee-long-text-wrap{
     width: 100%;
+    .el-textarea {
+      width: 98%;
+    }
 }
 .dee-short-text-wrap{
     width: 50%;
+    .el-input{
+        width: 95%;
+    }
 }
 .dee-multiple-choice-wrap{
     width: 100%;
 }
 .dee-multiple-dropdown-wrap{
     width: 50%;
+    .el-select {
+      width: 95%;
+    }
 }
 .dee-single-dropdown-wrap{
     width: 50%;
+    .el-select {
+        width: 95%;
+    }
 }
 .dee-single-choice-wrap{
     width: 100%;
@@ -42,14 +59,4 @@
     margin-left: .5rem;
     display: flex;
     flex-wrap: wrap;
-    .dee-question-wrap{
-        margin-top: 1rem;
-    }
-    .dee-question-heading{
-        font-size: 14px;
-        margin: .8rem  0 .4rem;
-    }
-    .dee-control-wrap{
-        margin-left: .5rem;
-    }
 }

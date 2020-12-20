@@ -1,18 +1,14 @@
 <template>
-  <div class="dee-question-wrap dee-single-dropdown-wrap">
-    <h6 class="dee-question-heading">{{ dimLayout.name }}</h6>
+  <div class="dee-question-wrap dee-multiple-dropdown-wrap">
+    <h6 class="dee-question-heading">
+      <span class="dee-question-no">{{ questionNo }}</span>
+      {{ dimLayout.name }}
+    </h6>
     <div class="dee-control-wrap">
-      <el-radio-group
-        v-model="radio"
-        class="me-radio-group"
-      >
-        <el-radio
-          v-for="(item,index) in dimLayout.options"
-          :key="index"
-          :label="getRealValue(item.option_value)"
-          @click.native.prevent="clickHandle(item.option_value)"
-        >{{ item.option_name }}</el-radio>
-      </el-radio-group>
+      <el-select v-model="select" size="small" @change="changeHandle">
+        <el-option value="" label="" />
+        <el-option v-for="(item,index) in dimLayout.options" :key="index" :value="item.option_value" :label="item.option_name" />
+      </el-select>
     </div>
   </div>
 </template>
@@ -28,42 +24,53 @@ export default {
     dimLayout: {
       default: () => { return {} },
       type: Object
+    },
+    questionIndex: {
+      default: null,
+      type: Number
     }
   },
   data() {
     return {
-      radio: ''
+      select: []
+    }
+  },
+  computed: {
+    questionNo() {
+      const index = this.questionIndex
+      return (index < 9) ? (0 + String(index + 1)) : index + 1
     }
   },
   watch: {
-    dimData(n) {
-      this.radio = n.value
+    dimData: {
+      handler: function(n) {
+        console.log('============')
+        console.log(n)
+        this.select = n[this.dimLayout.en_name]
+      }
     }
   },
   created() {
-    this.radio = this.dimData.value
-    // console.log()
   },
   methods: {
     getRealValue(v) {
       return v
     },
-    clickHandle(v) {
-      v = this.getRealValue(v)
-      this.radio = v === this.radio ? '' : v
-      // console.log(this.dimData.value, '!!!!!!!!!!', v)
+    changeHandle(v) {
+      const en = this.dimLayout.en_name
       this.$emit('modify', {
-        type: 'radio',
-        en: 'en',
-        value: this.radio,
-        dim_type: 1
+        type: 'single_dropdown',
+        en: en,
+        value: this.select
       })
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-// .single-choice-wrap{
-//   width: 100%;
-// }
+  // .multiple-dropdown-wrap{
+  //   // float: left;
+  //   // width: 50%;
+  //   width: 100%;
+  // }
 </style>

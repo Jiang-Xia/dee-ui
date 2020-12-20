@@ -1,12 +1,16 @@
 <template>
   <div class="dee-question-wrap dee-multiple-dropdown-wrap">
-    <h6 class="dee-question-heading">{{ dimLayout.name }}</h6>
+    <h6 class="dee-question-heading">
+      <span class="dee-question-no">{{ questionNo }}</span>
+      {{ dimLayout.name }}
+    </h6>
     <div class="dee-control-wrap">
       <el-select
-        v-model="select"
+        v-model="selects"
         size="small"
         multiple
         collapse-tags
+        @change="changeHandle"
       >
         <el-option
           v-for="(item,index) in dimLayout.options"
@@ -30,35 +34,44 @@ export default {
     dimLayout: {
       default: () => { return {} },
       type: Object
+    },
+    questionIndex: {
+      default: null,
+      type: Number
     }
   },
   data() {
     return {
-      select: []
+      selects: []
+    }
+  },
+  computed: {
+    questionNo() {
+      const index = this.questionIndex
+      return (index < 9) ? (0 + String(index + 1)) : index + 1
     }
   },
   watch: {
-    dimData(n) {
-      // this.select = n.value
+    dimData: {
+      handler: function(n) {
+        console.log('============')
+        console.log(n)
+        this.selects = n[this.dimLayout.en_name]
+      }
     }
   },
   created() {
-    // this.select = this.dimData.value
-    // console.log()
   },
   methods: {
     getRealValue(v) {
       return v
     },
-    clickHandle(v) {
-      v = this.getRealValue(v)
-
-      this.select = v === this.select ? '' : v
-      // console.log(this.dimData.value, '!!!!!!!!!!', v)
+    changeHandle(v) {
+      const en = this.dimLayout.en_name
       this.$emit('modify', {
-        type: 'select',
-        en: 'en',
-        value: this.select,
+        type: 'multiple_dropdown',
+        en: en,
+        value: this.selects,
         dim_type: 1
       })
     }

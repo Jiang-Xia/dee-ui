@@ -6,7 +6,7 @@
         :key="String('LongText_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
-        :index="index"
+        :question-index="index"
         @modify="modifyHandle"
       />
       <ShortText
@@ -14,7 +14,7 @@
         :key="String('ShortText_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
-        :index="index"
+        :question-index="index"
         @modify="modifyHandle"
       />
       <MultipleChoice
@@ -22,7 +22,7 @@
         :key="String('MultipleChoice_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
-        :index="index"
+        :question-index="index"
         @modify="modifyHandle"
       />
       <MultipleDropdown
@@ -30,7 +30,7 @@
         :key="String('LongText_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
-        :index="index"
+        :question-index="index"
         @modify="modifyHandle"
       />
       <SingleChoice
@@ -38,7 +38,7 @@
         :key="String('SingleChoice_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
-        :index="index"
+        :question-index="index"
         @modify="modifyHandle"
       />
       <SingleDropdown
@@ -46,7 +46,7 @@
         :key="String('SingleDropdown_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
-        :index="index"
+        :question-index="index"
         @modify="modifyHandle"
       />
       <Desp
@@ -54,7 +54,7 @@
         :key="String('LongText_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
-        :index="index"
+        :question-index="index"
         @modify="modifyHandle"
       />
     </template>

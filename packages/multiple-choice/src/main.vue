@@ -1,12 +1,12 @@
 <template>
   <div class="dee-question-wrap dee-multiple-choice-wrap">
     <h6 class="dee-question-heading">
-      <span class="question-no">{{ index+1 }}.</span>
+      <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
     </h6>
     <div class="dee-control-wrap">
       <el-checkbox-group
-        v-model="checkbox"
+        v-model="checkboxs"
         class="me-checkbox-group"
         @change="changeHandle"
       >
@@ -32,14 +32,20 @@ export default {
       default: () => { return {} },
       type: Object
     },
-    index: {
+    questionIndex: {
       default: null,
       type: Number
     }
   },
   data() {
     return {
-      checkbox: []
+      checkboxs: []
+    }
+  },
+  computed: {
+    questionNo() {
+      const index = this.questionIndex
+      return (index < 9) ? (0 + String(index + 1)) : index + 1
     }
   },
   watch: {
@@ -47,7 +53,7 @@ export default {
       handler: function(n) {
         console.log('============')
         console.log(n)
-        this.textarea = n[this.dimLayout.en_name]
+        this.checkboxs = n[this.dimLayout.en_name]
       }
     }
   },
@@ -62,7 +68,7 @@ export default {
       this.$emit('modify', {
         type: 'multiple_choice',
         en: en,
-        value: this.checkbox
+        value: this.checkboxs
       })
     }
   }
