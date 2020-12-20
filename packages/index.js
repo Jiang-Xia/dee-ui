@@ -5,7 +5,6 @@ import ShortText from './short-text'
 import MultipleChoice from './multiple-choice'
 import MultipleDropdown from './multiple-dropdown'
 import SingleChoice from './single-choice'
-
 import SingleDropdown from './single-dropdown'
 import PreviewModel from './preview-model'
 import './style/common.scss'
