@@ -8,6 +8,7 @@ import SingleChoice from './single-choice'
 import SingleDropdown from './single-dropdown'
 import PreviewModel from './preview-model'
 
+
 import './style/common.scss'
 
 // 所有组件列表
