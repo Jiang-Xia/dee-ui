@@ -1,10 +1,18 @@
+@import "~@/styles/scss/_mixins";
+
 // 所有提示公用样式
 .dee-question-wrap{
     margin-top: 1rem;
 }
 .dee-question-heading{
+    font-size: 16px;
+    margin: .8rem 0 .4rem;
+}
+@media (min-width: 1200px){
+    .dee-question-heading{
     font-size: 18px;
     margin: .8rem 0 .4rem;
+}
 }
 .dee-question-no{
     font-weight: 600;
@@ -14,6 +22,25 @@
     margin-left: .5rem;
 }
 
+// matrix
+.dee-matrix-table{
+    width:100%;
+    th,td{
+        padding:1rem .5rem;
+    }
+}
+.dee-matrix__body{
+    &>tr:nth-child(2n){
+      background-color: #fafafa;
+}
+    &>tr:hover{
+      background-color: #d9ecff;
+    }
+}
+
+.dee-matrix__header{
+    background-color: rgba($color: $main-color, $alpha: 0.1)
+}
 
 
 // 每个提示样式

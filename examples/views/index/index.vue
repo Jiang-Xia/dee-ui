@@ -41,7 +41,7 @@ export default {
         this.dimData = {
           pat_name: '江夏'
         }
-      }, 3000)
+      }, 1000)
     }
   }
 }

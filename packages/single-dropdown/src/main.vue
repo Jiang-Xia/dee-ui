@@ -44,8 +44,8 @@ export default {
   watch: {
     dimData: {
       handler: function(n) {
-        console.log('============')
-        console.log(n)
+        // console.log('============')
+        // console.log(n)
         this.select = n[this.dimLayout.en_name]
       }
     }

@@ -9,6 +9,7 @@ import ElementUI from 'element-ui'
 Vue.use(ElementUI)
 Vue.use(DeeUI)
 Vue.config.productionTip = false
+Vue.prototype.log = console.log
 new Vue({
   router,
   store,

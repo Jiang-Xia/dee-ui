@@ -49,6 +49,30 @@
         :question-index="index"
         @modify="modifyHandle"
       />
+      <MatrixMultipleChoice
+        v-if="item.type==='matrix_single_choice'"
+        :key="String('MatrixMultipleChoice_'+index)"
+        :dim-layout="item"
+        :dim-data="dimData"
+        :question-index="index"
+        @modify="modifyHandle"
+      />
+      <MatrixInput
+        v-if="item.type==='matrix_input'"
+        :key="String('MatrixInput_'+index)"
+        :dim-layout="item"
+        :dim-data="dimData"
+        :question-index="index"
+        @modify="modifyHandle"
+      />
+      <MatrixSingleChoice
+        v-if="item.type==='1matrix_single_choice'"
+        :key="String('MatrixSingleChoice_'+index)"
+        :dim-layout="item"
+        :dim-data="dimData"
+        :question-index="index"
+        @modify="modifyHandle"
+      />
       <Desp
         v-if="item.type==='desp'"
         :key="String('LongText_'+index)"
@@ -69,6 +93,9 @@ import MultipleDropdown from '#/multiple-dropdown'
 import SingleChoice from '#/single-choice'
 import SingleDropdown from '#/single-dropdown'
 import Desp from '#/desp'
+import MatrixMultipleChoice from '#/matrix-multiple-choice'
+import MatrixInput from '#/matrix-input'
+import MatrixSingleChoice from '#/matrix-single-choice'
 export default {
   name: 'DeePreviewModel',
   components: {
@@ -78,7 +105,10 @@ export default {
     MultipleDropdown,
     SingleChoice,
     SingleDropdown,
-    Desp
+    Desp,
+    MatrixMultipleChoice,
+    MatrixInput,
+    MatrixSingleChoice
   },
   provide() {
     return {

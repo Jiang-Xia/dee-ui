@@ -5,24 +5,31 @@
       {{ dimLayout.name }}
     </h6>
     <div class="dee-control-wrap">
-      <el-checkbox-group
-        v-model="checkboxs"
-        class="me-checkbox-group"
-        @change="changeHandle"
-      >
-        <el-checkbox
-          v-for="(item,index) in dimLayout.options"
-          :key="index"
-          :label="item.option_value"
-        >{{ item.option_name }}</el-checkbox>
-      </el-checkbox-group>
+      <table class="dee-matrix-table">
+        <thead>
+          <tr class="dee-matrix__header">
+            <th />
+            <th v-for="(thItem,thIndex) in dimLayout.matrix_cols" :key="thIndex">{{ thItem.name }}</th>
+          </tr>
+        </thead>
+        <tbody class="dee-matrix__body">
+          <tr v-for="(trItem,trIndex) in rows" :key="trIndex">
+            <td>
+              {{ trItem.name }}
+            </td>
+            <td v-for="(raItem,raIndex) in dimLayout.matrix_cols" :key="raIndex">
+              <el-radio @change="changeHandle" v-model="trItem.checked" :label="raItem.en_name">{{ '' }}</el-radio>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'DeeMultipleChoice',
+  name: 'DeeMatrixSingleChoice',
   props: {
     dimData: {
       default: () => { return {} },
@@ -39,25 +46,33 @@ export default {
   },
   data() {
     return {
-      checkboxs: []
+      tableData: [],
+      rows: []
     }
   },
   computed: {
     questionNo() {
       const index = this.questionIndex
       return (index < 9) ? (0 + String(index + 1)) : index + 1
+    },
+    new_matrix_cols() {
+      return this.dimLayout.matrix_cols
     }
   },
   watch: {
     dimData: {
       handler: function(n) {
         // console.log('============')
-        // console.log(n)
-        // this.checkboxs = n[this.dimLayout.en_name]
       }
     }
   },
   created() {
+    this.rows = this.dimLayout.matrix_rows.map(v => {
+      v.checked = ''
+      // 需要重新填装 才能双向绑定
+      return { ...v }
+    })
+    console.log(this.dimLayout.matrix_rows)
   },
   methods: {
     getRealValue(v) {
@@ -66,7 +81,7 @@ export default {
     changeHandle(v) {
       const en = this.dimLayout.en_name
       this.$emit('modify', {
-        type: 'multiple_choice',
+        type: 'matrix_single_choice',
         en: en,
         value: this.checkboxs
       })

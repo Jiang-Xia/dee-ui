@@ -51,8 +51,8 @@ export default {
   watch: {
     dimData: {
       handler: function(n) {
-        console.log('============')
-        console.log(n)
+        // console.log('============')
+        // console.log(n)
         this.radio = n[this.dimLayout.en_name]
       }
     }
