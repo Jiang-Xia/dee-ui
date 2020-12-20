@@ -13,12 +13,17 @@
           </tr>
         </thead>
         <tbody class="dee-matrix__body">
-          <tr v-for="(trItem,trIndex) in rows" :key="trIndex">
+          <tr v-for="(trItem,trIndex) in dimLayout.matrix_rows" :key="trIndex">
             <td>
               {{ trItem.name }}
             </td>
             <td v-for="(raItem,raIndex) in dimLayout.matrix_cols" :key="raIndex">
-              <el-checkbox @change="changeHandle" v-model="trItem.checked" :label="raItem.en_name">{{ '' }}</el-checkbox>
+              <el-input
+                v-model="tableData_[trItem.en_name][raItem.en_name]"
+                size="mini"
+                style="width:80%;"
+                @change="changeHandle"
+              />
             </td>
           </tr>
         </tbody>
@@ -46,17 +51,13 @@ export default {
   },
   data() {
     return {
-      tableData: [],
-      rows: []
+      tableData_: {}
     }
   },
   computed: {
     questionNo() {
       const index = this.questionIndex
       return (index < 9) ? (0 + String(index + 1)) : index + 1
-    },
-    new_matrix_cols() {
-      return this.dimLayout.matrix_cols
     }
   },
   watch: {
@@ -67,31 +68,39 @@ export default {
     }
   },
   created() {
-    this.rows = this.dimLayout.matrix_rows.map(v => {
-      v.checked = ''
-      // 需要重新填装 才能双向绑定
-      return { ...v }
+    const rows = this.dimLayout.matrix_rows
+    const cols = this.dimLayout.matrix_cols
+    const enObj = {}
+    cols.map((v) => {
+      enObj[v.en_name] = ''
     })
-    console.log(this.dimLayout.matrix_rows)
+    console.log(this.tableData_, 111111)
+    const newtableData_ = {}
+    rows.map((v, i) => {
+      newtableData_[v.en_name] = { ...enObj }
+    })
+    this.tableData_ = newtableData_
+    console.log(this.tableData_)
   },
   methods: {
     getRealValue(v) {
       return v
     },
     changeHandle(v) {
+      console.log(this.tableData_)
       const en = this.dimLayout.en_name
       this.$emit('modify', {
         type: 'matrix_input',
         en: en,
-        value: this.checkboxs
+        value: this.tableData_
       })
     }
   }
 }
 </script>
 <style lang="scss">
-// .multiple-choice-wrap{
-//   // float: left;
-//   width: 100%;
-// }
+  // .multiple-choice-wrap{
+  //   // float: left;
+  //   width: 100%;
+  // }
 </style>

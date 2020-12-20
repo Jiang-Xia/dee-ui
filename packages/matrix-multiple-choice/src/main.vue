@@ -5,6 +5,20 @@
       {{ dimLayout.name }}
     </h6>
     <div class="dee-control-wrap">
+      <!-- <el-table :data="tableData" border style="width: 100%">
+        <el-table-column prop="question" label="" />
+        <el-table-column
+          v-for="(thItem,thIndex) in dimLayout.matrix_cols"
+          :key="thIndex"
+          :prop="thItem.en_name"
+          :label="thItem.name"
+        >
+          <template slot-scope="scope">
+            <el-checkbox v-model="scope.row[thItem.en_name]" label="" @change="changeHandle" />
+          </template>
+        </el-table-column>
+      </el-table> -->
+
       <table class="dee-matrix-table">
         <thead>
           <tr class="dee-matrix__header">
@@ -13,12 +27,15 @@
           </tr>
         </thead>
         <tbody class="dee-matrix__body">
-          <tr v-for="(trItem,trIndex) in rows" :key="trIndex">
+          <tr v-for="(trItem,trIndex) in dimLayout.matrix_rows" :key="trIndex">
             <td>
               {{ trItem.name }}
             </td>
-            <td v-for="(raItem,raIndex) in cols" :key="raIndex">
-              <el-checkbox @change="changeHandle" v-model="raItem.checked" :label="raItem.en_name">{{ '' }}</el-checkbox>
+            <td v-for="(raItem,raIndex) in dimLayout.matrix_cols" :key="raIndex">
+              <el-checkbox
+                v-model="tableData_[trItem.en_name][raItem.en_name]"
+                @change="changeHandle"
+              >{{ '' }}</el-checkbox>
             </td>
           </tr>
         </tbody>
@@ -46,18 +63,16 @@ export default {
   },
   data() {
     return {
-      tableData: [],
+      // tableData: [],
+      tableData_: {},
       rows: [],
-      cols:[]
+      cols: []
     }
   },
   computed: {
     questionNo() {
       const index = this.questionIndex
       return (index < 9) ? (0 + String(index + 1)) : index + 1
-    },
-    new_matrix_cols() {
-      return this.dimLayout.matrix_cols
     }
   },
   watch: {
@@ -68,24 +83,36 @@ export default {
     }
   },
   created() {
-    this.rows = this.dimLayout.matrix_rows
-    this.cols = this.dimLayout.matrix_cols.map(v => {
-      v.checked = ''
-      // 需要重新填装 才能双向绑定
-      return { ...v }
+    const enObj = {}
+    const rows = this.dimLayout.matrix_rows
+    const cols = this.dimLayout.matrix_cols
+    cols.map((v) => {
+      enObj[v.en_name] = ''
     })
-    console.log(this.dimLayout.matrix_rows)
+    // this.tableData = this.rows.map((v, i) => {
+    //   const obj = {}
+    //   obj.question = v.name
+    //   obj.question_en = v.en_name
+    //   return { ...obj, ...enObj }
+    // })
+    const newtableData_ = {}
+    rows.map((v, i) => {
+      newtableData_[v.en_name] = { ...enObj }
+    })
+    this.tableData_ = newtableData_
+    console.log(this.tableData_)
   },
   methods: {
     getRealValue(v) {
       return v
     },
     changeHandle(v) {
+      console.log(this.tableData_)
       const en = this.dimLayout.en_name
       this.$emit('modify', {
         type: 'matrix_multiple_choice',
         en: en,
-        value: this.checkboxs
+        value: this.tableData_
       })
     }
   }

@@ -50,7 +50,7 @@
         @modify="modifyHandle"
       />
       <MatrixMultipleChoice
-        v-if="item.type==='matrix_single_choice'"
+        v-if="item.type==='1matrix_multiple_choice'"
         :key="String('MatrixMultipleChoice_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -58,7 +58,7 @@
         @modify="modifyHandle"
       />
       <MatrixInput
-        v-if="item.type==='matrix_input'"
+        v-if="item.type==='matrix_single_choice'"
         :key="String('MatrixInput_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
