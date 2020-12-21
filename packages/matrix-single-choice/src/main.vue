@@ -4,6 +4,7 @@
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
     </h6>
+    <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
     <div class="dee-control-wrap">
       <table class="dee-matrix-table">
         <thead>
@@ -18,7 +19,11 @@
               {{ trItem.name }}
             </td>
             <td v-for="(raItem,raIndex) in dimLayout.matrix_cols" :key="raIndex">
-              <el-radio @change="changeHandle" v-model="trItem.checked" :label="raItem.en_name">{{ '' }}</el-radio>
+              <el-radio
+                v-model="trItem.checked"
+                :label="raItem.en_name"
+                @click.native.prevent="clickHandle(trIndex,raItem.en_name)"
+              >{{ '' }}</el-radio>
             </td>
           </tr>
         </tbody>
@@ -54,9 +59,6 @@ export default {
     questionNo() {
       const index = this.questionIndex
       return (index < 9) ? (0 + String(index + 1)) : index + 1
-    },
-    new_matrix_cols() {
-      return this.dimLayout.matrix_cols
     }
   },
   watch: {
@@ -77,6 +79,10 @@ export default {
   methods: {
     getRealValue(v) {
       return v
+    },
+    clickHandle(i, v) {
+      this.rows[i].checked = this.rows[i].checked === v ? '' : v
+      this.changeHandle(v)
     },
     changeHandle(v) {
       const en = this.dimLayout.en_name

@@ -4,21 +4,8 @@
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
     </h6>
+    <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
     <div class="dee-control-wrap">
-      <!-- <el-table :data="tableData" border style="width: 100%">
-        <el-table-column prop="question" label="" />
-        <el-table-column
-          v-for="(thItem,thIndex) in dimLayout.matrix_cols"
-          :key="thIndex"
-          :prop="thItem.en_name"
-          :label="thItem.name"
-        >
-          <template slot-scope="scope">
-            <el-checkbox v-model="scope.row[thItem.en_name]" label="" @change="changeHandle" />
-          </template>
-        </el-table-column>
-      </el-table> -->
-
       <table class="dee-matrix-table">
         <thead>
           <tr class="dee-matrix__header">
@@ -63,10 +50,7 @@ export default {
   },
   data() {
     return {
-      // tableData: [],
-      tableData_: {},
-      rows: [],
-      cols: []
+      tableData_: {}
     }
   },
   computed: {
@@ -89,12 +73,6 @@ export default {
     cols.map((v) => {
       enObj[v.en_name] = ''
     })
-    // this.tableData = this.rows.map((v, i) => {
-    //   const obj = {}
-    //   obj.question = v.name
-    //   obj.question_en = v.en_name
-    //   return { ...obj, ...enObj }
-    // })
     const newtableData_ = {}
     rows.map((v, i) => {
       newtableData_[v.en_name] = { ...enObj }

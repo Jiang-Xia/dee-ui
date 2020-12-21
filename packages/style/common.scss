@@ -19,6 +19,7 @@
     margin-right: .5rem;
 }
 .dee-control-wrap{
+    padding-top: 0.5rem;
     margin-left: .5rem;
 }
 
@@ -33,9 +34,12 @@
 .dee-matrix__body{
     &>tr:nth-child(2n){
       background-color: #fafafa;
-}
+    }
     &>tr:hover{
       background-color: #d9ecff;
+    }
+    .el-input__inner{
+        padding: 0;
     }
 }
 
@@ -59,9 +63,19 @@
     .el-input{
         width: 95%;
     }
+    .el-date-editor.el-input{
+        width: 95%;
+    }
 }
 .dee-multiple-choice-wrap{
     width: 100%;
+    .el-checkbox-group{
+        width: 98%;
+    }
+    .el-checkbox{
+        margin-right: 1rem;
+        margin-bottom: 0.3rem;
+    }
 }
 .dee-multiple-dropdown-wrap{
     width: 50%;
@@ -77,6 +91,13 @@
 }
 .dee-single-choice-wrap{
     width: 100%;
+    .el-radio-group{
+        width: 98%;
+    }
+    .el-radio{
+        margin-right: 1rem;
+        margin-bottom: 0.3rem;
+    }
 }
 
 // 模板

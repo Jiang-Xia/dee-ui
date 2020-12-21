@@ -4,9 +4,9 @@
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
     </h6>
+    <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
     <div class="dee-control-wrap">
-      <el-select v-model="select" size="small" @change="changeHandle">
-        <el-option value="" label="" />
+      <el-select v-model="select" clearable size="small" @change="changeHandle">
         <el-option v-for="(item,index) in dimLayout.options" :key="index" :value="item.option_value" :label="item.option_name" />
       </el-select>
     </div>

@@ -14,7 +14,7 @@
                     "pid": "1",
                     "type": "short_text",
                     "name": "姓名",
-                    "remark": "",
+                    "remark": "姓名备注",
                     "en_name": "pat_name",
                     "is_required": 0,
                     "max_length": -1,
@@ -25,7 +25,7 @@
                     "pid": "1",
                     "type": "single_dropdown",
                     "name": "性别",
-                    "remark": "",
+                    "remark": "性别备注",
                     "is_required": 0,
                     "line_option_count": 4,
                     "options": [
@@ -904,6 +904,222 @@
                     "id": "1071",
                     "pid": "70",
                     "type": "matrix_single_choice",
+                    "name": "Epworth嗜睡量表",
+                    "remark": "以下情况打瞌睡的可能",
+                    "is_required": 0,
+                    "matrix_rows": [
+                        {
+                            "id": "71",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "坐着阅读时",
+                            "en_name": "scale_epworth_1"
+                        },
+                        {
+                            "id": "81",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "在公共场所坐着不动时(如剧场或开会)",
+                            "en_name": "scale_epworth_3"
+                        },
+                        {
+                            "id": "76",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "看电视时",
+                            "en_name": "scale_epworth_2"
+                        },
+                        {
+                            "id": "86",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "长时间坐车时中间不休息(超过1小时)",
+                            "en_name": "scale_epworth_4"
+                        },
+                        {
+                            "id": "91",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "坐着与人谈话时",
+                            "en_name": "scale_epworth_5"
+                        },
+                        {
+                            "id": "96",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "午餐不喝酒，餐后安静坐着",
+                            "en_name": "scale_epworth_6"
+                        },
+                        {
+                            "id": "101",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "遇堵车停车数分钟或等红绿灯时",
+                            "en_name": "scale_epworth_7"
+                        },
+                        {
+                            "id": "106",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "在环境许可时，下午静卧休息时",
+                            "en_name": "scale_epworth_8"
+                        }
+                    ],
+                    "matrix_cols": [
+                        {
+                            "id": "72",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "从不(0)",
+                            "en_name": "never",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        },
+                        {
+                            "id": "73",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "很少(1）",
+                            "en_name": "few",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        },
+                        {
+                            "id": "74",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "有时(2）",
+                            "en_name": "sometime",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        },
+                        {
+                            "id": "75",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "经常(3）",
+                            "en_name": "often",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        }
+                    ]
+                },
+                {
+                    "id": "1071",
+                    "pid": "70",
+                    "type": "matrix_multiple_choice",
+                    "name": "Epworth嗜睡量表",
+                    "remark": "以下情况打瞌睡的可能",
+                    "is_required": 0,
+                    "matrix_rows": [
+                        {
+                            "id": "71",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "坐着阅读时",
+                            "en_name": "scale_epworth_1"
+                        },
+                        {
+                            "id": "81",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "在公共场所坐着不动时(如剧场或开会)",
+                            "en_name": "scale_epworth_3"
+                        },
+                        {
+                            "id": "76",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "看电视时",
+                            "en_name": "scale_epworth_2"
+                        },
+                        {
+                            "id": "86",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "长时间坐车时中间不休息(超过1小时)",
+                            "en_name": "scale_epworth_4"
+                        },
+                        {
+                            "id": "91",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "坐着与人谈话时",
+                            "en_name": "scale_epworth_5"
+                        },
+                        {
+                            "id": "96",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "午餐不喝酒，餐后安静坐着",
+                            "en_name": "scale_epworth_6"
+                        },
+                        {
+                            "id": "101",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "遇堵车停车数分钟或等红绿灯时",
+                            "en_name": "scale_epworth_7"
+                        },
+                        {
+                            "id": "106",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "在环境许可时，下午静卧休息时",
+                            "en_name": "scale_epworth_8"
+                        }
+                    ],
+                    "matrix_cols": [
+                        {
+                            "id": "72",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "从不(0)",
+                            "en_name": "never",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        },
+                        {
+                            "id": "73",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "很少(1）",
+                            "en_name": "few",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        },
+                        {
+                            "id": "74",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "有时(2）",
+                            "en_name": "sometime",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        },
+                        {
+                            "id": "75",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "经常(3）",
+                            "en_name": "often",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        }
+                    ]
+                },
+                {
+                    "id": "1071",
+                    "pid": "70",
+                    "type": "matrix_input",
                     "name": "Epworth嗜睡量表",
                     "remark": "以下情况打瞌睡的可能",
                     "is_required": 0,

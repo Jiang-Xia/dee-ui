@@ -4,10 +4,12 @@
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
     </h6>
+    <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
     <div class="dee-control-wrap">
+      <!-- :style="{width:100/optionCount+'%'}" -->
       <el-checkbox-group
         v-model="checkboxs"
-        class="me-checkbox-group"
+        :max="optionMax?Number(optionMax):undefined"
         @change="changeHandle"
       >
         <el-checkbox
@@ -43,6 +45,12 @@ export default {
     }
   },
   computed: {
+    optionCount() {
+      return this.dimLayout.line_option_count
+    },
+    optionMax() {
+      return this.dimLayout.option_max_choice
+    },
     questionNo() {
       const index = this.questionIndex
       return (index < 9) ? (0 + String(index + 1)) : index + 1

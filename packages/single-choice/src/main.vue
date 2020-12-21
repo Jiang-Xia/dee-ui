@@ -1,11 +1,17 @@
 <template>
-  <div class="dee-question-wrap dee-single-choice-wrap">
+  <div
+    class="dee-question-wrap dee-single-choice-wrap"
+    :style="{
+      width:dimLayout.options.length<=4?'50%':'100%'
+    }"
+  >
     <h6 class="dee-question-heading">
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
     </h6>
-    <!-- @change="changeHandle" -->
+    <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
     <div class="dee-control-wrap">
+      <!-- :style="{width:100/optionCount+'%'}" -->
       <el-radio-group
         v-model="radio"
       >
@@ -43,6 +49,9 @@ export default {
     }
   },
   computed: {
+    optionCount() {
+      return this.dimLayout.line_option_count
+    },
     questionNo() {
       const index = this.questionIndex
       return (index < 9) ? (0 + String(index + 1)) : index + 1

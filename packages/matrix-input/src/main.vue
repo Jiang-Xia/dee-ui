@@ -4,6 +4,7 @@
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
     </h6>
+    <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
     <div class="dee-control-wrap">
       <table class="dee-matrix-table">
         <thead>
@@ -21,7 +22,7 @@
               <el-input
                 v-model="tableData_[trItem.en_name][raItem.en_name]"
                 size="mini"
-                style="width:80%;"
+                style="width:98%;"
                 @change="changeHandle"
               />
             </td>
@@ -74,7 +75,7 @@ export default {
     cols.map((v) => {
       enObj[v.en_name] = ''
     })
-    console.log(this.tableData_, 111111)
+    // console.log(this.tableData_, 111111)
     const newtableData_ = {}
     rows.map((v, i) => {
       newtableData_[v.en_name] = { ...enObj }
@@ -87,7 +88,6 @@ export default {
       return v
     },
     changeHandle(v) {
-      console.log(this.tableData_)
       const en = this.dimLayout.en_name
       this.$emit('modify', {
         type: 'matrix_input',

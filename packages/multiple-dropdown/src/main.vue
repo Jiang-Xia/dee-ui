@@ -4,12 +4,14 @@
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
     </h6>
+    <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
     <div class="dee-control-wrap">
+      <!-- collapse-tags -->
       <el-select
         v-model="selects"
         size="small"
         multiple
-        collapse-tags
+        :multiple-limit="optionMax?Number(optionMax):0"
         @change="changeHandle"
       >
         <el-option
@@ -46,6 +48,9 @@ export default {
     }
   },
   computed: {
+    optionMax() {
+      return this.dimLayout.option_max_choice
+    },
     questionNo() {
       const index = this.questionIndex
       return (index < 9) ? (0 + String(index + 1)) : index + 1

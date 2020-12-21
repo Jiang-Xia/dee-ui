@@ -1,0 +1,60 @@
+@import "~@/styles/scss/_mixins";
+// 修改elementui 样式
+.dee-preview-model-container{
+  // height: 100%;
+  // padding: 0 0.5rem;
+  overflow: scroll;
+  line-height: 24px;
+    .el-textarea.is-disabled .el-textarea__inner
+    ,.el-input.is-disabled .el-input__inner
+    ,.el-radio__input.is-disabled+span.el-radio__label
+    ,.el-checkbox__input.is-disabled+span.el-checkbox__label
+    ,.el-select.is-disabled .el-select__inner
+    ,.el-radio__input.is-disabled .el-radio__inner
+    ,.el-checkbox__input.is-disabled .el-checkbox__inner
+    ,.el-date-editor.el-input.is-disabled .el-input__inner
+    {
+      color: #333;
+      cursor: default;
+      user-select: none;
+    }
+    .height-auto{
+      height: auto;
+    }
+    /* dim-checkbox */ 
+      .el-checkbox__input.is-disabled.is-checked .el-checkbox__inner:after {
+        border-color: #fff;
+      }
+      .el-checkbox__input.is-disabled.is-checked .el-checkbox__inner {
+        background-color: #909399;
+        border-color: #909399;
+      }
+      .el-checkbox__inner{
+        border-color: #909399;
+      }
+      .el-checkbox__inner:hover {
+        border-color: $main-color;
+      }
+    /* dim-radio */
+      .el-radio__input.is-disabled.is-checked .el-radio__inner{
+          background-color: #909399;
+          border-color: #909399;
+        }
+      .el-radio__input.is-disabled.is-checked .el-radio__inner::after {
+          background-color: #fff;
+        }
+      .el-radio:focus:not(.is-focus):not(:active):not(.is-disabled) .el-radio__inner{
+          -webkit-box-shadow: 0 0 2px 2px #fff;
+          box-shadow: 0 0 2px 2px #fff;
+        }
+        .el-radio__inner{
+          border-color: #909399;
+        }
+        .el-radio__inner:hover{
+          border-color: $main-color;
+        }
+    /* dim-textarea */
+      .el-textarea__inner{
+        height: 100%;
+      }
+}
