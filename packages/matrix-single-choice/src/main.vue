@@ -1,5 +1,7 @@
 <template>
-  <div class="dee-question-wrap dee-multiple-choice-wrap">
+  <div
+    class="dee-question-wrap dee-multiple-choice-wrap"
+  >
     <h6 class="dee-question-heading">
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}

@@ -14,22 +14,20 @@
                     "pid": "1",
                     "type": "short_text",
                     "name": "姓名",
-                    "remark": "",
+                    "remark": "姓名备注",
                     "en_name": "pat_name",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "3",
                     "pid": "1",
-                    "type": "single_choice",
+                    "type": "single_dropdown",
                     "name": "性别",
-                    "remark": "",
+                    "remark": "性别备注",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "8",
@@ -40,10 +38,10 @@
                             "option_value": 1,
                             "option_en_name": "pat_sex",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "9",
@@ -54,10 +52,10 @@
                             "option_value": 2,
                             "option_en_name": "pat_sex",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -70,8 +68,7 @@
                     "en_name": "pat_identity",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "idcard",
-                    "row_behavior": 0
+                    "text_check": "idcard"
                 },
                 {
                     "id": "5",
@@ -82,8 +79,7 @@
                     "en_name": "pat_birth",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "date",
-                    "row_behavior": 0
+                    "text_check": "date"
                 },
                 {
                     "id": "6",
@@ -94,8 +90,7 @@
                     "en_name": "pat_tel",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "7",
@@ -106,18 +101,16 @@
                     "en_name": "pat_address",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "10",
                     "pid": "1",
-                    "type": "single_choice",
+                    "type": "multiple_dropdown",
                     "name": "文化程度",
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "13",
@@ -128,10 +121,10 @@
                             "option_value": 1,
                             "option_en_name": "pat_edu",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "14",
@@ -142,10 +135,10 @@
                             "option_value": 2,
                             "option_en_name": "pat_edu",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "15",
@@ -156,10 +149,10 @@
                             "option_value": 3,
                             "option_en_name": "pat_edu",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "16",
@@ -170,10 +163,10 @@
                             "option_value": 4,
                             "option_en_name": "pat_edu",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "17",
@@ -184,177 +177,23 @@
                             "option_value": 5,
                             "option_en_name": "pat_edu",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
                 {
                     "id": "11",
                     "pid": "1",
-                    "type": "single_dropdown",
+                    "type": "long_text",
                     "name": "职业",
                     "remark": "",
+                    "en_name": "pat_work",
                     "is_required": 0,
-                    "row_behavior": 0,
-                    "options": [
-                        {
-                            "id": "300",
-                            "pid": "11",
-                            "type": "option",
-                            "is_exclude_option": 1,
-                            "option_name": "无业",
-                            "option_value": 1,
-                            "option_en_name": "pat_work",
-                            "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
-                        },
-                        {
-                            "id": "301",
-                            "pid": "11",
-                            "type": "option",
-                            "is_exclude_option": 1,
-                            "option_name": "工人",
-                            "option_value": 2,
-                            "option_en_name": "pat_work",
-                            "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
-                        },
-                        {
-                            "id": "302",
-                            "pid": "11",
-                            "type": "option",
-                            "is_exclude_option": 1,
-                            "option_name": "农民",
-                            "option_value": 3,
-                            "option_en_name": "pat_work",
-                            "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
-                        },
-                        {
-                            "id": "303",
-                            "pid": "11",
-                            "type": "option",
-                            "is_exclude_option": 1,
-                            "option_name": "管理人员/干部",
-                            "option_value": 4,
-                            "option_en_name": "pat_work",
-                            "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
-                        },
-                        {
-                            "id": "304",
-                            "pid": "11",
-                            "type": "option",
-                            "is_exclude_option": 1,
-                            "option_name": "专业技术人员",
-                            "option_value": 5,
-                            "option_en_name": "pat_work",
-                            "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
-                        },
-                        {
-                            "id": "305",
-                            "pid": "11",
-                            "type": "option",
-                            "is_exclude_option": 1,
-                            "option_name": "商业服务人员",
-                            "option_value": 6,
-                            "option_en_name": "pat_work",
-                            "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
-                        },
-                        {
-                            "id": "306",
-                            "pid": "11",
-                            "type": "option",
-                            "is_exclude_option": 1,
-                            "option_name": "个体营业者",
-                            "option_value": 7,
-                            "option_en_name": "pat_work",
-                            "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
-                        },
-                        {
-                            "id": "307",
-                            "pid": "11",
-                            "type": "option",
-                            "is_exclude_option": 1,
-                            "option_name": "退休/离休",
-                            "option_value": 8,
-                            "option_en_name": "pat_work",
-                            "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
-                        },
-                        {
-                            "id": "308",
-                            "pid": "11",
-                            "type": "option",
-                            "is_exclude_option": 1,
-                            "option_name": "家务",
-                            "option_value": 9,
-                            "option_en_name": "pat_work",
-                            "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
-                        },
-                        {
-                            "id": "309",
-                            "pid": "11",
-                            "type": "option",
-                            "is_exclude_option": 1,
-                            "option_name": "其他",
-                            "option_value": 10,
-                            "option_en_name": "pat_work",
-                            "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
-                        },
-                        {
-                            "id": "310",
-                            "pid": "11",
-                            "type": "option",
-                            "is_exclude_option": 1,
-                            "option_name": "不详",
-                            "option_value": 11,
-                            "option_en_name": "pat_work",
-                            "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
-                        }
-                    ]
+                    "max_length": -1,
+                    "text_check": "no_limit"
                 }
             ]
         },
@@ -373,7 +212,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "20",
@@ -384,10 +222,10 @@
                             "option_value": 0,
                             "option_en_name": "sleep_snore",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "21",
@@ -398,10 +236,10 @@
                             "option_value": 1,
                             "option_en_name": "sleep_snore",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "22",
@@ -412,10 +250,10 @@
                             "option_value": 2,
                             "option_en_name": "sleep_snore",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "23",
@@ -426,10 +264,10 @@
                             "option_value": 3,
                             "option_en_name": "sleep_snore",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "24",
@@ -440,10 +278,10 @@
                             "option_value": 4,
                             "option_en_name": "sleep_snore",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -456,8 +294,7 @@
                     "en_name": "sleep_snore_time",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "25",
@@ -467,7 +304,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "32",
@@ -478,10 +314,10 @@
                             "option_value": 1,
                             "option_en_name": "sleep_snore_voice",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "33",
@@ -492,10 +328,10 @@
                             "option_value": 2,
                             "option_en_name": "sleep_snore_voice",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "34",
@@ -506,10 +342,10 @@
                             "option_value": 3,
                             "option_en_name": "sleep_snore_voice",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "35",
@@ -520,10 +356,10 @@
                             "option_value": 4,
                             "option_en_name": "sleep_snore_voice",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -536,7 +372,6 @@
                     "is_required": 0,
                     "line_option_count": 4,
                     "option_max_choice": "",
-                    "row_behavior": 1,
                     "options": [
                         {
                             "id": "27",
@@ -547,10 +382,10 @@
                             "option_value": 1,
                             "option_en_name": "sleep_symptom_1",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "28",
@@ -561,10 +396,10 @@
                             "option_value": 2,
                             "option_en_name": "sleep_symptom_2",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "29",
@@ -575,10 +410,10 @@
                             "option_value": 3,
                             "option_en_name": "sleep_symptom_3",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "30",
@@ -589,15 +424,15 @@
                             "option_value": 4,
                             "option_en_name": "sleep_symptom_4",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "31",
                             "pid": "26",
-                            "type": "option",
+                            "type": "option_other",
                             "is_exclude_option": 0,
                             "option_name": "其他",
                             "option_value": 5,
@@ -618,7 +453,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "37",
@@ -629,10 +463,10 @@
                             "option_value": 0,
                             "option_en_name": "sleep_nocturia",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "38",
@@ -643,10 +477,10 @@
                             "option_value": 1,
                             "option_en_name": "sleep_nocturia",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "39",
@@ -657,10 +491,10 @@
                             "option_value": 2,
                             "option_en_name": "sleep_nocturia",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "40",
@@ -671,10 +505,10 @@
                             "option_value": 3,
                             "option_en_name": "sleep_nocturia",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "41",
@@ -685,10 +519,10 @@
                             "option_value": 4,
                             "option_en_name": "sleep_nocturia",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -700,7 +534,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "43",
@@ -711,10 +544,10 @@
                             "option_value": 0,
                             "option_en_name": "sleep_snore_family",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "44",
@@ -725,10 +558,10 @@
                             "option_value": 1,
                             "option_en_name": "sleep_snore_family",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -741,8 +574,7 @@
                     "en_name": "sleep_symptom_family",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 }
             ]
         },
@@ -756,13 +588,12 @@
                 {
                     "id": "47",
                     "pid": "46",
-                    "type": "multiple_dropdown",
+                    "type": "multiple_choice",
                     "name": "觉醒时有无下列症状",
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
                     "option_max_choice": "",
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "48",
@@ -773,10 +604,10 @@
                             "option_value": 1,
                             "option_en_name": "wake_symptom_1",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "49",
@@ -787,10 +618,10 @@
                             "option_value": 2,
                             "option_en_name": "wake_symptom_2",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "50",
@@ -801,10 +632,10 @@
                             "option_value": 3,
                             "option_en_name": "wake_symptom_3",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "51",
@@ -815,10 +646,10 @@
                             "option_value": 4,
                             "option_en_name": "wake_symptom_4",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "52",
@@ -829,10 +660,10 @@
                             "option_value": 5,
                             "option_en_name": "wake_symptom_5",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "53",
@@ -843,10 +674,10 @@
                             "option_value": 6,
                             "option_en_name": "wake_symptom_6",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -858,7 +689,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "55",
@@ -869,10 +699,10 @@
                             "option_value": 0,
                             "option_en_name": "wake_vigour",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "56",
@@ -883,10 +713,10 @@
                             "option_value": 1,
                             "option_en_name": "wake_vigour",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 }
@@ -907,7 +737,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "59",
@@ -918,10 +747,10 @@
                             "option_value": 0,
                             "option_en_name": "breath_apnea",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "60",
@@ -932,10 +761,10 @@
                             "option_value": 1,
                             "option_en_name": "breath_apnea",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "61",
@@ -946,10 +775,10 @@
                             "option_value": 2,
                             "option_en_name": "breath_apnea",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "62",
@@ -960,10 +789,10 @@
                             "option_value": 3,
                             "option_en_name": "breath_apnea",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "63",
@@ -974,10 +803,10 @@
                             "option_value": 4,
                             "option_en_name": "breath_apnea",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -989,7 +818,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "65",
@@ -1000,10 +828,10 @@
                             "option_value": 0,
                             "option_en_name": "breath_awake",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "66",
@@ -1014,10 +842,10 @@
                             "option_value": 1,
                             "option_en_name": "breath_awake",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "67",
@@ -1028,10 +856,10 @@
                             "option_value": 2,
                             "option_en_name": "breath_awake",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "68",
@@ -1042,10 +870,10 @@
                             "option_value": 3,
                             "option_en_name": "breath_awake",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "69",
@@ -1056,10 +884,10 @@
                             "option_value": 4,
                             "option_en_name": "breath_awake",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 }
@@ -1076,6 +904,222 @@
                     "id": "1071",
                     "pid": "70",
                     "type": "matrix_single_choice",
+                    "name": "Epworth嗜睡量表",
+                    "remark": "以下情况打瞌睡的可能",
+                    "is_required": 0,
+                    "matrix_rows": [
+                        {
+                            "id": "71",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "坐着阅读时",
+                            "en_name": "scale_epworth_1"
+                        },
+                        {
+                            "id": "81",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "在公共场所坐着不动时(如剧场或开会)",
+                            "en_name": "scale_epworth_3"
+                        },
+                        {
+                            "id": "76",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "看电视时",
+                            "en_name": "scale_epworth_2"
+                        },
+                        {
+                            "id": "86",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "长时间坐车时中间不休息(超过1小时)",
+                            "en_name": "scale_epworth_4"
+                        },
+                        {
+                            "id": "91",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "坐着与人谈话时",
+                            "en_name": "scale_epworth_5"
+                        },
+                        {
+                            "id": "96",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "午餐不喝酒，餐后安静坐着",
+                            "en_name": "scale_epworth_6"
+                        },
+                        {
+                            "id": "101",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "遇堵车停车数分钟或等红绿灯时",
+                            "en_name": "scale_epworth_7"
+                        },
+                        {
+                            "id": "106",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "在环境许可时，下午静卧休息时",
+                            "en_name": "scale_epworth_8"
+                        }
+                    ],
+                    "matrix_cols": [
+                        {
+                            "id": "72",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "从不(0)",
+                            "en_name": "never",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        },
+                        {
+                            "id": "73",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "很少(1）",
+                            "en_name": "few",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        },
+                        {
+                            "id": "74",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "有时(2）",
+                            "en_name": "sometime",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        },
+                        {
+                            "id": "75",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "经常(3）",
+                            "en_name": "often",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        }
+                    ]
+                },
+                {
+                    "id": "1071",
+                    "pid": "70",
+                    "type": "matrix_multiple_choice",
+                    "name": "Epworth嗜睡量表",
+                    "remark": "以下情况打瞌睡的可能",
+                    "is_required": 0,
+                    "matrix_rows": [
+                        {
+                            "id": "71",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "坐着阅读时",
+                            "en_name": "scale_epworth_1"
+                        },
+                        {
+                            "id": "81",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "在公共场所坐着不动时(如剧场或开会)",
+                            "en_name": "scale_epworth_3"
+                        },
+                        {
+                            "id": "76",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "看电视时",
+                            "en_name": "scale_epworth_2"
+                        },
+                        {
+                            "id": "86",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "长时间坐车时中间不休息(超过1小时)",
+                            "en_name": "scale_epworth_4"
+                        },
+                        {
+                            "id": "91",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "坐着与人谈话时",
+                            "en_name": "scale_epworth_5"
+                        },
+                        {
+                            "id": "96",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "午餐不喝酒，餐后安静坐着",
+                            "en_name": "scale_epworth_6"
+                        },
+                        {
+                            "id": "101",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "遇堵车停车数分钟或等红绿灯时",
+                            "en_name": "scale_epworth_7"
+                        },
+                        {
+                            "id": "106",
+                            "pid": "1071",
+                            "type": "matrix_row",
+                            "name": "在环境许可时，下午静卧休息时",
+                            "en_name": "scale_epworth_8"
+                        }
+                    ],
+                    "matrix_cols": [
+                        {
+                            "id": "72",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "从不(0)",
+                            "en_name": "never",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        },
+                        {
+                            "id": "73",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "很少(1）",
+                            "en_name": "few",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        },
+                        {
+                            "id": "74",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "有时(2）",
+                            "en_name": "sometime",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        },
+                        {
+                            "id": "75",
+                            "pid": "1071",
+                            "type": "matrix_col",
+                            "name": "经常(3）",
+                            "en_name": "often",
+                            "col_type": "option",
+                            "option_value": "",
+                            "is_exclude_option": ""
+                        }
+                    ]
+                },
+                {
+                    "id": "1071",
+                    "pid": "70",
+                    "type": "matrix_input",
                     "name": "Epworth嗜睡量表",
                     "remark": "以下情况打瞌睡的可能",
                     "is_required": 0,
@@ -1197,7 +1241,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "117",
@@ -1208,10 +1251,10 @@
                             "option_value": 0,
                             "option_en_name": "personal_smoke",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "118",
@@ -1222,10 +1265,10 @@
                             "option_value": 1,
                             "option_en_name": "personal_smoke",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1238,8 +1281,7 @@
                     "en_name": "personal_smoke_year",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "120",
@@ -1250,8 +1292,7 @@
                     "en_name": "personal_smoke_num",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "121",
@@ -1261,7 +1302,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "122",
@@ -1272,10 +1312,10 @@
                             "option_value": 0,
                             "option_en_name": "personal_smoke_quit",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "123",
@@ -1286,10 +1326,10 @@
                             "option_value": 1,
                             "option_en_name": "personal_smoke_quit",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1301,7 +1341,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "125",
@@ -1312,10 +1351,10 @@
                             "option_value": 0,
                             "option_en_name": "personal_drink",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "126",
@@ -1326,10 +1365,10 @@
                             "option_value": 1,
                             "option_en_name": "personal_drink",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1342,8 +1381,7 @@
                     "en_name": "personal_drink_year",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "128",
@@ -1354,8 +1392,7 @@
                     "en_name": "personal_drink_ml",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "129",
@@ -1365,7 +1402,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "130",
@@ -1376,10 +1412,10 @@
                             "option_value": 0,
                             "option_en_name": "personal_drink_quit",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "131",
@@ -1390,10 +1426,10 @@
                             "option_value": 1,
                             "option_en_name": "personal_drink_quit",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 }
@@ -1414,7 +1450,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "134",
@@ -1425,10 +1460,10 @@
                             "option_value": 0,
                             "option_en_name": "h_hypertension",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "135",
@@ -1439,10 +1474,10 @@
                             "option_value": 1,
                             "option_en_name": "h_hypertension",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1455,8 +1490,7 @@
                     "en_name": "h_hypertension_year",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "137",
@@ -1467,8 +1501,7 @@
                     "en_name": "h_hypertension_sp",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "138",
@@ -1479,8 +1512,7 @@
                     "en_name": "h_hypertension_dp",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "139",
@@ -1491,8 +1523,7 @@
                     "en_name": "h_hypertension_drug",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "140",
@@ -1502,7 +1533,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 1,
                     "options": [
                         {
                             "id": "141",
@@ -1513,10 +1543,10 @@
                             "option_value": 0,
                             "option_en_name": "h_diabetes",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "142",
@@ -1527,10 +1557,10 @@
                             "option_value": 1,
                             "option_en_name": "h_diabetes",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1543,8 +1573,7 @@
                     "en_name": "h_diabetes_drug",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "144",
@@ -1554,7 +1583,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "145",
@@ -1565,10 +1593,10 @@
                             "option_value": 0,
                             "option_en_name": "h_copd",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "146",
@@ -1579,10 +1607,10 @@
                             "option_value": 1,
                             "option_en_name": "h_copd",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1594,7 +1622,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "148",
@@ -1605,10 +1632,10 @@
                             "option_value": 0,
                             "option_en_name": "h_asthma",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "149",
@@ -1619,10 +1646,10 @@
                             "option_value": 1,
                             "option_en_name": "h_asthma",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1634,7 +1661,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "151",
@@ -1645,10 +1671,10 @@
                             "option_value": 0,
                             "option_en_name": "h_chd",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "152",
@@ -1659,10 +1685,10 @@
                             "option_value": 1,
                             "option_en_name": "h_chd",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1674,7 +1700,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "154",
@@ -1685,10 +1710,10 @@
                             "option_value": 0,
                             "option_en_name": "h_cvd",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "155",
@@ -1699,10 +1724,10 @@
                             "option_value": 1,
                             "option_en_name": "h_cvd",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1714,7 +1739,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "157",
@@ -1725,10 +1749,10 @@
                             "option_value": 0,
                             "option_en_name": "h_rhinitis",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "158",
@@ -1739,10 +1763,10 @@
                             "option_value": 1,
                             "option_en_name": "h_rhinitis",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1754,7 +1778,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "160",
@@ -1765,10 +1788,10 @@
                             "option_value": 0,
                             "option_en_name": "h_pharyngitis",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "161",
@@ -1779,10 +1802,10 @@
                             "option_value": 1,
                             "option_en_name": "h_pharyngitis",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1794,7 +1817,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "163",
@@ -1805,10 +1827,10 @@
                             "option_value": 0,
                             "option_en_name": "h_insomnia",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "164",
@@ -1819,10 +1841,10 @@
                             "option_value": 1,
                             "option_en_name": "h_insomnia",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1834,7 +1856,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "166",
@@ -1845,10 +1866,10 @@
                             "option_value": 0,
                             "option_en_name": "h_cough",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "167",
@@ -1859,10 +1880,10 @@
                             "option_value": 1,
                             "option_en_name": "h_cough",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1874,7 +1895,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "169",
@@ -1885,10 +1905,10 @@
                             "option_value": 0,
                             "option_en_name": "h_gerd",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "170",
@@ -1899,10 +1919,10 @@
                             "option_value": 1,
                             "option_en_name": "h_gerd",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1915,8 +1935,7 @@
                     "en_name": "h_other",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "172",
@@ -1927,8 +1946,7 @@
                     "en_name": "h_other_text",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 }
             ]
         },
@@ -1947,7 +1965,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "175",
@@ -1958,10 +1975,10 @@
                             "option_value": 0,
                             "option_en_name": "treat_snore",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "176",
@@ -1972,10 +1989,10 @@
                             "option_value": 1,
                             "option_en_name": "treat_snore",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -1987,7 +2004,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 1,
                     "options": [
                         {
                             "id": "178",
@@ -1998,10 +2014,10 @@
                             "option_value": 1,
                             "option_en_name": "treat_respirator",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "179",
@@ -2012,10 +2028,10 @@
                             "option_value": 2,
                             "option_en_name": "treat_respirator",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "180",
@@ -2026,10 +2042,10 @@
                             "option_value": 3,
                             "option_en_name": "treat_respirator",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -2042,8 +2058,7 @@
                     "en_name": "treat_respirator_time",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "182",
@@ -2053,7 +2068,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "183",
@@ -2064,10 +2078,10 @@
                             "option_value": 0,
                             "option_en_name": "treat_oa",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "184",
@@ -2078,10 +2092,10 @@
                             "option_value": 1,
                             "option_en_name": "treat_oa",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -2091,11 +2105,10 @@
                     "type": "short_text",
                     "name": "口腔矫正器_何时开始治疗",
                     "remark": "",
-                    "en_name": "treat_oa_time",
+                    "en_name": "",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "186",
@@ -2105,7 +2118,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "187",
@@ -2116,10 +2128,10 @@
                             "option_value": 0,
                             "option_en_name": "treat_oa_time",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "188",
@@ -2130,10 +2142,10 @@
                             "option_value": 1,
                             "option_en_name": "treat_oa_time",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -2145,7 +2157,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 1,
                     "options": [
                         {
                             "id": "190",
@@ -2156,10 +2167,10 @@
                             "option_value": 0,
                             "option_en_name": "treat_op_uppp",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "191",
@@ -2170,10 +2181,10 @@
                             "option_value": 1,
                             "option_en_name": "treat_op_uppp",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -2186,8 +2197,7 @@
                     "en_name": "treat_op_uppp_time",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "193",
@@ -2197,7 +2207,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 1,
                     "options": [
                         {
                             "id": "194",
@@ -2208,10 +2217,10 @@
                             "option_value": 0,
                             "option_en_name": "treat_op_ma1",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "195",
@@ -2222,10 +2231,10 @@
                             "option_value": 1,
                             "option_en_name": "treat_op_ma1",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -2238,8 +2247,7 @@
                     "en_name": "treat_op_ma1_time",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "197",
@@ -2249,7 +2257,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 1,
                     "options": [
                         {
                             "id": "198",
@@ -2260,10 +2267,10 @@
                             "option_value": 0,
                             "option_en_name": "treat_op_ma2",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "199",
@@ -2274,10 +2281,10 @@
                             "option_value": 1,
                             "option_en_name": "treat_op_ma2",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -2290,8 +2297,7 @@
                     "en_name": "treat_op_ma2_time",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "201",
@@ -2301,7 +2307,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 1,
                     "options": [
                         {
                             "id": "202",
@@ -2312,10 +2317,10 @@
                             "option_value": 0,
                             "option_en_name": "treat_op_hms_ma",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "203",
@@ -2326,10 +2331,10 @@
                             "option_value": 1,
                             "option_en_name": "treat_op_hms_ma",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -2342,8 +2347,7 @@
                     "en_name": "treat_op_hms_ma_time",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "205",
@@ -2353,7 +2357,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 1,
                     "options": [
                         {
                             "id": "206",
@@ -2364,10 +2367,10 @@
                             "option_value": 0,
                             "option_en_name": "treat_op_other",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "207",
@@ -2378,10 +2381,10 @@
                             "option_value": 1,
                             "option_en_name": "treat_op_other",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -2394,8 +2397,7 @@
                     "en_name": "treat_op_other_time",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "209",
@@ -2405,7 +2407,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 1,
                     "options": [
                         {
                             "id": "210",
@@ -2416,10 +2417,10 @@
                             "option_value": 0,
                             "option_en_name": "treat_op_rw",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "211",
@@ -2430,10 +2431,10 @@
                             "option_value": 1,
                             "option_en_name": "treat_op_rw",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -2446,8 +2447,7 @@
                     "en_name": "treat_op_rw_time",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "213",
@@ -2458,8 +2458,7 @@
                     "en_name": "treat_op_rw_type",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "214",
@@ -2470,8 +2469,7 @@
                     "en_name": "treat_op_rw_kg",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "215",
@@ -2481,7 +2479,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 1,
                     "options": [
                         {
                             "id": "216",
@@ -2492,10 +2489,10 @@
                             "option_value": 0,
                             "option_en_name": "treat_diet_rw",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "217",
@@ -2506,10 +2503,10 @@
                             "option_value": 1,
                             "option_en_name": "treat_diet_rw",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -2522,8 +2519,7 @@
                     "en_name": "treat_diet_rw_time",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "no_limit",
-                    "row_behavior": 0
+                    "text_check": "no_limit"
                 },
                 {
                     "id": "219",
@@ -2534,8 +2530,7 @@
                     "en_name": "treat_diet_rw_kg",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 }
             ]
         },
@@ -2555,8 +2550,7 @@
                     "en_name": "body_neck_cm",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "222",
@@ -2567,8 +2561,7 @@
                     "en_name": "body_waistline",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "223",
@@ -2579,8 +2572,7 @@
                     "en_name": "body_hipline",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "224",
@@ -2590,7 +2582,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "225",
@@ -2601,10 +2592,10 @@
                             "option_value": 1,
                             "option_en_name": "body_mallampati",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "226",
@@ -2615,10 +2606,10 @@
                             "option_value": 2,
                             "option_en_name": "body_mallampati",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "227",
@@ -2629,10 +2620,10 @@
                             "option_value": 3,
                             "option_en_name": "body_mallampati",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "228",
@@ -2643,10 +2634,10 @@
                             "option_value": 4,
                             "option_en_name": "body_mallampati",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -2658,7 +2649,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "230",
@@ -2669,10 +2659,10 @@
                             "option_value": 0,
                             "option_en_name": "body_tonsil",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "231",
@@ -2683,10 +2673,10 @@
                             "option_value": 1,
                             "option_en_name": "body_tonsil",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "232",
@@ -2697,10 +2687,10 @@
                             "option_value": 2,
                             "option_en_name": "body_tonsil",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "233",
@@ -2711,10 +2701,10 @@
                             "option_value": 3,
                             "option_en_name": "body_tonsil",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -2726,7 +2716,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "235",
@@ -2737,10 +2726,10 @@
                             "option_value": 0,
                             "option_en_name": "body_tongue",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "236",
@@ -2751,10 +2740,10 @@
                             "option_value": 1,
                             "option_en_name": "body_tongue",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -2766,7 +2755,6 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": 4,
-                    "row_behavior": 0,
                     "options": [
                         {
                             "id": "238",
@@ -2777,10 +2765,10 @@
                             "option_value": 0,
                             "option_en_name": "body_mandible",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         },
                         {
                             "id": "239",
@@ -2791,10 +2779,10 @@
                             "option_value": 1,
                             "option_en_name": "body_mandible",
                             "option_other_en_name": "",
-                            "option_other_is_editable": 0,
-                            "option_other_is_required": 0,
-                            "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit"
+                            "option_other_is_editable": "",
+                            "option_other_is_required": "",
+                            "option_other_max_length": "",
+                            "option_other_text_check": ""
                         }
                     ]
                 },
@@ -2807,8 +2795,7 @@
                     "en_name": "body_sp1",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 1
+                    "text_check": "number"
                 },
                 {
                     "id": "241",
@@ -2819,8 +2806,7 @@
                     "en_name": "body_dp1",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "242",
@@ -2831,8 +2817,7 @@
                     "en_name": "body_sp2",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "243",
@@ -2843,8 +2828,7 @@
                     "en_name": "body_dp2",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "244",
@@ -2855,8 +2839,7 @@
                     "en_name": "body_plus1",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 },
                 {
                     "id": "245",
@@ -2867,8 +2850,7 @@
                     "en_name": "body_plus2",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
-                    "row_behavior": 0
+                    "text_check": "number"
                 }
             ]
         }

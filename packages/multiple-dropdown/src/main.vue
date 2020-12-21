@@ -1,5 +1,8 @@
 <template>
-  <div class="dee-question-wrap dee-multiple-dropdown-wrap">
+  <div
+    class="dee-question-wrap dee-multiple-dropdown-wrap"
+    :style="questionStyle"
+  >
     <h6 class="dee-question-heading">
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
@@ -11,6 +14,7 @@
         v-model="selects"
         size="small"
         multiple
+        :disabled="!isEditing"
         :multiple-limit="optionMax?Number(optionMax):0"
         @change="changeHandle"
       >
@@ -29,6 +33,10 @@
 export default {
   name: 'DeeMultipleDropdown',
   props: {
+    isEditing: {
+      default: false,
+      type: Boolean
+    },
     dimData: {
       default: () => { return {} },
       type: Object
@@ -48,6 +56,17 @@ export default {
     }
   },
   computed: {
+    questionStyle() {
+      const layout = this.dimLayout
+      const obj = {}
+      if (layout.row_behavior === 1) {
+        obj.clear = 'both'
+      } else if (layout.row_behavior === 2) {
+        obj.clear = 'both'
+        obj.width = '100%'
+      }
+      return obj
+    },
     optionMax() {
       return this.dimLayout.option_max_choice
     },
@@ -59,9 +78,14 @@ export default {
   watch: {
     dimData: {
       handler: function(n) {
-        // console.log('============')
-        // console.log(n)
-        this.selects = n[this.dimLayout.en_name]
+        const options = this.dimLayout.options
+        const values = options.map(v => v.option_value)
+        options.map(v => {
+          const val = n[v.option_en_name]
+          if (values.includes(val)) {
+            this.selects.push(val)
+          }
+        })
       }
     }
   },
@@ -71,12 +95,21 @@ export default {
     getRealValue(v) {
       return v
     },
-    changeHandle(v) {
+    changeHandle(val) {
       const en = this.dimLayout.en_name
+      const options = this.dimLayout.options
+      const obj = {}
+      options.forEach(v => {
+        if (val.includes(v.option_value)) {
+          obj[v.option_en_name] = v.option_value
+        } else {
+          obj[v.option_en_name] = ''
+        }
+      })
       this.$emit('modify', {
         type: 'multiple_dropdown',
         en: en,
-        value: this.selects,
+        value: obj,
         dim_type: 1
       })
     }

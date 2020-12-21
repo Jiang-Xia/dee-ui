@@ -8,6 +8,7 @@
     <div class="dee-control-wrap">
       <el-input
         v-model="textarea"
+        :disabled="!isEditing"
         :row="2"
         type="textarea"
         size="small"
@@ -23,6 +24,10 @@ export default {
   name: 'DeeLongText',
   // inject: ['dimData'],
   props: {
+    isEditing: {
+      default: false,
+      type: Boolean
+    },
     dimData: {
       default: () => { return {} },
       type: Object
@@ -67,7 +72,9 @@ export default {
       this.$emit('modify', {
         type: 'long_text',
         en: en,
-        value: this.textarea
+        value: {
+          [en]: this.textarea
+        }
       })
     }
   }

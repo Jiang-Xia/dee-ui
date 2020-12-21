@@ -1,30 +1,44 @@
 @import "~@/styles/scss/_mixins";
 
-// 所有提示公用样式
+/* 所有提示公用样式 开始 */
 .dee-question-wrap{
     margin-top: 1rem;
 }
 .dee-question-heading{
     font-size: 16px;
-    margin: .8rem 0 .4rem;
+    margin: .8rem 0 0.2rem;
 }
 @media (min-width: 1200px){
     .dee-question-heading{
     font-size: 18px;
-    margin: .8rem 0 .4rem;
+    margin: .8rem 0 0.2rem;
 }
 }
 .dee-question-no{
     font-weight: 600;
     margin-right: .5rem;
 }
+.dee-dropdown-span{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+}
+.dee-question-remark{
+    color: #909399;
+    line-height: 1;
+    margin-bottom: 5px;
+}
 .dee-control-wrap{
-    padding-top: 0.5rem;
     margin-left: .5rem;
 }
+/* 所有提示公用样式 结束 */
 
-// matrix
+/* 量表 matrix table  开始*/
 .dee-matrix-table{
+    float: left;
     width:100%;
     th,td{
         padding:1rem .5rem;
@@ -46,19 +60,23 @@
 .dee-matrix__header{
     background-color: rgba($color: $main-color, $alpha: 0.1)
 }
+/* 量表 matrix table  结束*/
 
 
-// 每个提示样式
+
+/* 基本提示单独样式 开始 */
 .dee-desp-wrap{
     width: 100%;
 }
 .dee-long-text-wrap{
+    float: left;
     width: 100%;
     .el-textarea {
       width: 98%;
     }
 }
 .dee-short-text-wrap{
+    float: left;
     width: 50%;
     .el-input{
         width: 95%;
@@ -68,6 +86,7 @@
     }
 }
 .dee-multiple-choice-wrap{
+    float: left;
     width: 100%;
     .el-checkbox-group{
         width: 98%;
@@ -76,20 +95,30 @@
         margin-right: 1rem;
         margin-bottom: 0.3rem;
     }
+    .el-input{
+        width: 5rem;
+    }
+    .el-input__inner{
+        padding: 0;
+        padding-left: 3px;
+    }
 }
 .dee-multiple-dropdown-wrap{
+    float: left;
     width: 50%;
     .el-select {
       width: 95%;
     }
 }
 .dee-single-dropdown-wrap{
+    float: left;
     width: 50%;
     .el-select {
         width: 95%;
     }
 }
 .dee-single-choice-wrap{
+    float: left;
     width: 100%;
     .el-radio-group{
         width: 98%;
@@ -98,14 +127,24 @@
         margin-right: 1rem;
         margin-bottom: 0.3rem;
     }
+    .el-input{
+        width: 5rem;
+    }
+    .el-input__inner{
+        padding: 0;
+        padding-left: 3px;
+    }
 }
 
-// 模板
+/* 基本提示单独样式 结束 */
+
+
+/* 提示模板样式 */
 .dee-preview-model-container{
     border-radius: 5px;
     border:1px solid #ccc;
     padding: .5rem 1rem;
     margin-left: .5rem;
-    display: flex;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-wrap: wrap;
 }

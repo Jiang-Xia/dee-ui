@@ -57,4 +57,9 @@
       .el-textarea__inner{
         height: 100%;
       }
+
+      /* select */
+      .el-select-dropdown__item{
+        position: relative;
+      }
 }

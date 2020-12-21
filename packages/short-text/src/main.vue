@@ -1,5 +1,10 @@
 <template>
-  <div class="dee-question-wrap dee-short-text-wrap">
+  <div
+    class="dee-question-wrap dee-short-text-wrap"
+    :style="{
+      width:dimLayout.is_exclusive_row?'100%':''
+    }"
+  >
     <h6 class="dee-question-heading">
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
@@ -13,6 +18,7 @@
         :type="cType==='number'?cType:''"
         :maxlength="dimLayout.max_length"
         size="small"
+        :disabled="!isEditing"
         @change="changeHandle"
       />
       <el-input
@@ -20,13 +26,16 @@
         v-model="input"
         :maxlength="dimLayout.max_length"
         size="small"
+        :disabled="!isEditing"
         @change="changeHandle"
       />
       <el-date-picker
         v-if="cType==='date'||cType==='datetime'"
         v-model="input"
+        :editable="false"
         :type="dimLayout.text_check"
         size="small"
+        :disabled="!isEditing"
         :placeholder="dimLayout.text_check==='date'?'例：2008-08-08':'例：2008-08-08 00:00:00'"
         @change="changeHandle"
       />
@@ -38,6 +47,10 @@
 export default {
   name: 'DeeShortText',
   props: {
+    isEditing: {
+      default: false,
+      type: Boolean
+    },
     dimData: {
       default: () => { return {} },
       type: Object
@@ -117,7 +130,9 @@ export default {
       this.$emit('modify', {
         type: 'long_text',
         en: en,
-        value: this.input
+        value: {
+          [en]: this.input
+        }
       })
     }
   }

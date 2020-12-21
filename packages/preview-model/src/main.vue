@@ -1,11 +1,12 @@
 <template>
-  <div class="dee-preview-model-container">
+  <div class="dee-preview-model-container clearfix">
     <template v-for="(item,index) in fieldTemp">
       <LongText
         v-if="item.type==='long_text'"
         :key="String('LongText_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
+        :is-editing="isEditing"
         :question-index="index"
         @modify="modifyHandle"
       />
@@ -14,6 +15,7 @@
         :key="String('ShortText_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
+        :is-editing="isEditing"
         :question-index="index"
         @modify="modifyHandle"
       />
@@ -22,6 +24,7 @@
         :key="String('MultipleChoice_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
+        :is-editing="isEditing"
         :question-index="index"
         @modify="modifyHandle"
       />
@@ -30,14 +33,17 @@
         :key="String('LongText_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
+        :is-editing="isEditing"
         :question-index="index"
         @modify="modifyHandle"
       />
       <SingleChoice
         v-if="item.type==='single_choice'"
         :key="String('SingleChoice_'+index)"
+        id-editing
         :dim-layout="item"
         :dim-data="dimData"
+        :is-editing="isEditing"
         :question-index="index"
         @modify="modifyHandle"
       />
@@ -46,6 +52,7 @@
         :key="String('SingleDropdown_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
+        :is-editing="isEditing"
         :question-index="index"
         @modify="modifyHandle"
       />
@@ -54,6 +61,7 @@
         :key="String('MatrixMultipleChoice_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
+        :is-editing="isEditing"
         :question-index="index"
         @modify="modifyHandle"
       />
@@ -62,6 +70,7 @@
         :key="String('MatrixInput_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
+        :is-editing="isEditing"
         :question-index="index"
         @modify="modifyHandle"
       />
@@ -70,6 +79,7 @@
         :key="String('MatrixSingleChoice_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
+        :is-editing="isEditing"
         :question-index="index"
         @modify="modifyHandle"
       />
@@ -78,6 +88,7 @@
         :key="String('LongText_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
+        :is-editing="isEditing"
         :question-index="index"
         @modify="modifyHandle"
       />
@@ -122,7 +133,7 @@ export default {
       type: Object
     },
     isEditing: {
-      default: () => false,
+      default: () => true,
       type: Boolean
     },
     fieldTemp: {

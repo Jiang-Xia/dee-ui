@@ -1,9 +1,7 @@
 <template>
   <div
     class="dee-question-wrap dee-single-choice-wrap"
-    :style="{
-      width:dimLayout.options.length<=4?'50%':'100%'
-    }"
+    :style="questionStyle"
   >
     <h6 class="dee-question-heading">
       <span class="dee-question-no">{{ questionNo }}</span>
@@ -14,13 +12,26 @@
       <!-- :style="{width:100/optionCount+'%'}" -->
       <el-radio-group
         v-model="radio"
+        :disabled="!isEditing"
       >
         <el-radio
           v-for="(item,index) in dimLayout.options"
           :key="index"
           :label="item.option_value"
-          @click.native.prevent="clickHandle(item.option_value)"
-        >{{ item.option_name }}</el-radio>
+          :disabled="!isEditing"
+          @click.native.prevent="clickHandle(item.option_value,item)"
+        >
+          <!-- 其他选项 -->
+          <el-input
+            v-if="item.option_other_is_editable"
+            v-model="option_other_value"
+            size="mini"
+            @change="(v)=>{
+              changeHandle(v,item.option_value,item)
+            }"
+          />
+          <span v-else>{{ item.option_name }}</span>
+        </el-radio>
       </el-radio-group>
     </div>
   </div>
@@ -30,6 +41,10 @@
 export default {
   name: 'DeeSingleChoice',
   props: {
+    isEditing: {
+      default: false,
+      type: Boolean
+    },
     dimData: {
       default: () => { return {} },
       type: Object
@@ -45,10 +60,22 @@ export default {
   },
   data() {
     return {
-      radio: ''
+      radio: '',
+      option_en_name: ''
     }
   },
   computed: {
+    questionStyle() {
+      const layout = this.dimLayout
+      const obj = {}
+      if (layout.row_behavior === 1) {
+        obj.clear = 'both'
+      } else if (layout.row_behavior === 2) {
+        obj.clear = 'both'
+        obj.width = '100%'
+      }
+      return obj
+    },
     optionCount() {
       return this.dimLayout.line_option_count
     },
@@ -60,9 +87,14 @@ export default {
   watch: {
     dimData: {
       handler: function(n) {
-        // console.log('============')
-        // console.log(n)
-        this.radio = n[this.dimLayout.en_name]
+        const options = this.dimLayout.options
+        const values = options.map(v => v.option_value)
+        options.map(v => {
+          if (values.includes(n[v.option_en_name])) {
+            this.radio = n[v.option_en_name]
+          }
+        })
+        // console.log(this.radio)
       }
     }
   },
@@ -72,13 +104,25 @@ export default {
     getRealValue(v) {
       return v
     },
-    clickHandle(v) {
-      const en = this.dimLayout.en_name
+    changeHandle(v, rV, item) {
+      if (this.radio !== rV) return
+    },
+    clickHandle(v, item) {
+      if (!this.isEditing) return
+      const options = this.dimLayout.options
+      const en = item.option_en_name
       this.radio = v === this.radio ? '' : v
+      this.option_en_name = en
+      const obj = {}
+      options.forEach(v => {
+        obj[v.option_en_name] = ''
+      })
+      obj[this.option_en_name ] = this.radio
+      // console.log(obj)
       this.$emit('modify', {
         type: 'single_choice',
         en: en,
-        value: this.radio
+        value: obj
       })
     }
   }
