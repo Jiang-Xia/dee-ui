@@ -2,6 +2,7 @@
   <div
     class="dee-question-wrap dee-multiple-dropdown-wrap"
     :style="questionStyle"
+    :type="dimLayout.type"
   >
     <h6 class="dee-question-heading">
       <span class="dee-question-no">{{ questionNo }}</span>
@@ -21,6 +22,7 @@
           :key="index"
           :value="item.option_value"
           :label="item.option_name"
+          :option-en="item.option_en_name"
         >
           <span
             class="dee-dropdown-span"

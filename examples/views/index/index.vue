@@ -49,7 +49,12 @@ export default {
           sleep_symptom_3: '',
           sleep_symptom_4: '',
           sleep_symptom_5: 5,
-          sleep_symptom_other: '其他输入框'
+          sleep_symptom_other: '其他输入框',
+          'scale_epworth_1#never': 1,
+          'scale_epworth_2#few': 2,
+          'scale_epworth_4#sometime': 3,
+          'scale_epworth_3#often': 4
+
         }
       }, 1000)
     }

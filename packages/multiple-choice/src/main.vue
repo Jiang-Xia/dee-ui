@@ -2,6 +2,7 @@
   <div
     class="dee-question-wrap dee-multiple-choice-wrap"
     :style="questionStyle"
+    :type="dimLayout.type"
   >
     <h6 class="dee-question-heading">
       <span class="dee-question-no">{{ questionNo }}</span>
@@ -20,15 +21,17 @@
           v-for="(item,index) in dimLayout.options"
           :key="index"
           :label="item.option_value"
+          :option-en="item.option_en_name"
         >
+          <span>{{ item.option_name }}</span>
           <!-- 其他选项 -->
           <el-input
             v-if="item.option_other_is_editable"
             v-model="option_other_value"
+            :option-en="item.option_other_en_name"
             size="mini"
-            @change="changeHandle"
+            @change="otherChangeHandle"
           />
-          <span v-else>{{ item.option_name }}</span>
         </el-checkbox>
       </el-checkbox-group>
     </div>
@@ -100,7 +103,7 @@ export default {
             this.option_other_value = n[v.option_other_en_name]
           }
         })
-        console.log(values)
+        // console.log(values)
       }
     }
   },
@@ -109,6 +112,9 @@ export default {
   methods: {
     getRealValue(v) {
       return v
+    },
+    otherChangeHandle() {
+
     },
     changeHandle(val) {
       const en = this.dimLayout.en_name

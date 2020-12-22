@@ -1145,7 +1145,7 @@
                             "name": "从不(0)",
                             "en_name": "never",
                             "col_type": "option",
-                            "option_value": "",
+                            "option_value": 1,
                             "is_exclude_option": ""
                         },
                         {
@@ -1155,7 +1155,7 @@
                             "name": "很少(1）",
                             "en_name": "few",
                             "col_type": "option",
-                            "option_value": "",
+                            "option_value": 2,
                             "is_exclude_option": ""
                         },
                         {
@@ -1165,7 +1165,7 @@
                             "name": "有时(2）",
                             "en_name": "sometime",
                             "col_type": "option",
-                            "option_value": "",
+                            "option_value": 3,
                             "is_exclude_option": ""
                         },
                         {
@@ -1175,7 +1175,7 @@
                             "name": "经常(3）",
                             "en_name": "often",
                             "col_type": "option",
-                            "option_value": "",
+                            "option_value": 4,
                             "is_exclude_option": ""
                         }
                     ]

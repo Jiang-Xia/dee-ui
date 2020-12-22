@@ -20,7 +20,9 @@
             </td>
             <td v-for="(raItem,raIndex) in dimLayout.matrix_cols" :key="raIndex">
               <el-input
-                v-model="tableData_[trItem.en_name][raItem.en_name]"
+                v-model="tableData[trItem.en_name+'#'+raItem.en_name]"
+                :option-en="trItem.en_name+'#'+raItem.en_name"
+                :disabled="!isEditing"
                 size="mini"
                 style="width:98%;"
                 @change="changeHandle"
@@ -37,6 +39,10 @@
 export default {
   name: 'DeeMatrixSingleChoice',
   props: {
+    isEditing: {
+      default: false,
+      type: Boolean
+    },
     dimData: {
       default: () => { return {} },
       type: Object
@@ -52,7 +58,7 @@ export default {
   },
   data() {
     return {
-      tableData_: {}
+      tableData: {}
     }
   },
   computed: {
@@ -64,35 +70,31 @@ export default {
   watch: {
     dimData: {
       handler: function(n) {
-        // console.log('============')
-      }
+        const cols = this.dimLayout.matrix_cols
+        const rows = this.dimLayout.matrix_rows
+        const obj = {}
+        rows.map(v => {
+          cols.map(v2 => {
+            obj[v.en_name + '#' + v2.en_name] = n[v.en_name + '#' + v2.en_name] || ''
+          })
+        })
+        this.tableData = obj
+        // console.log(obj)
+      },
+      immediate: true
     }
   },
   created() {
-    const rows = this.dimLayout.matrix_rows
-    const cols = this.dimLayout.matrix_cols
-    const enObj = {}
-    cols.map((v) => {
-      enObj[v.en_name] = ''
-    })
-    // console.log(this.tableData_, 111111)
-    const newtableData_ = {}
-    rows.map((v, i) => {
-      newtableData_[v.en_name] = { ...enObj }
-    })
-    this.tableData_ = newtableData_
-    console.log(this.tableData_)
   },
   methods: {
     getRealValue(v) {
       return v
     },
-    changeHandle(v) {
-      const en = this.dimLayout.en_name
+    changeHandle() {
       this.$emit('modify', {
         type: 'matrix_input',
-        en: en,
-        value: this.tableData_
+        en: '',
+        value: this.tableData
       })
     }
   }

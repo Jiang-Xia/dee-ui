@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="dee-question-wrap dee-multiple-choice-wrap"
-  >
+  <div class="dee-question-wrap dee-multiple-choice-wrap">
     <h6 class="dee-question-heading">
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
@@ -16,15 +14,17 @@
           </tr>
         </thead>
         <tbody class="dee-matrix__body">
-          <tr v-for="(trItem,trIndex) in rows" :key="trIndex">
+          <tr v-for="(trItem,trIndex) in dimLayout.matrix_rows" :key="trIndex">
             <td>
               {{ trItem.name }}
             </td>
             <td v-for="(raItem,raIndex) in dimLayout.matrix_cols" :key="raIndex">
               <el-radio
-                v-model="trItem.checked"
-                :label="raItem.en_name"
-                @click.native.prevent="clickHandle(trIndex,raItem.en_name)"
+                v-model="tableData[trItem.en_name+'#'+raItem.en_name]"
+                :option-en="trItem.en_name+'#'+raItem.en_name"
+                :disabled="!isEditing"
+                :label="raItem.option_value"
+                @click.native.prevent="clickHandle(raItem.option_value,(trItem.en_name+'#'+raItem.en_name))"
               >{{ '' }}</el-radio>
             </td>
           </tr>
@@ -38,6 +38,10 @@
 export default {
   name: 'DeeMatrixSingleChoice',
   props: {
+    isEditing: {
+      default: false,
+      type: Boolean
+    },
     dimData: {
       default: () => { return {} },
       type: Object
@@ -53,8 +57,7 @@ export default {
   },
   data() {
     return {
-      tableData: [],
-      rows: []
+      tableData: {}
     }
   },
   computed: {
@@ -66,32 +69,44 @@ export default {
   watch: {
     dimData: {
       handler: function(n) {
-        // console.log('============')
-      }
+        const cols = this.dimLayout.matrix_cols
+        const rows = this.dimLayout.matrix_rows
+        const obj = {}
+        rows.map(v => {
+          cols.map(v2 => {
+            obj[v.en_name + '#' + v2.en_name] = n[v.en_name + '#' + v2.en_name] || ''
+          })
+        })
+        this.tableData = obj
+        // console.log(obj)
+      },
+      immediate: true
     }
   },
   created() {
-    this.rows = this.dimLayout.matrix_rows.map(v => {
-      v.checked = ''
-      // 需要重新填装 才能双向绑定
-      return { ...v }
-    })
-    console.log(this.dimLayout.matrix_rows)
   },
   methods: {
     getRealValue(v) {
       return v
     },
-    clickHandle(i, v) {
-      this.rows[i].checked = this.rows[i].checked === v ? '' : v
-      this.changeHandle(v)
+    clickHandle(v, en) {
+      if (!this.isEditing) return
+      // 先清空对应 行的选项
+      const arr = en.split('#')
+      for (const k in this.tableData) {
+        // 除了当前点击选项同行其他选项清空
+        if (k.split('#')[0] === arr[0] && k !== en) {
+          this.tableData[k] = ''
+        }
+      }
+      this.tableData[en] = this.tableData[en] === v ? '' : v
+      this.changeHandle(en)
     },
-    changeHandle(v) {
-      const en = this.dimLayout.en_name
+    changeHandle(en) {
       this.$emit('modify', {
         type: 'matrix_single_choice',
         en: en,
-        value: this.checkboxs
+        value: this.tableData
       })
     }
   }

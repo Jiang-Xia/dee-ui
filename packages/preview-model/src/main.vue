@@ -121,12 +121,6 @@ export default {
     MatrixInput,
     MatrixSingleChoice
   },
-  provide() {
-    return {
-      dimData: this.dimData,
-      isEditing: this.isEditing
-    }
-  },
   props: {
     dimData: {
       default: () => {},
@@ -147,8 +141,11 @@ export default {
     }
   },
   watch: {
-    dimData(n) {
-      // console.log(n)
+    dimData: {
+      handler: function(n) {
+        // console.log(n)
+      },
+      immediate: true
     },
     fieldTemp: {
       handler: function(n) {
@@ -159,6 +156,7 @@ export default {
   },
   methods: {
     modifyHandle(data) {
+      this.$emit('modify', data)
       console.log('=============')
       console.log(data)
       console.log('=============')
@@ -166,25 +164,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import "~@/styles/scss/_mixins";
-// .dee-preview-model-container{
-//   border-radius: 5px;
-//   border:1px solid #ccc;
-//   padding: .5rem 1rem;
-//   margin-left: .5rem;
-//   display: flex;
-//   flex-wrap: wrap;
-//   .dee-question-wrap{
-//     margin-top: 1rem;
-//   }
-//   .dee-question-heading{
-//     font-size: 14px;
-//     margin: .8rem  0 .4rem;
-//   }
-//   .dee-control-wrap{
-//     margin-left: .5rem;
-//   }
-// }
-</style>

@@ -20,7 +20,11 @@
             </td>
             <td v-for="(raItem,raIndex) in dimLayout.matrix_cols" :key="raIndex">
               <el-checkbox
-                v-model="tableData_[trItem.en_name][raItem.en_name]"
+                v-model="tableData[trItem.en_name+'#'+raItem.en_name]"
+                :option-en="trItem.en_name+'#'+raItem.en_name"
+                :disabled="!isEditing"
+                :false-label="-1"
+                :true-label="raItem.option_value"
                 @change="changeHandle"
               >{{ '' }}</el-checkbox>
             </td>
@@ -35,6 +39,10 @@
 export default {
   name: 'DeeMatrixSingleChoice',
   props: {
+    isEditing: {
+      default: false,
+      type: Boolean
+    },
     dimData: {
       default: () => { return {} },
       type: Object
@@ -50,7 +58,7 @@ export default {
   },
   data() {
     return {
-      tableData_: {}
+      tableData: {}
     }
   },
   computed: {
@@ -62,35 +70,31 @@ export default {
   watch: {
     dimData: {
       handler: function(n) {
-        // console.log('============')
-      }
+        const cols = this.dimLayout.matrix_cols
+        const rows = this.dimLayout.matrix_rows
+        const obj = {}
+        rows.map(v => {
+          cols.map(v2 => {
+            obj[v.en_name + '#' + v2.en_name] = n[v.en_name + '#' + v2.en_name] || ''
+          })
+        })
+        this.tableData = obj
+        // console.log(obj)
+      },
+      immediate: true
     }
   },
   created() {
-    const enObj = {}
-    const rows = this.dimLayout.matrix_rows
-    const cols = this.dimLayout.matrix_cols
-    cols.map((v) => {
-      enObj[v.en_name] = ''
-    })
-    const newtableData_ = {}
-    rows.map((v, i) => {
-      newtableData_[v.en_name] = { ...enObj }
-    })
-    this.tableData_ = newtableData_
-    console.log(this.tableData_)
   },
   methods: {
     getRealValue(v) {
       return v
     },
     changeHandle(v) {
-      console.log(this.tableData_)
-      const en = this.dimLayout.en_name
       this.$emit('modify', {
         type: 'matrix_multiple_choice',
-        en: en,
-        value: this.tableData_
+        en: '',
+        value: this.tableData
       })
     }
   }

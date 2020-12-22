@@ -1,5 +1,9 @@
 <template>
-  <div class="dee-question-wrap dee-long-text-wrap" :type="dimLayout.type">
+  <div
+    class="dee-question-wrap dee-long-text-wrap"
+    :type="dimLayout.type"
+    :question-en="dimLayout.en_name"
+  >
     <h6 class="dee-question-heading">
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
@@ -22,7 +26,6 @@
 <script>
 export default {
   name: 'DeeLongText',
-  // inject: ['dimData'],
   props: {
     isEditing: {
       default: false,

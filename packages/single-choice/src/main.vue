@@ -2,6 +2,7 @@
   <div
     class="dee-question-wrap dee-single-choice-wrap"
     :style="questionStyle"
+    :type="dimLayout.type"
   >
     <h6 class="dee-question-heading">
       <span class="dee-question-no">{{ questionNo }}</span>
@@ -19,18 +20,20 @@
           :key="index"
           :label="item.option_value"
           :disabled="!isEditing"
+          :option-en="item.option_en_name"
           @click.native.prevent="clickHandle(item.option_value,item)"
         >
+          <span>{{ item.option_name }}</span>
           <!-- 其他选项 -->
           <el-input
             v-if="item.option_other_is_editable"
             v-model="option_other_value"
+            :option-en="item.option_other_en_name"
             size="mini"
             @change="(v)=>{
               changeHandle(v,item.option_value,item)
             }"
           />
-          <span v-else>{{ item.option_name }}</span>
         </el-radio>
       </el-radio-group>
     </div>

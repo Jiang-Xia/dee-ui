@@ -1,5 +1,5 @@
 <template>
-  <div class="dee-question-wrap dee-desp-wrap">
+  <div class="dee-question-wrap dee-desp-wrap" :type="dimLayout.type">
     <h6 class="dee-question-heading">{{ dimLayout.name||'段落描述' }}</h6>
   </div>
 </template>

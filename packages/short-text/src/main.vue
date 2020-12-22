@@ -1,6 +1,8 @@
 <template>
   <div
     class="dee-question-wrap dee-short-text-wrap"
+    :type="dimLayout.type"
+    :question-en="dimLayout.en_name"
     :style="{
       width:dimLayout.is_exclusive_row?'100%':''
     }"
