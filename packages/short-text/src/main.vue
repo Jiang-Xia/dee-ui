@@ -1,6 +1,6 @@
 <template>
   <div
-    class="dee-question-wrap dee-short-text-wrap"
+    class="dee-question-wrap dee-short-text"
     :type="dimLayout.type"
     :question-en="dimLayout.en_name"
     :style="{

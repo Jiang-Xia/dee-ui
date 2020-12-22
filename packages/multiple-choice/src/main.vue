@@ -1,6 +1,6 @@
 <template>
   <div
-    class="dee-question-wrap dee-multiple-choice-wrap"
+    class="dee-question-wrap dee-multiple-choice"
     :style="questionStyle"
     :type="dimLayout.type"
   >
@@ -10,7 +10,6 @@
     </h6>
     <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
     <div class="dee-control-wrap">
-      <!-- :style="{width:100/optionCount+'%'}" -->
       <el-checkbox-group
         v-model="checkboxs"
         :max="optionMax?Number(optionMax):undefined"
@@ -22,16 +21,18 @@
           :key="index"
           :label="item.option_value"
           :option-en="item.option_en_name"
+          :style="controlStyle"
         >
           <span>{{ item.option_name }}</span>
           <!-- 其他选项 -->
-          <el-input
+          <input
             v-if="item.option_other_is_editable"
             v-model="option_other_value"
             :option-en="item.option_other_en_name"
-            size="mini"
-            @change="otherChangeHandle"
-          />
+            class="dee-input__underline"
+            @click.stop=""
+            @change="otherChangeHandle(item.option_value,item)"
+          >
         </el-checkbox>
       </el-checkbox-group>
     </div>
@@ -66,6 +67,12 @@ export default {
     }
   },
   computed: {
+    controlStyle() {
+      return {
+        width: 100 / this.optionCount + '%',
+        marginRight: this.optionCount === -1 ? '1rem' : '0'
+      }
+    },
     questionStyle() {
       const layout = this.dimLayout
       const obj = {}
@@ -103,7 +110,6 @@ export default {
             this.option_other_value = n[v.option_other_en_name]
           }
         })
-        // console.log(values)
       }
     }
   },
@@ -113,11 +119,7 @@ export default {
     getRealValue(v) {
       return v
     },
-    otherChangeHandle() {
-
-    },
-    changeHandle(val) {
-      const en = this.dimLayout.en_name
+    getParams(val) {
       const options = this.dimLayout.options
       const obj = {}
       options.forEach(v => {
@@ -131,10 +133,22 @@ export default {
           obj[v.option_other_en_name] = this.option_other_value
         }
       })
-      // console.log(obj)
+      return obj
+    },
+    otherChangeHandle(cV, item) {
+      // 选择其他项时 return
+      if (!this.checkboxs.includes(cV)) return
+      const obj = this.getParams(this.checkboxs)
       this.$emit('modify', {
         type: 'multiple_choice',
-        en: en,
+        value: obj
+      })
+    },
+    changeHandle(val) {
+      // console.log(obj)
+      const obj = this.getParams(val)
+      this.$emit('modify', {
+        type: 'multiple_choice',
         value: obj
       })
     }

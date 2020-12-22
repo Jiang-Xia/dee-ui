@@ -1,5 +1,5 @@
 <template>
-  <div class="dee-question-wrap dee-desp-wrap" :type="dimLayout.type">
+  <div class="dee-question-wrap dee-desp" :type="dimLayout.type">
     <h6 class="dee-question-heading">{{ dimLayout.name||'段落描述' }}</h6>
   </div>
 </template>
@@ -18,33 +18,13 @@ export default {
   },
   data() {
     return {
-      input: ''
     }
   },
   watch: {
-    dimData(n) {
-      this.input = n.value
-    }
   },
   created() {
-    console.log(this.dimLayout)
   },
   methods: {
-    getRealValue(v) {
-      return v
-    },
-    clickHandle(v) {
-      v = this.getRealValue(v)
-
-      this.input = v === this.input ? '' : v
-      // console.log(this.dimData.value, '!!!!!!!!!!', v)
-      this.$emit('modify', {
-        type: 'input',
-        en: 'en',
-        value: this.input,
-        dim_type: 1
-      })
-    }
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="dee-question-wrap dee-single-choice-wrap"
+    class="dee-question-wrap dee-single-choice"
     :style="questionStyle"
     :type="dimLayout.type"
   >
@@ -10,7 +10,6 @@
     </h6>
     <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
     <div class="dee-control-wrap">
-      <!-- :style="{width:100/optionCount+'%'}" -->
       <el-radio-group
         v-model="radio"
         :disabled="!isEditing"
@@ -21,19 +20,21 @@
           :label="item.option_value"
           :disabled="!isEditing"
           :option-en="item.option_en_name"
+          :style="controlStyle"
           @click.native.prevent="clickHandle(item.option_value,item)"
         >
           <span>{{ item.option_name }}</span>
           <!-- 其他选项 -->
-          <el-input
+          <input
             v-if="item.option_other_is_editable"
             v-model="option_other_value"
+            :disabled="!isEditing"
+            class="dee-input__underline"
             :option-en="item.option_other_en_name"
             size="mini"
-            @change="(v)=>{
-              changeHandle(v,item.option_value,item)
-            }"
-          />
+            @click.stop=""
+            @change="otherChangeHandle(item.option_value,item)"
+          >
         </el-radio>
       </el-radio-group>
     </div>
@@ -64,10 +65,17 @@ export default {
   data() {
     return {
       radio: '',
-      option_en_name: ''
+      option_en_name: '',
+      option_other_value: ''
     }
   },
   computed: {
+    controlStyle() {
+      return {
+        width: 100 / this.optionCount + '%',
+        marginRight: this.optionCount === -1 ? '1rem' : '0'
+      }
+    },
     questionStyle() {
       const layout = this.dimLayout
       const obj = {}
@@ -96,6 +104,10 @@ export default {
           if (values.includes(n[v.option_en_name])) {
             this.radio = n[v.option_en_name]
           }
+          // 其他项
+          if (v.option_other_is_editable) {
+            this.option_other_value = n[v.option_other_en_name]
+          }
         })
         // console.log(this.radio)
       }
@@ -107,24 +119,37 @@ export default {
     getRealValue(v) {
       return v
     },
-    changeHandle(v, rV, item) {
+    otherChangeHandle(rV, item) {
+      // 选择其他项时 return
       if (this.radio !== rV) return
+      const obj = this.getParams(rV, item)
+      this.$emit('modify', {
+        type: 'single_choice',
+        value: obj
+      })
+    },
+    getParams(v, item) {
+      const options = this.dimLayout.options
+      const obj = {}
+      options.map(oItem => {
+        obj[oItem.option_en_name] = ''
+        // 判断是否勾选了其他项
+        if (oItem.option_other_is_editable && oItem.option_value === v) {
+          obj[oItem.option_other_en_name] = this.option_other_value
+        }
+      })
+      obj[this.option_en_name ] = this.radio
+      return obj
     },
     clickHandle(v, item) {
       if (!this.isEditing) return
-      const options = this.dimLayout.options
       const en = item.option_en_name
       this.radio = v === this.radio ? '' : v
       this.option_en_name = en
-      const obj = {}
-      options.forEach(v => {
-        obj[v.option_en_name] = ''
-      })
-      obj[this.option_en_name ] = this.radio
+      const obj = this.getParams(v, item)
       // console.log(obj)
       this.$emit('modify', {
         type: 'single_choice',
-        en: en,
         value: obj
       })
     }

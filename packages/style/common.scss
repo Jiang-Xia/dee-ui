@@ -1,6 +1,6 @@
 @import "~@/styles/scss/_mixins";
 
-/* 所有提示公用样式 开始 */
+/* 所有题型公用样式 开始 */
 .dee-question-wrap{
     margin-top: 1rem;
 }
@@ -10,9 +10,9 @@
 }
 @media (min-width: 1200px){
     .dee-question-heading{
-    font-size: 18px;
-    margin: .8rem 0 0.2rem;
-}
+        font-size: 18px;
+        margin: .8rem 0 0.2rem;
+    }
 }
 .dee-question-no{
     font-weight: 600;
@@ -34,15 +34,16 @@
 .dee-control-wrap{
     margin-left: .5rem;
 }
-/* 所有提示公用样式 结束 */
+/* 所有题型公用样式 结束 */
+
 
 /* 量表 matrix table  开始*/
 .dee-matrix-table{
-    float: left;
     width:100%;
     th,td{
         padding:1rem .5rem;
         text-align:center;
+        min-width: 5rem;
     }
 }
 .dee-matrix__body{
@@ -63,19 +64,35 @@
 /* 量表 matrix table  结束*/
 
 
-
-/* 基本提示单独样式 开始 */
-.dee-desp-wrap{
-    width: 100%;
+/* 
+    自定义控件样式 开始
+*/
+.dee-input__underline{
+    border-bottom: 1px solid #606266;
+    width: 4.5rem;
+    color: #606266;
+    margin-left: .3rem;
 }
-.dee-long-text-wrap{
+/* 
+    自定义控件样式 结束
+*/
+
+/* 基本题型单独样式 开始 */
+// 文本描述
+.dee-desp{
+    width: 100%;
+    float: left;
+}
+// 长文本
+.dee-long-text{
     float: left;
     width: 100%;
     .el-textarea {
       width: 98%;
     }
 }
-.dee-short-text-wrap{
+// 短文本
+.dee-short-text{
     float: left;
     width: 50%;
     .el-input{
@@ -85,14 +102,14 @@
         width: 95%;
     }
 }
-.dee-multiple-choice-wrap{
+// 多项选择
+.dee-multiple-choice{
     float: left;
-    width: 100%;
+    width: 50%;
     .el-checkbox-group{
         width: 98%;
     }
     .el-checkbox{
-        margin-right: 1rem;
         margin-bottom: 0.3rem;
     }
     .el-input{
@@ -103,28 +120,30 @@
         padding-left: 3px;
     }
 }
-.dee-multiple-dropdown-wrap{
+// 多选下拉
+.dee-multiple-dropdown{
     float: left;
     width: 50%;
     .el-select {
       width: 95%;
     }
 }
-.dee-single-dropdown-wrap{
+// 单选下拉
+.dee-single-dropdown{
     float: left;
     width: 50%;
     .el-select {
         width: 95%;
     }
 }
-.dee-single-choice-wrap{
+// 单项选择
+.dee-single-choice{
     float: left;
     width: 100%;
     .el-radio-group{
         width: 98%;
     }
     .el-radio{
-        margin-right: 1rem;
         margin-bottom: 0.3rem;
     }
     .el-input{
@@ -136,15 +155,18 @@
     }
 }
 
-/* 基本提示单独样式 结束 */
+// 矩阵单选 矩阵多选  矩阵填空
+.dee-matrix-single-choice,.dee-matrix-multiple-choice,.dee-matrix-input{
+    overflow-x: auto;
+}
+
+/* 基本题型单独样式 结束 */
 
 
-/* 提示模板样式 */
+/* 题型模板样式 */
 .dee-preview-model-container{
     border-radius: 5px;
     border:1px solid #ccc;
     padding: .5rem 1rem;
     margin-left: .5rem;
-    // display: flex;
-    // flex-wrap: wrap;
 }

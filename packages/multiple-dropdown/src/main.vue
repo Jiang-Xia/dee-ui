@@ -1,6 +1,6 @@
 <template>
   <div
-    class="dee-question-wrap dee-multiple-dropdown-wrap"
+    class="dee-question-wrap dee-multiple-dropdown"
     :style="questionStyle"
     :type="dimLayout.type"
   >
@@ -110,9 +110,7 @@ export default {
       })
       this.$emit('modify', {
         type: 'multiple_dropdown',
-        en: en,
-        value: obj,
-        dim_type: 1
+        value: obj
       })
     }
   }

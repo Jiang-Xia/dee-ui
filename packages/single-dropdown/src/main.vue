@@ -1,6 +1,6 @@
 <template>
   <div
-    class="dee-question-wrap dee-multiple-dropdown-wrap"
+    class="dee-question-wrap dee-multiple-dropdown"
     :style="questionStyle"
     :type="dimLayout.type"
   >
@@ -110,10 +110,9 @@ export default {
         obj[v.option_en_name] = ''
       })
       obj[en] = this.select
-      console.log(obj)
+      // console.log(obj)
       this.$emit('modify', {
         type: 'single_dropdown',
-        en: en,
         value: obj
       })
     }
