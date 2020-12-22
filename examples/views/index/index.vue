@@ -5,6 +5,7 @@
       <dee-preview-model
         :field-temp="item.items"
         :dim-data="dimData"
+        @modify="modifyHandle"
       />
     </section>
   </div>
@@ -57,6 +58,13 @@ export default {
 
         }
       }, 1000)
+    },
+    modifyHandle(data) {
+      console.warn('===============')
+      console.info('----提交数据中----')
+      console.log(data)
+      console.info('----提交数据中----')
+      console.warn('===============')
     }
   }
 }

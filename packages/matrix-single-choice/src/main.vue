@@ -105,7 +105,6 @@ export default {
     changeHandle(en) {
       this.$emit('modify', {
         type: 'matrix_single_choice',
-        en: en,
         value: this.tableData
       })
     }

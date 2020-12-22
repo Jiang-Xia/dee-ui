@@ -157,9 +157,9 @@ export default {
   methods: {
     modifyHandle(data) {
       this.$emit('modify', data)
-      console.log('=============')
-      console.log(data)
-      console.log('=============')
+      // console.log('=============')
+      // console.log(data)
+      // console.log('=============')
     }
   }
 }

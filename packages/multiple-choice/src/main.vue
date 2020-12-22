@@ -14,7 +14,7 @@
         v-model="checkboxs"
         :max="optionMax?Number(optionMax):undefined"
         :disabled="!isEditing"
-        @change="changeHandle"
+        @change="(v)=>{changeHandle(v)}"
       >
         <el-checkbox
           v-for="(item,index) in dimLayout.options"
@@ -119,7 +119,7 @@ export default {
     getRealValue(v) {
       return v
     },
-    getParams(val) {
+    getParams(val, exclude) {
       const options = this.dimLayout.options
       const obj = {}
       options.forEach(v => {
@@ -129,7 +129,7 @@ export default {
           obj[v.option_en_name] = ''
         }
         // 其他项
-        if (val.includes(v.option_value) && v.option_other_is_editable) {
+        if (val.includes(v.option_value) && v.option_other_is_editable && !exclude) {
           obj[v.option_other_en_name] = this.option_other_value
         }
       })
@@ -144,9 +144,26 @@ export default {
         value: obj
       })
     },
+    isExist(arr, arr2) {
+      let flag = false
+      for (const item of arr2) {
+        if (arr.includes(item)) {
+          flag = true
+          break
+        }
+      }
+      return flag
+    },
     changeHandle(val) {
+      const exValue = this.dimLayout.options.filter(v => v.is_exclude_option).map(v => v.option_value)
+      let obj = {}
+      if (exValue.length && this.isExist(val, exValue)) {
+        this.checkboxs = exValue
+        obj = this.getParams(this.checkboxs, true)
+      } else {
+        obj = this.getParams(val)
+      }
       // console.log(obj)
-      const obj = this.getParams(val)
       this.$emit('modify', {
         type: 'multiple_choice',
         value: obj

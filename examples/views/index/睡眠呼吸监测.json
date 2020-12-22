@@ -616,14 +616,14 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": -1,
-                    "option_max_choice": "",
+                    "option_max_choice": 3,
                     "row_behavior": 0,
                     "options": [
                         {
                             "id": "51.0",
                             "pid": "50.0",
                             "type": "option",
-                            "is_exclude_option": 0,
+                            "is_exclude_option": 1,
                             "option_name": "肺癌",
                             "option_value": 1,
                             "option_en_name": "diag_lung_cancer",

@@ -74,7 +74,6 @@ export default {
       const en = this.dimLayout.en_name
       this.$emit('modify', {
         type: 'long_text',
-        en: en,
         value: {
           [en]: this.textarea
         }

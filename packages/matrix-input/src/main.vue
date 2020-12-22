@@ -20,11 +20,26 @@
             </td>
             <td v-for="(raItem,raIndex) in dimLayout.matrix_cols" :key="raIndex">
               <el-input
+                v-if="raItem.text_check==='no_limit'||raItem.text_check==='number'"
                 v-model="tableData[trItem.en_name+'#'+raItem.en_name]"
-                :option-en="trItem.en_name+'#'+raItem.en_name"
-                :disabled="!isEditing"
+                :type="raItem.text_check==='number'?raItem.text_check:''"
+                :maxlength="raItem.max_length"
                 size="mini"
                 style="width:98%;"
+                :disabled="!isEditing"
+                :option-en="trItem.en_name+'#'+raItem.en_name"
+                @change="changeHandle"
+              />
+              <el-date-picker
+                v-if="raItem.text_check==='date'||raItem.text_check==='datetime'"
+                v-model="tableData[trItem.en_name+'#'+raItem.en_name]"
+                :option-en="trItem.en_name+'#'+raItem.en_name"
+                :editable="false"
+                :type="raItem.text_check"
+                size="mini"
+                :style="{width:raItem.text_check==='date'?'8rem':'11rem'}"
+                :disabled="!isEditing"
+                :placeholder="raItem.text_check==='date'?'例：2008-08-08':'例：2008-08-08 00:00:00'"
                 @change="changeHandle"
               />
             </td>
@@ -85,6 +100,7 @@ export default {
     }
   },
   created() {
+    console.log(this.dimLayout)
   },
   methods: {
     getRealValue(v) {
@@ -93,7 +109,6 @@ export default {
     changeHandle() {
       this.$emit('modify', {
         type: 'matrix_input',
-        en: '',
         value: this.tableData
       })
     }
