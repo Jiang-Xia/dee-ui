@@ -7,24 +7,10 @@
 export default {
   name: 'DeeDesp',
   props: {
-    dimData: {
-      default: () => { return {} },
-      type: Object
-    },
     dimLayout: {
       default: () => { return {} },
       type: Object
     }
-  },
-  data() {
-    return {
-    }
-  },
-  watch: {
-  },
-  created() {
-  },
-  methods: {
   }
 }
 </script>

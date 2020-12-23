@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>
+      {{ userAgent }}
+    </div>
     <section v-for="(item,index) in group_list" :key="item.id+index">
       <h2 class="dim-heading">{{ item.name }}</h2>
       <dee-preview-model
@@ -18,7 +21,8 @@ export default {
     return {
       previewVisible: false,
       group_list: [],
-      dimData: {}
+      dimData: {},
+      userAgent: this.$isMobile()
     }
   },
   created() {

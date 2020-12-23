@@ -3,9 +3,7 @@
     class="dee-question-wrap dee-short-text"
     :type="dimLayout.type"
     :question-en="dimLayout.en_name"
-    :style="{
-      width:dimLayout.is_exclusive_row?'100%':''
-    }"
+    :style="questionStyle"
   >
     <h6 class="dee-question-heading">
       <span class="dee-question-no">{{ questionNo }}</span>
@@ -46,26 +44,10 @@
 </template>
 
 <script>
+import { commonMixins } from '#/mixins/question-common'
 export default {
   name: 'DeeShortText',
-  props: {
-    isEditing: {
-      default: false,
-      type: Boolean
-    },
-    dimData: {
-      default: () => { return {} },
-      type: Object
-    },
-    dimLayout: {
-      default: () => { return {} },
-      type: Object
-    },
-    questionIndex: {
-      default: null,
-      type: Number
-    }
-  },
+  mixins: [commonMixins],
   data() {
     return {
       input: ''
@@ -74,10 +56,6 @@ export default {
   computed: {
     cType() {
       return this.dimLayout.text_check
-    },
-    questionNo() {
-      const index = this.questionIndex
-      return (index < 9) ? (0 + String(index + 1)) : index + 1
     }
   },
   watch: {
@@ -92,9 +70,6 @@ export default {
   created() {
   },
   methods: {
-    getRealValue(v) {
-      return v
-    },
     // 自定义日期格式
     p(s) {
       return s < 10 ? '0' + s : s
