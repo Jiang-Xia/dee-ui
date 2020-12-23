@@ -64,9 +64,6 @@ export default {
   created() {
   },
   methods: {
-    getRealValue(v) {
-      return v
-    },
     clickHandle(v, en) {
       if (!this.isEditing) return
       // 先清空对应 行的选项

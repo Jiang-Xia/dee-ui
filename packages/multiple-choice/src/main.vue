@@ -10,33 +10,28 @@
     </h6>
     <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
     <div class="dee-control-wrap">
-      <el-checkbox-group
-        v-model="checkboxs"
-        :max="optionMax?Number(optionMax):undefined"
+
+      <el-checkbox
+        v-for="(item,index) in dimLayout.options"
+        :key="index"
+        v-model="bindTableData[item.option_en_name]"
+        :option-en="item.option_en_name"
         :disabled="!isEditing"
+        :style="controlStyle"
+        @change="(v)=>{changeCheckboxHandle(v,item)}"
       >
-        <el-checkbox
-          v-for="(item,index) in dimLayout.options"
-          :key="index"
-          :label="item.option_value"
-          :option-en="item.option_en_name"
-          :disabled="exclude&&!item.is_exclude_option"
-          :style="controlStyle"
-          @change="(v)=>{changeCheckboxHandle(v,item)}"
+        <span>{{ item.option_name }}</span>
+        <!-- 其他选项 -->
+        <input
+          v-if="item.option_other_is_editable"
+          v-model="option_other_value"
+          :option-en="item.option_other_en_name"
+          :disabled="!isEditing"
+          class="dee-input__underline"
+          @click.stop=""
+          @change="otherChangeHandle(item)"
         >
-          <span>{{ item.option_name }}</span>
-          <!-- 其他选项 -->
-          <input
-            v-if="item.option_other_is_editable"
-            v-model="option_other_value"
-            :option-en="item.option_other_en_name"
-            :disabled="!isEditing"
-            class="dee-input__underline"
-            @click.stop=""
-            @change="otherChangeHandle(item.option_value,item)"
-          >
-        </el-checkbox>
-      </el-checkbox-group>
+      </el-checkbox>
     </div>
   </div>
 </template>
@@ -50,7 +45,9 @@ export default {
     return {
       checkboxs: [],
       exclude: null,
-      option_other_value: ''
+      option_other_value: '',
+      tableData: {},
+      bindTableData: {}
     }
   },
   computed: {
@@ -71,71 +68,72 @@ export default {
     dimData: {
       handler: function(n) {
         const options = this.dimLayout.options
-        const values = options.map(v => v.option_value)
+        const obj = {}
         options.map(v => {
-          const val = n[v.option_en_name]
-          if (values.includes(val)) {
-            this.checkboxs.push(val)
-          }
+          const key = v.option_en_name
+          obj[key] = v.option_value === n[key]
+          this.tableData[key] = n[key] || ''
           // 其他项
-          if (values.includes(val) && v.option_other_is_editable) {
+          if (v.option_other_is_editable) {
             this.option_other_value = n[v.option_other_en_name]
           }
         })
-      }
+        this.bindTableData = obj
+        // console.log(this.bindTableData, this.tableData)
+      },
+      immediate: true
     }
   },
   created() {
   },
   methods: {
-    getRealValue(v) {
-      return v
-    },
-    // 传参
-    getParams(val) {
-      const options = this.dimLayout.options
-      const obj = {}
-      options.forEach(v => {
-        if (val.includes(v.option_value)) {
-          obj[v.option_en_name] = v.option_value
-        } else {
-          obj[v.option_en_name] = ''
-        }
-        // 其他项
-        if (val.includes(v.option_value) && v.option_other_is_editable) {
-          obj[v.option_other_en_name] = this.option_other_value
-        }
-      })
-      return obj
-    },
-    otherChangeHandle(cV, item) {
+    otherChangeHandle(item) {
       // 选择其他项时 return
-      if (!this.checkboxs.includes(cV)) return
-      const obj = this.getParams(this.checkboxs)
+      if (!this.bindTableData[item.option_en_name]) return
+      const obj = { [item.option_en_name]: this.option_other_value }
       this.$emit('modify', {
         type: 'multiple_choice',
-        value: obj
+        value: { ...this.tableData, ...obj }
       })
     },
-    changeCheckboxHandle(val, item) {
+    changeCheckboxHandle(val, oItem) {
       /*  排他选项 互斥处理 */
-      const isExValue = item.is_exclude_option
-      if (val && isExValue) {
-        this.exclude = item.option_value
-        this.checkboxs = this.checkboxs.filter(v => {
-          return v === item.option_value
+      const options = this.dimLayout.options
+      const oItemKey = oItem.option_en_name
+      const curOptions = Object.values(this.bindTableData).filter(v => v).length
+      let otherObj
+      // 选择不是排他项时 有最多选项提示
+      if (!oItem.is_exclude_option && curOptions > this.optionMax) {
+        this.bindTableData[oItemKey] = false
+        this.$message.warning(`选项不能超过${this.optionMax}`)
+        return
+      }
+      // 选了排他项 清空其他项的值
+      if (oItem.is_exclude_option && val) {
+        for (const key in this.bindTableData) {
+          if (oItemKey !== key) {
+            this.bindTableData[key] = ''
+            this.tableData[key] = ''
+          }
+        }
+      } else {
+        //  选其他项 清除排他项的值
+        options.forEach(v => {
+          if (v.is_exclude_option === 1) {
+            this.bindTableData[v.option_en_name] = false
+            this.tableData[v.option_en_name] = ''
+          } else {
+            // 勾选了其他这个选项 其他输入框才传
+            if (this.bindTableData[v.option_en_name] && v.option_other_is_editable) {
+              otherObj = { [v.option_other_en_name]: this.option_other_value }
+            }
+          }
         })
-      } else if (!val && isExValue) {
-        this.exclude = null
-        this.checkboxs = []
       }
-      if (this.exclude) {
-        this.checkboxs = [this.exclude]
-      }
-      // console.log(this.checkboxs)
+      this.tableData[oItemKey] = val ? oItem.option_value : ''
       this.$emit('modify', {
         type: 'multiple_choice',
-        value: this.getParams(this.checkboxs)
+        value: { ...this.tableData, ...otherObj }
       })
     }
   }

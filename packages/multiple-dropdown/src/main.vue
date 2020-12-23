@@ -64,9 +64,6 @@ export default {
   created() {
   },
   methods: {
-    getRealValue(v) {
-      return v
-    },
     // 传参
     getParams(val) {
       const options = this.dimLayout.options

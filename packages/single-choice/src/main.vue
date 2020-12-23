@@ -85,9 +85,6 @@ export default {
   created() {
   },
   methods: {
-    getRealValue(v) {
-      return v
-    },
     otherChangeHandle(rV, item) {
       // 选择其他项时 return
       if (this.radio !== rV) return

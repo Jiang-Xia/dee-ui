@@ -63,9 +63,6 @@ export default {
   created() {
   },
   methods: {
-    getRealValue(v) {
-      return v
-    },
     clickOptionHandle(v) {
       this.option_en_name = v
     },

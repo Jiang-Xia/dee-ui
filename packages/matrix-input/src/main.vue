@@ -80,9 +80,6 @@ export default {
   created() {
   },
   methods: {
-    getRealValue(v) {
-      return v
-    },
     changeHandle() {
       this.$emit('modify', {
         type: 'matrix_input',
