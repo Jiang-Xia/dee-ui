@@ -14,18 +14,16 @@
           </tr>
         </thead>
         <tbody class="dee-matrix__body">
-          <tr v-for="(trItem,trIndex) in dimLayout.matrix_rows" :key="trIndex">
+          <tr v-for="(itemRow,trIndex) in dimLayout.matrix_rows" :key="trIndex">
             <td>
-              {{ trItem.name }}
+              {{ itemRow.name }}
             </td>
-            <td v-for="(raItem,raIndex) in dimLayout.matrix_cols" :key="raIndex">
+            <td v-for="(itemCol,raIndex) in dimLayout.matrix_cols" :key="raIndex">
               <el-checkbox
-                v-model="tableData[trItem.en_name+'#'+raItem.en_name]"
-                :option-en="trItem.en_name+'#'+raItem.en_name"
-                :disabled="!isEditing||!!(excludeObj[trItem.en_name]&&!raItem.is_exclude_option)"
-                false-label=""
-                :true-label="raItem.option_value"
-                @change="(v)=>{changeCheckboxHandle(v,raItem,trItem)}"
+                v-model="bindTableData[itemRow.en_name+'#'+itemCol.en_name]"
+                :option-en="itemRow.en_name+'#'+itemCol.en_name"
+                :disabled="!isEditing"
+                @change="(v)=>{changeCheckboxHandle(v,itemRow,itemCol)}"
               >{{ '' }}</el-checkbox>
             </td>
           </tr>
@@ -43,7 +41,7 @@ export default {
   data() {
     return {
       tableData: {},
-      excludeObj: {}
+      bindTableData: {}
     }
   },
   watch: {
@@ -54,44 +52,52 @@ export default {
         const obj = {}
         rows.map(v => {
           cols.map(v2 => {
-            obj[v.en_name + '#' + v2.en_name] = n[v.en_name + '#' + v2.en_name] || ''
+            const key = v.en_name + '#' + v2.en_name
+            obj[key] = v2.option_value === n[key]
+            this.tableData[key] = n[key] || ''
           })
         })
-        this.tableData = obj
-        // console.log(obj)
+        this.bindTableData = obj
+        // console.log(this.bindTableData, this.tableData)
       },
       immediate: true
     }
   },
+
   created() {
   },
   methods: {
-    getRealValue(v) {
-      return v
-    },
-    changeCheckboxHandle(val, raItem, trItem) {
-      /*  排他选项 互斥处理 */
-      const isExValue = raItem.is_exclude_option
-      if (val && isExValue) {
-        this.excludeObj[trItem.en_name] = 1
-        for (const k in this.tableData) {
-          const arr = k.split('#')
-          if (arr[0] === trItem.en_name && arr[1] !== raItem.en_name) {
-            this.tableData[k] = ''
-          }
-        }
-      } else if (!val && isExValue) {
-        this.excludeObj[trItem.en_name] = ''
-      }
-      // console.log(!!(this.excludeObj[trItem.en_name] && !raItem.is_exclude_option))
-      // console.log(this.excludeObj)
-      this.changeHandle()
-    },
     changeHandle() {
       this.$emit('modify', {
         type: 'matrix_multiple_choice',
         value: this.tableData
       })
+    },
+    changeCheckboxHandle(val, itemRow, itemCol) {
+      const cols = this.dimLayout.matrix_cols
+      const tableKey = itemRow.en_name + '#' + itemCol.en_name
+      for (const key in this.bindTableData) {
+        // 判断这一行的所有列
+        if (itemRow.en_name === key.split('#')[0]) {
+          // 勾选并且开启排他
+          if (itemCol.is_exclude_option === 1 && val) {
+            // 选了排他项 清空其他项的值
+            this.bindTableData[key] = false
+            this.tableData[key] = ''
+            this.bindTableData[tableKey] = true
+          } else if (itemCol.is_exclude_option !== 1) {
+            // 选其他项 清除排他项的值
+            cols.forEach(item => {
+              if (item.is_exclude_option === 1) {
+                this.bindTableData[itemRow.en_name + '#' + item.en_name] = false
+                this.tableData[key] = ''
+              }
+            })
+          }
+        }
+      }
+      this.tableData[tableKey] = val ? itemCol.option_value : ''
+      this.changeHandle()
     }
   }
 }

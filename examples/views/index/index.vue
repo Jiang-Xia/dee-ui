@@ -33,21 +33,20 @@ export default {
       const { group_list } = FieldTemp
       this.previewVisible = true
       this.group_list = group_list
-      group_list.forEach((v, i) => {
-        v.items.forEach((v2, i2) => {
-          if (v2.type === 'long_text') {
-            console.log('==============', v2)
-          } else {
-            // console.log('--------------', v2)
-          }
-        })
-      })
       // console.log(group_list)
       setTimeout(() => {
         this.dimData = {
           pat_name: '江夏',
           pat_work: '程序汪',
           pat_sex: 2,
+          hnow_first: '没有哦',
+          symptom_thin: 2,
+          diag_intestinal_polyposis: 1,
+          diag_fap: 2,
+          diag_ibd: 3,
+          diag_lung_cancer: 1,
+          diag_nasopharyngeal_cancer: 3,
+          dp_cc_tumor_location: 3,
           sleep_snore: 2,
           sleep_snore_voice: 3,
           sleep_symptom_1: '',
@@ -56,10 +55,11 @@ export default {
           sleep_symptom_4: '',
           sleep_symptom_5: 5,
           sleep_symptom_other: '其他输入框',
-          'scale_epworth_1#never': 1,
-          'scale_epworth_2#few': 2,
-          'scale_epworth_4#sometime': 3,
-          'scale_epworth_3#often': 4
+          'first#complaint': '恢复',
+          'enzymology_ast#one': 1,
+          'follow_first#follow_h_abd_pain': 2,
+          'follow_second#follow_h_abd_pain': 2,
+          'follow_third#follow_h_abd_pain': 2
 
         }
       }, 1000)
@@ -79,6 +79,6 @@ export default {
     font-weight: 600;
     font-size: 17px;
     color: $main-color;
-    // text-indent: 1em;
+    margin-left: -0.5rem;
   }
 </style>
