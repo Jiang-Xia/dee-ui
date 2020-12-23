@@ -97,7 +97,8 @@ export default {
     getRealValue(v) {
       return v
     },
-    changeHandle(val) {
+    // 传参
+    getParams(val) {
       const options = this.dimLayout.options
       const obj = {}
       options.forEach(v => {
@@ -107,9 +108,12 @@ export default {
           obj[v.option_en_name] = ''
         }
       })
+      return obj
+    },
+    changeHandle(val) {
       this.$emit('modify', {
         type: 'multiple_dropdown',
-        value: obj
+        value: this.getParams(this.selects)
       })
     }
   }

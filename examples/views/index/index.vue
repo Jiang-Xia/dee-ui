@@ -62,9 +62,7 @@ export default {
     },
     modifyHandle(data) {
       console.warn('===============')
-      console.info('----提交数据中----')
       console.log(data)
-      console.info('----提交数据中----')
       console.warn('===============')
     }
   }

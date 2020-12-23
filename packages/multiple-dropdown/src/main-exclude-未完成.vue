@@ -1,6 +1,6 @@
 <template>
   <div
-    class="dee-question-wrap dee-multiple-choice"
+    class="dee-question-wrap dee-multiple-dropdown"
     :style="questionStyle"
     :type="dimLayout.type"
   >
@@ -10,40 +10,38 @@
     </h6>
     <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
     <div class="dee-control-wrap">
-      <el-checkbox-group
-        v-model="checkboxs"
-        :max="optionMax?Number(optionMax):undefined"
+      <!-- collapse-tags -->
+      <el-select
+        v-model="selects"
+        size="small"
+        multiple
         :disabled="!isEditing"
+        :multiple-limit="optionMax?Number(optionMax):0"
+        @remove-tag="removeTagHandle"
       >
-        <el-checkbox
+        <el-option
           v-for="(item,index) in dimLayout.options"
           :key="index"
-          :label="item.option_value"
+          :value="item.option_value"
+          :label="item.option_name"
           :option-en="item.option_en_name"
           :disabled="exclude&&!item.is_exclude_option"
-          :style="controlStyle"
-          @change="(v)=>{changeCheckboxHandle(v,item)}"
         >
-          <span>{{ item.option_name }}</span>
-          <!-- 其他选项 -->
-          <input
-            v-if="item.option_other_is_editable"
-            v-model="option_other_value"
-            :option-en="item.option_other_en_name"
-            :disabled="!isEditing"
-            class="dee-input__underline"
-            @click.stop=""
-            @change="otherChangeHandle(item.option_value,item)"
+          <span
+            class="dee-dropdown-span"
+            @click="clickOptionHandle(item)"
           >
-        </el-checkbox>
-      </el-checkbox-group>
+            {{ item.option_name }}
+          </span>
+        </el-option>
+      </el-select>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'DeeMultipleChoice',
+  name: 'DeeMultipleDropdown',
   props: {
     isEditing: {
       default: false,
@@ -64,18 +62,11 @@ export default {
   },
   data() {
     return {
-      checkboxs: [],
-      exclude: null,
-      option_other_value: ''
+      selects: [],
+      exclude: null
     }
   },
   computed: {
-    controlStyle() {
-      return {
-        width: 100 / this.optionCount + '%',
-        marginRight: this.optionCount === -1 ? '1rem' : '0'
-      }
-    },
     questionStyle() {
       const layout = this.dimLayout
       const obj = {}
@@ -86,9 +77,6 @@ export default {
         obj.width = '100%'
       }
       return obj
-    },
-    optionCount() {
-      return this.dimLayout.line_option_count
     },
     optionMax() {
       return this.dimLayout.option_max_choice
@@ -106,11 +94,7 @@ export default {
         options.map(v => {
           const val = n[v.option_en_name]
           if (values.includes(val)) {
-            this.checkboxs.push(val)
-          }
-          // 其他项
-          if (values.includes(val) && v.option_other_is_editable) {
-            this.option_other_value = n[v.option_other_en_name]
+            this.selects.push(val)
           }
         })
       }
@@ -132,49 +116,43 @@ export default {
         } else {
           obj[v.option_en_name] = ''
         }
-        // 其他项
-        if (val.includes(v.option_value) && v.option_other_is_editable) {
-          obj[v.option_other_en_name] = this.option_other_value
-        }
       })
       return obj
     },
-    otherChangeHandle(cV, item) {
-      // 选择其他项时 return
-      if (!this.checkboxs.includes(cV)) return
-      const obj = this.getParams(this.checkboxs)
-      this.$emit('modify', {
-        type: 'multiple_choice',
-        value: obj
-      })
+    removeTagHandle(val) {
+      const options = this.dimLayout.options.filter(v => v.option_value === val)
+      const isExValue = options[0] && options[0].is_exclude_option
+      if (isExValue) {
+        this.exclude = null
+      }
     },
-    changeCheckboxHandle(val, item) {
+    clickOptionHandle(item) {
+      const val = item.option_value
       /*  排他选项 互斥处理 */
       const isExValue = item.is_exclude_option
-      if (val && isExValue) {
+      if (isExValue) {
         this.exclude = item.option_value
-        this.checkboxs = this.checkboxs.filter(v => {
-          return v === item.option_value
-        })
-      } else if (!val && isExValue) {
+      } else if (isExValue && this.selects.includes(val)) {
         this.exclude = null
-        this.checkboxs = []
+        this.selects = this.selects.filter(v => {
+          return v !== val
+        })
       }
-      if (this.exclude) {
-        this.checkboxs = [this.exclude]
-      }
-      // console.log(this.checkboxs)
+      this.changeHandle()
+    },
+    changeHandle() {
       this.$emit('modify', {
-        type: 'multiple_choice',
-        value: this.getParams(this.checkboxs)
+        type: 'multiple_dropdown',
+        value: this.getParams(this.selects)
       })
     }
   }
 }
 </script>
-<style lang="scss">
-// .multiple-choice-wrap{
+<style lang="scss" scoped>
+// .multiple-dropdown-wrap{
 //   // float: left;
+//   // width: 50%;
 //   width: 100%;
 // }
 </style>
