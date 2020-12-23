@@ -5,6 +5,7 @@
       <dee-preview-model
         :field-temp="item.items"
         :dim-data="dimData"
+        :is-editing="true"
         @modify="modifyHandle"
       />
     </section>

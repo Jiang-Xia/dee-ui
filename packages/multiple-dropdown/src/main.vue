@@ -98,7 +98,6 @@ export default {
       return v
     },
     changeHandle(val) {
-      const en = this.dimLayout.en_name
       const options = this.dimLayout.options
       const obj = {}
       options.forEach(v => {

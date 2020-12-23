@@ -22,10 +22,10 @@
               <el-checkbox
                 v-model="tableData[trItem.en_name+'#'+raItem.en_name]"
                 :option-en="trItem.en_name+'#'+raItem.en_name"
-                :disabled="!isEditing"
-                :false-label="-1"
+                :disabled="!isEditing||!!(excludeObj[trItem.en_name]&&!raItem.is_exclude_option)"
+                false-label=""
                 :true-label="raItem.option_value"
-                @change="changeHandle"
+                @change="(v)=>{changeCheckboxHandle(v,raItem,trItem)}"
               >{{ '' }}</el-checkbox>
             </td>
           </tr>
@@ -58,7 +58,8 @@ export default {
   },
   data() {
     return {
-      tableData: {}
+      tableData: {},
+      excludeObj: {}
     }
   },
   computed: {
@@ -90,7 +91,25 @@ export default {
     getRealValue(v) {
       return v
     },
-    changeHandle(v) {
+    changeCheckboxHandle(val, raItem, trItem) {
+      /*  排他选项 互斥处理 */
+      const isExValue = raItem.is_exclude_option
+      if (val && isExValue) {
+        this.excludeObj[trItem.en_name] = 1
+        for (const k in this.tableData) {
+          const arr = k.split('#')
+          if (arr[0] === trItem.en_name && arr[1] !== raItem.en_name) {
+            this.tableData[k] = ''
+          }
+        }
+      } else if (!val && isExValue) {
+        this.excludeObj[trItem.en_name] = ''
+      }
+      // console.log(!!(this.excludeObj[trItem.en_name] && !raItem.is_exclude_option))
+      // console.log(this.excludeObj)
+      this.changeHandle()
+    },
+    changeHandle() {
       this.$emit('modify', {
         type: 'matrix_multiple_choice',
         value: this.tableData

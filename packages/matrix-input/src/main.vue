@@ -100,7 +100,6 @@ export default {
     }
   },
   created() {
-    console.log(this.dimLayout)
   },
   methods: {
     getRealValue(v) {

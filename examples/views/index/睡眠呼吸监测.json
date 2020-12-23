@@ -637,7 +637,7 @@
                             "id": "52.0",
                             "pid": "50.0",
                             "type": "option",
-                            "is_exclude_option": 0,
+                            "is_exclude_option": 1,
                             "option_name": "胃癌",
                             "option_value": 2,
                             "option_en_name": "diag_gastric_cancer",
@@ -1309,7 +1309,7 @@
                             "col_type": "option",
                             "option_value": 2,
                             "option_value_type": "int",
-                            "is_exclude_option": 0,
+                            "is_exclude_option": 1,
                             "max_length": -1,
                             "text_check": "no_limit"
                         },

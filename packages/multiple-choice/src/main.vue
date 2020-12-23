@@ -14,14 +14,15 @@
         v-model="checkboxs"
         :max="optionMax?Number(optionMax):undefined"
         :disabled="!isEditing"
-        @change="(v)=>{changeHandle(v)}"
       >
         <el-checkbox
           v-for="(item,index) in dimLayout.options"
           :key="index"
           :label="item.option_value"
           :option-en="item.option_en_name"
+          :disabled="exclude&&!item.is_exclude_option"
           :style="controlStyle"
+          @change="(v)=>{changeCheckboxHandle(v,item)}"
         >
           <span>{{ item.option_name }}</span>
           <!-- 其他选项 -->
@@ -29,6 +30,7 @@
             v-if="item.option_other_is_editable"
             v-model="option_other_value"
             :option-en="item.option_other_en_name"
+            :disabled="!isEditing"
             class="dee-input__underline"
             @click.stop=""
             @change="otherChangeHandle(item.option_value,item)"
@@ -63,6 +65,7 @@ export default {
   data() {
     return {
       checkboxs: [],
+      exclude: null,
       option_other_value: ''
     }
   },
@@ -119,7 +122,8 @@ export default {
     getRealValue(v) {
       return v
     },
-    getParams(val, exclude) {
+    // 传参
+    getParams(val) {
       const options = this.dimLayout.options
       const obj = {}
       options.forEach(v => {
@@ -129,7 +133,7 @@ export default {
           obj[v.option_en_name] = ''
         }
         // 其他项
-        if (val.includes(v.option_value) && v.option_other_is_editable && !exclude) {
+        if (val.includes(v.option_value) && v.option_other_is_editable) {
           obj[v.option_other_en_name] = this.option_other_value
         }
       })
@@ -144,29 +148,25 @@ export default {
         value: obj
       })
     },
-    isExist(arr, arr2) {
-      let flag = false
-      for (const item of arr2) {
-        if (arr.includes(item)) {
-          flag = true
-          break
-        }
+    changeCheckboxHandle(val, item) {
+      /*  排他选项 互斥处理 */
+      const isExValue = item.is_exclude_option
+      if (val && isExValue) {
+        this.exclude = item.option_value
+        this.checkboxs = this.checkboxs.filter(v => {
+          return v === item.option_value
+        })
+      } else if (!val && isExValue) {
+        this.exclude = null
+        this.checkboxs = []
       }
-      return flag
-    },
-    changeHandle(val) {
-      const exValue = this.dimLayout.options.filter(v => v.is_exclude_option).map(v => v.option_value)
-      let obj = {}
-      if (exValue.length && this.isExist(val, exValue)) {
-        this.checkboxs = exValue
-        obj = this.getParams(this.checkboxs, true)
-      } else {
-        obj = this.getParams(val)
+      if (this.exclude) {
+        this.checkboxs = [this.exclude]
       }
-      // console.log(obj)
+      console.log(this.checkboxs)
       this.$emit('modify', {
         type: 'multiple_choice',
-        value: obj
+        value: this.getParams(this.checkboxs)
       })
     }
   }
