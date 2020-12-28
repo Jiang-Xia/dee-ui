@@ -1,6 +1,3 @@
-import { isMobile } from './utils/common'
-import Vue from 'vue'
-Vue.prototype.$isMobile = isMobile
 
 // 引入编写的组件
 import Desp from './desp'

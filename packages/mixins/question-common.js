@@ -1,3 +1,4 @@
+import { isMobile } from './utils/common'
 /* 即所有题型都公用的 个别单独写 */
 export const commonMixins = {
   props: {
@@ -22,7 +23,7 @@ export const commonMixins = {
     questionStyle() {
       const layout = this.dimLayout
       const obj = {}
-      if (!this.$isMobile()) {
+      if (!isMobile()) {
         if (layout.row_behavior === 1) {
           obj.clear = 'both'
         } else if (layout.row_behavior === 2) {
