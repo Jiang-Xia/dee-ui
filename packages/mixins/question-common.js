@@ -1,4 +1,4 @@
-import { isMobile } from './utils/common'
+import { isMobile } from '#/utils/common'
 /* 即所有题型都公用的 个别单独写 */
 export const commonMixins = {
   props: {
