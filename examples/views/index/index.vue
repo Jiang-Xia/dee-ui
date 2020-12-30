@@ -22,7 +22,7 @@ export default {
       previewVisible: false,
       group_list: [],
       dimData: {},
-      userAgent: this.$isMobile()
+      userAgent: ''
     }
   },
   created() {

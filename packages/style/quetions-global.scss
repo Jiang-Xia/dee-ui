@@ -1,9 +1,9 @@
 @import "~@/styles/scss/_mixins";
 // 修改elementui 样式
 .dee-preview-model-container{
-  // height: 100%;
-  // padding: 0 0.5rem;
-  overflow: scroll;
+  height: 100%;
+  padding: 0.5rem;
+  // overflow: scroll;
   line-height: 24px;
     .el-textarea.is-disabled .el-textarea__inner
     ,.el-input.is-disabled .el-input__inner

@@ -127,6 +127,12 @@
     .el-select {
       width: 95%;
     }
+    .dee-dropdown-item{
+        padding: .3rem 1rem;
+    }
+    .dee-dropdown-item:hover{
+        background-color: #F5F7FA;
+    }
 }
 // 单选下拉
 .dee-single-dropdown{

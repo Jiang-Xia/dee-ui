@@ -611,7 +611,7 @@
                 {
                     "id": "50.0",
                     "pid": "40.0",
-                    "type": "multiple_choice",
+                    "type": "multiple_dropdown",
                     "name": "肿瘤",
                     "remark": "",
                     "is_required": 0,
