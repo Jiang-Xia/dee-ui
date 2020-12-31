@@ -4,11 +4,13 @@
       <el-input :value="inputNames" :placeholder="placeholder" readonly size="small" />
     </p>
     <i class="el-icon-arrow-down fr" :style="{transform: !isShow?'translateY(-50%) rotateZ(0deg)':'translateY(-50%) rotateZ(-180deg)'}" />
-    <el-collapse-transition>
-      <section v-show="isShow" class="table-container" @click.stop="">
-        <slot />
+    <transition name="el-fade-in-linear">
+      <section v-show="isShow" class="table-container" :style="{height:height}" @click.stop="">
+        <el-scrollbar class="xia-scrollbar">
+          <slot />
+        </el-scrollbar>
       </section>
-    </el-collapse-transition>
+    </transition>
   </div>
 </template>
 <script>
@@ -22,6 +24,10 @@ export default {
     placeholder: {
       default: () => '',
       type: String
+    },
+    height: {
+      default: () => '2rem',
+      type: String
     }
   },
   data() {
@@ -33,6 +39,11 @@ export default {
     document.addEventListener('click', () => {
       this.isShow = false
     })
+  },
+  methods: {
+    handleScroll(e) {
+      console.log(e)
+    }
   }
 }
 </script>
@@ -59,8 +70,8 @@ export default {
         position: absolute;
         background-color: #fff;
         min-height: 4rem;
-        max-height: 10rem;
-        overflow: auto;
+        max-height: 20rem;
+        // overflow: auto;
         padding: 8px 0;
         z-index: 3333;
         top: 34px;
@@ -68,5 +79,8 @@ export default {
         border:1px solid #E4E7ED;
         box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
         border-radius: 5px;
+        .xia-scrollbar{
+          height: 100%;
+        }
     }
 </style>
