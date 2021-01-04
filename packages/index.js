@@ -11,6 +11,19 @@ import PreviewModel from './preview-model'
 import './style/common.scss'
 import './style/quetions-global.scss'
 
+/*
+ * common import start
+ *
+*/
+/* quill */
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+/*
+ * common import end
+ *
+*/
 // 所有组件列表
 const components = [
   Desp,

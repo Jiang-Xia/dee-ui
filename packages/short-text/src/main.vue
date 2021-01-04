@@ -9,7 +9,7 @@
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
     </h6>
-    <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
+    <p v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">
       <!-- 文本验证 ：no_limit/number/date/time/datetime/idcard -->
       <el-input

@@ -4,7 +4,7 @@
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
     </h6>
-    <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
+    <p v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">
       <table class="dee-matrix-table">
         <thead>

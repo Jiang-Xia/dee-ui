@@ -8,7 +8,7 @@
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
     </h6>
-    <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
+    <p v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">
       <DeeTableSelect style="width:95%;" :input-names="inputNames" :height="dimLayout.options.length*1.8+'rem'">
         <div v-for="(item,index) in dimLayout.options" :key="index" class="dee-dropdown-item">

@@ -21,7 +21,7 @@
                     "pid": "1.0",
                     "type": "short_text",
                     "name": "姓名",
-                    "remark": "",
+                    "remark": "<p style='color:red; font-size:20px;'><b>仅可以使用复姓！！</b></p>",
                     "en_name": "pat_name",
                     "is_required": 1,
                     "max_length": 5,

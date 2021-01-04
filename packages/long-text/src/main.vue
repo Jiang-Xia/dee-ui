@@ -8,12 +8,11 @@
       <span class="dee-question-no">{{ questionNo }}</span>
       {{ dimLayout.name }}
     </h6>
-    <p v-if="dimLayout.remark" class="dee-question-remark">{{ dimLayout.remark }}</p>
+    <p v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">
       <el-input
         v-model="textarea"
         :disabled="!isEditing"
-        :row="2"
         type="textarea"
         size="small"
         :rows="dimLayout.max_line_count?dimLayout.max_line_count:2"

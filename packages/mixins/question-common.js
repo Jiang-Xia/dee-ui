@@ -1,4 +1,5 @@
 import { isMobile } from '#/utils/common'
+import Quill from 'quill'
 /* 即所有题型都公用的 个别单独写 */
 export const commonMixins = {
   props: {
@@ -36,8 +37,23 @@ export const commonMixins = {
       return obj
     },
     questionNo() {
-      const index = this.questionIndex
-      return (index < 9) ? (0 + String(index + 1)) : index + 1
+      // const index = this.questionIndex
+      // return (index < 9) ? (0 + String(index + 1)) : index + 1
+      return ''
+    }
+  },
+  mounted() {
+    this.renderRichText()
+  },
+  methods: {
+    // 备注渲染富文本
+    renderRichText() {
+      const dom = this.$refs.remarkWrap
+      if (dom) {
+        const editor = new Quill(dom)
+        editor.clipboard.dangerouslyPasteHTML(this.dimLayout.remark)
+        console.log(editor)
+      }
     }
   }
 }
