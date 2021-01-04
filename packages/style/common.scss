@@ -7,6 +7,9 @@
 .dee-question-heading{
     font-size: 16px;
     margin: .8rem 0 0.2rem;
+    color: #000015;
+    line-height: 2rem;
+    height: 2rem;
 }
 @media (min-width: 1200px){
     .dee-question-heading{
@@ -14,9 +17,14 @@
         margin: .8rem 0 0.2rem;
     }
 }
+.dee-question-sign{
+    color: red;
+}
 .dee-question-no{
     font-weight: 600;
-    margin-right: .5rem;
+}
+.dee-question-name{
+    margin-left: .5rem;
 }
 .dee-dropdown-span{
     height: 100%;
@@ -40,26 +48,28 @@
 /* 量表 matrix table  开始*/
 .dee-matrix-table{
     width:100%;
+    color: #606266;
     th,td{
         padding:1rem .5rem;
         text-align:center;
         min-width: 5rem;
+        border-bottom: 1px solid #DCDFE6;
     }
 }
 .dee-matrix__body{
-    &>tr:nth-child(2n){
-      background-color: #fafafa;
-    }
-    &>tr:hover{
-      background-color: #d9ecff;
-    }
+    // &>tr:nth-child(2n){
+    //   background-color: #fafafa;
+    // }
+    // &>tr:hover{
+    //   background-color: #d9ecff;
+    // }
     .el-input__inner{
         padding: 0;
     }
 }
 
 .dee-matrix__header{
-    background-color: rgba($color: $main-color, $alpha: 0.1)
+    // background-color: rgba($color: $main-color, $alpha: 0.1)
 }
 /* 量表 matrix table  结束*/
 
@@ -88,7 +98,7 @@
     float: left;
     width: 100%;
     .el-textarea {
-      width: 98%;
+      width: 90%;
     }
 }
 // 短文本
@@ -96,10 +106,14 @@
     float: left;
     width: 50%;
     .el-input{
-        width: 95%;
+        // width: 95%;
+        max-width:22.5rem;
+        width: 50%;
     }
     .el-date-editor.el-input{
-        width: 95%;
+        // width: 95%;
+        max-width:22.5rem;
+        width: 50%;
     }
 }
 // 多项选择
@@ -107,7 +121,7 @@
     float: left;
     width: 50%;
     .el-checkbox-group{
-        width: 98%;
+        width: 90%;
     }
     .el-checkbox{
         margin-bottom: 0.3rem;
@@ -125,7 +139,9 @@
     float: left;
     width: 50%;
     .el-select {
-      width: 95%;
+    //   width: 95%;
+    max-width:22.5rem;
+        width: 50%;
     }
     .dee-dropdown-item{
         padding: .3rem 1rem;
@@ -139,7 +155,9 @@
     float: left;
     width: 50%;
     .el-select {
-        width: 95%;
+        // width: 95%;
+        max-width:22.5rem;
+        width: 50%;
     }
 }
 // 单项选择
@@ -147,7 +165,7 @@
     float: left;
     width: 100%;
     .el-radio-group{
-        width: 98%;
+        width: 90%;
     }
     .el-radio{
         margin-bottom: 0.3rem;

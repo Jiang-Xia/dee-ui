@@ -6,8 +6,10 @@
     :style="questionStyle"
   >
     <h6 class="dee-question-heading">
+      <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span class="dee-question-no">{{ questionNo }}</span>
-      {{ dimLayout.name }}
+            <span class="dee-question-name">{{ dimLayout.name }}</span>
+
     </h6>
     <p v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">
