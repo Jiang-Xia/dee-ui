@@ -6,13 +6,12 @@
   >
     <h6 class="dee-question-heading">
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
-      <span class="dee-question-no">{{ questionNo }}</span>
-            <span class="dee-question-name">{{ dimLayout.name }}</span>
-
+      <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
+      <span class="dee-question-name">{{ dimLayout.name }}</span>
     </h6>
-    <p v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
+    <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">
-      <DeeTableSelect style="width:95%;" :input-names="inputNames" :height="dimLayout.options.length*1.8+'rem'">
+      <DeeTableSelect class="dee-dropdown-wrap" :input-names="inputNames" :height="dimLayout.options.length*1.8+'rem'">
         <div v-for="(item,index) in dimLayout.options" :key="index" class="dee-dropdown-item">
           <el-checkbox
             v-model="bindTableData[item.option_en_name]"

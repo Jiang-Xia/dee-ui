@@ -19,12 +19,14 @@
 }
 .dee-question-sign{
     color: red;
+    margin-right: .5rem;
 }
 .dee-question-no{
     font-weight: 600;
+    margin-right: .5rem;
 }
 .dee-question-name{
-    margin-left: .5rem;
+    // margin-left: .5rem;
 }
 .dee-dropdown-span{
     height: 100%;
@@ -139,8 +141,8 @@
     float: left;
     width: 50%;
     .el-select {
-    //   width: 95%;
-    max-width:22.5rem;
+        //width: 95%;
+        max-width:22.5rem;
         width: 50%;
     }
     .dee-dropdown-item{
@@ -148,6 +150,13 @@
     }
     .dee-dropdown-item:hover{
         background-color: #F5F7FA;
+    }
+    .dee-dropdown-wrap{
+        max-width:22.5rem;
+        width: 50%;
+    }
+    .el-checkbox{
+        width: 95%;
     }
 }
 // 单选下拉
@@ -190,6 +199,6 @@
 /* 题型模板样式 */
 .dee-preview-model-container{
     border-radius: 5px;
-    border:1px solid #ccc;
+    border:1px solid rgba($color: #979797, $alpha: .25);
     padding: .5rem;
 }
