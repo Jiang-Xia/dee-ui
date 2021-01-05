@@ -7,6 +7,9 @@
       <h2 class="dim-heading">{{ item.name }}</h2>
       <dee-preview-model
         :field-temp="item.items"
+        :relation-list="relation_list"
+        :relation-dict="relationDict"
+        :relation-keys="relationKeys"
         :dim-data="dimData"
         :is-editing="true"
         @modify="modifyHandle"
@@ -15,13 +18,17 @@
   </div>
 </template>
 <script>
-import FieldTemp from './睡眠呼吸监测.json'
+// import FieldTemp from './睡眠呼吸监测.json'
+import FieldTemp from './睡眠呼吸监测问卷.json'
 export default {
   data() {
     return {
       previewVisible: false,
       group_list: [],
+      relation_list: [],
       dimData: {},
+      relationDict: {},
+      relationKeys: {},
       userAgent: ''
     }
   },
@@ -30,10 +37,18 @@ export default {
   },
   methods: {
     init() {
-      const { group_list } = FieldTemp
+      const {
+        group_list,
+        relation_list,
+        relation_dict,
+        relation_keys
+      } = FieldTemp
       this.previewVisible = true
       this.group_list = group_list
-      // console.log(group_list)
+      this.relation_list = relation_list
+      this.relationDict = relation_dict
+      this.relationKeys = relation_keys
+      // console.log(group_list, relation_list)
       setTimeout(() => {
         this.dimData = {
           pat_name: '江夏',
@@ -65,9 +80,9 @@ export default {
       }, 1000)
     },
     modifyHandle(data) {
-      console.warn('===============')
-      console.log(data)
-      console.warn('===============')
+    //   console.warn('===============')
+    //   console.log(data)
+    //   console.warn('===============')
     }
   }
 }

@@ -7,7 +7,7 @@
     <h6 class="dee-question-heading">
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
-            <span class="dee-question-name">{{ dimLayout.name }}</span>
+      <span class="dee-question-name">{{ dimLayout.name }}</span>
 
     </h6>
     <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
@@ -43,6 +43,16 @@ import { commonMixins } from '#/mixins/question-common'
 export default {
   name: 'DeeMultipleChoice',
   mixins: [commonMixins],
+  props: {
+    relationDict: {
+      default: () => {},
+      type: Object
+    },
+    relationKeys: {
+      default: () => {},
+      type: Object
+    }
+  },
   data() {
     return {
       checkboxs: [],
@@ -89,6 +99,93 @@ export default {
   created() {
   },
   methods: {
+    // 获取关联题目
+    calcRelation() {
+      const id = this.dimLayout.id
+      const ids = this.relationKeys[id]
+      if (ids) {
+        for (const id_ of ids) {
+          const obj = this.relationDict[id_].relation_items
+          const relation = this.relationDict[id_].relation
+          if (this.getMultiQuestionLogic(obj, relation)) {
+            this.$emit('change-id', { id: id_, type: 'add' })
+          } else {
+            this.$emit('change-id', { id: id_, type: 'remove' })
+          }
+        }
+      }
+    },
+    // 判断选项是否存在选中
+    isExisted(relation_item, bindTableData) {
+      const { any_or_all, checked_or_unchecked, option_list } = relation_item
+      let options = this.dimLayout.options
+      let checkedVals = []
+      const relationVals = option_list.map(v => v.option_value)
+      if (checked_or_unchecked === 'checked') {
+        options = options.filter(v => bindTableData[v.option_en_name])
+        checkedVals = options.map(v => v.option_value)
+        if (any_or_all === 'any') {
+          return this.anyCB(checkedVals, relationVals)
+        } else if (any_or_all === 'all') {
+          return this.allCB(checkedVals, relationVals)
+        }
+      } else if (checked_or_unchecked === 'unchecked') {
+        options = options.filter(v => !bindTableData[v.option_en_name])
+        checkedVals = options.map(v => v.option_value)
+        if (any_or_all === 'any') {
+          return this.anyCB(checkedVals, relationVals)
+        } else if (any_or_all === 'all') {
+          return this.allCB(checkedVals, relationVals)
+        }
+      }
+    },
+    anyCB(checkedVals, relationVals) {
+      return checkedVals.some((v) => {
+        return relationVals.includes(v)
+      })
+    },
+    allCB(checkedVals, relationVals) {
+      if (this.isEqual(relationVals, checkedVals)) {
+        return true
+      }
+    },
+    // 判断数组是否相等
+    isEqual(arr, arr2) {
+      if (arr.length !== arr2.length) {
+        return false
+      } else {
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] !== arr2[i]) {
+            return false
+          }
+        }
+        return true
+      }
+    },
+    /*
+     *  返回值 就是判断多题逻辑的结果
+    */
+    getMultiQuestionLogic(obj, relation) {
+      const boolObj = {}
+      for (const k in obj) {
+        boolObj[k] = this.isExisted(obj[k], this.bindTableData)
+      }
+      if (relation === 'and') {
+        for (const k in obj) {
+          if (!boolObj[k]) {
+            return false
+          }
+        }
+        return true
+      } else if (relation === 'or') {
+        for (const k in obj) {
+          if (boolObj[k]) {
+            return true
+          }
+        }
+        return false
+      }
+    },
     otherChangeHandle(item) {
       // 选择其他项时 return
       if (!this.bindTableData[item.option_en_name]) return
@@ -105,7 +202,7 @@ export default {
       const curOptions = Object.values(this.bindTableData).filter(v => v).length
       let otherObj
       // 选择不是排他项时 有最多选项提示
-      if (!oItem.is_exclude_option && curOptions > this.optionMax) {
+      if (!oItem.is_exclude_option && this.optionMax && curOptions > this.optionMax) {
         this.bindTableData[oItemKey] = false
         this.$message.warning(`选项不能超过${this.optionMax}`)
         return

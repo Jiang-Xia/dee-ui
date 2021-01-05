@@ -102,7 +102,7 @@ export default {
       const curOptions = Object.values(this.bindTableData).filter(v => v).length
       let otherObj
       // 选择不是排他项时 有最多选项提示
-      if (!oItem.is_exclude_option && curOptions > this.optionMax) {
+      if (!oItem.is_exclude_option && this.optionMax && curOptions > this.optionMax) {
         this.bindTableData[oItemKey] = false
         this.$message.warning(`选项不能超过${this.optionMax}`)
         return

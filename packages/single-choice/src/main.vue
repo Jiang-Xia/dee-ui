@@ -7,7 +7,7 @@
     <h6 class="dee-question-heading">
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
-            <span class="dee-question-name">{{ dimLayout.name }}</span>
+      <span class="dee-question-name">{{ dimLayout.name }}</span>
 
     </h6>
     <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
@@ -48,6 +48,16 @@ import { commonMixins } from '#/mixins/question-common'
 export default {
   name: 'DeeSingleChoice',
   mixins: [commonMixins],
+  props: {
+    relationDict: {
+      default: () => {},
+      type: Object
+    },
+    relationKeys: {
+      default: () => {},
+      type: Object
+    }
+  },
   data() {
     return {
       radio: '',
@@ -85,6 +95,9 @@ export default {
     }
   },
   created() {
+    if (Object.keys(true).length) {
+      console.log(true)
+    }
   },
   methods: {
     otherChangeHandle(rV, item) {
@@ -109,12 +122,64 @@ export default {
       obj[this.option_en_name ] = this.radio
       return obj
     },
+    // 获取关联题目
+    calcRelation() {
+      const id = this.dimLayout.id
+      const ids = this.relationKeys[id]
+      if (ids) {
+        for (const id_ of ids) {
+          const obj = this.relationDict[id_].relation_items
+          const relation = this.relationDict[id_].relation
+          if (this.getMultiQuestionLogic(obj, relation)) {
+            this.$emit('change-id', { id: id_, type: 'add' })
+          } else {
+            this.$emit('change-id', { id: id_, type: 'remove' })
+          }
+        }
+      }
+    },
+    // 判断选项是否存在
+    isExisted(checkedVals, relationVals) {
+      return checkedVals.some((v) => {
+        return relationVals.includes(v)
+      })
+    },
+
+    /*
+     *  返回值 就是判断多题逻辑的结果
+    */
+    getMultiQuestionLogic(obj, relation) {
+      const checkedVals = this.dimLayout.options.filter(v => v.option_value === this.radio).map(v => v.option_value)
+      const boolObj = {}
+      for (const k in obj) {
+        const relationVals = obj[k].option_list.map(v => v.option_value)
+        boolObj[k] = this.isExisted(checkedVals, relationVals)
+      }
+      if (relation === 'and') {
+        // 有一个不为true 就返回false
+        for (const k in obj) {
+          if (!boolObj[k]) {
+            return false
+          }
+        }
+        return true
+      } else if (relation === 'or') {
+        // 有一个为true 就返回 true
+        for (const k in obj) {
+          if (boolObj[k]) {
+            return true
+          }
+        }
+        return false
+      }
+    },
     clickHandle(v, item) {
       if (!this.isEditing) return
       const en = item.option_en_name
       this.radio = v === this.radio ? '' : v
       this.option_en_name = en
       const obj = this.getParams(v, item)
+      this.calcRelation()
       // console.log(obj)
       this.$emit('modify', {
         type: 'single_choice',
