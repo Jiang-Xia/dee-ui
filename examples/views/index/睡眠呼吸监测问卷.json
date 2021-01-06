@@ -90,7 +90,38 @@
                         }
                     ],
                     "any_or_all": "any",
-                    "checked_or_unchecked": "unchecked"
+                    "checked_or_unchecked": "checked"
+                },
+                "18": {
+                    "rid": "18",
+                    "option_list": [
+                        {
+                            "id": "21",
+                            "option_name": "1~2次/月",
+                            "option_value": 1,
+                            "option_en_name": "sleep_snore"
+                        },
+                        {
+                            "id": "22",
+                            "option_name": "1~2次/周",
+                            "option_value": 2,
+                            "option_en_name": "sleep_snore"
+                        },
+                        {
+                            "id": "23",
+                            "option_name": "3~4次/周",
+                            "option_value": 3,
+                            "option_en_name": "sleep_snore"
+                        },
+                        {
+                            "id": "24",
+                            "option_name": "几乎每天",
+                            "option_value": 4,
+                            "option_en_name": "sleep_snore"
+                        }
+                    ],
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked"
                 }
             }
         },
@@ -945,7 +976,8 @@
     "relation_keys": {
         "18": [
             "19",
-            "25"
+            "25",
+            "36"
         ],
         "26":[
             "36"

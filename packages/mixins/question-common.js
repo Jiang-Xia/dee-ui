@@ -44,21 +44,83 @@ export const commonMixins = {
       // return (index < 9) ? (0 + String(index + 1)) : index + 1
       return ''
     }
-  },
-  mounted() {
-    this.renderRichText()
-  },
-  methods: {
-    // 备注渲染富文本
-    renderRichText() {
-      const dom = this.$refs.remarkWrap
-      if (dom) {
-        const editor = new Quill(dom)
-        editor.clipboard.dangerouslyPasteHTML(this.dimLayout.remark)
-        console.log(editor)
-      }
-    }
   }
 }
 
 /* 单选选择和多选选择的联动题 */
+export const relationMixins = {
+  methods: {
+    // 获取关联题目
+    $__calcRelationHandle() {
+      const id = this.dimLayout.id
+      const ids = this.relationKeys[id]
+      if (ids) {
+        for (const id_ of ids) {
+          const obj = this.relationDict[id_].relation_items
+          const relation = this.relationDict[id_].relation
+          if (getMultiQuestionLogic(obj, relation, this.dimData)) {
+            this.$emit('change-id', { id: id_, type: 'add' })
+          } else {
+            this.$emit('change-id', { id: id_, type: 'remove' })
+          }
+        }
+      }
+    },
+
+    // 不显示时清除关联题一选中选项
+    $__clearRelationOptionHandle() {
+
+    }
+  }
+}
+/*
+  * 返回值 就是判断多题逻辑的结果 (一道题和多道题控制 一样使用)
+*/
+export function getMultiQuestionLogic(relation_items, relation, dimData) {
+  const boolObj = {}
+  for (const k in relation_items) {
+    boolObj[k] = isSatisfyCondition(relation_items[k], dimData)
+  }
+  if (relation === 'and') {
+    // 有一个不为true 就返回false
+    for (const k in relation_items) {
+      if (!boolObj[k]) {
+        return false
+      }
+    }
+    return true
+  } else if (relation === 'or') {
+    // 有一个为true 就返回 true
+    for (const k in relation_items) {
+      if (boolObj[k]) {
+        return true
+      }
+    }
+    return false
+  }
+}
+// 计算关联题是否满足显示条件
+export function isSatisfyCondition(relation_item, dimData) {
+  const { any_or_all, checked_or_unchecked, option_list } = relation_item
+  if (checked_or_unchecked === 'checked') {
+    if (any_or_all === 'any') {
+      return option_list.some((v) => {
+        return dimData[v.option_en_name] === v.option_value
+      })
+    } else if (any_or_all === 'all') {
+      return option_list.every((v) => {
+        return dimData[v.option_en_name] === v.option_value
+      })
+    }
+  } else if (checked_or_unchecked === 'unchecked') {
+    if (any_or_all === 'any') {
+      return option_list.some((v) => {
+        return dimData[v.option_en_name] !== v.option_value
+      })
+    } else if (any_or_all === 'all') {
+      return option_list.every((v) => {
+        return dimData[v.option_en_name] !== v.option_value
+      })
+    }
+  }
+}

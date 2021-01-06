@@ -39,10 +39,10 @@
 </template>
 
 <script>
-import { commonMixins } from '#/mixins/question-common'
+import { commonMixins, relationMixins } from '#/mixins/question-common'
 export default {
   name: 'DeeMultipleChoice',
-  mixins: [commonMixins],
+  mixins: [commonMixins, relationMixins],
   props: {
     relationDict: {
       default: () => { return {} },
@@ -91,7 +91,7 @@ export default {
           }
         })
         this.bindTableData = obj
-        this.calcRelation()
+        this.$__calcRelationHandle()
         // console.log(this.bindTableData, this.tableData)
       },
       immediate: true
@@ -100,86 +100,6 @@ export default {
   created() {
   },
   methods: {
-    /*
-      联动题 开始
-    */
-    // 获取关联题目
-    calcRelation() {
-      const id = this.dimLayout.id
-      const ids = this.relationKeys[id]
-      if (ids) {
-        for (const id_ of ids) {
-          const obj = this.relationDict[id_].relation_items
-          const relation = this.relationDict[id_].relation
-          if (this.getMultiQuestionLogic(obj, relation)) {
-            this.$emit('change-id', { id: id_, type: 'add' })
-          } else {
-            this.$emit('change-id', { id: id_, type: 'remove' })
-          }
-        }
-      }
-    },
-    // 判断选项是否存在选中
-    isExisted(relation_item, bindTableData) {
-      const { any_or_all, checked_or_unchecked, option_list } = relation_item
-      let options = this.dimLayout.options
-      const relationVals = option_list.map(v => v.option_value)
-      if (checked_or_unchecked === 'checked') {
-        options = options.filter(v => bindTableData[v.option_en_name])
-        const checkedVals = options.map(v => v.option_value)
-        if (any_or_all === 'any') {
-          return this.anyCB(checkedVals, relationVals)
-        } else if (any_or_all === 'all') {
-          return this.allCB(checkedVals, relationVals)
-        }
-      } else if (checked_or_unchecked === 'unchecked') {
-        options = options.filter(v => !bindTableData[v.option_en_name])
-        const unCheckedVals = options.map(v => v.option_value)
-        if (any_or_all === 'any') {
-          return this.anyCB(unCheckedVals, relationVals)
-        } else if (any_or_all === 'all') {
-          return this.allCB(unCheckedVals, relationVals)
-        }
-      }
-    },
-    anyCB(Vals, relationVals) {
-      return Vals.some((v) => {
-        return relationVals.includes(v)
-      })
-    },
-    allCB(Vals, relationVals) {
-      // 符合的每一项都要在不选中的数组里
-      return relationVals.every((v) => {
-        return Vals.includes(v)
-      })
-    },
-    /*
-     *  返回值 就是判断多题逻辑的结果
-    */
-    getMultiQuestionLogic(obj, relation) {
-      const boolObj = {}
-      for (const k in obj) {
-        boolObj[k] = this.isExisted(obj[k], this.bindTableData)
-      }
-      if (relation === 'and') {
-        for (const k in obj) {
-          if (!boolObj[k]) {
-            return false
-          }
-        }
-        return true
-      } else if (relation === 'or') {
-        for (const k in obj) {
-          if (boolObj[k]) {
-            return true
-          }
-        }
-        return false
-      }
-    },
-    /*
-      联动题 结束
-    */
     otherChangeHandle(item) {
       // 选择其他项时 return
       if (!this.bindTableData[item.option_en_name]) return
@@ -224,11 +144,11 @@ export default {
         })
       }
       this.tableData[oItemKey] = val ? oItem.option_value : ''
-      this.calcRelation()
       this.$emit('modify', {
         type: 'multiple_choice',
         value: { ...this.tableData, ...otherObj }
       })
+      this.$__calcRelationHandle()
     }
   }
 }

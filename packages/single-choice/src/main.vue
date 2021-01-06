@@ -43,10 +43,10 @@
 </template>
 
 <script>
-import { commonMixins } from '#/mixins/question-common'
+import { commonMixins, relationMixins } from '#/mixins/question-common'
 export default {
   name: 'DeeSingleChoice',
-  mixins: [commonMixins],
+  mixins: [commonMixins, relationMixins],
   props: {
     relationDict: {
       default: () => { return {} },
@@ -89,7 +89,7 @@ export default {
             this.option_other_value = n[v.option_other_en_name]
           }
         })
-        this.calcRelation()
+        this.$__calcRelationHandle()
         // console.log(this.radio)
       }
     }
@@ -97,62 +97,6 @@ export default {
   created() {
   },
   methods: {
-    /*
-      联动题 开始
-    */
-    // 获取关联题目
-    calcRelation() {
-      const id = this.dimLayout.id
-      const ids = this.relationKeys[id]
-      if (ids) {
-        for (const id_ of ids) {
-          const obj = this.relationDict[id_].relation_items
-          const relation = this.relationDict[id_].relation
-          if (this.getMultiQuestionLogic(obj, relation)) {
-            this.$emit('change-id', { id: id_, type: 'add' })
-          } else {
-            this.$emit('change-id', { id: id_, type: 'remove' })
-          }
-        }
-      }
-    },
-    // 判断选项是否存在
-    isExisted(checkedVals, relationVals) {
-      return checkedVals.some((v) => {
-        return relationVals.includes(v)
-      })
-    },
-    /*
-     *  返回值 就是判断多题逻辑的结果
-    */
-    getMultiQuestionLogic(obj, relation) {
-      const checkedVals = this.dimLayout.options.filter(v => v.option_value === this.radio).map(v => v.option_value)
-      const boolObj = {}
-      for (const k in obj) {
-        const relationVals = obj[k].option_list.map(v => v.option_value)
-        boolObj[k] = this.isExisted(checkedVals, relationVals)
-      }
-      if (relation === 'and') {
-        // 有一个不为true 就返回false
-        for (const k in obj) {
-          if (!boolObj[k]) {
-            return false
-          }
-        }
-        return true
-      } else if (relation === 'or') {
-        // 有一个为true 就返回 true
-        for (const k in obj) {
-          if (boolObj[k]) {
-            return true
-          }
-        }
-        return false
-      }
-    },
-    /*
-      联动题 结束
-    */
     otherChangeHandle(rV, item) {
       // 选择其他项时 return
       if (this.radio !== rV) return
@@ -181,12 +125,12 @@ export default {
       this.radio = v === this.radio ? '' : v
       this.option_en_name = en
       const obj = this.getParams(v, item)
-      this.calcRelation()
       // console.log(obj)
       this.$emit('modify', {
         type: 'single_choice',
         value: obj
       })
+      this.$__calcRelationHandle()
     }
   }
 }

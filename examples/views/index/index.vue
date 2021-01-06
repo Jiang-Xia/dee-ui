@@ -19,7 +19,7 @@
 </template>
 <script>
 // import FieldTemp from './睡眠呼吸监测.json'
-import FieldTemp from './睡眠呼吸监测问卷.json'
+import FieldTemp from './睡眠呼吸监测问卷2.json'
 export default {
   data() {
     return {
@@ -65,7 +65,7 @@ export default {
           sleep_snore: 2,
           sleep_snore_voice: 3,
           sleep_symptom_1: '',
-          sleep_symptom_2: '',
+          sleep_symptom_2: 2,
           sleep_symptom_3: '',
           sleep_symptom_4: '',
           sleep_symptom_5: 5,
@@ -81,9 +81,15 @@ export default {
       }, 1000)
     },
     modifyHandle(data) {
-    //   console.warn('===============')
-    //   console.log(data)
-    //   console.warn('===============')
+      const obj = { ...this.dimData }
+      for (const k in data.value) {
+        obj[k] = data.value[k]
+      }
+      this.dimData = obj
+      // console.log(this.dimData)
+      // console.warn('===============')
+      // console.log(data)
+      // console.warn('===============')
     }
   }
 }

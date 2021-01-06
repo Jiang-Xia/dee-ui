@@ -164,10 +164,12 @@ export default {
       default: () => { return [] },
       type: Array
     },
+    // 关联题关联了多少道题的数据和判断显示依据
     relationDict: {
       default: () => { return {} },
       type: Object
     },
+    // 当前题型被多少道题关联的id list
     relationKeys: {
       default: () => { return {} },
       type: Object
@@ -192,45 +194,43 @@ export default {
         // console.log(n)
       },
       immediate: true
-    },
-    relationIds: {
-      handler: function(n) {
-        console.log('=============', n)
-      }
     }
   },
-  mounted() {
-    // const dom = document.querySelector('#q19-12')
-    // dom.style.display = 'block'
-    // console.log(dom)
-  },
   methods: {
-    getRelationData(item) {
-      const arr = ['multiple_choice', 'single_choice']
-      let list = []
-      if (arr.includes(item.type)) {
-        list = this.relationList.filter(v => {
-          return item.id === v.id
+    // 清空dimData 触发事件和后台交互
+    clearDimData(id) {
+      const fieldTemp = this.fieldTemp.filter(v => v.exist_relation_items && v.id === id)
+      const itemData = fieldTemp[0]
+      const { type, matrix_rows, matrix_cols } = itemData
+      const clearObj = { type }
+      if (['long_text', 'short_text'].includes(type)) {
+        clearObj.value = { [itemData.en_name]: '' }
+      } else if (['multiple_choice', 'multiple_dropdown', 'single_choice', 'single_dropdown'].includes(type)) {
+        const obj = {}
+        itemData.options.forEach(v => { obj[v.option_en_name] = '' })
+        clearObj.value = obj
+      } else if (['matrix_multiple_choice', 'matrix_input', 'matrix_single_choice'].includes(type)) {
+        const obj = {}
+        matrix_rows.forEach(row => {
+          matrix_cols.forEach(col => {
+            obj[row.en_name + '#' + col.en_name] = ''
+          })
         })
+        clearObj.value = obj
       }
-      if (list.length) {
-        return list[0]
-      }
+      this.$emit('modify', clearObj)
     },
+    // 控制关联题型的显示和隐藏事件回调
     changeRelationIdHandle({ id, type }) {
-      // console.log(id, type)
       if (type === 'add' && !this.relationIds.includes(id)) {
         this.relationIds.push(id)
       } else if (type === 'remove' && this.relationIds.includes(id)) {
         this.relationIds.splice(this.relationIds.indexOf(id), 1)
+        this.clearDimData(id)
       }
-      // console.log('=============', this.relationIds)
     },
     modifyHandle(data) {
       this.$emit('modify', data)
-      // console.log('=============')
-      // console.log(data)
-      // console.log('=============')
     }
   }
 }
