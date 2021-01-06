@@ -44,6 +44,7 @@
 
 <script>
 import { commonMixins, relationMixins } from '#/mixins/question-common'
+import { isMobile } from '#/utils/common'
 export default {
   name: 'DeeSingleChoice',
   mixins: [commonMixins, relationMixins],
@@ -66,10 +67,14 @@ export default {
   },
   computed: {
     controlStyle() {
-      return {
-        width: 100 / this.optionCount + '%',
-        marginRight: this.optionCount === -1 ? '1rem' : '0'
+      let obj = {}
+      if (!isMobile()) {
+        obj = {
+          width: 100 / this.optionCount + '%',
+          marginRight: this.optionCount === -1 ? '1rem' : '0'
+        }
       }
+      return obj
     },
     optionCount() {
       return this.dimLayout.line_option_count

@@ -17,7 +17,6 @@
             v-model="bindTableData[item.option_en_name]"
             :option-en="item.option_en_name"
             :disabled="!isEditing"
-            :style="controlStyle"
             @change="(v)=>{changeCheckboxHandle(v,item)}"
           >
             <span>{{ item.option_name }}</span>
@@ -45,12 +44,6 @@ export default {
     }
   },
   computed: {
-    controlStyle() {
-      return {
-        width: 100 / this.optionCount + '%',
-        marginRight: this.optionCount === -1 ? '1rem' : '0'
-      }
-    },
     optionCount() {
       return this.dimLayout.line_option_count
     },
