@@ -91,6 +91,7 @@ export default {
           }
         })
         this.bindTableData = obj
+        this.calcRelation()
         // console.log(this.bindTableData, this.tableData)
       },
       immediate: true
@@ -122,11 +123,10 @@ export default {
     isExisted(relation_item, bindTableData) {
       const { any_or_all, checked_or_unchecked, option_list } = relation_item
       let options = this.dimLayout.options
-      let checkedVals = []
       const relationVals = option_list.map(v => v.option_value)
       if (checked_or_unchecked === 'checked') {
         options = options.filter(v => bindTableData[v.option_en_name])
-        checkedVals = options.map(v => v.option_value)
+        const checkedVals = options.map(v => v.option_value)
         if (any_or_all === 'any') {
           return this.anyCB(checkedVals, relationVals)
         } else if (any_or_all === 'all') {
@@ -134,40 +134,25 @@ export default {
         }
       } else if (checked_or_unchecked === 'unchecked') {
         options = options.filter(v => !bindTableData[v.option_en_name])
-        checkedVals = options.map(v => v.option_value)
+        const unCheckedVals = options.map(v => v.option_value)
         if (any_or_all === 'any') {
-          return this.anyCB(checkedVals, relationVals)
+          return this.anyCB(unCheckedVals, relationVals)
         } else if (any_or_all === 'all') {
-          return this.allCB(checkedVals, relationVals)
+          return this.allCB(unCheckedVals, relationVals)
         }
       }
     },
-    anyCB(checkedVals, relationVals) {
-      return checkedVals.some((v) => {
+    anyCB(Vals, relationVals) {
+      return Vals.some((v) => {
         return relationVals.includes(v)
       })
     },
-    allCB(checkedVals, relationVals) {
-      if (this.isEqual(relationVals, checkedVals)) {
-        return true
-      }
+    allCB(Vals, relationVals) {
+      // 符合的每一项都要在不选中的数组里
+      return relationVals.every((v) => {
+        return Vals.includes(v)
+      })
     },
-    // 判断数组是否相等
-    isEqual(arr, arr2) {
-      if (arr.length !== arr2.length) {
-        return false
-      } else {
-        for (let i = 0; i < arr.length; i++) {
-          if (arr[i] !== arr2[i]) {
-            return false
-          }
-        }
-        return true
-      }
-    },
-    /*
-      联动题 结束
-    */
     /*
      *  返回值 就是判断多题逻辑的结果
     */
@@ -192,6 +177,9 @@ export default {
         return false
       }
     },
+    /*
+      联动题 结束
+    */
     otherChangeHandle(item) {
       // 选择其他项时 return
       if (!this.bindTableData[item.option_en_name]) return
@@ -236,6 +224,7 @@ export default {
         })
       }
       this.tableData[oItemKey] = val ? oItem.option_value : ''
+      this.calcRelation()
       this.$emit('modify', {
         type: 'multiple_choice',
         value: { ...this.tableData, ...otherObj }

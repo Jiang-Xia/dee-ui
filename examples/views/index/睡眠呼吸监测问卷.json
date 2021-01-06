@@ -39,6 +39,61 @@
                 }
             }
         },
+        "36":{
+            "id": "36",
+            "relation": "and",
+            "relation_items": {
+                "26": {
+                    "rid": "26",
+                    "option_list": [
+                        {
+                            "id": "27",
+                            "pid": "26",
+                            "type": "option",
+                            "is_exclude_option": 0,
+                            "option_name": "梦游",
+                            "option_value": 1,
+                            "option_en_name": "sleep_symptom_1",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit"
+                        },
+                        {
+                            "id": "28",
+                            "pid": "26",
+                            "type": "option",
+                            "is_exclude_option": 0,
+                            "option_name": "磨牙",
+                            "option_value": 2,
+                            "option_en_name": "sleep_symptom_2",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit"
+                        },
+                        {
+                            "id": "29",
+                            "pid": "26",
+                            "type": "option",
+                            "is_exclude_option": 0,
+                            "option_name": "说梦话",
+                            "option_value": 3,
+                            "option_en_name": "sleep_symptom_3",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit"
+                        }
+                    ],
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "unchecked"
+                }
+            }
+        },
         "25": {
             "id": "25",
             "relation": "and",
@@ -892,6 +947,9 @@
             "19",
             "25"
         ],
+        "26":[
+            "36"
+        ],
         "133": [
             "136",
             "137",
@@ -1633,6 +1691,7 @@
                     "remark": "",
                     "is_required": 0,
                     "line_option_count": -1,
+                    "exist_relation_items": true,
                     "row_behavior": 0,
                     "options": [
                         {

@@ -60,3 +60,5 @@ export const commonMixins = {
     }
   }
 }
+
+/* 单选选择和多选选择的联动题 */
