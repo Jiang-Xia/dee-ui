@@ -147,28 +147,29 @@ export default {
   },
   props: {
     dimData: {
-      default: () => {},
+      default: () => { return {} },
       type: Object
     },
     isEditing: {
-      default: () => true,
+      default: true,
       type: Boolean
     },
     fieldTemp: {
-      default: () => [],
-      type: Array
+      default: () => { return [] },
+      type: Array,
+      required: true
     },
     // 被关联题型的数据  只有单项选择题和多项选择题才需要
     relationList: {
-      default: () => [],
+      default: () => { return [] },
       type: Array
     },
     relationDict: {
-      default: () => {},
+      default: () => { return {} },
       type: Object
     },
     relationKeys: {
-      default: () => {},
+      default: () => { return {} },
       type: Object
     }
   },
@@ -185,11 +186,17 @@ export default {
       },
       immediate: true
     },
+
     fieldTemp: {
       handler: function(n) {
         // console.log(n)
       },
       immediate: true
+    },
+    relationIds: {
+      handler: function(n) {
+        console.log('=============', n)
+      }
     }
   },
   mounted() {
@@ -198,7 +205,6 @@ export default {
     // console.log(dom)
   },
   methods: {
-
     getRelationData(item) {
       const arr = ['multiple_choice', 'single_choice']
       let list = []
@@ -212,13 +218,13 @@ export default {
       }
     },
     changeRelationIdHandle({ id, type }) {
-      console.log(id, type)
+      // console.log(id, type)
       if (type === 'add' && !this.relationIds.includes(id)) {
         this.relationIds.push(id)
-      } else if (type === 'remove') {
+      } else if (type === 'remove' && this.relationIds.includes(id)) {
         this.relationIds.splice(this.relationIds.indexOf(id), 1)
       }
-      console.log('=============', this.relationIds)
+      // console.log('=============', this.relationIds)
     },
     modifyHandle(data) {
       this.$emit('modify', data)

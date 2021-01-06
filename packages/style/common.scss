@@ -8,8 +8,8 @@
     font-size: 16px;
     margin: .8rem 0 0.2rem;
     color: #000015;
-    line-height: 2rem;
-    height: 2rem;
+    line-height: 1;
+    min-height: 2rem;
 }
 @media (min-width: 1200px){
     .dee-question-heading{
@@ -100,7 +100,7 @@
     float: left;
     width: 100%;
     .el-textarea {
-      width: 90%;
+      width: 95%;
     }
 }
 // 短文本
@@ -108,14 +108,16 @@
     float: left;
     width: 50%;
     .el-input{
-        // width: 95%;
-        max-width:22.5rem;
-        width: 50%;
+        width:22.5rem;
+        @media (max-width: 900px){
+            width: 95%;
+        }
     }
     .el-date-editor.el-input{
-        // width: 95%;
-        max-width:22.5rem;
-        width: 50%;
+        width:22.5rem;
+        @media (max-width: 900px){
+            width: 95%;
+        }
     }
 }
 // 多项选择
@@ -123,7 +125,7 @@
     float: left;
     width: 50%;
     .el-checkbox-group{
-        width: 90%;
+        width: 95%;
     }
     .el-checkbox{
         margin-bottom: 0.3rem;
@@ -141,9 +143,10 @@
     float: left;
     width: 50%;
     .el-select {
-        //width: 95%;
-        max-width:22.5rem;
-        width: 50%;
+        width:22.5rem;
+        @media (max-width: 900px){
+            width: 95%;
+        }
     }
     .dee-dropdown-item{
         padding: .3rem 1rem;
@@ -152,8 +155,10 @@
         background-color: #F5F7FA;
     }
     .dee-dropdown-wrap{
-        max-width:22.5rem;
-        width: 50%;
+        width:22.5rem;
+        @media (max-width: 900px){
+            width: 95%;
+        }
     }
     .el-checkbox{
         width: 95%;
@@ -164,9 +169,10 @@
     float: left;
     width: 50%;
     .el-select {
-        // width: 95%;
-        max-width:22.5rem;
-        width: 50%;
+        width:22.5rem;
+        @media (max-width: 900px){
+            width: 95%;
+        }
     }
 }
 // 单项选择
@@ -174,7 +180,7 @@
     float: left;
     width: 100%;
     .el-radio-group{
-        width: 90%;
+        width: 95%;
     }
     .el-radio{
         margin-bottom: 0.3rem;

@@ -1,4 +1,4 @@
-import { isMobile } from '#/utils/common'
+// import { isMobile } from '#/utils/common'
 import Quill from 'quill'
 /* 即所有题型都公用的 个别单独写 */
 export const commonMixins = {
@@ -13,27 +13,30 @@ export const commonMixins = {
     },
     dimLayout: {
       default: () => { return {} },
-      type: Object
+      type: Object,
+      required: true
     },
     questionIndex: {
       default: null,
-      type: Number
+      type: Number,
+      required: true
     }
   },
   computed: {
     questionStyle() {
-      const layout = this.dimLayout
+      // const layout = this.dimLayout
       const obj = {}
-      if (!isMobile()) {
-        if (layout.row_behavior === 1) {
-          obj.clear = 'both'
-        } else if (layout.row_behavior === 2) {
-          obj.clear = 'both'
-          obj.width = '100%'
-        }
-      } else {
-        obj.width = '100%'
-      }
+      // if (!isMobile()) {
+      //   if (layout.row_behavior === 1) {
+      //     obj.clear = 'both'
+      //   } else if (layout.row_behavior === 2) {
+      //     obj.clear = 'both'
+      //     obj.width = '100%'
+      //   }
+      // } else {
+      //   obj.width = '100%'
+      // }
+      obj.width = '100%'
       return obj
     },
     questionNo() {

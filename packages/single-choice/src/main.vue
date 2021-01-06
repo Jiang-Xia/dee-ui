@@ -8,7 +8,6 @@
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
       <span class="dee-question-name">{{ dimLayout.name }}</span>
-
     </h6>
     <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">
@@ -50,11 +49,11 @@ export default {
   mixins: [commonMixins],
   props: {
     relationDict: {
-      default: () => {},
+      default: () => { return {} },
       type: Object
     },
     relationKeys: {
-      default: () => {},
+      default: () => { return {} },
       type: Object
     }
   },
@@ -90,38 +89,17 @@ export default {
             this.option_other_value = n[v.option_other_en_name]
           }
         })
+        this.calcRelation()
         // console.log(this.radio)
       }
     }
   },
   created() {
-    if (Object.keys(true).length) {
-      console.log(true)
-    }
   },
   methods: {
-    otherChangeHandle(rV, item) {
-      // 选择其他项时 return
-      if (this.radio !== rV) return
-      const obj = this.getParams(rV, item)
-      this.$emit('modify', {
-        type: 'single_choice',
-        value: obj
-      })
-    },
-    getParams(v, item) {
-      const options = this.dimLayout.options
-      const obj = {}
-      options.map(oItem => {
-        obj[oItem.option_en_name] = ''
-        // 判断是否勾选了其他项
-        if (oItem.option_other_is_editable && oItem.option_value === v) {
-          obj[oItem.option_other_en_name] = this.option_other_value
-        }
-      })
-      obj[this.option_en_name ] = this.radio
-      return obj
-    },
+    /*
+      联动题 开始
+    */
     // 获取关联题目
     calcRelation() {
       const id = this.dimLayout.id
@@ -144,7 +122,6 @@ export default {
         return relationVals.includes(v)
       })
     },
-
     /*
      *  返回值 就是判断多题逻辑的结果
     */
@@ -172,6 +149,31 @@ export default {
         }
         return false
       }
+    },
+    /*
+      联动题 结束
+    */
+    otherChangeHandle(rV, item) {
+      // 选择其他项时 return
+      if (this.radio !== rV) return
+      const obj = this.getParams(rV, item)
+      this.$emit('modify', {
+        type: 'single_choice',
+        value: obj
+      })
+    },
+    getParams(v, item) {
+      const options = this.dimLayout.options
+      const obj = {}
+      options.map(oItem => {
+        obj[oItem.option_en_name] = ''
+        // 判断是否勾选了其他项
+        if (oItem.option_other_is_editable && oItem.option_value === v) {
+          obj[oItem.option_other_en_name] = this.option_other_value
+        }
+      })
+      obj[this.option_en_name ] = this.radio
+      return obj
     },
     clickHandle(v, item) {
       if (!this.isEditing) return

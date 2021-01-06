@@ -45,11 +45,11 @@ export default {
   mixins: [commonMixins],
   props: {
     relationDict: {
-      default: () => {},
+      default: () => { return {} },
       type: Object
     },
     relationKeys: {
-      default: () => {},
+      default: () => { return {} },
       type: Object
     }
   },
@@ -99,6 +99,9 @@ export default {
   created() {
   },
   methods: {
+    /*
+      联动题 开始
+    */
     // 获取关联题目
     calcRelation() {
       const id = this.dimLayout.id
@@ -162,6 +165,9 @@ export default {
         return true
       }
     },
+    /*
+      联动题 结束
+    */
     /*
      *  返回值 就是判断多题逻辑的结果
     */

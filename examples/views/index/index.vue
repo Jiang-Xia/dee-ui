@@ -69,6 +69,7 @@ export default {
           sleep_symptom_3: '',
           sleep_symptom_4: '',
           sleep_symptom_5: 5,
+          treat_diet_rw: 1,
           diag_cancer_text: '其他输入框',
           'first#complaint': '恢复',
           'enzymology_ast#one': 1,
