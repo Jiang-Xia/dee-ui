@@ -39,7 +39,6 @@ export default {
   data() {
     return {
       selects: [],
-      tableData: {},
       bindTableData: {}
     }
   },
@@ -68,19 +67,7 @@ export default {
   watch: {
     dimData: {
       handler: function(n) {
-        const options = this.dimLayout.options
-        const obj = {}
-        options.map(v => {
-          const key = v.option_en_name
-          obj[key] = v.option_value === n[key]
-          this.tableData[key] = n[key] || ''
-          // 其他项
-          if (v.option_other_is_editable) {
-            this.option_other_value = n[v.option_other_en_name]
-          }
-        })
-        this.bindTableData = obj
-        // console.log(this.bindTableData, this.tableData)
+        this.setBindTableData(n)
       },
       immediate: true
     }
@@ -88,6 +75,31 @@ export default {
   created() {
   },
   methods: {
+    // 渲染绑定数据
+    setBindTableData(n) {
+      const options = this.dimLayout.options
+      const obj = {}
+      options.map(v => {
+        const key = v.option_en_name
+        obj[key] = v.option_value === n[key]
+      })
+      this.bindTableData = obj
+      // console.log(this.bindTableData)
+    },
+    // 根据绑定的对象装填需要发送的数据
+    getTableData(bindTableData) {
+      const options = this.dimLayout.options
+      const obj = {}
+      options.map(v => {
+        const key = v.option_en_name
+        if (bindTableData[key]) {
+          obj[key] = v.option_value
+        } else {
+          obj[key] = ''
+        }
+      })
+      return obj
+    },
     changeCheckboxHandle(val, oItem) {
       /*  排他选项 互斥处理 */
       const options = this.dimLayout.options
@@ -105,7 +117,6 @@ export default {
         for (const key in this.bindTableData) {
           if (oItemKey !== key) {
             this.bindTableData[key] = ''
-            this.tableData[key] = ''
           }
         }
       } else {
@@ -113,7 +124,6 @@ export default {
         options.forEach(v => {
           if (v.is_exclude_option === 1) {
             this.bindTableData[v.option_en_name] = false
-            this.tableData[v.option_en_name] = ''
           } else {
             // 勾选了其他这个选项 其他输入框才传
             if (this.bindTableData[v.option_en_name] && v.option_other_is_editable) {
@@ -122,10 +132,10 @@ export default {
           }
         })
       }
-      this.tableData[oItemKey] = val ? oItem.option_value : ''
+      const valueObj = this.getTableData(this.bindTableData)
       this.$emit('modify', {
         type: 'multiple_dropdown',
-        value: { ...this.tableData, ...otherObj }
+        value: valueObj
       })
     }
   }

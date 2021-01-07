@@ -3,7 +3,7 @@
     <h6 class="dee-question-heading">
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
-            <span class="dee-question-name">{{ dimLayout.name }}</span>
+      <span class="dee-question-name">{{ dimLayout.name }}</span>
 
     </h6>
     <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
@@ -65,16 +65,7 @@ export default {
   watch: {
     dimData: {
       handler: function(n) {
-        const cols = this.dimLayout.matrix_cols
-        const rows = this.dimLayout.matrix_rows
-        const obj = {}
-        rows.map(v => {
-          cols.map(v2 => {
-            obj[v.en_name + '#' + v2.en_name] = n[v.en_name + '#' + v2.en_name] || ''
-          })
-        })
-        this.tableData = obj
-        // console.log(obj)
+        this.setTableData(n)
       },
       immediate: true
     }
@@ -82,6 +73,18 @@ export default {
   created() {
   },
   methods: {
+    setTableData(n) {
+      const cols = this.dimLayout.matrix_cols
+      const rows = this.dimLayout.matrix_rows
+      const obj = {}
+      rows.map(v => {
+        cols.map(v2 => {
+          obj[v.en_name + '#' + v2.en_name] = n[v.en_name + '#' + v2.en_name] || ''
+        })
+      })
+      this.tableData = obj
+      // console.log(obj)
+    },
     changeHandle() {
       this.$emit('modify', {
         type: 'matrix_input',

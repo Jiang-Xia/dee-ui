@@ -48,16 +48,7 @@ export default {
   watch: {
     dimData: {
       handler: function(n) {
-        const cols = this.dimLayout.matrix_cols
-        const rows = this.dimLayout.matrix_rows
-        const obj = {}
-        rows.map(v => {
-          cols.map(v2 => {
-            obj[v.en_name + '#' + v2.en_name] = n[v.en_name + '#' + v2.en_name] || ''
-          })
-        })
-        this.tableData = obj
-        // console.log(obj)
+        this.setTableData(n)
       },
       immediate: true
     }
@@ -65,6 +56,19 @@ export default {
   created() {
   },
   methods: {
+    // 渲染渲染绑定数据
+    setTableData(n) {
+      const cols = this.dimLayout.matrix_cols
+      const rows = this.dimLayout.matrix_rows
+      const obj = {}
+      rows.map(v => {
+        cols.map(v2 => {
+          obj[v.en_name + '#' + v2.en_name] = n[v.en_name + '#' + v2.en_name] || ''
+        })
+      })
+      this.tableData = obj
+      // console.log(obj)
+    },
     clickHandle(v, en) {
       if (!this.isEditing) return
       // 先清空对应 行的选项
@@ -76,9 +80,9 @@ export default {
         }
       }
       this.tableData[en] = this.tableData[en] === v ? '' : v
-      this.changeHandle(en)
+      this.changeHandle()
     },
-    changeHandle(en) {
+    changeHandle() {
       this.$emit('modify', {
         type: 'matrix_single_choice',
         value: this.tableData

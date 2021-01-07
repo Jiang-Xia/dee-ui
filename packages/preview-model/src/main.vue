@@ -148,9 +148,15 @@ export default {
   props: {
     dimData: {
       default: () => { return {} },
-      type: Object
+      type: Object,
+      required: true
     },
     isEditing: {
+      default: true,
+      type: Boolean
+    },
+    // 是否实时交互  可用于控制 是否及时清空
+    realTime: {
       default: true,
       type: Boolean
     },
@@ -222,11 +228,15 @@ export default {
     },
     // 控制关联题型的显示和隐藏事件回调
     changeRelationIdHandle({ id, type }) {
+      this.$emit('change-id', { id, type })
       if (type === 'add' && !this.relationIds.includes(id)) {
         this.relationIds.push(id)
       } else if (type === 'remove' && this.relationIds.includes(id)) {
         this.relationIds.splice(this.relationIds.indexOf(id), 1)
-        this.clearDimData(id)
+        // 是实时交互的话，就清空
+        if (this.realTime) {
+          this.clearDimData(id)
+        }
       }
     },
     modifyHandle(data) {

@@ -86,7 +86,7 @@ export default {
         obj[k] = data.value[k]
       }
       this.dimData = obj
-      // console.log(this.dimData)
+      console.log(this.dimData)
       // console.warn('===============')
       // console.log(data)
       // console.warn('===============')
