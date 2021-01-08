@@ -10,7 +10,7 @@
         :relation-list="relation_list"
         :relation-dict="relationDict"
         :relation-keys="relationKeys"
-        :real-time="false"
+        :real-time="true"
         :dim-data="dimData"
         :is-editing="true"
         @modify="modifyHandle"

@@ -88,6 +88,8 @@ export default {
         options.map(v => {
           if (values.includes(n[v.option_en_name])) {
             this.radio = n[v.option_en_name]
+          } else {
+            this.radio = ''
           }
           // 其他项
           if (v.option_other_is_editable) {

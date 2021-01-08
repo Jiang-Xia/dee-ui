@@ -131,6 +131,7 @@ import Desp from '#/desp'
 import MatrixMultipleChoice from '#/matrix-multiple-choice'
 import MatrixInput from '#/matrix-input'
 import MatrixSingleChoice from '#/matrix-single-choice'
+import store from '#/store'
 export default {
   name: 'DeePreviewModel',
   components: {
@@ -184,7 +185,12 @@ export default {
   data() {
     return {
       // 用于控制关联题的显示和隐藏
-      relationIds: []
+      // relationIds: []
+    }
+  },
+  computed: {
+    relationIds() {
+      return store.getters.relationIds
     }
   },
   watch: {
@@ -226,13 +232,18 @@ export default {
       }
       this.$emit('modify', clearObj)
     },
+    relationIdsHandle(relationIds) {
+      store.commit('question/relationIds', relationIds)
+    },
     // 控制关联题型的显示和隐藏事件回调
     changeRelationIdHandle({ id, type }) {
-      this.$emit('change-id', { id, type })
-      if (type === 'add' && !this.relationIds.includes(id)) {
-        this.relationIds.push(id)
-      } else if (type === 'remove' && this.relationIds.includes(id)) {
-        this.relationIds.splice(this.relationIds.indexOf(id), 1)
+      const relationIds = [...store.getters.relationIds]
+      if (type === 'add' && !relationIds.includes(id)) {
+        relationIds.push(id)
+        this.relationIdsHandle(relationIds)
+      } else if (type === 'remove' && relationIds.includes(id)) {
+        relationIds.splice(relationIds.indexOf(id), 1)
+        this.relationIdsHandle(relationIds)
         // 是实时交互的话，就清空
         if (this.realTime) {
           this.clearDimData(id)

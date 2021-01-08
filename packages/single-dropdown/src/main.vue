@@ -7,7 +7,7 @@
     <h6 class="dee-question-heading">
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
-            <span class="dee-question-name">{{ dimLayout.name }}</span>
+      <span class="dee-question-name">{{ dimLayout.name }}</span>
 
     </h6>
     <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
@@ -57,6 +57,8 @@ export default {
         options.map(v => {
           if (values.includes(n[v.option_en_name])) {
             this.select = n[v.option_en_name]
+          } else {
+            this.select = ''
           }
         })
       }

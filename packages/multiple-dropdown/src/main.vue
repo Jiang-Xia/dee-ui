@@ -38,7 +38,6 @@ export default {
   mixins: [commonMixins],
   data() {
     return {
-      selects: [],
       bindTableData: {}
     }
   },
