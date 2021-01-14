@@ -8,6 +8,9 @@ import MultipleDropdown from './multiple-dropdown'
 import SingleChoice from './single-choice'
 import SingleDropdown from './single-dropdown'
 import PreviewModel from './preview-model'
+import MatrixMultipleChoice from './matrix-multiple-choice'
+import MatrixInput from './matrix-input'
+import MatrixSingleChoice from './matrix-single-choice'
 import './style/common.scss'
 import './style/quetions-global.scss'
 
@@ -33,6 +36,9 @@ const components = [
   MultipleDropdown,
   SingleChoice,
   SingleDropdown,
+  MatrixMultipleChoice,
+  MatrixInput,
+  MatrixSingleChoice,
   PreviewModel
 ]
 

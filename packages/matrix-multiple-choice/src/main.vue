@@ -38,7 +38,7 @@
 <script>
 import { commonMixins } from '#/mixins/question-common'
 export default {
-  name: 'MatrixMultipleChoice',
+  name: 'DeeMatrixMultipleChoice',
   mixins: [commonMixins],
   data() {
     return {
