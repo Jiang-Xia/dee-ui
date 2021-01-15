@@ -65,7 +65,8 @@ export default {
         // console.log('============')
         // console.log(n)
         this.input = n[this.dimLayout.en_name]
-      }
+      },
+      immediate: true
     }
   },
   created() {

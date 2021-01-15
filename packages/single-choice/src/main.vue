@@ -98,7 +98,8 @@ export default {
         })
         this.$__calcRelationHandle()
         // console.log(this.radio)
-      }
+      },
+      immediate: true
     }
   },
   created() {

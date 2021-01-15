@@ -61,7 +61,8 @@ export default {
             this.select = ''
           }
         })
-      }
+      },
+      immediate: true
     }
   },
   created() {

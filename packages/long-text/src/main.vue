@@ -39,7 +39,8 @@ export default {
         // console.log('============')
         // console.log(n)
         this.textarea = n[this.dimLayout.en_name]
-      }
+      },
+      immediate: true
     }
   },
   created() {
