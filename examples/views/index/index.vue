@@ -7,7 +7,6 @@
       <h2 class="dim-heading">{{ item.name }}</h2>
       <dee-preview-model
         :field-temp="item.items"
-        :relation-list="relation_list"
         :relation-dict="relationDict"
         :relation-keys="relationKeys"
         :relation-ids="relationIds"
@@ -29,7 +28,6 @@ export default {
     return {
       previewVisible: false,
       group_list: [],
-      relation_list: [],
       dimData: {},
       relationDict: {},
       relationKeys: {},
@@ -45,16 +43,13 @@ export default {
     init() {
       const {
         group_list,
-        relation_list,
         relation_dict,
         relation_keys
       } = FieldTemp
       this.previewVisible = true
       this.group_list = group_list
-      this.relation_list = relation_list
       this.relationDict = relation_dict
       this.relationKeys = relation_keys
-      // console.log(group_list, relation_list)
       setTimeout(() => {
         this.dimData = {
           pat_name: '江夏',
@@ -86,6 +81,7 @@ export default {
         }
       }, 1000)
     },
+    // 总数据修改回调
     modifyHandle(data) {
       const obj = { ...this.dimData }
       for (const k in data.value) {
@@ -97,6 +93,7 @@ export default {
       // console.log(data)
       // console.warn('===============')
     },
+    // 控制关联题显示隐藏事件回调
     changeRelationIdHandle(data) {
       const { id, type } = data
       const relationIds = [...this.relationIds]
@@ -112,6 +109,7 @@ export default {
         }
       }
     },
+    // 赋值 relationId
     relationIdsHandle(relationIds) {
       this.relationIds = relationIds
     },

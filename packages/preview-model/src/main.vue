@@ -4,7 +4,7 @@
       <LongText
         v-if="item.type==='long_text'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="customQuestionId+item.id+'-'+item.pid"
+        :id="customQuestionId?customQuestionId+'_'+item.id:''"
         :key="String('LongText_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -15,7 +15,7 @@
       <ShortText
         v-if="item.type==='short_text'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="customQuestionId+item.id+'-'+item.pid"
+        :id="customQuestionId?customQuestionId+'_'+item.id:''"
         :key="String('ShortText_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -26,7 +26,7 @@
       <MultipleChoice
         v-if="item.type==='multiple_choice'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="customQuestionId+item.id+'-'+item.pid"
+        :id="customQuestionId?customQuestionId+'_'+item.id:''"
         :key="String('MultipleChoice_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -40,7 +40,7 @@
       <MultipleDropdown
         v-if="item.type==='multiple_dropdown'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="customQuestionId+item.id+'-'+item.pid"
+        :id="customQuestionId?customQuestionId+'_'+item.id:''"
         :key="String('LongText_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -51,7 +51,7 @@
       <SingleChoice
         v-if="item.type==='single_choice'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="customQuestionId+item.id+'-'+item.pid"
+        :id="customQuestionId?customQuestionId+'_'+item.id:''"
         :key="String('SingleChoice_'+index)"
         id-editing
         :dim-layout="item"
@@ -66,7 +66,7 @@
       <SingleDropdown
         v-if="item.type==='single_dropdown'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="customQuestionId+item.id+'-'+item.pid"
+        :id="customQuestionId?customQuestionId+'_'+item.id:''"
         :key="String('SingleDropdown_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -77,7 +77,7 @@
       <MatrixMultipleChoice
         v-if="item.type==='matrix_multiple_choice'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="customQuestionId+item.id+'-'+item.pid"
+        :id="customQuestionId?customQuestionId+'_'+item.id:''"
         :key="String('MatrixMultipleChoice_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -88,7 +88,7 @@
       <MatrixInput
         v-if="item.type==='matrix_input'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="customQuestionId+item.id+'-'+item.pid"
+        :id="customQuestionId?customQuestionId+'_'+item.id:''"
         :key="String('MatrixInput_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -99,7 +99,7 @@
       <MatrixSingleChoice
         v-if="item.type==='matrix_single_choice'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="customQuestionId+item.id+'-'+item.pid"
+        :id="customQuestionId?customQuestionId+'_'+item.id:''"
         :key="String('MatrixSingleChoice_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -165,6 +165,7 @@ export default {
       type: Array,
       required: true
     },
+    // 用于控制关联题的局部变量（一个模板一个变量）
     relationIds: {
       default: () => { return [] },
       type: Array
