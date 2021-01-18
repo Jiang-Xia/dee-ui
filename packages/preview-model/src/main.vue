@@ -4,7 +4,7 @@
       <LongText
         v-if="item.type==='long_text'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="'q'+item.id+'-'+item.pid"
+        :id="customQuestionId+item.id+'-'+item.pid"
         :key="String('LongText_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -15,7 +15,7 @@
       <ShortText
         v-if="item.type==='short_text'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="'q'+item.id+'-'+item.pid"
+        :id="customQuestionId+item.id+'-'+item.pid"
         :key="String('ShortText_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -26,7 +26,7 @@
       <MultipleChoice
         v-if="item.type==='multiple_choice'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="'q'+item.id+'-'+item.pid"
+        :id="customQuestionId+item.id+'-'+item.pid"
         :key="String('MultipleChoice_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -40,7 +40,7 @@
       <MultipleDropdown
         v-if="item.type==='multiple_dropdown'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="'q'+item.id+'-'+item.pid"
+        :id="customQuestionId+item.id+'-'+item.pid"
         :key="String('LongText_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -51,7 +51,7 @@
       <SingleChoice
         v-if="item.type==='single_choice'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="'q'+item.id+'-'+item.pid"
+        :id="customQuestionId+item.id+'-'+item.pid"
         :key="String('SingleChoice_'+index)"
         id-editing
         :dim-layout="item"
@@ -66,7 +66,7 @@
       <SingleDropdown
         v-if="item.type==='single_dropdown'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="'q'+item.id+'-'+item.pid"
+        :id="customQuestionId+item.id+'-'+item.pid"
         :key="String('SingleDropdown_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -77,7 +77,7 @@
       <MatrixMultipleChoice
         v-if="item.type==='matrix_multiple_choice'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="'q'+item.id+'-'+item.pid"
+        :id="customQuestionId+item.id+'-'+item.pid"
         :key="String('MatrixMultipleChoice_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -88,7 +88,7 @@
       <MatrixInput
         v-if="item.type==='matrix_input'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="'q'+item.id+'-'+item.pid"
+        :id="customQuestionId+item.id+'-'+item.pid"
         :key="String('MatrixInput_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -99,7 +99,7 @@
       <MatrixSingleChoice
         v-if="item.type==='matrix_single_choice'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
-        :id="'q'+item.id+'-'+item.pid"
+        :id="customQuestionId+item.id+'-'+item.pid"
         :key="String('MatrixSingleChoice_'+index)"
         :dim-layout="item"
         :dim-data="dimData"
@@ -131,7 +131,6 @@ import Desp from '#/desp'
 import MatrixMultipleChoice from '#/matrix-multiple-choice'
 import MatrixInput from '#/matrix-input'
 import MatrixSingleChoice from '#/matrix-single-choice'
-import store from '#/store'
 export default {
   name: 'DeePreviewModel',
   components: {
@@ -166,8 +165,7 @@ export default {
       type: Array,
       required: true
     },
-    // 被关联题型的数据  只有单项选择题和多项选择题才需要
-    relationList: {
+    relationIds: {
       default: () => { return [] },
       type: Array
     },
@@ -180,18 +178,17 @@ export default {
     relationKeys: {
       default: () => { return {} },
       type: Object
+    },
+    customQuestionId: {
+      default: () => '',
+      type: [String, Number]
     }
   },
   data() {
     return {
-      // 用于控制关联题的显示和隐藏
-      // relationIds: []
     }
   },
   computed: {
-    relationIds() {
-      return store.getters.relationIds
-    }
   },
   watch: {
     dimData: {
@@ -200,55 +197,23 @@ export default {
       },
       immediate: true
     },
-
     fieldTemp: {
       handler: function(n) {
         // console.log(n)
       },
       immediate: true
     }
+    // relationIds: {
+    //   handler: function(n) {
+    //     console.log(n)
+    //   },
+    //   immediate: true
+    // }
   },
   methods: {
-    // 清空dimData 触发事件和后台交互
-    clearDimData(id) {
-      const fieldTemp = this.fieldTemp.filter(v => v.exist_relation_items && v.id === id)
-      const itemData = fieldTemp[0]
-      const { type, matrix_rows, matrix_cols } = itemData
-      const clearObj = { type }
-      if (['long_text', 'short_text'].includes(type)) {
-        clearObj.value = { [itemData.en_name]: '' }
-      } else if (['multiple_choice', 'multiple_dropdown', 'single_choice', 'single_dropdown'].includes(type)) {
-        const obj = {}
-        itemData.options.forEach(v => { obj[v.option_en_name] = '' })
-        clearObj.value = obj
-      } else if (['matrix_multiple_choice', 'matrix_input', 'matrix_single_choice'].includes(type)) {
-        const obj = {}
-        matrix_rows.forEach(row => {
-          matrix_cols.forEach(col => {
-            obj[row.en_name + '#' + col.en_name] = ''
-          })
-        })
-        clearObj.value = obj
-      }
-      this.$emit('modify', clearObj)
-    },
-    relationIdsHandle(relationIds) {
-      store.commit('question/relationIds', relationIds)
-    },
     // 控制关联题型的显示和隐藏事件回调
-    changeRelationIdHandle({ id, type }) {
-      const relationIds = [...store.getters.relationIds]
-      if (type === 'add' && !relationIds.includes(id)) {
-        relationIds.push(id)
-        this.relationIdsHandle(relationIds)
-      } else if (type === 'remove' && relationIds.includes(id)) {
-        relationIds.splice(relationIds.indexOf(id), 1)
-        this.relationIdsHandle(relationIds)
-        // 是实时交互的话，就清空
-        if (this.realTime) {
-          this.clearDimData(id)
-        }
-      }
+    changeRelationIdHandle(data) {
+      this.$emit('change-id', data)
     },
     modifyHandle(data) {
       this.$emit('modify', data)

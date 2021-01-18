@@ -10,10 +10,13 @@
         :relation-list="relation_list"
         :relation-dict="relationDict"
         :relation-keys="relationKeys"
-        :real-time="true"
+        :relation-ids="relationIds"
+        :real-time="realTime"
         :dim-data="dimData"
         :is-editing="true"
+        custom-question-id="q"
         @modify="modifyHandle"
+        @change-id="changeRelationIdHandle"
       />
     </section>
   </div>
@@ -30,7 +33,9 @@ export default {
       dimData: {},
       relationDict: {},
       relationKeys: {},
-      userAgent: ''
+      userAgent: '',
+      relationIds: [],
+      realTime: true
     }
   },
   created() {
@@ -91,6 +96,53 @@ export default {
       // console.warn('===============')
       // console.log(data)
       // console.warn('===============')
+    },
+    changeRelationIdHandle(data) {
+      const { id, type } = data
+      const relationIds = [...this.relationIds]
+      if (type === 'add' && !relationIds.includes(id)) {
+        relationIds.push(id)
+        this.relationIdsHandle(relationIds)
+      } else if (type === 'remove' && relationIds.includes(id)) {
+        relationIds.splice(relationIds.indexOf(id), 1)
+        this.relationIdsHandle(relationIds)
+        // 是实时交互的话，就清空
+        if (this.realTime) {
+          this.clearDimData(id)
+        }
+      }
+    },
+    relationIdsHandle(relationIds) {
+      this.relationIds = relationIds
+    },
+    // 清空dimData 触发事件和后台交互
+    clearDimData(id) {
+      let fieldTemp = []
+      this.group_list.forEach(v => {
+        v.items.forEach(v2 => {
+          fieldTemp.push(v2)
+        })
+      })
+      fieldTemp = fieldTemp.filter(v => v.exist_relation_items && v.id === id)
+      const itemData = fieldTemp[0]
+      const { type, matrix_rows, matrix_cols } = itemData
+      const clearObj = { type }
+      if (['long_text', 'short_text'].includes(type)) {
+        clearObj.value = { [itemData.en_name]: '' }
+      } else if (['multiple_choice', 'multiple_dropdown', 'single_choice', 'single_dropdown'].includes(type)) {
+        const obj = {}
+        itemData.options.forEach(v => { obj[v.option_en_name] = '' })
+        clearObj.value = obj
+      } else if (['matrix_multiple_choice', 'matrix_input', 'matrix_single_choice'].includes(type)) {
+        const obj = {}
+        matrix_rows.forEach(row => {
+          matrix_cols.forEach(col => {
+            obj[row.en_name + '#' + col.en_name] = ''
+          })
+        })
+        clearObj.value = obj
+      }
+      this.modifyHandle(clearObj)
     }
   }
 }
