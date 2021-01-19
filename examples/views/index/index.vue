@@ -22,7 +22,8 @@
 </template>
 <script>
 // import FieldTemp from './睡眠呼吸监测.json'
-import FieldTemp from './睡眠呼吸监测问卷2.json'
+// import FieldTemp from './睡眠呼吸监测问卷2.json'
+import FieldTemp from './档案信息.json'
 export default {
   data() {
     return {
@@ -88,9 +89,8 @@ export default {
         obj[k] = data.value[k]
       }
       this.dimData = obj
-      console.log(this.dimData)
       // console.warn('===============')
-      // console.log(data)
+      // console.log(this.dimData)
       // console.warn('===============')
     },
     // 控制关联题显示隐藏事件回调
@@ -99,19 +99,16 @@ export default {
       const relationIds = [...this.relationIds]
       if (type === 'add' && !relationIds.includes(id)) {
         relationIds.push(id)
-        this.relationIdsHandle(relationIds)
+        this.relationIds = relationIds
       } else if (type === 'remove' && relationIds.includes(id)) {
         relationIds.splice(relationIds.indexOf(id), 1)
-        this.relationIdsHandle(relationIds)
+        this.relationIds = relationIds
         // 是实时交互的话，就清空
         if (this.realTime) {
           this.clearDimData(id)
         }
       }
-    },
-    // 赋值 relationId
-    relationIdsHandle(relationIds) {
-      this.relationIds = relationIds
+      // console.log(data, relationIds)
     },
     // 清空dimData 触发事件和后台交互
     clearDimData(id) {

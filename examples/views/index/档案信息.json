@@ -1,0 +1,2494 @@
+{
+    "group_list": [
+        {
+            "id": "1",
+            "items": [
+                {
+                    "en_name": "pat_nation",
+                    "id": "2",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "民族",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "pat_native_place",
+                    "id": "3",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "籍贯",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "pat_work",
+                    "id": "4",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "职业",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "pat_marriage",
+                    "id": "5",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "婚姻",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "pat_identity_4",
+                    "id": "6",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "身份证号后四位",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "pat_education",
+                    "id": "7",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "文化程度",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "pat_tel",
+                    "id": "8",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "电话",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "pat_birth",
+                    "id": "9",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "出生年月",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "pat_contacts",
+                    "id": "10",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "联系人",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "pat_contact_tel",
+                    "id": "11",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "联系人电话",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "id": "12",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "结算类型",
+                    "options": [
+                        {
+                            "id": "13",
+                            "is_exclude_option": 1,
+                            "option_en_name": "settlement_type",
+                            "option_name": "自费",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "12",
+                            "type": "option"
+                        },
+                        {
+                            "id": "14",
+                            "is_exclude_option": 1,
+                            "option_en_name": "settlement_type",
+                            "option_name": "医保",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "pid": "12",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "15",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "生育需求",
+                    "options": [
+                        {
+                            "id": "16",
+                            "is_exclude_option": 1,
+                            "option_en_name": "fertility_needs",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "15",
+                            "type": "option"
+                        },
+                        {
+                            "id": "17",
+                            "is_exclude_option": 1,
+                            "option_en_name": "fertility_needs",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "15",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "18",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "是否喝茶",
+                    "options": [
+                        {
+                            "id": "19",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_tea",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "18",
+                            "type": "option"
+                        },
+                        {
+                            "id": "20",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_tea",
+                            "option_name": "1-2天/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "18",
+                            "type": "option"
+                        },
+                        {
+                            "id": "21",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_tea",
+                            "option_name": "3-5天/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "pid": "18",
+                            "type": "option"
+                        },
+                        {
+                            "id": "22",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_tea",
+                            "option_name": "≥6天/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 3,
+                            "pid": "18",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "exist_relation_items": true,
+                    "id": "23",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "茶叶种类",
+                    "options": [
+                        {
+                            "id": "24",
+                            "is_exclude_option": 1,
+                            "option_en_name": "tea_type",
+                            "option_name": "普洱",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "23",
+                            "type": "option"
+                        },
+                        {
+                            "id": "25",
+                            "is_exclude_option": 1,
+                            "option_en_name": "tea_type",
+                            "option_name": "绿茶",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "pid": "23",
+                            "type": "option"
+                        },
+                        {
+                            "id": "26",
+                            "is_exclude_option": 1,
+                            "option_en_name": "tea_type",
+                            "option_name": "红茶",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 3,
+                            "pid": "23",
+                            "type": "option"
+                        },
+                        {
+                            "id": "27",
+                            "is_exclude_option": 1,
+                            "option_en_name": "tea_type",
+                            "option_name": "其他",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 4,
+                            "pid": "23",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "relation": "and",
+                    "relation_items": {
+                        "18": {
+                            "any_or_all": "any",
+                            "checked_or_unchecked": "checked"
+                        }
+                    },
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "29",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "吸烟史",
+                    "options": [
+                        {
+                            "id": "30",
+                            "is_exclude_option": 1,
+                            "option_en_name": "smoking_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "29",
+                            "type": "option"
+                        },
+                        {
+                            "id": "31",
+                            "is_exclude_option": 1,
+                            "option_en_name": "smoking_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "29",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "en_name": "smoking_num",
+                    "exist_relation_items": true,
+                    "id": "32",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "每日吸烟支数",
+                    "pid": "1",
+                    "relation": "and",
+                    "relation_items": {
+                        "29": {
+                            "any_or_all": "any",
+                            "checked_or_unchecked": "checked"
+                        }
+                    },
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "number",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "smoking_year",
+                    "exist_relation_items": true,
+                    "id": "33",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "烟龄",
+                    "pid": "1",
+                    "relation": "and",
+                    "relation_items": {
+                        "29": {
+                            "any_or_all": "any",
+                            "checked_or_unchecked": "checked"
+                        }
+                    },
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "number",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "quit_smoking_time",
+                    "exist_relation_items": true,
+                    "id": "34",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "戒烟时间",
+                    "pid": "1",
+                    "relation": "and",
+                    "relation_items": {
+                        "29": {
+                            "any_or_all": "any",
+                            "checked_or_unchecked": "checked"
+                        }
+                    },
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "id": "35",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "吸二手烟",
+                    "options": [
+                        {
+                            "id": "36",
+                            "is_exclude_option": 1,
+                            "option_en_name": "passive_smoking",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "35",
+                            "type": "option"
+                        },
+                        {
+                            "id": "37",
+                            "is_exclude_option": 1,
+                            "option_en_name": "passive_smoking",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "35",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "38",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "每日进食≥1种水果",
+                    "options": [
+                        {
+                            "id": "39",
+                            "is_exclude_option": 1,
+                            "option_en_name": "fruit_more_than_1",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "38",
+                            "type": "option"
+                        },
+                        {
+                            "id": "40",
+                            "is_exclude_option": 1,
+                            "option_en_name": "fruit_more_than_1",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "38",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "41",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "饮酒史",
+                    "options": [
+                        {
+                            "id": "42",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "41",
+                            "type": "option"
+                        },
+                        {
+                            "id": "43",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "41",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "exist_relation_items": true,
+                    "id": "44",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "饮酒种类",
+                    "options": [
+                        {
+                            "id": "45",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_type",
+                            "option_name": "红酒、白酒",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "44",
+                            "type": "option"
+                        },
+                        {
+                            "id": "46",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_type",
+                            "option_name": "啤酒",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "pid": "44",
+                            "type": "option"
+                        },
+                        {
+                            "id": "47",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_type",
+                            "option_name": "洋酒",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 3,
+                            "pid": "44",
+                            "type": "option"
+                        },
+                        {
+                            "id": "48",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_type",
+                            "option_name": "其他",
+                            "option_other_en_name": "drink_type_other",
+                            "option_other_is_editable": 1,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 4,
+                            "pid": "44",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "relation": "and",
+                    "relation_items": {
+                        "41": {
+                            "any_or_all": "any",
+                            "checked_or_unchecked": "checked"
+                        }
+                    },
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "en_name": "drink_volume",
+                    "exist_relation_items": true,
+                    "id": "50",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "每日饮酒量（两）",
+                    "pid": "1",
+                    "relation": "and",
+                    "relation_items": {
+                        "41": {
+                            "any_or_all": "any",
+                            "checked_or_unchecked": "checked"
+                        }
+                    },
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "abstinence_time",
+                    "exist_relation_items": true,
+                    "id": "51",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "戒酒时间",
+                    "pid": "1",
+                    "relation": "and",
+                    "relation_items": {
+                        "41": {
+                            "any_or_all": "any",
+                            "checked_or_unchecked": "checked"
+                        }
+                    },
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "id": "52",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "纹身史",
+                    "options": [
+                        {
+                            "id": "53",
+                            "is_exclude_option": 1,
+                            "option_en_name": "tattoo_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "52",
+                            "type": "option"
+                        },
+                        {
+                            "id": "54",
+                            "is_exclude_option": 1,
+                            "option_en_name": "tattoo_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "52",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "55",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "食用油",
+                    "options": [
+                        {
+                            "id": "56",
+                            "is_exclude_option": 1,
+                            "option_en_name": "edible_oil",
+                            "option_name": "正规购买",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "55",
+                            "type": "option"
+                        },
+                        {
+                            "id": "57",
+                            "is_exclude_option": 1,
+                            "option_en_name": "edible_oil",
+                            "option_name": "作坊自榨",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "pid": "55",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "58",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "输血史",
+                    "options": [
+                        {
+                            "id": "59",
+                            "is_exclude_option": 1,
+                            "option_en_name": "blood_transfusion_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "58",
+                            "type": "option"
+                        },
+                        {
+                            "id": "60",
+                            "is_exclude_option": 1,
+                            "option_en_name": "blood_transfusion_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "58",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "61",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "卖血史",
+                    "options": [
+                        {
+                            "id": "62",
+                            "is_exclude_option": 1,
+                            "option_en_name": "selling_blood_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "61",
+                            "type": "option"
+                        },
+                        {
+                            "id": "63",
+                            "is_exclude_option": 1,
+                            "option_en_name": "selling_blood_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "61",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "en_name": "allergy_history",
+                    "id": "64",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "过敏史",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "id": "65",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "吸毒史",
+                    "options": [
+                        {
+                            "id": "66",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drug_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "65",
+                            "type": "option"
+                        },
+                        {
+                            "id": "67",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drug_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "65",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "en_name": "drug_type",
+                    "exist_relation_items": true,
+                    "id": "68",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "毒品种类",
+                    "pid": "1",
+                    "relation": "and",
+                    "relation_items": {
+                        "65": {
+                            "any_or_all": "any",
+                            "checked_or_unchecked": "checked"
+                        }
+                    },
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "drug_use_pattern",
+                    "exist_relation_items": true,
+                    "id": "69",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "吸毒方式",
+                    "pid": "1",
+                    "relation": "and",
+                    "relation_items": {
+                        "65": {
+                            "any_or_all": "any",
+                            "checked_or_unchecked": "checked"
+                        }
+                    },
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "detoxification_time",
+                    "exist_relation_items": true,
+                    "id": "70",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "戒毒时间",
+                    "pid": "1",
+                    "relation": "and",
+                    "relation_items": {
+                        "65": {
+                            "any_or_all": "any",
+                            "checked_or_unchecked": "checked"
+                        }
+                    },
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "id": "71",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "睡眠",
+                    "options": [
+                        {
+                            "id": "72",
+                            "is_exclude_option": 1,
+                            "option_en_name": "sleep",
+                            "option_name": "7-9小时",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "71",
+                            "type": "option"
+                        },
+                        {
+                            "id": "73",
+                            "is_exclude_option": 1,
+                            "option_en_name": "sleep",
+                            "option_name": "5-7小时",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "pid": "71",
+                            "type": "option"
+                        },
+                        {
+                            "id": "74",
+                            "is_exclude_option": 1,
+                            "option_en_name": "sleep",
+                            "option_name": ">5小时",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 3,
+                            "pid": "71",
+                            "type": "option"
+                        },
+                        {
+                            "id": "75",
+                            "is_exclude_option": 1,
+                            "option_en_name": "sleep",
+                            "option_name": "12点后入睡",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 4,
+                            "pid": "71",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "82",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "运动频率",
+                    "options": [
+                        {
+                            "id": "83",
+                            "is_exclude_option": 1,
+                            "option_en_name": "motion_frequency",
+                            "option_name": "基本不运动",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "82",
+                            "type": "option"
+                        },
+                        {
+                            "id": "84",
+                            "is_exclude_option": 1,
+                            "option_en_name": "motion_frequency",
+                            "option_name": "1次/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "pid": "82",
+                            "type": "option"
+                        },
+                        {
+                            "id": "85",
+                            "is_exclude_option": 1,
+                            "option_en_name": "motion_frequency",
+                            "option_name": "2-3次/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 3,
+                            "pid": "82",
+                            "type": "option"
+                        },
+                        {
+                            "id": "86",
+                            "is_exclude_option": 1,
+                            "option_en_name": "motion_frequency",
+                            "option_name": ">3次/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 4,
+                            "pid": "82",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "exist_relation_items": true,
+                    "id": "76",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "规律运动方式",
+                    "options": [
+                        {
+                            "id": "77",
+                            "is_exclude_option": 1,
+                            "option_en_name": "regular_exercise_pattern",
+                            "option_name": "慢跑或散步",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "76",
+                            "type": "option"
+                        },
+                        {
+                            "id": "78",
+                            "is_exclude_option": 1,
+                            "option_en_name": "regular_exercise_pattern",
+                            "option_name": "广场舞",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "pid": "76",
+                            "type": "option"
+                        },
+                        {
+                            "id": "79",
+                            "is_exclude_option": 1,
+                            "option_en_name": "regular_exercise_pattern",
+                            "option_name": "太极拳",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 3,
+                            "pid": "76",
+                            "type": "option"
+                        },
+                        {
+                            "id": "80",
+                            "is_exclude_option": 1,
+                            "option_en_name": "regular_exercise_pattern",
+                            "option_name": "球类",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 4,
+                            "pid": "76",
+                            "type": "option"
+                        },
+                        {
+                            "id": "81",
+                            "is_exclude_option": 1,
+                            "option_en_name": "regular_exercise_pattern",
+                            "option_name": "游泳",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 5,
+                            "pid": "76",
+                            "type": "option"
+                        },
+                        {
+                            "id": "92",
+                            "is_exclude_option": 1,
+                            "option_en_name": "regular_exercise_pattern",
+                            "option_name": "其他",
+                            "option_other_en_name": "regular_exercise_pattern_other",
+                            "option_other_is_editable": 1,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 6,
+                            "pid": "76",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "relation": "and",
+                    "relation_items": {
+                        "82": {
+                            "any_or_all": "any",
+                            "checked_or_unchecked": "checked"
+                        }
+                    },
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "87",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "手术或外伤",
+                    "options": [
+                        {
+                            "id": "88",
+                            "is_exclude_option": 1,
+                            "option_en_name": "surgery_trauma",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "87",
+                            "type": "option"
+                        },
+                        {
+                            "id": "89",
+                            "is_exclude_option": 1,
+                            "option_en_name": "surgery_trauma",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "87",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "en_name": "op_name",
+                    "exist_relation_items": true,
+                    "id": "90",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "手术名称",
+                    "pid": "1",
+                    "relation": "and",
+                    "relation_items": {
+                        "87": {
+                            "any_or_all": "any",
+                            "checked_or_unchecked": "checked"
+                        }
+                    },
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "op_time",
+                    "exist_relation_items": true,
+                    "id": "91",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "手术时间",
+                    "pid": "1",
+                    "relation": "and",
+                    "relation_items": {
+                        "87": {
+                            "any_or_all": "any",
+                            "checked_or_unchecked": "checked"
+                        }
+                    },
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                }
+            ],
+            "name": "一般信息登记",
+            "pid": "0",
+            "remark": "",
+            "type": "group"
+        }
+    ],
+    "relation_dict": {
+        "23": {
+            "id": "23",
+            "relation": "and",
+            "relation_items": {
+                "18": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "19",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_tea",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "18",
+                            "type": "option"
+                        },
+                        {
+                            "id": "20",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_tea",
+                            "option_name": "1-2天/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "18",
+                            "type": "option"
+                        },
+                        {
+                            "id": "21",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_tea",
+                            "option_name": "3-5天/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "pid": "18",
+                            "type": "option"
+                        },
+                        {
+                            "id": "22",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_tea",
+                            "option_name": "≥6天/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 3,
+                            "pid": "18",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "18"
+                }
+            }
+        },
+        "32": {
+            "id": "32",
+            "relation": "and",
+            "relation_items": {
+                "29": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "30",
+                            "is_exclude_option": 1,
+                            "option_en_name": "smoking_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "29",
+                            "type": "option"
+                        },
+                        {
+                            "id": "31",
+                            "is_exclude_option": 1,
+                            "option_en_name": "smoking_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "29",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "29"
+                }
+            }
+        },
+        "33": {
+            "id": "33",
+            "relation": "and",
+            "relation_items": {
+                "29": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "30",
+                            "is_exclude_option": 1,
+                            "option_en_name": "smoking_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "29",
+                            "type": "option"
+                        },
+                        {
+                            "id": "31",
+                            "is_exclude_option": 1,
+                            "option_en_name": "smoking_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "29",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "29"
+                }
+            }
+        },
+        "34": {
+            "id": "34",
+            "relation": "and",
+            "relation_items": {
+                "29": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "30",
+                            "is_exclude_option": 1,
+                            "option_en_name": "smoking_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "29",
+                            "type": "option"
+                        },
+                        {
+                            "id": "31",
+                            "is_exclude_option": 1,
+                            "option_en_name": "smoking_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "29",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "29"
+                }
+            }
+        },
+        "44": {
+            "id": "44",
+            "relation": "and",
+            "relation_items": {
+                "41": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "42",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "41",
+                            "type": "option"
+                        },
+                        {
+                            "id": "43",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "41",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "41"
+                }
+            }
+        },
+        "50": {
+            "id": "50",
+            "relation": "and",
+            "relation_items": {
+                "41": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "42",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "41",
+                            "type": "option"
+                        },
+                        {
+                            "id": "43",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "41",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "41"
+                }
+            }
+        },
+        "51": {
+            "id": "51",
+            "relation": "and",
+            "relation_items": {
+                "41": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "42",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "41",
+                            "type": "option"
+                        },
+                        {
+                            "id": "43",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "41",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "41"
+                }
+            }
+        },
+        "68": {
+            "id": "68",
+            "relation": "and",
+            "relation_items": {
+                "65": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "66",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drug_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "65",
+                            "type": "option"
+                        },
+                        {
+                            "id": "67",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drug_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "65",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "65"
+                }
+            }
+        },
+        "69": {
+            "id": "69",
+            "relation": "and",
+            "relation_items": {
+                "65": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "66",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drug_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "65",
+                            "type": "option"
+                        },
+                        {
+                            "id": "67",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drug_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "65",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "65"
+                }
+            }
+        },
+        "70": {
+            "id": "70",
+            "relation": "and",
+            "relation_items": {
+                "65": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "66",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drug_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "65",
+                            "type": "option"
+                        },
+                        {
+                            "id": "67",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drug_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "65",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "65"
+                }
+            }
+        },
+        "76": {
+            "id": "76",
+            "relation": "and",
+            "relation_items": {
+                "82": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "83",
+                            "is_exclude_option": 1,
+                            "option_en_name": "motion_frequency",
+                            "option_name": "基本不运动",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "82",
+                            "type": "option"
+                        },
+                        {
+                            "id": "84",
+                            "is_exclude_option": 1,
+                            "option_en_name": "motion_frequency",
+                            "option_name": "1次/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "pid": "82",
+                            "type": "option"
+                        },
+                        {
+                            "id": "85",
+                            "is_exclude_option": 1,
+                            "option_en_name": "motion_frequency",
+                            "option_name": "2-3次/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 3,
+                            "pid": "82",
+                            "type": "option"
+                        },
+                        {
+                            "id": "86",
+                            "is_exclude_option": 1,
+                            "option_en_name": "motion_frequency",
+                            "option_name": ">3次/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 4,
+                            "pid": "82",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "82"
+                }
+            }
+        },
+        "90": {
+            "id": "90",
+            "relation": "and",
+            "relation_items": {
+                "87": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "88",
+                            "is_exclude_option": 1,
+                            "option_en_name": "surgery_trauma",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "87",
+                            "type": "option"
+                        },
+                        {
+                            "id": "89",
+                            "is_exclude_option": 1,
+                            "option_en_name": "surgery_trauma",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "87",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "87"
+                }
+            }
+        },
+        "91": {
+            "id": "91",
+            "relation": "and",
+            "relation_items": {
+                "87": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "88",
+                            "is_exclude_option": 1,
+                            "option_en_name": "surgery_trauma",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "87",
+                            "type": "option"
+                        },
+                        {
+                            "id": "89",
+                            "is_exclude_option": 1,
+                            "option_en_name": "surgery_trauma",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "87",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "87"
+                }
+            }
+        }
+    },
+    "relation_keys": {
+        "18": [
+            "23"
+        ],
+        "29": [
+            "32",
+            "33",
+            "34"
+        ],
+        "41": [
+            "44",
+            "50",
+            "51"
+        ],
+        "65": [
+            "68",
+            "69",
+            "70"
+        ],
+        "82": [
+            "76"
+        ],
+        "87": [
+            "90",
+            "91"
+        ]
+    },
+    "relation_list": [
+        {
+            "id": "23",
+            "relation": "and",
+            "relation_items": {
+                "18": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "19",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_tea",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "18",
+                            "type": "option"
+                        },
+                        {
+                            "id": "20",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_tea",
+                            "option_name": "1-2天/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "18",
+                            "type": "option"
+                        },
+                        {
+                            "id": "21",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_tea",
+                            "option_name": "3-5天/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "pid": "18",
+                            "type": "option"
+                        },
+                        {
+                            "id": "22",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_tea",
+                            "option_name": "≥6天/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 3,
+                            "pid": "18",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "18"
+                }
+            }
+        },
+        {
+            "id": "32",
+            "relation": "and",
+            "relation_items": {
+                "29": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "30",
+                            "is_exclude_option": 1,
+                            "option_en_name": "smoking_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "29",
+                            "type": "option"
+                        },
+                        {
+                            "id": "31",
+                            "is_exclude_option": 1,
+                            "option_en_name": "smoking_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "29",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "29"
+                }
+            }
+        },
+        {
+            "id": "33",
+            "relation": "and",
+            "relation_items": {
+                "29": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "30",
+                            "is_exclude_option": 1,
+                            "option_en_name": "smoking_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "29",
+                            "type": "option"
+                        },
+                        {
+                            "id": "31",
+                            "is_exclude_option": 1,
+                            "option_en_name": "smoking_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "29",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "29"
+                }
+            }
+        },
+        {
+            "id": "34",
+            "relation": "and",
+            "relation_items": {
+                "29": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "30",
+                            "is_exclude_option": 1,
+                            "option_en_name": "smoking_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "29",
+                            "type": "option"
+                        },
+                        {
+                            "id": "31",
+                            "is_exclude_option": 1,
+                            "option_en_name": "smoking_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "29",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "29"
+                }
+            }
+        },
+        {
+            "id": "44",
+            "relation": "and",
+            "relation_items": {
+                "41": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "42",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "41",
+                            "type": "option"
+                        },
+                        {
+                            "id": "43",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "41",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "41"
+                }
+            }
+        },
+        {
+            "id": "50",
+            "relation": "and",
+            "relation_items": {
+                "41": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "42",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "41",
+                            "type": "option"
+                        },
+                        {
+                            "id": "43",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "41",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "41"
+                }
+            }
+        },
+        {
+            "id": "51",
+            "relation": "and",
+            "relation_items": {
+                "41": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "42",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "41",
+                            "type": "option"
+                        },
+                        {
+                            "id": "43",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drink_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "41",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "41"
+                }
+            }
+        },
+        {
+            "id": "68",
+            "relation": "and",
+            "relation_items": {
+                "65": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "66",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drug_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "65",
+                            "type": "option"
+                        },
+                        {
+                            "id": "67",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drug_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "65",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "65"
+                }
+            }
+        },
+        {
+            "id": "69",
+            "relation": "and",
+            "relation_items": {
+                "65": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "66",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drug_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "65",
+                            "type": "option"
+                        },
+                        {
+                            "id": "67",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drug_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "65",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "65"
+                }
+            }
+        },
+        {
+            "id": "70",
+            "relation": "and",
+            "relation_items": {
+                "65": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "66",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drug_history",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "65",
+                            "type": "option"
+                        },
+                        {
+                            "id": "67",
+                            "is_exclude_option": 1,
+                            "option_en_name": "drug_history",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "65",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "65"
+                }
+            }
+        },
+        {
+            "id": "76",
+            "relation": "and",
+            "relation_items": {
+                "82": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "83",
+                            "is_exclude_option": 1,
+                            "option_en_name": "motion_frequency",
+                            "option_name": "基本不运动",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "82",
+                            "type": "option"
+                        },
+                        {
+                            "id": "84",
+                            "is_exclude_option": 1,
+                            "option_en_name": "motion_frequency",
+                            "option_name": "1次/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "pid": "82",
+                            "type": "option"
+                        },
+                        {
+                            "id": "85",
+                            "is_exclude_option": 1,
+                            "option_en_name": "motion_frequency",
+                            "option_name": "2-3次/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 3,
+                            "pid": "82",
+                            "type": "option"
+                        },
+                        {
+                            "id": "86",
+                            "is_exclude_option": 1,
+                            "option_en_name": "motion_frequency",
+                            "option_name": ">3次/周",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 4,
+                            "pid": "82",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "82"
+                }
+            }
+        },
+        {
+            "id": "90",
+            "relation": "and",
+            "relation_items": {
+                "87": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "88",
+                            "is_exclude_option": 1,
+                            "option_en_name": "surgery_trauma",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "87",
+                            "type": "option"
+                        },
+                        {
+                            "id": "89",
+                            "is_exclude_option": 1,
+                            "option_en_name": "surgery_trauma",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "87",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "87"
+                }
+            }
+        },
+        {
+            "id": "91",
+            "relation": "and",
+            "relation_items": {
+                "87": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "88",
+                            "is_exclude_option": 1,
+                            "option_en_name": "surgery_trauma",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "pid": "87",
+                            "type": "option"
+                        },
+                        {
+                            "id": "89",
+                            "is_exclude_option": 1,
+                            "option_en_name": "surgery_trauma",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "pid": "87",
+                            "type": "option"
+                        }
+                    ],
+                    "rid": "87"
+                }
+            }
+        }
+    ]
+}

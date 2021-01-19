@@ -1,5 +1,5 @@
 // import { isMobile } from '#/utils/common'
-import Quill from 'quill'
+// import Quill from 'quill'
 /* 即所有题型都公用的 个别单独写 */
 export const commonMixins = {
   props: {
@@ -55,6 +55,7 @@ export const relationMixins = {
       const id = this.dimLayout.id
       const ids = this.relationKeys[id]
       if (ids) {
+        // console.log(ids)
         for (const id_ of ids) {
           const obj = this.relationDict[id_].relation_items
           const relation = this.relationDict[id_].relation
