@@ -4,11 +4,11 @@
     :style="questionStyle"
     :type="dimLayout.type"
   >
-    <h6 class="dee-question-heading">
+    <div class="dee-question-heading">
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
       <span class="dee-question-name">{{ dimLayout.name }}</span>
-    </h6>
+    </div>
     <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">
       <DeeTableSelect class="dee-dropdown-wrap" :input-names="inputNames" :height="dimLayout.options.length*1.8+'rem'">

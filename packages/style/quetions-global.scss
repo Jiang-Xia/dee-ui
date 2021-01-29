@@ -1,8 +1,6 @@
 @import "~@/styles/scss/_mixins";
 // 修改elementui 样式
 .dee-preview-model-container{
-  padding: 0.5rem;
-  line-height: 24px;
     .el-textarea.is-disabled .el-textarea__inner
     ,.el-input.is-disabled .el-input__inner
     ,.el-radio__input.is-disabled+span.el-radio__label

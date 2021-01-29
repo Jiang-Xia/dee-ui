@@ -21,9 +21,9 @@
   </div>
 </template>
 <script>
-// import FieldTemp from './睡眠呼吸监测.json'
+import FieldTemp from './睡眠呼吸监测.json'
 // import FieldTemp from './睡眠呼吸监测问卷2.json'
-import FieldTemp from './档案信息.json'
+// import FieldTemp from './档案信息.json'
 export default {
   data() {
     return {

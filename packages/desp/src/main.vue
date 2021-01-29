@@ -1,6 +1,6 @@
 <template>
   <div class="dee-question-wrap dee-desp" :type="dimLayout.type">
-    <h6 class="dee-question-heading">{{ dimLayout.name||'段落描述' }}</h6>
+    <div class="dee-question-heading">{{ dimLayout.name||'段落描述' }}</div>
   </div>
 </template>
 <script>

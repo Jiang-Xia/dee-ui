@@ -10,7 +10,7 @@
                     "max_length": -1,
                     "name": "民族",
                     "pid": "1",
-                    "remark": "",
+                    "remark": "中华民族",
                     "row_behavior": 0,
                     "text_check": "no_limit",
                     "type": "short_text"
@@ -22,7 +22,7 @@
                     "max_length": -1,
                     "name": "籍贯",
                     "pid": "1",
-                    "remark": "",
+                    "remark": "本人籍贯",
                     "row_behavior": 0,
                     "text_check": "no_limit",
                     "type": "short_text"
