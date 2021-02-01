@@ -1,10 +1,13 @@
+
 {
         "group_list": [
             {
+                "form_id": 76,
                 "id": "1",
                 "items": [
                     {
                         "en_name": "body_t",
+                        "form_id": 76,
                         "id": "2",
                         "is_required": 0,
                         "max_length": -1,
@@ -17,6 +20,7 @@
                     },
                     {
                         "en_name": "body_r",
+                        "form_id": 76,
                         "id": "3",
                         "is_required": 0,
                         "max_length": -1,
@@ -29,6 +33,7 @@
                     },
                     {
                         "en_name": "body_bp",
+                        "form_id": 76,
                         "id": "4",
                         "is_required": 0,
                         "max_length": -1,
@@ -41,6 +46,7 @@
                     },
                     {
                         "en_name": "body_hr",
+                        "form_id": 76,
                         "id": "5",
                         "is_required": 0,
                         "max_length": -1,
@@ -53,6 +59,7 @@
                     },
                     {
                         "en_name": "pat_weight",
+                        "form_id": 76,
                         "id": "6",
                         "is_required": 0,
                         "max_length": -1,
@@ -65,6 +72,7 @@
                     },
                     {
                         "en_name": "pat_height",
+                        "form_id": 76,
                         "id": "7",
                         "is_required": 0,
                         "max_length": -1,
@@ -77,6 +85,7 @@
                     },
                     {
                         "en_name": "body_spo2",
+                        "form_id": 76,
                         "id": "8",
                         "is_required": 0,
                         "max_length": -1,
@@ -88,12 +97,14 @@
                         "type": "short_text"
                     },
                     {
+                        "form_id": 76,
                         "id": "9",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "从出院日期起算，属于出院后",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "10",
                                 "is_exclude_option": 1,
                                 "option_en_name": "follow",
@@ -108,6 +119,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "11",
                                 "is_exclude_option": 1,
                                 "option_en_name": "follow",
@@ -122,6 +134,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "12",
                                 "is_exclude_option": 1,
                                 "option_en_name": "follow",
@@ -136,6 +149,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "13",
                                 "is_exclude_option": 1,
                                 "option_en_name": "follow",
@@ -156,6 +170,7 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "14",
                         "is_required": 0,
                         "line_option_count": -1,
@@ -163,6 +178,7 @@
                         "option_max_choice": "",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "15",
                                 "is_exclude_option": 0,
                                 "option_en_name": "symptom_dizzy",
@@ -177,6 +193,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "16",
                                 "is_exclude_option": 0,
                                 "option_en_name": "symptom_headache",
@@ -191,6 +208,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "17",
                                 "is_exclude_option": 0,
                                 "option_en_name": "symptom_myalgia",
@@ -205,6 +223,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "18",
                                 "is_exclude_option": 0,
                                 "option_en_name": "symptom_disturbance_consciousness",
@@ -219,6 +238,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "19",
                                 "is_exclude_option": 0,
                                 "option_en_name": "symptom_anosmia",
@@ -233,6 +253,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "20",
                                 "is_exclude_option": 0,
                                 "option_en_name": "symptom_fatigue",
@@ -247,6 +268,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "21",
                                 "is_exclude_option": 0,
                                 "option_en_name": "symptom_hypoesthesia",
@@ -261,6 +283,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "22",
                                 "is_exclude_option": 0,
                                 "option_en_name": "symptom_loss_appetite",
@@ -275,6 +298,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "23",
                                 "is_exclude_option": 0,
                                 "option_en_name": "symptom_decline_athletic_ability",
@@ -289,6 +313,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "24",
                                 "is_exclude_option": 0,
                                 "option_en_name": "symptom_gastrointestinal",
@@ -303,6 +328,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "25",
                                 "is_exclude_option": 0,
                                 "option_en_name": "symptom_vision_loss",
@@ -317,6 +343,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "26",
                                 "is_exclude_option": 0,
                                 "option_en_name": "symptom_chest_tightness",
@@ -331,6 +358,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "27",
                                 "is_exclude_option": 0,
                                 "option_en_name": "symptom_dyspnea",
@@ -345,6 +373,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "28",
                                 "is_exclude_option": 0,
                                 "option_en_name": "symptom_other",
@@ -372,9 +401,11 @@
                 "type": "group"
             },
             {
+                "form_id": 76,
                 "id": "29",
                 "items": [
                     {
+                        "form_id": 76,
                         "id": "30",
                         "name": "抑郁症筛查量表（PHQ-9）",
                         "pid": "29",
@@ -382,12 +413,14 @@
                         "type": "desp"
                     },
                     {
+                        "form_id": 76,
                         "id": "31",
                         "is_required": 0,
                         "matrix_cols": [
                             {
                                 "col_type": "option",
                                 "en_name": "phq9_a_0",
+                                "form_id": 76,
                                 "id": "41",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -401,6 +434,7 @@
                             {
                                 "col_type": "option",
                                 "en_name": "phq9_a_1",
+                                "form_id": 76,
                                 "id": "42",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -414,6 +448,7 @@
                             {
                                 "col_type": "option",
                                 "en_name": "phq9_a_2",
+                                "form_id": 76,
                                 "id": "43",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -427,6 +462,7 @@
                             {
                                 "col_type": "option",
                                 "en_name": "phq9_a_3",
+                                "form_id": 76,
                                 "id": "44",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -441,6 +477,7 @@
                         "matrix_rows": [
                             {
                                 "en_name": "phq9_q_1",
+                                "form_id": 76,
                                 "id": "32",
                                 "name": "1、做什么事都感到没有兴趣或乐趣",
                                 "pid": "31",
@@ -448,6 +485,7 @@
                             },
                             {
                                 "en_name": "phq9_q_2",
+                                "form_id": 76,
                                 "id": "33",
                                 "name": "2、感到心情低落",
                                 "pid": "31",
@@ -455,6 +493,7 @@
                             },
                             {
                                 "en_name": "phq9_q_3",
+                                "form_id": 76,
                                 "id": "34",
                                 "name": "3、入睡困难、很难熟睡或睡太多",
                                 "pid": "31",
@@ -462,6 +501,7 @@
                             },
                             {
                                 "en_name": "phq9_q_4",
+                                "form_id": 76,
                                 "id": "35",
                                 "name": "4、感到疲劳或无精打采",
                                 "pid": "31",
@@ -469,6 +509,7 @@
                             },
                             {
                                 "en_name": "phq9_q_5",
+                                "form_id": 76,
                                 "id": "36",
                                 "name": "5、胃口不好或吃太多",
                                 "pid": "31",
@@ -476,6 +517,7 @@
                             },
                             {
                                 "en_name": "phq9_q_6",
+                                "form_id": 76,
                                 "id": "37",
                                 "name": "6、觉得自己很糟，或很失败，或让自己或家人失望",
                                 "pid": "31",
@@ -483,6 +525,7 @@
                             },
                             {
                                 "en_name": "phq9_q_7",
+                                "form_id": 76,
                                 "id": "38",
                                 "name": "7、注意力很难集中，例如阅读报纸或看电视",
                                 "pid": "31",
@@ -490,6 +533,7 @@
                             },
                             {
                                 "en_name": "phq9_q_8",
+                                "form_id": 76,
                                 "id": "39",
                                 "name": "8、动作或说话速度缓慢到别人可以察觉，或正好相反—烦躁或坐立不安，动来动去的情况比平时更严重",
                                 "pid": "31",
@@ -497,6 +541,7 @@
                             },
                             {
                                 "en_name": "phq9_q_9",
+                                "form_id": 76,
                                 "id": "40",
                                 "name": "9、有不如死掉或用某种方式伤害自己的念头",
                                 "pid": "31",
@@ -509,6 +554,7 @@
                         "type": "matrix_single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "45",
                         "name": "广泛性焦虑量表（GAD-7）",
                         "pid": "29",
@@ -516,12 +562,14 @@
                         "type": "desp"
                     },
                     {
+                        "form_id": 76,
                         "id": "46",
                         "is_required": 0,
                         "matrix_cols": [
                             {
                                 "col_type": "option",
                                 "en_name": "gad7_a_0",
+                                "form_id": 76,
                                 "id": "54",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -535,6 +583,7 @@
                             {
                                 "col_type": "option",
                                 "en_name": "gad7_a_1",
+                                "form_id": 76,
                                 "id": "55",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -548,6 +597,7 @@
                             {
                                 "col_type": "option",
                                 "en_name": "gad7_a_2",
+                                "form_id": 76,
                                 "id": "56",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -561,6 +611,7 @@
                             {
                                 "col_type": "option",
                                 "en_name": "gad7_a_3",
+                                "form_id": 76,
                                 "id": "57",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -575,6 +626,7 @@
                         "matrix_rows": [
                             {
                                 "en_name": "gad7_q_1",
+                                "form_id": 76,
                                 "id": "47",
                                 "name": "1、紧张、焦虑或愤怒",
                                 "pid": "46",
@@ -582,6 +634,7 @@
                             },
                             {
                                 "en_name": "gad7_q_2",
+                                "form_id": 76,
                                 "id": "48",
                                 "name": "2、易被激怒",
                                 "pid": "46",
@@ -589,6 +642,7 @@
                             },
                             {
                                 "en_name": "gad7_q_3",
+                                "form_id": 76,
                                 "id": "49",
                                 "name": "3、害怕什么可怕的事情发生",
                                 "pid": "46",
@@ -596,6 +650,7 @@
                             },
                             {
                                 "en_name": "gad7_q_4",
+                                "form_id": 76,
                                 "id": "50",
                                 "name": "4、担心很多事情",
                                 "pid": "46",
@@ -603,6 +658,7 @@
                             },
                             {
                                 "en_name": "gad7_q_5",
+                                "form_id": 76,
                                 "id": "51",
                                 "name": "5、疲劳，坐不住",
                                 "pid": "46",
@@ -610,6 +666,7 @@
                             },
                             {
                                 "en_name": "gad7_q_6",
+                                "form_id": 76,
                                 "id": "52",
                                 "name": "6、不能停止或不能控制的担心",
                                 "pid": "46",
@@ -617,6 +674,7 @@
                             },
                             {
                                 "en_name": "gad7_q_7",
+                                "form_id": 76,
                                 "id": "53",
                                 "name": "7、很难放松",
                                 "pid": "46",
@@ -629,6 +687,7 @@
                         "type": "matrix_single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "58",
                         "name": "匹兹堡睡眠质量指数（PSQI）",
                         "pid": "29",
@@ -637,6 +696,7 @@
                     },
                     {
                         "en_name": "scale_psqi_1",
+                        "form_id": 76,
                         "id": "59",
                         "is_required": 0,
                         "max_length": -1,
@@ -649,6 +709,7 @@
                     },
                     {
                         "en_name": "scale_psqi_2",
+                        "form_id": 76,
                         "id": "60",
                         "is_required": 0,
                         "max_length": -1,
@@ -661,6 +722,7 @@
                     },
                     {
                         "en_name": "scale_psqi_3",
+                        "form_id": 76,
                         "id": "61",
                         "is_required": 0,
                         "max_length": -1,
@@ -673,6 +735,7 @@
                     },
                     {
                         "en_name": "scale_psqi_4",
+                        "form_id": 76,
                         "id": "62",
                         "is_required": 0,
                         "max_length": -1,
@@ -684,12 +747,14 @@
                         "type": "short_text"
                     },
                     {
+                        "form_id": 76,
                         "id": "63",
                         "is_required": 0,
                         "matrix_cols": [
                             {
                                 "col_type": "option",
                                 "en_name": "scale_psqi_5_0",
+                                "form_id": 76,
                                 "id": "74",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -703,6 +768,7 @@
                             {
                                 "col_type": "option",
                                 "en_name": "scale_psqi_5_1",
+                                "form_id": 76,
                                 "id": "75",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -716,6 +782,7 @@
                             {
                                 "col_type": "option",
                                 "en_name": "scale_psqi_5_2",
+                                "form_id": 76,
                                 "id": "76",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -729,6 +796,7 @@
                             {
                                 "col_type": "option",
                                 "en_name": "scale_psqi_5_3",
+                                "form_id": 76,
                                 "id": "77",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -743,6 +811,7 @@
                         "matrix_rows": [
                             {
                                 "en_name": "scale_psqi_5a",
+                                "form_id": 76,
                                 "id": "64",
                                 "name": "a.入睡困难(30分钟内不能入睡)",
                                 "pid": "63",
@@ -750,6 +819,7 @@
                             },
                             {
                                 "en_name": "scale_psqi_5b",
+                                "form_id": 76,
                                 "id": "65",
                                 "name": "b.夜间易醒或早醒",
                                 "pid": "63",
@@ -757,6 +827,7 @@
                             },
                             {
                                 "en_name": "scale_psqi_5c",
+                                "form_id": 76,
                                 "id": "66",
                                 "name": "c.夜间去厕所",
                                 "pid": "63",
@@ -764,6 +835,7 @@
                             },
                             {
                                 "en_name": "scale_psqi_5d",
+                                "form_id": 76,
                                 "id": "67",
                                 "name": "d.呼吸不畅",
                                 "pid": "63",
@@ -771,6 +843,7 @@
                             },
                             {
                                 "en_name": "scale_psqi_5e",
+                                "form_id": 76,
                                 "id": "68",
                                 "name": "e.咳嗽或鼾声高",
                                 "pid": "63",
@@ -778,6 +851,7 @@
                             },
                             {
                                 "en_name": "scale_psqi_5f",
+                                "form_id": 76,
                                 "id": "69",
                                 "name": "f.感觉冷",
                                 "pid": "63",
@@ -785,6 +859,7 @@
                             },
                             {
                                 "en_name": "scale_psqi_5g",
+                                "form_id": 76,
                                 "id": "70",
                                 "name": "g.感觉热",
                                 "pid": "63",
@@ -792,6 +867,7 @@
                             },
                             {
                                 "en_name": "scale_psqi_5h",
+                                "form_id": 76,
                                 "id": "71",
                                 "name": "h.做恶梦",
                                 "pid": "63",
@@ -799,6 +875,7 @@
                             },
                             {
                                 "en_name": "scale_psqi_5i",
+                                "form_id": 76,
                                 "id": "72",
                                 "name": "i.疼痛不适",
                                 "pid": "63",
@@ -806,6 +883,7 @@
                             },
                             {
                                 "en_name": "scale_psqi_5j",
+                                "form_id": 76,
                                 "id": "73",
                                 "name": "j.其它影响睡眠的事情",
                                 "pid": "63",
@@ -818,12 +896,14 @@
                         "type": "matrix_single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "78",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "6. 近1个月，总的来说，您认为自己的睡眠质量",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "79",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_6",
@@ -838,6 +918,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "80",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_6",
@@ -852,6 +933,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "81",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_6",
@@ -866,6 +948,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "82",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_6",
@@ -886,12 +969,14 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "83",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "7.近1个月，您用药物催眠的情况",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "84",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_7",
@@ -906,6 +991,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "85",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_7",
@@ -920,6 +1006,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "86",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_7",
@@ -934,6 +1021,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "87",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_7",
@@ -954,12 +1042,14 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "88",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "8. 近1个月，您常感到困倦吗",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "89",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_8",
@@ -974,6 +1064,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "90",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_8",
@@ -988,6 +1079,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "91",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_8",
@@ -1002,6 +1094,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "92",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_8",
@@ -1022,12 +1115,14 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "93",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "9. 近1个月，您做事情的精力不足吗",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "94",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_9",
@@ -1042,6 +1137,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "95",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_9",
@@ -1056,6 +1152,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "96",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_9",
@@ -1070,6 +1167,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "97",
                                 "is_exclude_option": 1,
                                 "option_en_name": "scale_psqi_9",
@@ -1090,6 +1188,7 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "98",
                         "name": "创伤后应激障碍（PCL-5）",
                         "pid": "29",
@@ -1097,12 +1196,14 @@
                         "type": "desp"
                     },
                     {
+                        "form_id": 76,
                         "id": "99",
                         "is_required": 0,
                         "matrix_cols": [
                             {
                                 "col_type": "option",
                                 "en_name": "scale_pcl5_no",
+                                "form_id": 76,
                                 "id": "120",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -1116,6 +1217,7 @@
                             {
                                 "col_type": "option",
                                 "en_name": "scale_pcl6_occasionally",
+                                "form_id": 76,
                                 "id": "121",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -1129,6 +1231,7 @@
                             {
                                 "col_type": "option",
                                 "en_name": "scale_pcl7_sometimes",
+                                "form_id": 76,
                                 "id": "122",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -1142,6 +1245,7 @@
                             {
                                 "col_type": "option",
                                 "en_name": "scale_pcl8_often",
+                                "form_id": 76,
                                 "id": "123",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -1155,6 +1259,7 @@
                             {
                                 "col_type": "option",
                                 "en_name": "scale_pcl9_always",
+                                "form_id": 76,
                                 "id": "124",
                                 "is_exclude_option": 0,
                                 "max_length": -1,
@@ -1169,6 +1274,7 @@
                         "matrix_rows": [
                             {
                                 "en_name": "scale_pcl5_1",
+                                "form_id": 76,
                                 "id": "100",
                                 "name": "1、与此应激经历有关的重复的、令人不安的、痛苦的记忆？",
                                 "pid": "99",
@@ -1176,6 +1282,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_2",
+                                "form_id": 76,
                                 "id": "101",
                                 "name": "2、与此应激经历有关的重复的、令人不安的梦境出现？",
                                 "pid": "99",
@@ -1183,6 +1290,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_3",
+                                "form_id": 76,
                                 "id": "102",
                                 "name": "3、突然感觉或者表现的好像此应激事件再次发生了一样（好像你真的回到最初感染新冠肺炎的时候）？",
                                 "pid": "99",
@@ -1190,6 +1298,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_4",
+                                "form_id": 76,
                                 "id": "103",
                                 "name": "4、当一些事情让你想起这段应激经历时，你会感到非常难过吗？",
                                 "pid": "99",
@@ -1197,6 +1306,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_5",
+                                "form_id": 76,
                                 "id": "104",
                                 "name": "5、当一些事情让你想起这段应激经历时，你会有强烈的身体反应吗（例如心跳、呼吸困难、出汗）？",
                                 "pid": "99",
@@ -1204,6 +1314,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_6",
+                                "form_id": 76,
                                 "id": "105",
                                 "name": "6、你会不会逃避与这段应激经历有关的记忆、想法或感觉吗？",
                                 "pid": "99",
@@ -1211,6 +1322,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_7",
+                                "form_id": 76,
                                 "id": "106",
                                 "name": "7、你会不会逃避让你想起这段应激经历的一些外界提醒吗（例如人、地点、谈话、活动、对象或情景）？",
                                 "pid": "99",
@@ -1218,6 +1330,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_8",
+                                "form_id": 76,
                                 "id": "107",
                                 "name": "8、你会不会难以记住关于这段应激经历的重要部分？",
                                 "pid": "99",
@@ -1225,6 +1338,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_9",
+                                "form_id": 76,
                                 "id": "108",
                                 "name": "9、你会不会对自己、他人或世界有强烈的消极信念（例如有这样的想法：我不好，我有严重的问题，没有人可以信任，世界是完全危险的）？",
                                 "pid": "99",
@@ -1232,6 +1346,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_10",
+                                "form_id": 76,
                                 "id": "109",
                                 "name": "10、你会把这段应激经历归咎于你自己或者他人，或者之后发生的事情上吗？",
                                 "pid": "99",
@@ -1239,6 +1354,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_11",
+                                "form_id": 76,
                                 "id": "110",
                                 "name": "11、你是否有强烈的负面情绪，如害怕、恐惧、愤怒、内疚或羞愧吗？",
                                 "pid": "99",
@@ -1246,6 +1362,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_12",
+                                "form_id": 76,
                                 "id": "111",
                                 "name": "12、你会对过去喜欢的活动失去兴趣吗？",
                                 "pid": "99",
@@ -1253,6 +1370,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_13",
+                                "form_id": 76,
                                 "id": "112",
                                 "name": "13、你会感到疏远或与他人隔绝吗？",
                                 "pid": "99",
@@ -1260,6 +1378,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_14",
+                                "form_id": 76,
                                 "id": "113",
                                 "name": "14、你会无法体验到积极的感受吗（例如无法感受到幸福或者无法对你亲近的人有 的感觉）？",
                                 "pid": "99",
@@ -1267,6 +1386,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_15",
+                                "form_id": 76,
                                 "id": "114",
                                 "name": "15、你有易怒的行为、爆发愤怒或者攻击行为吗？",
                                 "pid": "99",
@@ -1274,6 +1394,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_16",
+                                "form_id": 76,
                                 "id": "115",
                                 "name": "16、你会冒过多的风险或者做一些可能伤害你的事情吗？",
                                 "pid": "99",
@@ -1281,6 +1402,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_17",
+                                "form_id": 76,
                                 "id": "116",
                                 "name": "17、你会超级警惕、警觉或者戒备吗？",
                                 "pid": "99",
@@ -1288,6 +1410,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_18",
+                                "form_id": 76,
                                 "id": "117",
                                 "name": "18、你会感到紧张，或者容易收到惊吓吗？",
                                 "pid": "99",
@@ -1295,6 +1418,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_19",
+                                "form_id": 76,
                                 "id": "118",
                                 "name": "19、你集中注意力困难吗？",
                                 "pid": "99",
@@ -1302,6 +1426,7 @@
                             },
                             {
                                 "en_name": "scale_pcl5_20",
+                                "form_id": 76,
                                 "id": "119",
                                 "name": "20、你有入睡困难或者维持睡眠困难吗？",
                                 "pid": "99",
@@ -1314,6 +1439,7 @@
                         "type": "matrix_single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "126",
                         "name": "Barthel指数评定量表",
                         "pid": "29",
@@ -1321,12 +1447,14 @@
                         "type": "desp"
                     },
                     {
+                        "form_id": 76,
                         "id": "127",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "1、进食",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "128",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_1",
@@ -1341,6 +1469,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "129",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_1",
@@ -1355,6 +1484,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "130",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_1",
@@ -1375,12 +1505,14 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "131",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "2、洗澡",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "132",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_2",
@@ -1395,6 +1527,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "133",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_2",
@@ -1415,12 +1548,14 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "134",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "3、修饰",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "135",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_3",
@@ -1435,6 +1570,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "136",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_3",
@@ -1455,12 +1591,14 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "137",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "4、穿衣",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "138",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_4",
@@ -1475,6 +1613,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "139",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_4",
@@ -1489,6 +1628,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "140",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_4",
@@ -1509,12 +1649,14 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "141",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "5、控制大便",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "142",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_5",
@@ -1529,6 +1671,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "143",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_5",
@@ -1543,6 +1686,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "144",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_5",
@@ -1563,12 +1707,14 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "145",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "6、控制小便",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "146",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_6",
@@ -1583,6 +1729,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "147",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_6",
@@ -1597,6 +1744,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "148",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_6",
@@ -1617,12 +1765,14 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "149",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "7、如厕",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "150",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_7",
@@ -1637,6 +1787,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "151",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_7",
@@ -1651,6 +1802,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "152",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_7",
@@ -1671,12 +1823,14 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "153",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "8、转移（床椅）",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "154",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_8",
@@ -1691,6 +1845,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "155",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_8",
@@ -1705,6 +1860,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "156",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_8",
@@ -1719,6 +1875,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "157",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_8",
@@ -1739,12 +1896,14 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "158",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "9、活动（步行）",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "159",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_9",
@@ -1759,6 +1918,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "160",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_9",
@@ -1773,6 +1933,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "161",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_9",
@@ -1787,6 +1948,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "162",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_9",
@@ -1807,12 +1969,14 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "163",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "10、上下楼梯",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "164",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_10",
@@ -1827,6 +1991,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "165",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_10",
@@ -1841,6 +2006,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "166",
                                 "is_exclude_option": 1,
                                 "option_en_name": "barthel_10",
@@ -1861,6 +2027,7 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "167",
                         "name": " Borg呼吸困难指数",
                         "pid": "29",
@@ -1868,12 +2035,14 @@
                         "type": "desp"
                     },
                     {
+                        "form_id": 76,
                         "id": "168",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": " Borg呼吸困难指数主观感觉描述",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "169",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_breath",
@@ -1888,6 +2057,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "170",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_breath",
@@ -1902,6 +2072,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "171",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_breath",
@@ -1916,6 +2087,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "172",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_breath",
@@ -1930,6 +2102,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "173",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_breath",
@@ -1944,6 +2117,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "174",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_breath",
@@ -1958,6 +2132,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "175",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_breath",
@@ -1972,6 +2147,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "176",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_breath",
@@ -1986,6 +2162,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "177",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_breath",
@@ -2000,6 +2177,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "178",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_breath",
@@ -2014,6 +2192,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "179",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_breath",
@@ -2028,6 +2207,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "180",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_breath",
@@ -2048,6 +2228,7 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "181",
                         "name": " Borg 自觉疲劳程度量表",
                         "pid": "29",
@@ -2055,12 +2236,14 @@
                         "type": "desp"
                     },
                     {
+                        "form_id": 76,
                         "id": "182",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "Borg 自觉疲劳程度量表",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "183",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2075,6 +2258,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "184",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2089,6 +2273,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "185",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2103,6 +2288,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "186",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2117,6 +2303,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "187",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2131,6 +2318,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "188",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2145,6 +2333,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "189",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2159,6 +2348,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "190",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2173,6 +2363,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "191",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2187,6 +2378,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "192",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2201,6 +2393,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "193",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2215,6 +2408,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "194",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2229,6 +2423,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "195",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2243,6 +2438,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "196",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2257,6 +2453,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "197",
                                 "is_exclude_option": 1,
                                 "option_en_name": "borg_tired",
@@ -2277,6 +2474,7 @@
                         "type": "single_choice"
                     },
                     {
+                        "form_id": 76,
                         "id": "198",
                         "name": "呼吸困难指数量表（mMRC）",
                         "pid": "29",
@@ -2284,12 +2482,14 @@
                         "type": "desp"
                     },
                     {
+                        "form_id": 76,
                         "id": "199",
                         "is_required": 0,
                         "line_option_count": -1,
                         "name": "呼吸困难程度",
                         "options": [
                             {
+                                "form_id": 76,
                                 "id": "200",
                                 "is_exclude_option": 1,
                                 "option_en_name": "dyspnea_degree",
@@ -2304,6 +2504,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "201",
                                 "is_exclude_option": 1,
                                 "option_en_name": "dyspnea_degree",
@@ -2318,6 +2519,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "202",
                                 "is_exclude_option": 1,
                                 "option_en_name": "dyspnea_degree",
@@ -2332,6 +2534,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "203",
                                 "is_exclude_option": 1,
                                 "option_en_name": "dyspnea_degree",
@@ -2346,6 +2549,7 @@
                                 "type": "option"
                             },
                             {
+                                "form_id": 76,
                                 "id": "204",
                                 "is_exclude_option": 1,
                                 "option_en_name": "dyspnea_degree",
@@ -2373,6 +2577,7 @@
                 "type": "group"
             },
             {
+                "form_id": 76,
                 "id": "125",
                 "items": [],
                 "name": "康复评估",

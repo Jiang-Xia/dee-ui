@@ -79,7 +79,7 @@ export default {
       const obj = {}
       rows.map(v => {
         cols.map(v2 => {
-          obj[v.en_name + '#' + v2.en_name] = n[v.en_name + '#' + v2.en_name] || ''
+          obj[v.en_name + '#' + v2.en_name] = n[v.en_name + '#' + v2.en_name]
         })
       })
       this.tableData = obj
