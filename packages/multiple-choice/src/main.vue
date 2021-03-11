@@ -3,6 +3,7 @@
     class="dee-question-wrap dee-multiple-choice"
     :style="questionStyle"
     :type="dimLayout.type"
+    :data-value="verifyValue"
   >
     <div class="dee-question-heading">
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
@@ -78,6 +79,14 @@ export default {
     },
     optionMax() {
       return this.dimLayout.option_max_choice
+    },
+    /* 判断空值（即一道题是否一填）*/
+    verifyValue() {
+      const data = this.dimData
+      const checked = this.dimLayout.options.every(v => {
+        return data[v.option_en_name] === '' || data[v.option_en_name] === undefined
+      })
+      return checked ? 'no_value' : 'value'
     }
   },
   watch: {

@@ -3,6 +3,7 @@
     class="dee-question-wrap dee-long-text"
     :type="dimLayout.type"
     :question-en="dimLayout.en_name"
+    :data-value="verifyValue"
   >
     <div class="dee-question-heading">
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
@@ -31,6 +32,12 @@ export default {
   data() {
     return {
       textarea: ''
+    }
+  },
+  computed: {
+    /* 判断空值（即一道题是否一填）*/
+    verifyValue() {
+      return this.textarea ? 'value' : 'no_value'
     }
   },
   watch: {

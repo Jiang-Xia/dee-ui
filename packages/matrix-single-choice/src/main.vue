@@ -1,5 +1,8 @@
 <template>
-  <div class="dee-question-wrap dee-matrix-single-choice">
+  <div
+    class="dee-question-wrap dee-matrix-single-choice"
+    :data-value="verifyValue"
+  >
     <div class="dee-question-heading">
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
@@ -43,6 +46,23 @@ export default {
   data() {
     return {
       tableData: {}
+    }
+  },
+  computed: {
+    /* 判断空值（即一道题是否一填）*/
+    verifyValue() {
+      const item = this.dimLayout
+      const list = []
+      item.matrix_rows.forEach(row => {
+        item.matrix_cols.forEach(col => {
+          list.push([row.en_name + '#' + col.en_name])
+        })
+      })
+      const data = this.dimData
+      const checked = list.every(v => {
+        return data[v] === '' || data[v] === undefined
+      })
+      return checked ? 'no_value' : 'value'
     }
   },
   watch: {

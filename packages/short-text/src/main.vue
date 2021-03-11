@@ -4,6 +4,7 @@
     :type="dimLayout.type"
     :question-en="dimLayout.en_name"
     :style="questionStyle"
+    :data-value="verifyValue"
   >
     <div class="dee-question-heading">
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
@@ -57,6 +58,10 @@ export default {
   computed: {
     cType() {
       return this.dimLayout.text_check
+    },
+    /* 判断空值（即一道题是否一填）*/
+    verifyValue() {
+      return this.input ? 'value' : 'no_value'
     }
   },
   watch: {
