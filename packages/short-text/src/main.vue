@@ -115,6 +115,13 @@ export default {
         type: 'long_text',
         value: {
           [en]: this.input
+        },
+        other: {
+          en_name: en,
+          question_name: this.dimLayout.name,
+          question_id: this.dimLayout.id,
+          value: this.input,
+          show_text: this.input
         }
       })
     }

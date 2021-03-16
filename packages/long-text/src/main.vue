@@ -59,6 +59,13 @@ export default {
         type: 'long_text',
         value: {
           [en]: this.textarea
+        },
+        other: {
+          en_name: en,
+          question_name: this.dimLayout.name,
+          question_id: this.dimLayout.id,
+          value: this.textarea,
+          show_text: this.textarea
         }
       })
     }

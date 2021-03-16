@@ -18,17 +18,17 @@
           </tr>
         </thead>
         <tbody class="dee-matrix__body">
-          <tr v-for="(trItem,trIndex) in dimLayout.matrix_rows" :key="trIndex">
+          <tr v-for="(itemRow,trIndex) in dimLayout.matrix_rows" :key="trIndex">
             <td>
-              {{ trItem.name }}
+              {{ itemRow.name }}
             </td>
-            <td v-for="(raItem,raIndex) in dimLayout.matrix_cols" :key="raIndex">
+            <td v-for="(itemCol,raIndex) in dimLayout.matrix_cols" :key="raIndex">
               <el-radio
-                v-model="tableData[trItem.en_name+'#'+raItem.en_name]"
-                :option-en="trItem.en_name+'#'+raItem.en_name"
+                v-model="tableData[itemRow.en_name+'#'+itemCol.en_name]"
+                :option-en="itemRow.en_name+'#'+itemCol.en_name"
                 :disabled="!isEditing"
-                :label="raItem.option_value"
-                @click.native.prevent="clickHandle(raItem.option_value,(trItem.en_name+'#'+raItem.en_name))"
+                :label="itemCol.option_value"
+                @click.native.prevent="clickHandle(itemCol.option_value,itemRow,itemCol)"
               >{{ '' }}</el-radio>
             </td>
           </tr>
@@ -89,7 +89,9 @@ export default {
       this.tableData = obj
       // console.log(obj)
     },
-    clickHandle(v, en) {
+    clickHandle(v, itemRow, itemCol) {
+      const en = itemRow.en_name + '#' + itemCol.en_name
+      const show_text = itemRow.name + ':' + itemCol.name
       if (!this.isEditing) return
       // 先清空对应 行的选项
       const arr = en.split('#')
@@ -100,12 +102,19 @@ export default {
         }
       }
       this.tableData[en] = this.tableData[en] === v ? '' : v
-      this.changeHandle()
+      this.changeHandle(en, show_text)
     },
-    changeHandle() {
+    changeHandle(en, show_text) {
       this.$emit('modify', {
         type: 'matrix_single_choice',
-        value: this.tableData
+        value: this.tableData,
+        other: {
+          en_name: en,
+          question_name: this.dimLayout.name,
+          question_id: this.dimLayout.id,
+          value: this.tableData[en],
+          show_text
+        }
       })
     }
   }

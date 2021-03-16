@@ -19,11 +19,11 @@
           </tr>
         </thead>
         <tbody class="dee-matrix__body">
-          <tr v-for="(itemRow,trIndex) in dimLayout.matrix_rows" :key="trIndex">
+          <tr v-for="(itemRow,rowIndex) in dimLayout.matrix_rows" :key="rowIndex">
             <td>
               {{ itemRow.name }}
             </td>
-            <td v-for="(itemCol,raIndex) in dimLayout.matrix_cols" :key="raIndex">
+            <td v-for="(itemCol,colIndex) in dimLayout.matrix_cols" :key="colIndex">
               <el-checkbox
                 v-model="bindTableData[itemRow.en_name+'#'+itemCol.en_name]"
                 :option-en="itemRow.en_name+'#'+itemCol.en_name"
@@ -109,6 +109,7 @@ export default {
     changeCheckboxHandle(val, itemRow, itemCol) {
       const cols = this.dimLayout.matrix_cols
       const tableKey = itemRow.en_name + '#' + itemCol.en_name
+      const show_text = itemRow.name + ':' + itemCol.name
       for (const key in this.bindTableData) {
         // 判断这一行的所有列
         if (itemRow.en_name === key.split('#')[0]) {
@@ -127,13 +128,20 @@ export default {
           }
         }
       }
-      this.changeHandle()
+      this.changeHandle(tableKey, val, show_text)
     },
-    changeHandle() {
+    changeHandle(en, val, show_text) {
       const valueObj = this.getTableData(this.bindTableData)
       this.$emit('modify', {
         type: 'matrix_multiple_choice',
-        value: valueObj
+        value: valueObj,
+        other: {
+          en_name: en,
+          question_name: this.dimLayout.name,
+          question_id: this.dimLayout.id,
+          value: valueObj[en],
+          show_text
+        }
       })
     }
   }

@@ -85,15 +85,26 @@ export default {
     changeHandle(v) {
       const options = this.dimLayout.options
       const en = this.option_en_name
+      let show_text
       const obj = {}
       options.forEach(v => {
+        if (v.option_en_name === en) {
+          show_text = v.option_name
+        }
         obj[v.option_en_name] = ''
       })
       obj[en] = this.select
       // console.log(obj)
       this.$emit('modify', {
         type: 'single_dropdown',
-        value: obj
+        value: obj,
+        other: {
+          en_name: en,
+          question_name: this.dimLayout.name,
+          question_id: this.dimLayout.id,
+          value: this.select,
+          show_text: show_text
+        }
       })
     }
   }

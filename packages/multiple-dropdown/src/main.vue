@@ -143,7 +143,14 @@ export default {
       const valueObj = this.getTableData(this.bindTableData)
       this.$emit('modify', {
         type: 'multiple_dropdown',
-        value: valueObj
+        value: valueObj,
+        other: {
+          en_name: oItem.option_en_name,
+          question_name: this.dimLayout.name,
+          question_id: this.dimLayout.id,
+          value: valueObj[oItem.option_en_name],
+          show_text: oItem.option_name
+        }
       })
     }
   }

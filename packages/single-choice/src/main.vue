@@ -117,14 +117,22 @@ export default {
     otherChangeHandle(rV, item) {
       // 选择其他项时 return
       if (this.radio !== rV) return
-      const obj = this.getParams(rV, item)
+      const obj = this.getParams(rV, item).value
       this.$emit('modify', {
         type: 'single_choice',
-        value: obj
+        value: obj.value,
+        other: {
+          en_name: item.option_other_en_name,
+          question_name: this.dimLayout.name,
+          question_id: this.dimLayout.id,
+          value: this.radio,
+          show_text: this.option_other_value ? obj.show_text + this.option_other_value : obj.show_text
+        }
       })
     },
     getParams(v, item) {
       const options = this.dimLayout.options
+      let show_text
       const obj = {}
       options.map(oItem => {
         obj[oItem.option_en_name] = ''
@@ -132,9 +140,16 @@ export default {
         if (oItem.option_other_is_editable && oItem.option_value === v) {
           obj[oItem.option_other_en_name] = this.option_other_value
         }
+        if (item.option_en_name === oItem.option_en_name) {
+          show_text = item.option_name
+        }
       })
+      console.log(1, show_text)
       obj[this.option_en_name ] = this.radio
-      return obj
+      return {
+        value: obj,
+        show_text
+      }
     },
     clickHandle(v, item) {
       if (!this.isEditing) return
@@ -145,7 +160,14 @@ export default {
       // console.log(obj)
       this.$emit('modify', {
         type: 'single_choice',
-        value: obj
+        value: obj.value,
+        other: {
+          en_name: en,
+          question_name: this.dimLayout.name,
+          question_id: this.dimLayout.id,
+          value: this.radio,
+          show_text: this.option_other_value ? obj.show_text + this.option_other_value : obj.show_text
+        }
       })
       this.$__calcRelationHandle()
     }

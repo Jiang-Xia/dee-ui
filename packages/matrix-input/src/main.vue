@@ -19,33 +19,33 @@
           </tr>
         </thead>
         <tbody class="dee-matrix__body">
-          <tr v-for="(trItem,trIndex) in dimLayout.matrix_rows" :key="trIndex">
+          <tr v-for="(itemRow,rowIndex) in dimLayout.matrix_rows" :key="rowIndex">
             <td>
-              {{ trItem.name }}
+              {{ itemRow.name }}
             </td>
-            <td v-for="(raItem,raIndex) in dimLayout.matrix_cols" :key="raIndex">
+            <td v-for="(itemCol,colIndex) in dimLayout.matrix_cols" :key="colIndex">
               <el-input
-                v-if="raItem.text_check==='no_limit'||raItem.text_check==='number'"
-                v-model="tableData[trItem.en_name+'#'+raItem.en_name]"
-                :type="raItem.text_check==='number'?raItem.text_check:''"
-                :maxlength="raItem.max_length"
+                v-if="itemCol.text_check==='no_limit'||itemCol.text_check==='number'"
+                v-model="tableData[itemRow.en_name+'#'+itemCol.en_name]"
+                :type="itemCol.text_check==='number'?itemCol.text_check:''"
+                :maxlength="itemCol.max_length"
                 size="mini"
                 style="width:98%;"
                 :disabled="!isEditing"
-                :option-en="trItem.en_name+'#'+raItem.en_name"
-                @change="changeHandle"
+                :option-en="itemRow.en_name+'#'+itemCol.en_name"
+                @change="changeHandle(itemRow,itemCol)"
               />
               <el-date-picker
-                v-if="raItem.text_check==='date'||raItem.text_check==='datetime'"
-                v-model="tableData[trItem.en_name+'#'+raItem.en_name]"
-                :option-en="trItem.en_name+'#'+raItem.en_name"
+                v-if="itemCol.text_check==='date'||itemCol.text_check==='datetime'"
+                v-model="tableData[itemRow.en_name+'#'+itemCol.en_name]"
+                :option-en="itemRow.en_name+'#'+itemCol.en_name"
                 :editable="false"
-                :type="raItem.text_check"
+                :type="itemCol.text_check"
                 size="mini"
-                :style="{width:raItem.text_check==='date'?'8rem':'11rem'}"
+                :style="{width:itemCol.text_check==='date'?'8rem':'11rem'}"
                 :disabled="!isEditing"
-                :placeholder="raItem.text_check==='date'?'例：2008-08-08':'例：2008-08-08 00:00:00'"
-                @change="changeHandle"
+                :placeholder="itemCol.text_check==='date'?'例：2008-08-08':'例：2008-08-08 00:00:00'"
+                @change="changeHandle(itemRow,itemCol)"
               />
             </td>
           </tr>
@@ -105,10 +105,19 @@ export default {
       this.tableData = obj
       // console.log(obj)
     },
-    changeHandle() {
+    changeHandle(itemRow, itemCol) {
+      const show_text = itemRow.name + itemCol.name + ':' + this.tableData[en]
+      const en = itemRow.en_name + '#' + itemCol.en_name
       this.$emit('modify', {
         type: 'matrix_input',
-        value: this.tableData
+        value: this.tableData,
+        other: {
+          en_name: en,
+          question_name: this.dimLayout.name,
+          question_id: this.dimLayout.id,
+          value: this.tableData[en],
+          show_text
+        }
       })
     }
   }

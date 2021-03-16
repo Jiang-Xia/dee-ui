@@ -21,8 +21,10 @@
   </div>
 </template>
 <script>
-// import FieldTemp from './睡眠呼吸监测.json'
-import FieldTemp from './睡眠呼吸监测问卷.json'
+import FieldTemp from './睡眠呼吸监测.json' // 所有题型
+
+// import FieldTemp from './睡眠呼吸监测问卷.json'
+// import FieldTemp from './new.json'
 // import FieldTemp from './档案信息.json'
 export default {
   data() {
@@ -90,7 +92,7 @@ export default {
       }
       this.dimData = obj
       // console.warn('===============')
-      // console.log(this.dimData)
+      console.log(data)
       // console.warn('===============')
     },
     // 控制关联题显示隐藏事件回调

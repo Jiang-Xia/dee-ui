@@ -137,7 +137,14 @@ export default {
       const valueObj = this.getTableData(this.bindTableData)
       this.$emit('modify', {
         type: 'multiple_choice',
-        value: { ...valueObj, ...obj }
+        value: { ...valueObj, ...obj },
+        other: {
+          en_name: item.option_other_en_name,
+          question_name: this.dimLayout.name,
+          question_id: this.dimLayout.id,
+          value: valueObj[item.option_en_name],
+          show_text: this.option_other_value ? item.option_name + this.option_other_value : item.option_name
+        }
       })
     },
     changeCheckboxHandle(val, oItem) {
@@ -145,7 +152,7 @@ export default {
       const options = this.dimLayout.options
       const oItemKey = oItem.option_en_name
       const curOptions = Object.values(this.bindTableData).filter(v => v).length
-      let otherObj
+      let otherObj = {}
       // 选择不是排他项时 有最多选项提示
       if (!oItem.is_exclude_option && this.optionMax && curOptions > this.optionMax) {
         this.bindTableData[oItemKey] = false
@@ -173,9 +180,18 @@ export default {
         })
       }
       const valueObj = this.getTableData(this.bindTableData)
+      // 其他和这个选项结合起来
+      const show_text = otherObj[Object.keys(otherObj) ? Object.keys(otherObj)[0] : '']
       this.$emit('modify', {
         type: 'multiple_choice',
-        value: { ...valueObj, ...otherObj }
+        value: { ...valueObj, ...otherObj },
+        other: {
+          en_name: oItem.option_en_name,
+          question_name: this.dimLayout.name,
+          question_id: this.dimLayout.id,
+          value: valueObj[oItem.option_en_name],
+          show_text: show_text ? oItem.option_name + show_text : oItem.option_name
+        }
       })
       this.$__calcRelationHandle()
     }
