@@ -113,7 +113,7 @@ export default {
         }
       })
       this.bindTableData = obj
-      this.$__calcRelationHandle(this.dimLayout.id)
+      this.$__calcRelationHandle()
       // console.log(this.bindTableData)
     },
     // 根据绑定的对象装填需要发送的数据
@@ -193,7 +193,7 @@ export default {
           show_text: show_text ? oItem.option_name + show_text : oItem.option_name
         }
       })
-      this.$__calcRelationHandle(this.dimLayout.id)
+      this.$__calcRelationHandle()
     }
   }
 }
