@@ -105,7 +105,7 @@ export default {
             this.option_other_value = n[v.option_other_en_name]
           }
         })
-        this.$__calcRelationHandle()
+        this.$__calcRelationHandle(this.dimLayout.id)
         // console.log(this.radio)
       },
       immediate: true
@@ -144,7 +144,6 @@ export default {
           show_text = item.option_name
         }
       })
-      console.log(1, show_text)
       obj[this.option_en_name ] = this.radio
       return {
         value: obj,
@@ -169,7 +168,7 @@ export default {
           show_text: this.option_other_value ? obj.show_text + this.option_other_value : obj.show_text
         }
       })
-      this.$__calcRelationHandle()
+      this.$__calcRelationHandle(this.dimLayout.id)
     }
   }
 }

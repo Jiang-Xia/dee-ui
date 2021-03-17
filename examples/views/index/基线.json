@@ -1,0 +1,1570 @@
+{
+    "group_list": [
+        {
+            "id": "1",
+            "items": [
+                {
+                    "en_name": "pat_name",
+                    "id": "2",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "姓名",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "inpatient_no",
+                    "id": "3",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "住院号",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "outpatient_no",
+                    "id": "4",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "门诊号",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "attending_doctor",
+                    "id": "5",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "主诊医生",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "pat_birthday",
+                    "id": "6",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "出生日期",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "date",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "diag_date",
+                    "id": "7",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "确诊日期",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "date",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "diag_age",
+                    "id": "8",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "确诊年龄",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "pat_height",
+                    "id": "9",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "身高（cm）",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "pat_weight",
+                    "id": "10",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "体重（kg）",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "pat_bmi",
+                    "id": "11",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "BMI",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "first_diag_ct",
+                    "id": "12",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "首诊：肿瘤cT分期",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "first_diag_cn",
+                    "id": "13",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "首诊：肿瘤cN分期",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "en_name": "first_diag_cm",
+                    "id": "14",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "首诊：肿瘤cM分期",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "no_limit",
+                    "type": "short_text"
+                },
+                {
+                    "id": "15",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "手术治疗",
+                    "options": [
+                        {
+                            "en_name": "op_treat",
+                            "id": "16",
+                            "is_exclude_option": 0,
+                            "name": "无",
+                            "option_en_name": "op_treat",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "pid": "15",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "op_treat",
+                            "id": "17",
+                            "is_exclude_option": 0,
+                            "name": "有",
+                            "option_en_name": "op_treat",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "15",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "18",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "化疗",
+                    "options": [
+                        {
+                            "en_name": "chem",
+                            "id": "19",
+                            "is_exclude_option": 0,
+                            "name": "无",
+                            "option_en_name": "chem",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "pid": "18",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "chem",
+                            "id": "20",
+                            "is_exclude_option": 0,
+                            "name": "有",
+                            "option_en_name": "chem",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "18",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "21",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "内分泌治疗",
+                    "options": [
+                        {
+                            "en_name": "endocrine_therapy",
+                            "id": "22",
+                            "is_exclude_option": 0,
+                            "name": "无",
+                            "option_en_name": "endocrine_therapy",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "pid": "21",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "endocrine_therapy",
+                            "id": "23",
+                            "is_exclude_option": 0,
+                            "name": "有",
+                            "option_en_name": "endocrine_therapy",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "21",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "24",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "靶向治疗",
+                    "options": [
+                        {
+                            "en_name": "targeted_therapy",
+                            "id": "25",
+                            "is_exclude_option": 0,
+                            "name": "无",
+                            "option_en_name": "targeted_therapy",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "pid": "24",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "targeted_therapy",
+                            "id": "26",
+                            "is_exclude_option": 0,
+                            "name": "有",
+                            "option_en_name": "targeted_therapy",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "24",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "27",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "放疗",
+                    "options": [
+                        {
+                            "en_name": "radio",
+                            "id": "28",
+                            "is_exclude_option": 0,
+                            "name": "无",
+                            "option_en_name": "radio",
+                            "option_name": "无",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "pid": "27",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "radio",
+                            "id": "29",
+                            "is_exclude_option": 0,
+                            "name": "有",
+                            "option_en_name": "radio",
+                            "option_name": "有",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "27",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "id": "30",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "局部进展",
+                    "options": [
+                        {
+                            "en_name": "local_progress",
+                            "id": "31",
+                            "is_exclude_option": 0,
+                            "name": "否",
+                            "option_en_name": "local_progress",
+                            "option_name": "否",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "pid": "30",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "local_progress",
+                            "id": "32",
+                            "is_exclude_option": 0,
+                            "name": "是",
+                            "option_en_name": "local_progress",
+                            "option_name": "是",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "30",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "en_name": "first_local_progress_date",
+                    "exist_relation_items": true,
+                    "id": "33",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "首次局部进展日期",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "date",
+                    "type": "short_text"
+                },
+                {
+                    "id": "34",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "局部复发",
+                    "options": [
+                        {
+                            "en_name": "local_recurrence",
+                            "id": "35",
+                            "is_exclude_option": 0,
+                            "name": "否",
+                            "option_en_name": "local_recurrence",
+                            "option_name": "否",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "pid": "34",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "local_recurrence",
+                            "id": "36",
+                            "is_exclude_option": 0,
+                            "name": "是",
+                            "option_en_name": "local_recurrence",
+                            "option_name": "是",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "34",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "en_name": "first_local_recurrence_date",
+                    "exist_relation_items": true,
+                    "id": "37",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "首次局部复发日期",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "date",
+                    "type": "short_text"
+                },
+                {
+                    "id": "38",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "淋巴转移",
+                    "options": [
+                        {
+                            "en_name": "ln_metastasis",
+                            "id": "39",
+                            "is_exclude_option": 0,
+                            "name": "否",
+                            "option_en_name": "ln_metastasis",
+                            "option_name": "否",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "pid": "38",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "ln_metastasis",
+                            "id": "40",
+                            "is_exclude_option": 0,
+                            "name": "是",
+                            "option_en_name": "ln_metastasis",
+                            "option_name": "是",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "38",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "en_name": "first_ln_metastasis_date",
+                    "exist_relation_items": true,
+                    "id": "41",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "首次淋巴转移日期",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "date",
+                    "type": "short_text"
+                },
+                {
+                    "exist_relation_items": true,
+                    "id": "70",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "确诊方法",
+                    "option_max_choice": 0,
+                    "options": [
+                        {
+                            "en_name": "diag_method_biopsy",
+                            "id": "71",
+                            "is_exclude_option": 0,
+                            "name": "活检",
+                            "option_en_name": "diag_method_biopsy",
+                            "option_name": "活检",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "70",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "diag_method_ct",
+                            "id": "72",
+                            "is_exclude_option": 0,
+                            "name": "CT",
+                            "option_en_name": "diag_method_ct",
+                            "option_name": "CT",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "pid": "70",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "diag_method_mr",
+                            "id": "73",
+                            "is_exclude_option": 0,
+                            "name": "MR",
+                            "option_en_name": "diag_method_mr",
+                            "option_name": "MR",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 3,
+                            "option_value_type": "int",
+                            "pid": "70",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "multiple_choice"
+                },
+                {
+                    "id": "42",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "远处转移",
+                    "options": [
+                        {
+                            "en_name": "distant_metastasis",
+                            "id": "43",
+                            "is_exclude_option": 0,
+                            "name": "否",
+                            "option_en_name": "distant_metastasis",
+                            "option_name": "否",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "pid": "42",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "distant_metastasis",
+                            "id": "44",
+                            "is_exclude_option": 0,
+                            "name": "是",
+                            "option_en_name": "distant_metastasis",
+                            "option_name": "是",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "42",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "en_name": "first_distant_metastasis_Date",
+                    "exist_relation_items": true,
+                    "id": "45",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "name": "首次远处转移日期",
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "text_check": "date",
+                    "type": "short_text"
+                },
+                {
+                    "exist_relation_items": true,
+                    "id": "46",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "骨转移",
+                    "options": [
+                        {
+                            "en_name": "bone_metastases",
+                            "id": "47",
+                            "is_exclude_option": 0,
+                            "name": "否",
+                            "option_en_name": "bone_metastases",
+                            "option_name": "否",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "pid": "46",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "bone_metastases",
+                            "id": "48",
+                            "is_exclude_option": 0,
+                            "name": "是",
+                            "option_en_name": "bone_metastases",
+                            "option_name": "是",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "46",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "exist_relation_items": true,
+                    "id": "78",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "确诊方法",
+                    "option_max_choice": 0,
+                    "options": [
+                        {
+                            "en_name": "diag_method_biopsy_bone",
+                            "id": "79",
+                            "is_exclude_option": 0,
+                            "name": "活检",
+                            "option_en_name": "diag_method_biopsy_bone",
+                            "option_name": "活检",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "78",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "diag_method_ct_bone",
+                            "id": "80",
+                            "is_exclude_option": 0,
+                            "name": "CT",
+                            "option_en_name": "diag_method_ct_bone",
+                            "option_name": "CT",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "pid": "78",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "diag_method_mr_bone",
+                            "id": "81",
+                            "is_exclude_option": 0,
+                            "name": "MR",
+                            "option_en_name": "diag_method_mr_bone",
+                            "option_name": "MR",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 3,
+                            "option_value_type": "int",
+                            "pid": "78",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "multiple_choice"
+                },
+                {
+                    "exist_relation_items": true,
+                    "id": "53",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "肺转移",
+                    "options": [
+                        {
+                            "en_name": "lung_metastases",
+                            "id": "54",
+                            "is_exclude_option": 0,
+                            "name": "否",
+                            "option_en_name": "lung_metastases",
+                            "option_name": "否",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "pid": "53",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "lung_metastases",
+                            "id": "55",
+                            "is_exclude_option": 0,
+                            "name": "是",
+                            "option_en_name": "lung_metastases",
+                            "option_name": "是",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "53",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "exist_relation_items": true,
+                    "id": "82",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "确诊方法",
+                    "option_max_choice": 0,
+                    "options": [
+                        {
+                            "en_name": "diag_method_biopsy_lung",
+                            "id": "83",
+                            "is_exclude_option": 0,
+                            "name": "活检",
+                            "option_en_name": "diag_method_biopsy_lung",
+                            "option_name": "活检",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "82",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "diag_method_ct_lung",
+                            "id": "84",
+                            "is_exclude_option": 0,
+                            "name": "CT",
+                            "option_en_name": "diag_method_ct_lung",
+                            "option_name": "CT",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "pid": "82",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "diag_method_mr_lung",
+                            "id": "85",
+                            "is_exclude_option": 0,
+                            "name": "MR",
+                            "option_en_name": "diag_method_mr_lung",
+                            "option_name": "MR",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 3,
+                            "option_value_type": "int",
+                            "pid": "82",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "multiple_choice"
+                },
+                {
+                    "exist_relation_items": true,
+                    "id": "60",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "肝转移",
+                    "options": [
+                        {
+                            "en_name": "liver_metastases",
+                            "id": "61",
+                            "is_exclude_option": 0,
+                            "name": "否",
+                            "option_en_name": "liver_metastases",
+                            "option_name": "否",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "pid": "60",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "liver_metastases",
+                            "id": "62",
+                            "is_exclude_option": 0,
+                            "name": "是",
+                            "option_en_name": "liver_metastases",
+                            "option_name": "是",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "60",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                },
+                {
+                    "exist_relation_items": true,
+                    "id": "63",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "确诊方法",
+                    "option_max_choice": 0,
+                    "options": [
+                        {
+                            "en_name": "diag_method_biopsy_liver",
+                            "id": "64",
+                            "is_exclude_option": 0,
+                            "name": "活检",
+                            "option_en_name": "diag_method_biopsy_liver",
+                            "option_name": "活检",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "63",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "diag_method_ct_liver",
+                            "id": "65",
+                            "is_exclude_option": 0,
+                            "name": "CT",
+                            "option_en_name": "diag_method_ct_liver",
+                            "option_name": "CT",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "pid": "63",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "diag_method_mr_liver",
+                            "id": "66",
+                            "is_exclude_option": 0,
+                            "name": "MR",
+                            "option_en_name": "diag_method_mr_liver",
+                            "option_name": "MR",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 3,
+                            "option_value_type": "int",
+                            "pid": "63",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "multiple_choice"
+                },
+                {
+                    "id": "67",
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "name": "去势",
+                    "options": [
+                        {
+                            "en_name": "castration",
+                            "id": "68",
+                            "is_exclude_option": 0,
+                            "name": "敏感",
+                            "option_en_name": "castration",
+                            "option_name": "敏感",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "pid": "67",
+                            "remark": "",
+                            "type": "option"
+                        },
+                        {
+                            "en_name": "castration",
+                            "id": "69",
+                            "is_exclude_option": 0,
+                            "name": "抵抗",
+                            "option_en_name": "castration",
+                            "option_name": "抵抗",
+                            "option_other_en_name": "",
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "pid": "67",
+                            "remark": "",
+                            "type": "option"
+                        }
+                    ],
+                    "pid": "1",
+                    "remark": "",
+                    "row_behavior": 0,
+                    "type": "single_choice"
+                }
+            ],
+            "name": "基线信息",
+            "pid": "0",
+            "remark": "",
+            "source": [],
+            "type": "group"
+        }
+    ],
+    "relation_dict": {
+        "33": {
+            "id": "33",
+            "relation": "and",
+            "relation_items": {
+                "30": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "32",
+                            "option_en_name": "local_progress",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "30"
+                }
+            }
+        },
+        "37": {
+            "id": "37",
+            "relation": "and",
+            "relation_items": {
+                "34": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "36",
+                            "option_en_name": "local_recurrence",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "34"
+                }
+            }
+        },
+        "41": {
+            "id": "41",
+            "relation": "and",
+            "relation_items": {
+                "38": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "40",
+                            "option_en_name": "ln_metastasis",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "38"
+                }
+            }
+        },
+        "45": {
+            "id": "45",
+            "relation": "and",
+            "relation_items": {
+                "42": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "44",
+                            "option_en_name": "distant_metastasis",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "42"
+                }
+            }
+        },
+        "46": {
+            "id": "46",
+            "relation": "and",
+            "relation_items": {
+                "42": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "44",
+                            "option_en_name": "distant_metastasis",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "42"
+                }
+            }
+        },
+        "53": {
+            "id": "53",
+            "relation": "and",
+            "relation_items": {
+                "42": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "44",
+                            "option_en_name": "distant_metastasis",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "42"
+                }
+            }
+        },
+        "60": {
+            "id": "60",
+            "relation": "and",
+            "relation_items": {
+                "42": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "44",
+                            "option_en_name": "distant_metastasis",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "42"
+                }
+            }
+        },
+        "63": {
+            "id": "63",
+            "relation": "and",
+            "relation_items": {
+                "60": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "62",
+                            "option_en_name": "liver_metastases",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "60"
+                }
+            }
+        },
+        "70": {
+            "id": "70",
+            "relation": "and",
+            "relation_items": {
+                "38": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "40",
+                            "option_en_name": "ln_metastasis",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "38"
+                }
+            }
+        },
+        "78": {
+            "id": "78",
+            "relation": "and",
+            "relation_items": {
+                "46": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "48",
+                            "option_en_name": "bone_metastases",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "46"
+                }
+            }
+        },
+        "82": {
+            "id": "82",
+            "relation": "and",
+            "relation_items": {
+                "53": {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "55",
+                            "option_en_name": "lung_metastases",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "53"
+                }
+            }
+        }
+    },
+    "relation_keys": {
+        "30": [
+            "33"
+        ],
+        "34": [
+            "37"
+        ],
+        "38": [
+            "41",
+            "70"
+        ],
+        "42": [
+            "45",
+            "46",
+            "53",
+            "60"
+        ],
+        "46": [
+            "78"
+        ],
+        "53": [
+            "82"
+        ],
+        "60": [
+            "63"
+        ]
+    },
+    "relation_list": [
+        {
+            "id": "33",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "32",
+                            "option_en_name": "local_progress",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "30"
+                }
+            ]
+        },
+        {
+            "id": "37",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "36",
+                            "option_en_name": "local_recurrence",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "34"
+                }
+            ]
+        },
+        {
+            "id": "41",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "40",
+                            "option_en_name": "ln_metastasis",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "38"
+                }
+            ]
+        },
+        {
+            "id": "70",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "40",
+                            "option_en_name": "ln_metastasis",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "38"
+                }
+            ]
+        },
+        {
+            "id": "45",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "44",
+                            "option_en_name": "distant_metastasis",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "42"
+                }
+            ]
+        },
+        {
+            "id": "46",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "44",
+                            "option_en_name": "distant_metastasis",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "42"
+                }
+            ]
+        },
+        {
+            "id": "78",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "48",
+                            "option_en_name": "bone_metastases",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "46"
+                }
+            ]
+        },
+        {
+            "id": "53",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "44",
+                            "option_en_name": "distant_metastasis",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "42"
+                }
+            ]
+        },
+        {
+            "id": "82",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "55",
+                            "option_en_name": "lung_metastases",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "53"
+                }
+            ]
+        },
+        {
+            "id": "60",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "44",
+                            "option_en_name": "distant_metastasis",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "42"
+                }
+            ]
+        },
+        {
+            "id": "63",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "any_or_all": "any",
+                    "checked_or_unchecked": "checked",
+                    "option_list": [
+                        {
+                            "id": "62",
+                            "option_en_name": "liver_metastases",
+                            "option_name": "是",
+                            "option_value": 1
+                        }
+                    ],
+                    "rid": "60"
+                }
+            ]
+        }
+    ]
+}

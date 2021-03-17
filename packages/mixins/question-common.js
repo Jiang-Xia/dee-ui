@@ -51,8 +51,7 @@ export const commonMixins = {
 export const relationMixins = {
   methods: {
     // 获取关联题目
-    $__calcRelationHandle() {
-      const id = this.dimLayout.id
+    $__calcRelationHandle(id) {
       const ids = this.relationKeys[id]
       if (ids) {
         // console.log(ids)
@@ -63,6 +62,9 @@ export const relationMixins = {
             this.$emit('change-id', { id: id_, type: 'add' })
           } else {
             this.$emit('change-id', { id: id_, type: 'remove' })
+          }
+          if (this.relationKeys[id_]) {
+            this.$__calcRelationHandle(id_)
           }
         }
       }
