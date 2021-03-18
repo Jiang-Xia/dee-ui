@@ -62,7 +62,6 @@ const install = function(Vue) {
   // 下面这个写法也可以
   // components.map(component => Vue.use(component))
 }
-
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
