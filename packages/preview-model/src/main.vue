@@ -116,6 +116,51 @@
         :question-index="index"
         @modify="modifyHandle"
       />
+      <!-- 新增四种题型 -->
+      <!-- <MatrixSingleDropdown
+        v-if="item.type==='matrix_single_dropdown'"
+        v-show="!item.exist_relation_items||relationIds.includes(item.id)"
+        :id="customQuestionId?customQuestionId+'_'+item.id:''"
+        :key="String('MatrixSingleDropdown_'+index)"
+        :dim-layout="item"
+        :dim-data="dimData"
+        :is-editing="isEditing"
+        :question-index="index"
+        @modify="modifyHandle"
+      />
+      <MatrixMultipleDropdown
+        v-if="item.type==='matrix_multiple_dropdown'"
+        v-show="!item.exist_relation_items||relationIds.includes(item.id)"
+        :id="customQuestionId?customQuestionId+'_'+item.id:''"
+        :key="String('MatrixMultipleDropdown_'+index)"
+        :dim-layout="item"
+        :dim-data="dimData"
+        :is-editing="isEditing"
+        :question-index="index"
+        @modify="modifyHandle"
+      />
+      <MatrixComplexList
+        v-if="item.type==='matrix_complex_list'"
+        v-show="!item.exist_relation_items||relationIds.includes(item.id)"
+        :id="customQuestionId?customQuestionId+'_'+item.id:''"
+        :key="String('MatrixComplexList_'+index)"
+        :dim-layout="item"
+        :dim-data="dimData"
+        :is-editing="isEditing"
+        :question-index="index"
+        @modify="modifyHandle"
+      />
+      <MatrixComplex
+        v-if="item.type==='matrix_complex'"
+        v-show="!item.exist_relation_items||relationIds.includes(item.id)"
+        :id="customQuestionId?customQuestionId+'_'+item.id:''"
+        :key="String('MatrixComplex_'+index)"
+        :dim-layout="item"
+        :dim-data="dimData"
+        :is-editing="isEditing"
+        :question-index="index"
+        @modify="modifyHandle"
+      /> -->
     </template>
   </div>
 </template>
@@ -131,6 +176,11 @@ import Desp from '#/desp'
 import MatrixMultipleChoice from '#/matrix-multiple-choice'
 import MatrixInput from '#/matrix-input'
 import MatrixSingleChoice from '#/matrix-single-choice'
+
+// import MatrixSingleDropdown from '#/matrix-single-dropdown'
+// import MatrixMultipleDropdown from '#/matrix-multiple-dropdown'
+// import MatrixComplexList from '#/matrix-complex-list'
+// import MatrixComplex from '#/matrix-complex'
 export default {
   name: 'DeePreviewModel',
   components: {
@@ -144,6 +194,11 @@ export default {
     MatrixMultipleChoice,
     MatrixInput,
     MatrixSingleChoice
+
+    // MatrixSingleDropdown,
+    // MatrixMultipleDropdown,
+    // MatrixComplexList,
+    // MatrixComplex
   },
   props: {
     dimData: {

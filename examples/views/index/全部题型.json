@@ -1,0 +1,3502 @@
+{
+    "group_list": [
+        {
+            "id": "1",
+            "pid": "0",
+            "name": "基本信息",
+            "remark": "",
+            "type": "group",
+            "form_id": null,
+            "items": [
+                {
+                    "id": "2",
+                    "pid": "1",
+                    "name": "基础信息",
+                    "remark": "",
+                    "type": "desp",
+                    "form_id": null
+                },
+                {
+                    "id": "3",
+                    "pid": "1",
+                    "name": "姓名",
+                    "remark": "",
+                    "type": "short_text",
+                    "form_id": null,
+                    "en_name": "pat_name",
+                    "is_required": 1,
+                    "max_length": 5,
+                    "text_check": "no_limit",
+                    "row_behavior": 0
+                },
+                {
+                    "id": "4",
+                    "pid": "1",
+                    "name": "初次入院初次年龄",
+                    "remark": "",
+                    "type": "short_text",
+                    "form_id": null,
+                    "en_name": "pat_age",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "text_check": "number",
+                    "row_behavior": 0
+                },
+                {
+                    "id": "5",
+                    "pid": "1",
+                    "name": "身份证号",
+                    "remark": "",
+                    "type": "short_text",
+                    "form_id": null,
+                    "en_name": "pat_identity",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "text_check": "idcard",
+                    "row_behavior": 0
+                },
+                {
+                    "id": "6",
+                    "pid": "1",
+                    "name": "初次入院日期",
+                    "remark": "",
+                    "type": "short_text",
+                    "form_id": null,
+                    "en_name": "in_date_first",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "text_check": "date",
+                    "row_behavior": 0
+                },
+                {
+                    "id": "7",
+                    "pid": "1",
+                    "name": "性别",
+                    "remark": "",
+                    "type": "single_choice",
+                    "form_id": null,
+                    "options": [
+                        {
+                            "id": "8",
+                            "pid": "7",
+                            "name": "男",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "pat_sex",
+                            "option_name": "男",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "option_en_name": "pat_sex",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "9",
+                            "pid": "7",
+                            "name": "女",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "pat_sex",
+                            "option_name": "女",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "option_en_name": "pat_sex",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        }
+                    ],
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "row_behavior": 0
+                },
+                {
+                    "id": "10",
+                    "pid": "1",
+                    "name": "现病史",
+                    "remark": "",
+                    "type": "desp",
+                    "form_id": null
+                },
+                {
+                    "id": "11",
+                    "pid": "1",
+                    "name": "初次入院现病史",
+                    "remark": "",
+                    "type": "long_text",
+                    "form_id": null,
+                    "en_name": "hnow_first",
+                    "is_required": 0,
+                    "max_line_count": 2,
+                    "exist_relation_items": true
+                },
+                {
+                    "id": "12",
+                    "pid": "1",
+                    "name": "症状",
+                    "remark": "",
+                    "type": "desp",
+                    "form_id": null
+                },
+                {
+                    "id": "13",
+                    "pid": "1",
+                    "name": "是否有以下症状",
+                    "remark": "",
+                    "type": "multiple_dropdown",
+                    "form_id": null,
+                    "options": [
+                        {
+                            "id": "14",
+                            "pid": "13",
+                            "name": "体重减轻",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_thin",
+                            "option_name": "体重减轻",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_thin",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "15",
+                            "pid": "13",
+                            "name": "腹部肿块",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_abd_mass",
+                            "option_name": "腹部肿块",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_abd_mass",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "16",
+                            "pid": "13",
+                            "name": "腹痛",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_abd_pain",
+                            "option_name": "腹痛",
+                            "option_value": 3,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_abd_pain",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "17",
+                            "pid": "13",
+                            "name": "腹胀",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_abd_distension",
+                            "option_name": "腹胀",
+                            "option_value": 4,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_abd_distension",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "18",
+                            "pid": "13",
+                            "name": "排便习惯改变",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_bhchange",
+                            "option_name": "排便习惯改变",
+                            "option_value": 5,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_bhchange",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "19",
+                            "pid": "13",
+                            "name": "排便增多",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_bmore",
+                            "option_name": "排便增多",
+                            "option_value": 6,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_bmore",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "20",
+                            "pid": "13",
+                            "name": "排便减少",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_bless",
+                            "option_name": "排便减少",
+                            "option_value": 7,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_bless",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "21",
+                            "pid": "13",
+                            "name": "排便困难",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_bdiff",
+                            "option_name": "排便困难",
+                            "option_value": 8,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_bdiff",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "22",
+                            "pid": "13",
+                            "name": "便秘",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_constipation",
+                            "option_name": "便秘",
+                            "option_value": 9,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_constipation",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "23",
+                            "pid": "13",
+                            "name": "腹泻",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_diarrhea",
+                            "option_name": "腹泻",
+                            "option_value": 10,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_diarrhea",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        }
+                    ],
+                    "is_required": 0,
+                    "line_option_count": 5,
+                    "option_max_choice": 0,
+                    "row_behavior": 0
+                },
+                {
+                    "id": "24",
+                    "pid": "1",
+                    "name": "既往史",
+                    "remark": "",
+                    "type": "desp",
+                    "form_id": null
+                },
+                {
+                    "id": "25",
+                    "pid": "1",
+                    "name": "高血压",
+                    "remark": "",
+                    "type": "single_choice",
+                    "form_id": null,
+                    "options": [
+                        {
+                            "id": "26",
+                            "pid": "25",
+                            "name": "有",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "h_hypertension",
+                            "option_name": "有",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "option_en_name": "h_hypertension",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "27",
+                            "pid": "25",
+                            "name": "无",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "h_hypertension",
+                            "option_name": "无",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "option_en_name": "h_hypertension",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        }
+                    ],
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "row_behavior": 0
+                },
+                {
+                    "id": "28",
+                    "pid": "1",
+                    "name": "确诊年份",
+                    "remark": "",
+                    "type": "short_text",
+                    "form_id": null,
+                    "en_name": "h_hypertension_year",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "text_check": "no_limit",
+                    "row_behavior": 0,
+                    "exist_relation_items": true
+                },
+                {
+                    "id": "29",
+                    "pid": "1",
+                    "name": "治疗药物",
+                    "remark": "",
+                    "type": "short_text",
+                    "form_id": null,
+                    "en_name": "h_hypertension_drug",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "text_check": "no_limit",
+                    "row_behavior": 2,
+                    "exist_relation_items": true
+                },
+                {
+                    "id": "30",
+                    "pid": "1",
+                    "name": "脑卒中",
+                    "remark": "",
+                    "type": "single_choice",
+                    "form_id": null,
+                    "options": [
+                        {
+                            "id": "31",
+                            "pid": "30",
+                            "name": "有",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "h_cerebral_apoplexy",
+                            "option_name": "有",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "option_en_name": "h_cerebral_apoplexy",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "32",
+                            "pid": "30",
+                            "name": "无",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "h_cerebral_apoplexy",
+                            "option_name": "无",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "option_en_name": "h_cerebral_apoplexy",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        }
+                    ],
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "row_behavior": 0
+                },
+                {
+                    "id": "33",
+                    "pid": "1",
+                    "name": "确诊年份",
+                    "remark": "",
+                    "type": "short_text",
+                    "form_id": null,
+                    "en_name": "h_cerebral_apoplexy_year",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "text_check": "no_limit",
+                    "row_behavior": 0
+                },
+                {
+                    "id": "34",
+                    "pid": "1",
+                    "name": "类型",
+                    "remark": "",
+                    "type": "short_text",
+                    "form_id": null,
+                    "en_name": "h_cerebral_apoplexy_type",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "text_check": "no_limit",
+                    "row_behavior": 0
+                },
+                {
+                    "id": "35",
+                    "pid": "1",
+                    "name": "糖尿病",
+                    "remark": "",
+                    "type": "single_dropdown",
+                    "form_id": null,
+                    "options": [
+                        {
+                            "id": "36",
+                            "pid": "35",
+                            "name": "有",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "h_diabetes",
+                            "option_name": "有",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "option_en_name": "h_diabetes",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "37",
+                            "pid": "35",
+                            "name": "无",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "h_diabetes",
+                            "option_name": "无",
+                            "option_value": 0,
+                            "option_value_type": "int",
+                            "option_en_name": "h_diabetes",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        }
+                    ],
+                    "is_required": 0,
+                    "row_behavior": 1
+                },
+                {
+                    "id": "38",
+                    "pid": "1",
+                    "name": "确诊年份",
+                    "remark": "",
+                    "type": "short_text",
+                    "form_id": null,
+                    "en_name": "h_diabetes_year",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "text_check": "no_limit",
+                    "row_behavior": 0
+                },
+                {
+                    "id": "39",
+                    "pid": "1",
+                    "name": "治疗药物",
+                    "remark": "",
+                    "type": "short_text",
+                    "form_id": null,
+                    "en_name": "h_diabetes_drug",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "text_check": "no_limit",
+                    "row_behavior": 0
+                }
+            ],
+            "source": []
+        },
+        {
+            "id": "40",
+            "pid": "0",
+            "name": "结直肠相关疾病",
+            "remark": "",
+            "type": "group",
+            "form_id": null,
+            "items": [
+                {
+                    "id": "41",
+                    "pid": "40",
+                    "name": "结直肠相关疾病",
+                    "remark": "",
+                    "type": "multiple_choice",
+                    "form_id": null,
+                    "options": [
+                        {
+                            "id": "42",
+                            "pid": "41",
+                            "name": "肠息肉病",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_intestinal_polyposis",
+                            "option_name": "肠息肉病",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_intestinal_polyposis",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "43",
+                            "pid": "41",
+                            "name": "家族性腺瘤性息肉病(FAP)",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_fap",
+                            "option_name": "家族性腺瘤性息肉病(FAP)",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_fap",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "44",
+                            "pid": "41",
+                            "name": "炎性肠病",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_ibd",
+                            "option_name": "炎性肠病",
+                            "option_value": 3,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_ibd",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "45",
+                            "pid": "41",
+                            "name": "溃疡性结肠炎",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_ulcerative_colitis",
+                            "option_name": "溃疡性结肠炎",
+                            "option_value": 4,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_ulcerative_colitis",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "46",
+                            "pid": "41",
+                            "name": "克罗恩病",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_crohns",
+                            "option_name": "克罗恩病",
+                            "option_value": 5,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_crohns",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "47",
+                            "pid": "41",
+                            "name": "肠梗阻",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_intestinal_obstruction",
+                            "option_name": "肠梗阻",
+                            "option_value": 6,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_intestinal_obstruction",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "48",
+                            "pid": "41",
+                            "name": "肠结核",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_intestinal_tuberculosis",
+                            "option_name": "肠结核",
+                            "option_value": 7,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_intestinal_tuberculosis",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "49",
+                            "pid": "41",
+                            "name": "肠穿孔",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_intestinal_perforation",
+                            "option_name": "肠穿孔",
+                            "option_value": 8,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_intestinal_perforation",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        }
+                    ],
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "option_max_choice": 0,
+                    "row_behavior": 0
+                },
+                {
+                    "id": "50",
+                    "pid": "40",
+                    "name": "肿瘤",
+                    "remark": "",
+                    "type": "multiple_choice",
+                    "form_id": null,
+                    "options": [
+                        {
+                            "id": "51",
+                            "pid": "50",
+                            "name": "肺癌",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_lung_cancer",
+                            "option_name": "肺癌",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_lung_cancer",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "52",
+                            "pid": "50",
+                            "name": "胃癌",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_gastric_cancer",
+                            "option_name": "胃癌",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_gastric_cancer",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "53",
+                            "pid": "50",
+                            "name": "鼻咽癌",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_nasopharyngeal_cancer",
+                            "option_name": "鼻咽癌",
+                            "option_value": 3,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_nasopharyngeal_cancer",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "54",
+                            "pid": "50",
+                            "name": "食道癌",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_esophageal_cancer",
+                            "option_name": "食道癌",
+                            "option_value": 4,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_esophageal_cancer",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "55",
+                            "pid": "50",
+                            "name": "肝癌",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_liver_cancer",
+                            "option_name": "肝癌",
+                            "option_value": 5,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_liver_cancer",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "56",
+                            "pid": "50",
+                            "name": "胆管癌",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_bile_duct_cancer",
+                            "option_name": "胆管癌",
+                            "option_value": 6,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_bile_duct_cancer",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "57",
+                            "pid": "50",
+                            "name": "其他",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_cancer",
+                            "option_name": "其他",
+                            "option_value": 7,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_cancer",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 1,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": "diag_cancer_text"
+                        }
+                    ],
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "option_max_choice": 0,
+                    "row_behavior": 0
+                },
+                {
+                    "id": "150",
+                    "pid": "40",
+                    "name": "肠癌位置",
+                    "remark": "",
+                    "type": "single_choice",
+                    "form_id": null,
+                    "options": [
+                        {
+                            "id": "151",
+                            "pid": "150",
+                            "name": "直肠",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "dp_cc_tumor_location",
+                            "option_name": "直肠",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "option_en_name": "dp_cc_tumor_location",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "152",
+                            "pid": "150",
+                            "name": "横结肠",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "dp_cc_tumor_location",
+                            "option_name": "横结肠",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "option_en_name": "dp_cc_tumor_location",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "153",
+                            "pid": "150",
+                            "name": "降结肠",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "dp_cc_tumor_location",
+                            "option_name": "降结肠",
+                            "option_value": 3,
+                            "option_value_type": "int",
+                            "option_en_name": "dp_cc_tumor_location",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "154",
+                            "pid": "150",
+                            "name": "升结肠",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "dp_cc_tumor_location",
+                            "option_name": "升结肠",
+                            "option_value": 4,
+                            "option_value_type": "int",
+                            "option_en_name": "dp_cc_tumor_location",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "155",
+                            "pid": "150",
+                            "name": "乙状结肠",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "dp_cc_tumor_location",
+                            "option_name": "乙状结肠",
+                            "option_value": 5,
+                            "option_value_type": "int",
+                            "option_en_name": "dp_cc_tumor_location",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "157",
+                            "pid": "150",
+                            "name": "其他",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "dp_cc_tumor_location",
+                            "option_name": "其他",
+                            "option_value": 7,
+                            "option_value_type": "int",
+                            "option_en_name": "dp_cc_tumor_location",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 1,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": "dp_cc_tumor_location_text"
+                        }
+                    ],
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "row_behavior": 0,
+                    "exist_relation_items": true
+                }
+            ],
+            "source": []
+        },
+        {
+            "id": "58",
+            "pid": "0",
+            "name": "结直肠相关疾病",
+            "remark": "",
+            "type": "group",
+            "form_id": null,
+            "items": [
+                {
+                    "id": "59",
+                    "pid": "58",
+                    "name": "术后观察表",
+                    "remark": "",
+                    "type": "matrix_input",
+                    "form_id": null,
+                    "matrix_rows": [
+                        {
+                            "id": "60",
+                            "pid": "59",
+                            "name": "术后第一天",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "first"
+                        },
+                        {
+                            "id": "61",
+                            "pid": "59",
+                            "name": "术后第二天",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "second"
+                        },
+                        {
+                            "id": "62",
+                            "pid": "59",
+                            "name": "术后第三天",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "third"
+                        },
+                        {
+                            "id": "63",
+                            "pid": "59",
+                            "name": "术后第四天",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "forth"
+                        },
+                        {
+                            "id": "64",
+                            "pid": "59",
+                            "name": "术后第五天",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "fifth"
+                        }
+                    ],
+                    "matrix_cols": [
+                        {
+                            "id": "65",
+                            "pid": "59",
+                            "name": "主诉",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "complaint",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "66",
+                            "pid": "59",
+                            "name": "伤口",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "cut",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "67",
+                            "pid": "59",
+                            "name": "疼痛评分",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "pain",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "68",
+                            "pid": "59",
+                            "name": "体温（T）",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "temp",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "69",
+                            "pid": "59",
+                            "name": "呼吸（次/分）",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "breath",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "70",
+                            "pid": "59",
+                            "name": "脉搏（次/分）",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "pulse",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "71",
+                            "pid": "59",
+                            "name": "血压（mmHg）",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "bp",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "72",
+                            "pid": "59",
+                            "name": "肠鸣音",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "bowel_s",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "73",
+                            "pid": "59",
+                            "name": "引流物量（ml）",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "drain",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "74",
+                            "pid": "59",
+                            "name": "引流颜色",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "drain_color",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "75",
+                            "pid": "59",
+                            "name": "尿量（ml）",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "upd",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "76",
+                            "pid": "59",
+                            "name": "中心静脉压",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "cvp",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "77",
+                            "pid": "59",
+                            "name": "晶体入量（ml）",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "crystal",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "78",
+                            "pid": "59",
+                            "name": "胶体入量（ml）",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "colloid",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "79",
+                            "pid": "59",
+                            "name": "体液丢失量(ml)",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "loss_body_f",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "80",
+                            "pid": "59",
+                            "name": "胸腹腔积液量(ml)",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "pleural_v",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "81",
+                            "pid": "59",
+                            "name": "排便次数（次）",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "defec_time",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "82",
+                            "pid": "59",
+                            "name": "大便性状",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "defec_color",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "83",
+                            "pid": "59",
+                            "name": "活动量",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "active_v",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "84",
+                            "pid": "59",
+                            "name": "饮食情况",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "diet",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "85",
+                            "pid": "59",
+                            "name": "医嘱调整",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "od_change",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "86",
+                            "pid": "59",
+                            "name": "干预措施",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "intervention",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        }
+                    ]
+                },
+                {
+                    "id": "87",
+                    "pid": "58",
+                    "name": "病情变化判断指标",
+                    "remark": "",
+                    "type": "matrix_single_choice",
+                    "form_id": null,
+                    "matrix_rows": [
+                        {
+                            "id": "88",
+                            "pid": "87",
+                            "name": "ALT (SGPT)",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "enzymology_ast"
+                        },
+                        {
+                            "id": "89",
+                            "pid": "87",
+                            "name": "GGT",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "enzymology_alt"
+                        },
+                        {
+                            "id": "90",
+                            "pid": "87",
+                            "name": "ALP",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "enzymology_ggt"
+                        },
+                        {
+                            "id": "91",
+                            "pid": "87",
+                            "name": "淀粉酶",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "enzymology_alp"
+                        },
+                        {
+                            "id": "92",
+                            "pid": "87",
+                            "name": "脂肪酶",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "enzymology_amylase"
+                        }
+                    ],
+                    "matrix_cols": [
+                        {
+                            "id": "93",
+                            "pid": "87",
+                            "name": "1级",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "one",
+                            "col_type": "option",
+                            "option_name": "1级",
+                            "option_en_name": "one",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "is_exclude_option": 0
+                        },
+                        {
+                            "id": "94",
+                            "pid": "87",
+                            "name": "2级",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "two",
+                            "col_type": "option",
+                            "option_name": "2级",
+                            "option_en_name": "two",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "is_exclude_option": 0
+                        },
+                        {
+                            "id": "95",
+                            "pid": "87",
+                            "name": "3级",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "three",
+                            "col_type": "option",
+                            "option_name": "3级",
+                            "option_en_name": "three",
+                            "option_value": 3,
+                            "option_value_type": "int",
+                            "is_exclude_option": 0
+                        },
+                        {
+                            "id": "96",
+                            "pid": "87",
+                            "name": "4级",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "four",
+                            "col_type": "option",
+                            "option_name": "4级",
+                            "option_en_name": "four",
+                            "option_value": 4,
+                            "option_value_type": "int",
+                            "is_exclude_option": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "97",
+                    "pid": "58",
+                    "name": "随访",
+                    "remark": "",
+                    "type": "matrix_multiple_choice",
+                    "form_id": null,
+                    "matrix_rows": [
+                        {
+                            "id": "98",
+                            "pid": "97",
+                            "name": "第一次随访",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "follow_first"
+                        },
+                        {
+                            "id": "99",
+                            "pid": "97",
+                            "name": "第二次随访",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "follow_second"
+                        },
+                        {
+                            "id": "100",
+                            "pid": "97",
+                            "name": "第三次随访",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "follow_third"
+                        }
+                    ],
+                    "matrix_cols": [
+                        {
+                            "id": "101",
+                            "pid": "97",
+                            "name": "无",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "follow_no",
+                            "col_type": "option",
+                            "option_name": "无",
+                            "option_en_name": "follow_no",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "is_exclude_option": 1
+                        },
+                        {
+                            "id": "102",
+                            "pid": "97",
+                            "name": "腹痛",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "follow_h_abd_pain",
+                            "col_type": "option",
+                            "option_name": "腹痛",
+                            "option_en_name": "follow_h_abd_pain",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "is_exclude_option": 0
+                        },
+                        {
+                            "id": "103",
+                            "pid": "97",
+                            "name": "腹胀",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "follow_h_abd_distension",
+                            "col_type": "option",
+                            "option_name": "腹胀",
+                            "option_en_name": "follow_h_abd_distension",
+                            "option_value": 3,
+                            "option_value_type": "int",
+                            "is_exclude_option": 0
+                        },
+                        {
+                            "id": "104",
+                            "pid": "97",
+                            "name": "腹泻",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "follow_h_diarrhea",
+                            "col_type": "option",
+                            "option_name": "腹泻",
+                            "option_en_name": "follow_h_diarrhea",
+                            "option_value": 4,
+                            "option_value_type": "int",
+                            "is_exclude_option": 0
+                        },
+                        {
+                            "id": "105",
+                            "pid": "97",
+                            "name": "恶心",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "follow_h_nausea",
+                            "col_type": "option",
+                            "option_name": "恶心",
+                            "option_en_name": "follow_h_nausea",
+                            "option_value": 5,
+                            "option_value_type": "int",
+                            "is_exclude_option": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "106",
+                    "pid": "58",
+                    "name": "症状",
+                    "remark": "",
+                    "type": "multiple_choice",
+                    "form_id": null,
+                    "options": [
+                        {
+                            "id": "107",
+                            "pid": "106",
+                            "name": "头痛",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_headache",
+                            "option_name": "头痛",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_headache",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "108",
+                            "pid": "106",
+                            "name": "头晕",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_dizzy",
+                            "option_name": "头晕",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_dizzy",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "109",
+                            "pid": "106",
+                            "name": "畏寒",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_chills",
+                            "option_name": "畏寒",
+                            "option_value": 3,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_chills",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "110",
+                            "pid": "106",
+                            "name": "午后发热",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_fever_afternoon",
+                            "option_name": "午后发热",
+                            "option_value": 4,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_fever_afternoon",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "111",
+                            "pid": "106",
+                            "name": "盗汗",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "symptom_night_sweat",
+                            "option_name": "盗汗",
+                            "option_value": 5,
+                            "option_value_type": "int",
+                            "option_en_name": "symptom_night_sweat",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        }
+                    ],
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "option_max_choice": 0,
+                    "row_behavior": 0
+                },
+                {
+                    "id": "112",
+                    "pid": "58",
+                    "name": "症状出现时间",
+                    "remark": "",
+                    "type": "short_text",
+                    "form_id": null,
+                    "en_name": "symptom_time",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "text_check": "no_limit",
+                    "row_behavior": 0,
+                    "exist_relation_items": true
+                },
+                {
+                    "id": "113",
+                    "pid": "58",
+                    "name": "曾用药",
+                    "remark": "",
+                    "type": "multiple_choice",
+                    "form_id": null,
+                    "options": [
+                        {
+                            "id": "114",
+                            "pid": "113",
+                            "name": "r干扰素",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "h_bf_inf_r",
+                            "option_name": "r干扰素",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "option_en_name": "h_bf_inf_r",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "115",
+                            "pid": "113",
+                            "name": "PEG干扰素",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "h_bf_inf_peg",
+                            "option_name": "PEG干扰素",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "option_en_name": "h_bf_inf_peg",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        }
+                    ],
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "option_max_choice": 0,
+                    "row_behavior": 0
+                },
+                {
+                    "id": "116",
+                    "pid": "58",
+                    "name": "用药时间",
+                    "remark": "",
+                    "type": "short_text",
+                    "form_id": null,
+                    "en_name": "med_time",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "text_check": "no_limit",
+                    "row_behavior": 0,
+                    "exist_relation_items": true
+                },
+                {
+                    "id": "117",
+                    "pid": "58",
+                    "name": "呼吸系统相关诊断",
+                    "remark": "",
+                    "type": "multiple_choice",
+                    "form_id": null,
+                    "options": [
+                        {
+                            "id": "118",
+                            "pid": "117",
+                            "name": "慢性支气管炎",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_rs_group",
+                            "option_name": "慢性支气管炎",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_rs_group",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "119",
+                            "pid": "117",
+                            "name": "肺炎",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_bronchitis",
+                            "option_name": "肺炎",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_bronchitis",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "120",
+                            "pid": "117",
+                            "name": "真菌性肺炎",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_pneumonia",
+                            "option_name": "真菌性肺炎",
+                            "option_value": 3,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_pneumonia",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "121",
+                            "pid": "117",
+                            "name": "肺孢子虫肺炎",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "diag_fungal_pneumonia",
+                            "option_name": "肺孢子虫肺炎",
+                            "option_value": 4,
+                            "option_value_type": "int",
+                            "option_en_name": "diag_fungal_pneumonia",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        }
+                    ],
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "option_max_choice": 0,
+                    "row_behavior": 0
+                },
+                {
+                    "id": "122",
+                    "pid": "58",
+                    "name": "其他呼吸系统诊断",
+                    "remark": "",
+                    "type": "short_text",
+                    "form_id": null,
+                    "en_name": "other_diag",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "text_check": "no_limit",
+                    "row_behavior": 0,
+                    "exist_relation_items": true
+                },
+                {
+                    "id": "123",
+                    "pid": "58",
+                    "name": "生育情况",
+                    "remark": "",
+                    "type": "multiple_choice",
+                    "form_id": null,
+                    "options": [
+                        {
+                            "id": "124",
+                            "pid": "123",
+                            "name": "儿子",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "marriage_son",
+                            "option_name": "儿子",
+                            "option_value": 1,
+                            "option_value_type": "int",
+                            "option_en_name": "marriage_son",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        },
+                        {
+                            "id": "125",
+                            "pid": "123",
+                            "name": "女儿",
+                            "remark": "",
+                            "type": "option",
+                            "en_name": "marriage_daugter",
+                            "option_name": "女儿",
+                            "option_value": 2,
+                            "option_value_type": "int",
+                            "option_en_name": "marriage_daugter",
+                            "is_exclude_option": 0,
+                            "option_other_is_editable": 0,
+                            "option_other_is_required": 0,
+                            "option_other_max_length": -1,
+                            "option_other_text_check": "no_limit",
+                            "option_other_en_name": ""
+                        }
+                    ],
+                    "is_required": 0,
+                    "line_option_count": -1,
+                    "option_max_choice": 0,
+                    "row_behavior": 0
+                },
+                {
+                    "id": "126",
+                    "pid": "58",
+                    "name": "个数",
+                    "remark": "",
+                    "type": "short_text",
+                    "form_id": null,
+                    "en_name": "no",
+                    "is_required": 0,
+                    "max_length": -1,
+                    "text_check": "no_limit",
+                    "row_behavior": 0,
+                    "exist_relation_items": true
+                },
+                {
+                    "id": "127",
+                    "pid": "58",
+                    "name": "随访（矩阵下拉多选）",
+                    "remark": "",
+                    "type": "matrix_multiple_dropdown",
+					"is_required": 1,
+                    "form_id": null,
+                    "matrix_rows": [
+                        {
+                            "id": "128",
+                            "pid": "127",
+                            "name": "第一次随访",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "follow_first_dropdown"
+                        },
+                        {
+                            "id": "129",
+                            "pid": "127",
+                            "name": "第二次随访",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "follow_second_dropdown"
+                        },
+                        {
+                            "id": "130",
+                            "pid": "127",
+                            "name": "第三次随访",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "follow_third_dropdown"
+                        }
+                    ],
+                    "matrix_cols": [
+                        {
+                            "id": "131",
+                            "pid": "127",
+                            "name": "症状",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "sym",
+                            "col_type": "multiple_dropdown",
+                            "options": [
+                                {
+                                    "id": "132",
+                                    "pid": "131",
+                                    "name": "无",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "follow_no_dropdown",
+                                    "option_name": "无",
+                                    "option_value": 1,
+                                    "option_value_type": "int",
+                                    "option_en_name": "follow_no_dropdown",
+                                    "is_exclude_option": 1,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "133",
+                                    "pid": "131",
+                                    "name": "腹痛",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "follow_h_abd_pain_dropdown",
+                                    "option_name": "腹痛",
+                                    "option_value": 2,
+                                    "option_value_type": "int",
+                                    "option_en_name": "follow_h_abd_pain_dropdown",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "134",
+                                    "pid": "131",
+                                    "name": "腹胀",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "follow_h_abd_distension_dropdown",
+                                    "option_name": "腹胀",
+                                    "option_value": 3,
+                                    "option_value_type": "int",
+                                    "option_en_name": "follow_h_abd_distension_dropdown",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "135",
+                                    "pid": "131",
+                                    "name": "腹泻",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "follow_h_diarrhea_dropdown",
+                                    "option_name": "腹泻",
+                                    "option_value": 4,
+                                    "option_value_type": "int",
+                                    "option_en_name": "follow_h_diarrhea_dropdown",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "136",
+                                    "pid": "131",
+                                    "name": "恶心",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "follow_h_nausea_dropdown",
+                                    "option_name": "恶心",
+                                    "option_value": 5,
+                                    "option_value_type": "int",
+                                    "option_en_name": "follow_h_nausea_dropdown",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                }
+                            ],
+                            "is_required": 0,
+                            "option_max_choice": 0
+                        },
+                        {
+                            "id": "137",
+                            "pid": "127",
+                            "name": "影像检查项目",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "exam",
+                            "col_type": "multiple_dropdown",
+                            "options": [
+                                {
+                                    "id": "138",
+                                    "pid": "137",
+                                    "name": "无",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "exam_no",
+                                    "option_name": "无",
+                                    "option_value": 1,
+                                    "option_value_type": "int",
+                                    "option_en_name": "exam_no",
+                                    "is_exclude_option": 1,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "139",
+                                    "pid": "137",
+                                    "name": "ct",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "exam_ct",
+                                    "option_name": "ct",
+                                    "option_value": 2,
+                                    "option_value_type": "int",
+                                    "option_en_name": "exam_ct",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "140",
+                                    "pid": "137",
+                                    "name": "mr",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "exam_mr",
+                                    "option_name": "mr",
+                                    "option_value": 3,
+                                    "option_value_type": "int",
+                                    "option_en_name": "exam_mr",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "141",
+                                    "pid": "137",
+                                    "name": "us",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "exam_us",
+                                    "option_name": "us",
+                                    "option_value": 4,
+                                    "option_value_type": "int",
+                                    "option_en_name": "exam_us",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                }
+                            ],
+                            "is_required": 0,
+                            "option_max_choice": 0
+                        },
+                        {
+                            "id": "142",
+                            "pid": "127",
+                            "name": "实验室检查项目",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "lis",
+                            "col_type": "multiple_dropdown",
+                            "options": [
+                                {
+                                    "id": "143",
+                                    "pid": "142",
+                                    "name": "无",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "lis_no",
+                                    "option_name": "无",
+                                    "option_value": 1,
+                                    "option_value_type": "int",
+                                    "option_en_name": "lis_no",
+                                    "is_exclude_option": 1,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "144",
+                                    "pid": "142",
+                                    "name": "血常规",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "lis_1",
+                                    "option_name": "血常规",
+                                    "option_value": 2,
+                                    "option_value_type": "int",
+                                    "option_en_name": "lis_1",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "145",
+                                    "pid": "142",
+                                    "name": "尿常规",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "lis_2",
+                                    "option_name": "尿常规",
+                                    "option_value": 3,
+                                    "option_value_type": "int",
+                                    "option_en_name": "lis_2",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "146",
+                                    "pid": "142",
+                                    "name": "粪便常规",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "lis_3",
+                                    "option_name": "粪便常规",
+                                    "option_value": 4,
+                                    "option_value_type": "int",
+                                    "option_en_name": "lis_3",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                }
+                            ],
+                            "is_required": 0,
+                            "option_max_choice": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "147",
+                    "pid": "58",
+                    "name": "调查表(矩阵下拉单选)",
+                    "remark": "",
+                    "type": "matrix_single_dropdown",
+					"is_required": 1,
+                    "form_id": null,
+                    "matrix_rows": [
+                        {
+                            "id": "148",
+                            "pid": "147",
+                            "name": "医生",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "enzymology_ast_dropdown"
+                        },
+                        {
+                            "id": "149",
+                            "pid": "147",
+                            "name": "护士",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "enzymology_alt_dropdown"
+                        },
+                        {
+                            "id": "200",
+                            "pid": "147",
+                            "name": "其他",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "enzymology_ggt_dropdown"
+                        }
+                    ],
+                    "matrix_cols": [
+                        {
+                            "id": "201",
+                            "pid": "147",
+                            "name": "整体满意度",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "total",
+                            "col_type": "single_dropdown",
+                            "options": [
+                                {
+                                    "id": "202",
+                                    "pid": "201",
+                                    "name": "非常满意",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "total",
+                                    "option_name": "非常满意",
+                                    "option_value": 1,
+                                    "option_value_type": "int",
+                                    "option_en_name": "total",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "203",
+                                    "pid": "201",
+                                    "name": "满意",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "total",
+                                    "option_name": "满意",
+                                    "option_value": 2,
+                                    "option_value_type": "int",
+                                    "option_en_name": "total",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "204",
+                                    "pid": "201",
+                                    "name": "一般",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "total",
+                                    "option_name": "一般",
+                                    "option_value": 3,
+                                    "option_value_type": "int",
+                                    "option_en_name": "total",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "205",
+                                    "pid": "201",
+                                    "name": "不满意",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "total",
+                                    "option_name": "不满意",
+                                    "option_value": 4,
+                                    "option_value_type": "int",
+                                    "option_en_name": "total",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                }
+                            ],
+                            "is_required": 0
+                        },
+                        {
+                            "id": "156",
+                            "pid": "147",
+                            "name": "专业程度",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "level",
+                            "col_type": "single_dropdown",
+                            "options": [
+                                {
+                                    "id": "206",
+                                    "pid": "156",
+                                    "name": "非常专业",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "level",
+                                    "option_name": "非常专业",
+                                    "option_value": 1,
+                                    "option_value_type": "int",
+                                    "option_en_name": "level",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "158",
+                                    "pid": "156",
+                                    "name": "专业",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "level",
+                                    "option_name": "专业",
+                                    "option_value": 2,
+                                    "option_value_type": "int",
+                                    "option_en_name": "level",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "159",
+                                    "pid": "156",
+                                    "name": "一般",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "level",
+                                    "option_name": "一般",
+                                    "option_value": 3,
+                                    "option_value_type": "int",
+                                    "option_en_name": "level",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "160",
+                                    "pid": "156",
+                                    "name": "不专业",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "level",
+                                    "option_name": "不专业",
+                                    "option_value": 4,
+                                    "option_value_type": "int",
+                                    "option_en_name": "level",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                }
+                            ],
+                            "is_required": 0
+                        },
+                        {
+                            "id": "161",
+                            "pid": "147",
+                            "name": "态度",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "attitude",
+                            "col_type": "single_dropdown",
+                            "options": [
+                                {
+                                    "id": "162",
+                                    "pid": "161",
+                                    "name": "优秀",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "attitude",
+                                    "option_name": "优秀",
+                                    "option_value": 1,
+                                    "option_value_type": "int",
+                                    "option_en_name": "attitude",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "163",
+                                    "pid": "161",
+                                    "name": "良好",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "attitude",
+                                    "option_name": "良好",
+                                    "option_value": 2,
+                                    "option_value_type": "int",
+                                    "option_en_name": "attitude",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "164",
+                                    "pid": "161",
+                                    "name": "一般",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "attitude",
+                                    "option_name": "一般",
+                                    "option_value": 3,
+                                    "option_value_type": "int",
+                                    "option_en_name": "attitude",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "165",
+                                    "pid": "161",
+                                    "name": "差",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "attitude",
+                                    "option_name": "差",
+                                    "option_value": 4,
+                                    "option_value_type": "int",
+                                    "option_en_name": "attitude",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                }
+                            ],
+                            "is_required": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "166",
+                    "pid": "58",
+                    "name": "肿块(复合矩阵)",
+                    "remark": "",
+                    "type": "matrix_complex",
+					"is_required": 1,
+                    "form_id": null,
+                    "matrix_rows": [
+                        {
+                            "id": "167",
+                            "pid": "166",
+                            "name": "肿块1",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "tumor1"
+                        },
+                        {
+                            "id": "168",
+                            "pid": "166",
+                            "name": "肿块2",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "tumor2"
+                        },
+                        {
+                            "id": "169",
+                            "pid": "166",
+                            "name": "肿块3",
+                            "remark": "",
+                            "type": "matrix_row",
+                            "en_name": "tumor3"
+                        }
+                    ],
+                    "matrix_cols": [
+                        {
+                            "id": "170",
+                            "pid": "166",
+                            "name": "大小",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "size",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "no_limit"
+                        },
+                        {
+                            "id": "171",
+                            "pid": "166",
+                            "name": "质地",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "texture",
+                            "col_type": "single_dropdown",
+                            "options": [
+                                {
+                                    "id": "172",
+                                    "pid": "171",
+                                    "name": "软",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "texture_1",
+                                    "option_name": "软",
+                                    "option_value": 1,
+                                    "option_value_type": "int",
+                                    "option_en_name": "texture_1",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "173",
+                                    "pid": "171",
+                                    "name": "硬",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "texture_2",
+                                    "option_name": "硬",
+                                    "option_value": 2,
+                                    "option_value_type": "int",
+                                    "option_en_name": "texture_2",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                }
+                            ],
+                            "is_required": 0
+                        },
+                        {
+                            "id": "174",
+                            "pid": "166",
+                            "name": "病理类型",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "tumor_main_path_type",
+                            "col_type": "single_dropdown",
+                            "options": [
+                                {
+                                    "id": "175",
+                                    "pid": "174",
+                                    "name": "腺泡腺癌",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "tumor_main_path_type1",
+                                    "option_name": "腺泡腺癌",
+                                    "option_value": 1,
+                                    "option_value_type": "int",
+                                    "option_en_name": "tumor_main_path_type1",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "176",
+                                    "pid": "174",
+                                    "name": "导管腺癌",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "tumor_main_path_type2",
+                                    "option_name": "导管腺癌",
+                                    "option_value": 2,
+                                    "option_value_type": "int",
+                                    "option_en_name": "tumor_main_path_type2",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "177",
+                                    "pid": "174",
+                                    "name": "小细胞癌",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "tumor_main_path_type3",
+                                    "option_name": "小细胞癌",
+                                    "option_value": 3,
+                                    "option_value_type": "int",
+                                    "option_en_name": "tumor_main_path_type3",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "178",
+                                    "pid": "174",
+                                    "name": "尿路上皮癌",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "tumor_main_path_type4",
+                                    "option_name": "尿路上皮癌",
+                                    "option_value": 4,
+                                    "option_value_type": "int",
+                                    "option_en_name": "tumor_main_path_type4",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "179",
+                                    "pid": "174",
+                                    "name": "导管内癌",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "tumor_main_path_type5",
+                                    "option_name": "导管内癌",
+                                    "option_value": 5,
+                                    "option_value_type": "int",
+                                    "option_en_name": "tumor_main_path_type5",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "180",
+                                    "pid": "174",
+                                    "name": "筛状结构",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "tumor_main_path_type6",
+                                    "option_name": "筛状结构",
+                                    "option_value": 6,
+                                    "option_value_type": "int",
+                                    "option_en_name": "tumor_main_path_type6",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                }
+                            ],
+                            "is_required": 0
+                        }
+                    ]
+                },
+                {
+                    "id": "181",
+                    "pid": "58",
+                    "name": "化疗（自增复合矩阵）",
+                    "remark": "",
+                    "type": "matrix_complex_list",
+                    "form_id": null,
+                    "matrix_cols": [
+                        {
+                            "id": "182",
+                            "pid": "181",
+                            "name": "开始时间",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "begin_date",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "date"
+                        },
+                        {
+                            "id": "183",
+                            "pid": "181",
+                            "name": "结束时间",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "over_date",
+                            "col_type": "short_text",
+                            "is_required": 0,
+                            "max_length": -1,
+                            "text_check": "date"
+                        },
+                        {
+                            "id": "184",
+                            "pid": "181",
+                            "name": "计划",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "plan",
+                            "col_type": "single_dropdown",
+                            "options": [
+                                {
+                                    "id": "185",
+                                    "pid": "184",
+                                    "name": "术前新辅助",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "chem_plan",
+                                    "option_name": "术前新辅助",
+                                    "option_value": 1,
+                                    "option_value_type": "int",
+                                    "option_en_name": "chem_plan",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "186",
+                                    "pid": "184",
+                                    "name": "术后辅助",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "chem_plan",
+                                    "option_name": "术后辅助",
+                                    "option_value": 2,
+                                    "option_value_type": "int",
+                                    "option_en_name": "chem_plan",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "187",
+                                    "pid": "184",
+                                    "name": "持续治疗",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "chem_plan",
+                                    "option_name": "持续治疗",
+                                    "option_value": 3,
+                                    "option_value_type": "int",
+                                    "option_en_name": "chem_plan",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "188",
+                                    "pid": "184",
+                                    "name": "间断治疗",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "chem_plan",
+                                    "option_name": "间断治疗",
+                                    "option_value": 4,
+                                    "option_value_type": "int",
+                                    "option_en_name": "chem_plan",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                }
+                            ],
+                            "is_required": 0
+                        },
+                        {
+                            "id": "189",
+                            "pid": "181",
+                            "name": "化疗药物",
+                            "remark": "",
+                            "type": "matrix_col",
+                            "en_name": "chem_med",
+                            "col_type": "multiple_dropdown",
+                            "options": [
+                                {
+                                    "id": "190",
+                                    "pid": "189",
+                                    "name": "多西他赛（泰素帝）",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "chem_med1",
+                                    "option_name": "多西他赛（泰素帝）",
+                                    "option_value": 1,
+                                    "option_value_type": "int",
+                                    "option_en_name": "chem_med1",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "191",
+                                    "pid": "189",
+                                    "name": "多西他赛（艾素）",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "chem_med2",
+                                    "option_name": "多西他赛（艾素）",
+                                    "option_value": 2,
+                                    "option_value_type": "int",
+                                    "option_en_name": "chem_med2",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "192",
+                                    "pid": "189",
+                                    "name": "多西他赛（其他）",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "chem_med3",
+                                    "option_name": "多西他赛（其他）",
+                                    "option_value": 3,
+                                    "option_value_type": "int",
+                                    "option_en_name": "chem_med3",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "193",
+                                    "pid": "189",
+                                    "name": "卡巴他赛",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "chem_med4",
+                                    "option_name": "卡巴他赛",
+                                    "option_value": 4,
+                                    "option_value_type": "int",
+                                    "option_en_name": "chem_med4",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "194",
+                                    "pid": "189",
+                                    "name": "雌莫司汀",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "chem_med5",
+                                    "option_name": "雌莫司汀",
+                                    "option_value": 5,
+                                    "option_value_type": "int",
+                                    "option_en_name": "chem_med5",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                },
+                                {
+                                    "id": "195",
+                                    "pid": "189",
+                                    "name": "米托蒽醌",
+                                    "remark": "",
+                                    "type": "option",
+                                    "en_name": "chem_med6",
+                                    "option_name": "米托蒽醌",
+                                    "option_value": 6,
+                                    "option_value_type": "int",
+                                    "option_en_name": "chem_med6",
+                                    "is_exclude_option": 0,
+                                    "option_other_is_editable": 0,
+                                    "option_other_is_required": 0,
+                                    "option_other_max_length": -1,
+                                    "option_other_text_check": "no_limit",
+                                    "option_other_en_name": ""
+                                }
+                            ],
+                            "is_required": 0,
+                            "option_max_choice": 0
+                        }
+                    ],
+                    "en_name": "matrix_complex_list_chem",
+                    "min_col": -1,
+                    "max_col": -1
+                }
+            ],
+            "source": []
+        }
+    ],
+    "relation_dict": {
+        "11": {
+            "id": "11",
+            "relation": "or",
+            "relation_items": {
+                "7": {
+                    "rid": "7",
+                    "any_or_all": "any",
+                    "option_list": [
+                        {
+                            "id": "8",
+                            "option_name": "男",
+                            "option_value": 1,
+                            "option_en_name": "pat_sex"
+                        },
+                        {
+                            "id": "9",
+                            "option_name": "女",
+                            "option_value": 2,
+                            "option_en_name": "pat_sex"
+                        }
+                    ],
+                    "checked_or_unchecked": "checked"
+                },
+                "13": {
+                    "rid": "13",
+                    "any_or_all": "all",
+                    "option_list": [
+                        {
+                            "id": "14",
+                            "option_name": "体重减轻",
+                            "option_value": 1,
+                            "option_en_name": "symptom_thin"
+                        },
+                        {
+                            "id": "15",
+                            "option_name": "腹部肿块",
+                            "option_value": 2,
+                            "option_en_name": "symptom_abd_mass"
+                        }
+                    ],
+                    "checked_or_unchecked": "unchecked"
+                }
+            }
+        },
+        "28": {
+            "id": "28",
+            "relation": "and",
+            "relation_items": {
+                "25": {
+                    "rid": "25",
+                    "any_or_all": "any",
+                    "option_list": [
+                        {
+                            "id": "26",
+                            "option_name": "有",
+                            "option_value": 1,
+                            "option_en_name": "h_hypertension"
+                        }
+                    ],
+                    "checked_or_unchecked": "checked"
+                }
+            }
+        },
+        "29": {
+            "id": "29",
+            "relation": "and",
+            "relation_items": {
+                "25": {
+                    "rid": "25",
+                    "any_or_all": "any",
+                    "option_list": [
+                        {
+                            "id": "26",
+                            "option_name": "有",
+                            "option_value": 1,
+                            "option_en_name": "h_hypertension"
+                        }
+                    ],
+                    "checked_or_unchecked": "checked"
+                }
+            }
+        },
+        "150": {
+            "id": "150",
+            "relation": "and",
+            "relation_items": {
+                "41": {
+                    "rid": "41",
+                    "any_or_all": "any",
+                    "option_list": [
+                        {
+                            "id": "42",
+                            "option_name": "肠息肉病",
+                            "option_value": 1,
+                            "option_en_name": "diag_intestinal_polyposis"
+                        },
+                        {
+                            "id": "43",
+                            "option_name": "家族性腺瘤性息肉病(FAP)",
+                            "option_value": 2,
+                            "option_en_name": "diag_fap"
+                        }
+                    ],
+                    "checked_or_unchecked": "checked"
+                },
+                "50": {
+                    "rid": "50",
+                    "any_or_all": "any",
+                    "option_list": [
+                        {
+                            "id": "51",
+                            "option_name": "肺癌",
+                            "option_value": 1,
+                            "option_en_name": "diag_lung_cancer"
+                        },
+                        {
+                            "id": "52",
+                            "option_name": "胃癌",
+                            "option_value": 2,
+                            "option_en_name": "diag_gastric_cancer"
+                        }
+                    ],
+                    "checked_or_unchecked": "checked"
+                }
+            }
+        },
+        "112": {
+            "id": "112",
+            "relation": "and",
+            "relation_items": {
+                "106": {
+                    "rid": "106",
+                    "any_or_all": "any",
+                    "option_list": [
+                        {
+                            "id": "107",
+                            "option_name": "头痛",
+                            "option_value": 1,
+                            "option_en_name": "symptom_headache"
+                        },
+                        {
+                            "id": "108",
+                            "option_name": "头晕",
+                            "option_value": 2,
+                            "option_en_name": "symptom_dizzy"
+                        },
+                        {
+                            "id": "109",
+                            "option_name": "畏寒",
+                            "option_value": 3,
+                            "option_en_name": "symptom_chills"
+                        },
+                        {
+                            "id": "110",
+                            "option_name": "午后发热",
+                            "option_value": 4,
+                            "option_en_name": "symptom_fever_afternoon"
+                        },
+                        {
+                            "id": "111",
+                            "option_name": "盗汗",
+                            "option_value": 5,
+                            "option_en_name": "symptom_night_sweat"
+                        }
+                    ],
+                    "checked_or_unchecked": "checked"
+                }
+            }
+        },
+        "116": {
+            "id": "116",
+            "relation": "and",
+            "relation_items": {
+                "113": {
+                    "rid": "113",
+                    "any_or_all": "all",
+                    "option_list": [
+                        {
+                            "id": "114",
+                            "option_name": "r干扰素",
+                            "option_value": 1,
+                            "option_en_name": "h_bf_inf_r"
+                        },
+                        {
+                            "id": "115",
+                            "option_name": "PEG干扰素",
+                            "option_value": 2,
+                            "option_en_name": "h_bf_inf_peg"
+                        }
+                    ],
+                    "checked_or_unchecked": "checked"
+                }
+            }
+        },
+        "122": {
+            "id": "122",
+            "relation": "and",
+            "relation_items": {
+                "117": {
+                    "rid": "117",
+                    "any_or_all": "all",
+                    "option_list": [
+                        {
+                            "id": "118",
+                            "option_name": "慢性支气管炎",
+                            "option_value": 1,
+                            "option_en_name": "diag_rs_group"
+                        },
+                        {
+                            "id": "119",
+                            "option_name": "肺炎",
+                            "option_value": 2,
+                            "option_en_name": "diag_bronchitis"
+                        },
+                        {
+                            "id": "120",
+                            "option_name": "真菌性肺炎",
+                            "option_value": 3,
+                            "option_en_name": "diag_pneumonia"
+                        },
+                        {
+                            "id": "121",
+                            "option_name": "肺孢子虫肺炎",
+                            "option_value": 4,
+                            "option_en_name": "diag_fungal_pneumonia"
+                        }
+                    ],
+                    "checked_or_unchecked": "unchecked"
+                }
+            }
+        },
+        "126": {
+            "id": "126",
+            "relation": "and",
+            "relation_items": {
+                "123": {
+                    "rid": "123",
+                    "any_or_all": "any",
+                    "option_list": [
+                        {
+                            "id": "124",
+                            "option_name": "儿子",
+                            "option_value": 1,
+                            "option_en_name": "marriage_son"
+                        },
+                        {
+                            "id": "125",
+                            "option_name": "女儿",
+                            "option_value": 2,
+                            "option_en_name": "marriage_daugter"
+                        }
+                    ],
+                    "checked_or_unchecked": "unchecked"
+                }
+            }
+        }
+    },
+    "relation_list": [
+        {
+            "id": "11",
+            "relation": "or",
+            "relation_items": [
+                {
+                    "rid": "7",
+                    "any_or_all": "any",
+                    "option_list": [
+                        {
+                            "id": "8",
+                            "option_name": "男",
+                            "option_value": 1,
+                            "option_en_name": "pat_sex"
+                        },
+                        {
+                            "id": "9",
+                            "option_name": "女",
+                            "option_value": 2,
+                            "option_en_name": "pat_sex"
+                        }
+                    ],
+                    "checked_or_unchecked": "checked"
+                },
+                {
+                    "rid": "13",
+                    "any_or_all": "all",
+                    "option_list": [
+                        {
+                            "id": "14",
+                            "option_name": "体重减轻",
+                            "option_value": 1,
+                            "option_en_name": "symptom_thin"
+                        },
+                        {
+                            "id": "15",
+                            "option_name": "腹部肿块",
+                            "option_value": 2,
+                            "option_en_name": "symptom_abd_mass"
+                        }
+                    ],
+                    "checked_or_unchecked": "unchecked"
+                }
+            ]
+        },
+        {
+            "id": "28",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "rid": "25",
+                    "any_or_all": "any",
+                    "option_list": [
+                        {
+                            "id": "26",
+                            "option_name": "有",
+                            "option_value": 1,
+                            "option_en_name": "h_hypertension"
+                        }
+                    ],
+                    "checked_or_unchecked": "checked"
+                }
+            ]
+        },
+        {
+            "id": "29",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "rid": "25",
+                    "any_or_all": "any",
+                    "option_list": [
+                        {
+                            "id": "26",
+                            "option_name": "有",
+                            "option_value": 1,
+                            "option_en_name": "h_hypertension"
+                        }
+                    ],
+                    "checked_or_unchecked": "checked"
+                }
+            ]
+        },
+        {
+            "id": "150",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "rid": "41",
+                    "any_or_all": "any",
+                    "option_list": [
+                        {
+                            "id": "42",
+                            "option_name": "肠息肉病",
+                            "option_value": 1,
+                            "option_en_name": "diag_intestinal_polyposis"
+                        },
+                        {
+                            "id": "43",
+                            "option_name": "家族性腺瘤性息肉病(FAP)",
+                            "option_value": 2,
+                            "option_en_name": "diag_fap"
+                        }
+                    ],
+                    "checked_or_unchecked": "checked"
+                },
+                {
+                    "rid": "50",
+                    "any_or_all": "any",
+                    "option_list": [
+                        {
+                            "id": "51",
+                            "option_name": "肺癌",
+                            "option_value": 1,
+                            "option_en_name": "diag_lung_cancer"
+                        },
+                        {
+                            "id": "52",
+                            "option_name": "胃癌",
+                            "option_value": 2,
+                            "option_en_name": "diag_gastric_cancer"
+                        }
+                    ],
+                    "checked_or_unchecked": "checked"
+                }
+            ]
+        },
+        {
+            "id": "112",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "rid": "106",
+                    "any_or_all": "any",
+                    "option_list": [
+                        {
+                            "id": "107",
+                            "option_name": "头痛",
+                            "option_value": 1,
+                            "option_en_name": "symptom_headache"
+                        },
+                        {
+                            "id": "108",
+                            "option_name": "头晕",
+                            "option_value": 2,
+                            "option_en_name": "symptom_dizzy"
+                        },
+                        {
+                            "id": "109",
+                            "option_name": "畏寒",
+                            "option_value": 3,
+                            "option_en_name": "symptom_chills"
+                        },
+                        {
+                            "id": "110",
+                            "option_name": "午后发热",
+                            "option_value": 4,
+                            "option_en_name": "symptom_fever_afternoon"
+                        },
+                        {
+                            "id": "111",
+                            "option_name": "盗汗",
+                            "option_value": 5,
+                            "option_en_name": "symptom_night_sweat"
+                        }
+                    ],
+                    "checked_or_unchecked": "checked"
+                }
+            ]
+        },
+        {
+            "id": "116",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "rid": "113",
+                    "any_or_all": "all",
+                    "option_list": [
+                        {
+                            "id": "114",
+                            "option_name": "r干扰素",
+                            "option_value": 1,
+                            "option_en_name": "h_bf_inf_r"
+                        },
+                        {
+                            "id": "115",
+                            "option_name": "PEG干扰素",
+                            "option_value": 2,
+                            "option_en_name": "h_bf_inf_peg"
+                        }
+                    ],
+                    "checked_or_unchecked": "checked"
+                }
+            ]
+        },
+        {
+            "id": "122",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "rid": "117",
+                    "any_or_all": "all",
+                    "option_list": [
+                        {
+                            "id": "118",
+                            "option_name": "慢性支气管炎",
+                            "option_value": 1,
+                            "option_en_name": "diag_rs_group"
+                        },
+                        {
+                            "id": "119",
+                            "option_name": "肺炎",
+                            "option_value": 2,
+                            "option_en_name": "diag_bronchitis"
+                        },
+                        {
+                            "id": "120",
+                            "option_name": "真菌性肺炎",
+                            "option_value": 3,
+                            "option_en_name": "diag_pneumonia"
+                        },
+                        {
+                            "id": "121",
+                            "option_name": "肺孢子虫肺炎",
+                            "option_value": 4,
+                            "option_en_name": "diag_fungal_pneumonia"
+                        }
+                    ],
+                    "checked_or_unchecked": "unchecked"
+                }
+            ]
+        },
+        {
+            "id": "126",
+            "relation": "and",
+            "relation_items": [
+                {
+                    "rid": "123",
+                    "any_or_all": "any",
+                    "option_list": [
+                        {
+                            "id": "124",
+                            "option_name": "儿子",
+                            "option_value": 1,
+                            "option_en_name": "marriage_son"
+                        },
+                        {
+                            "id": "125",
+                            "option_name": "女儿",
+                            "option_value": 2,
+                            "option_en_name": "marriage_daugter"
+                        }
+                    ],
+                    "checked_or_unchecked": "unchecked"
+                }
+            ]
+        }
+    ],
+    "relation_keys": {
+        "7": [
+            "11"
+        ],
+        "13": [
+            "11"
+        ],
+        "25": [
+            "28",
+            "29"
+        ],
+        "41": [
+            "150"
+        ],
+        "50": [
+            "150"
+        ],
+        "106": [
+            "112"
+        ],
+        "113": [
+            "116"
+        ],
+        "117": [
+            "122"
+        ],
+        "123": [
+            "126"
+        ]
+    }
+}

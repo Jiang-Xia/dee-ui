@@ -126,7 +126,7 @@
         }
     }
 }
-// 多项选择
+// 多项选择 
 .dee-multiple-choice{
     float: left;
     width: 50%;
@@ -144,10 +144,14 @@
         padding-left: 3px;
     }
 }
-// 多选下拉
+// 多选下拉 
 .dee-multiple-dropdown{
     float: left;
     width: 50%;
+}
+
+// 多选下拉  矩阵多选下拉
+.dee-multiple-dropdown,.dee-matrix-multiple-dropdown{
     .el-select {
         width:22.5rem;
         @media (max-width: 900px){
@@ -200,9 +204,12 @@
     }
 }
 
-// 矩阵单选 矩阵多选  矩阵填空
-.dee-matrix-single-choice,.dee-matrix-multiple-choice,.dee-matrix-input{
+// 矩阵单选 矩阵多选  矩阵填空 矩阵多选下拉
+.dee-matrix-single-choice,.dee-matrix-multiple-choice,.dee-matrix-input,.dee-matrix-multiple-dropdown{
     overflow-x: auto;
+    .dee-dropdown-item{
+        text-align: left;
+    }
 }
 
 /* 基本题型单独样式 结束 */

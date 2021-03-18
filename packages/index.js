@@ -11,6 +11,12 @@ import PreviewModel from './preview-model'
 import MatrixMultipleChoice from './matrix-multiple-choice'
 import MatrixInput from './matrix-input'
 import MatrixSingleChoice from './matrix-single-choice'
+
+import MatrixSingleDropdown from './matrix-single-dropdown'
+import MatrixMultipleDropdown from './matrix-multiple-dropdown'
+import MatrixComplexList from './matrix-complex-list'
+import MatrixComplex from './matrix-complex'
+
 import './style/common.scss'
 import './style/quetions-global.scss'
 
@@ -39,6 +45,10 @@ const components = [
   MatrixMultipleChoice,
   MatrixInput,
   MatrixSingleChoice,
+  MatrixSingleDropdown,
+  MatrixMultipleDropdown,
+  MatrixComplexList,
+  MatrixComplex,
   PreviewModel
 ]
 

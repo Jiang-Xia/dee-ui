@@ -23,7 +23,9 @@
 <script>
 // import FieldTemp from './睡眠呼吸监测.json' // 所有题型
 
-import FieldTemp from './基线.json'
+// import FieldTemp from './基线.json'
+import FieldTemp from './全部题型.json'
+
 // import FieldTemp from './睡眠呼吸监测问卷.json'
 // import FieldTemp from './new.json'
 // import FieldTemp from './档案信息.json'
