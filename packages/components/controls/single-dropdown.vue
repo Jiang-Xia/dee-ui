@@ -2,8 +2,7 @@
   <el-select
     v-model="select"
     clearable
-    size="small"
-    style="width:98%;"
+    :size="size"
     @change="changeHandle"
   >
     <el-option
@@ -40,8 +39,13 @@ export default {
       type: Object,
       required: true
     },
+    size: {
+      default: 'small',
+      type: String
+    },
+    // 自增型复合矩阵才用到
     rowIndex: {
-      default: 0,
+      default: null,
       type: Number
     }
   },
@@ -85,11 +89,9 @@ export default {
         obj[v.option_en_name] = ''
       })
       obj[en] = this.select
-      // console.log(obj)
-      this.$emit('modify', {
+      const modifyObj = {
         type: 'single_dropdown',
         value: obj,
-        rowIndex: this.rowIndex,
         other: {
           en_name: en,
           question_name: this.dimLayout.name,
@@ -97,7 +99,12 @@ export default {
           value: this.select,
           show_text: show_text
         }
-      })
+      }
+      if (this.rowIndex !== null) {
+        modifyObj.rowIndex = this.rowIndex
+      }
+      // console.log(obj)
+      this.$emit('modify', modifyObj)
     }
   }
 }

@@ -24,7 +24,7 @@
               {{ itemRow.name }}
             </td>
             <td v-for="(itemCol,colIndex) in dimLayout.matrix_cols" :key="colIndex">
-              <!-- <el-input
+              <el-input
                 v-if="itemCol.text_check==='no_limit'||itemCol.text_check==='number'"
                 v-model="tableData[itemRow.en_name+'#'+itemCol.en_name]"
                 :type="itemCol.text_check==='number'?itemCol.text_check:''"
@@ -46,14 +46,6 @@
                 :disabled="!isEditing"
                 :placeholder="itemCol.text_check==='date'?'例：2008-08-08':'例：2008-08-08 00:00:00'"
                 @change="changeHandle(itemRow,itemCol)"
-              /> -->
-              <ShortText
-                :is-editing="isEditing"
-                :dim-layout="itemCol"
-                :dim-data="dimData"
-                :item-row="itemRow"
-                size="mini"
-                @modify="inputHandle"
               />
             </td>
           </tr>
@@ -65,13 +57,8 @@
 
 <script>
 import { commonMixins } from '#/mixins/question-common'
-import ShortText from '#/components/matrix-controls/short-text'
-
 export default {
   name: 'DeeMatrixInput',
-  components: {
-    ShortText
-  },
   mixins: [commonMixins],
   data() {
     return {
@@ -106,10 +93,6 @@ export default {
   created() {
   },
   methods: {
-    inputHandle(data) {
-      data.type = 'matrix_input'
-      this.$emit('modify', data)
-    },
     setTableData(n) {
       const cols = this.dimLayout.matrix_cols
       const rows = this.dimLayout.matrix_rows

@@ -1,10 +1,9 @@
 <template>
   <el-select
     v-model="deeSelects"
-    size="mini"
+    :size="size"
     multiple
     placeholder=""
-    style="width:98%;"
     popper-class="dee-select-dropdown"
   >
     <el-option
@@ -37,8 +36,13 @@ export default {
       type: Object,
       required: true
     },
+    size: {
+      default: 'small',
+      type: String
+    },
+    // 自增型复合矩阵才用到
     rowIndex: {
-      default: 0,
+      default: null,
       type: Number
     }
   },
@@ -110,10 +114,9 @@ export default {
           valueObj[v.option_en_name] = ''
         }
       })
-      this.$emit('modify', {
+      const modifyObj = {
         type: 'multiple_dropdown',
         value: valueObj,
-        rowIndex: this.rowIndex,
         other: {
           en_name: oItem.option_en_name,
           question_name: this.dimLayout.name,
@@ -121,7 +124,11 @@ export default {
           value: valueObj[oItem.option_en_name],
           show_text: oItem.option_name
         }
-      })
+      }
+      if (this.rowIndex !== null) {
+        modifyObj.rowIndex = this.rowIndex
+      }
+      this.$emit('modify', modifyObj)
     }
   }
 }

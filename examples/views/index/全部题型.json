@@ -352,7 +352,7 @@
                     "pid": "1",
                     "name": "高血压",
                     "remark": "",
-                    "type": "single_choice",
+                    "type": "single_dropdown",
                     "form_id": null,
                     "options": [
                         {

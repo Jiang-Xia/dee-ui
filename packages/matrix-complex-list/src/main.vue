@@ -37,6 +37,8 @@
                 :dim-layout="itemCol"
                 :dim-data="rowItem"
                 :row-index="rowIndex"
+                style="width:98%;"
+                size="mini"
                 @modify="inputHandle"
               />
 
@@ -47,6 +49,8 @@
                 :dim-layout="itemCol"
                 :dim-data="rowItem"
                 :row-index="rowIndex"
+                style="width:98%;"
+                size="mini"
                 @modify="singleHandle"
               />
 
@@ -57,6 +61,8 @@
                 :dim-layout="itemCol"
                 :dim-data="rowItem"
                 :row-index="rowIndex"
+                style="width:98%;"
+                size="mini"
                 @modify="multipleHandle"
               />
             </td>
@@ -75,9 +81,9 @@
 
 <script>
 import { commonMixins } from '#/mixins/question-common'
-import ShortText from './short-text'
-import SingleDropdown from './single-dropdown'
-import MultipleDropdown from './multiple-dropdown'
+import ShortText from '#/components/controls/short-text'
+import SingleDropdown from '#/components/controls/single-dropdown'
+import MultipleDropdown from '#/components/controls/multiple-dropdown'
 
 export default {
   name: 'DeeMatrixComplexList',
@@ -154,7 +160,7 @@ export default {
           question_name: this.dimLayout.name,
           question_id: this.dimLayout.id,
           value: other.value,
-          show_text: other.value.show_text
+          show_text: other.value ? other.value.show_text : ''
         }
       })
     },
@@ -188,8 +194,4 @@ export default {
 }
 </script>
 <style lang="scss">
-  // .multiple-choice-wrap{
-  //   // float: left;
-  //   width: 100%;
-  // }
 </style>

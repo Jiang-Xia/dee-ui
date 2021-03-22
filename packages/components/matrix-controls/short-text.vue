@@ -1,12 +1,12 @@
 <template>
-  <div style="width:98%">
+  <div>
     <!-- 文本验证 ：no_limit/number/date/time/datetime/idcard -->
     <el-input
       v-if="cType==='no_limit'||cType==='number'"
       v-model="input"
       :type="cType==='number'?cType:''"
       :maxlength="dimLayout.max_length"
-      size="small"
+      :size="size"
       :disabled="!isEditing"
       @change="changeHandle"
     />
@@ -14,7 +14,7 @@
       v-else-if="cType==='idcard'"
       v-model="input"
       :maxlength="dimLayout.max_length"
-      size="small"
+      :size="size"
       :disabled="!isEditing"
       @change="changeHandle"
     />
@@ -23,7 +23,7 @@
       v-model="input"
       :editable="false"
       :type="dimLayout.text_check"
-      size="small"
+      :size="size"
       :disabled="!isEditing"
       :placeholder="dimLayout.text_check==='date'?'例：2008-08-08':'例：2008-08-08 00:00:00'"
       @change="changeHandle"
@@ -48,9 +48,14 @@ export default {
       type: Object,
       required: true
     },
-    rowIndex: {
-      default: 0,
-      type: Number
+    itemRow: {
+      default: () => { return {} },
+      type: Object,
+      required: true
+    },
+    size: {
+      default: 'small',
+      type: String
     }
   },
   data() {
@@ -66,9 +71,7 @@ export default {
   watch: {
     dimData: {
       handler: function(n) {
-        // console.log('============')
-        // console.log(n[this.dimLayout.en_name])
-        this.input = n[this.dimLayout.en_name]
+        this.input = n[this.getKey()]
       },
       immediate: true
     }
@@ -76,6 +79,9 @@ export default {
   created() {
   },
   methods: {
+    getKey() {
+      return this.itemRow.en_name + '#' + this.dimLayout.en_name
+    },
     // 自定义日期格式
     p(s) {
       return s < 10 ? '0' + s : s
@@ -109,13 +115,12 @@ export default {
       } else if (type === 'date' || type === 'datetime') {
         this.input = this.getCustomDateFormat(v)
       }
-      const en = this.dimLayout.en_name
-      this.$emit('modify', {
+      const en = this.getKey()
+      const modifyObj = {
         type: 'short_text',
         value: {
           [en]: this.input
         },
-        rowIndex: this.rowIndex,
         other: {
           en_name: en,
           question_name: this.dimLayout.name,
@@ -123,7 +128,8 @@ export default {
           value: this.input,
           show_text: this.input
         }
-      })
+      }
+      this.$emit('modify', modifyObj)
     }
   }
 }

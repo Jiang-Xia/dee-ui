@@ -130,7 +130,10 @@ export default {
               chem_plan: 3,
               over_date: '2021-03-27'
             }
-          ]
+          ],
+
+          // 统一组件化
+          h_hypertension: 1
         }
       }, 1000)
     },
