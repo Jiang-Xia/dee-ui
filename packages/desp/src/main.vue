@@ -14,9 +14,3 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-// .dee-desp-wrap{
-//   // float: left;
-//   width: 100%;
-// }
-</style>

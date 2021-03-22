@@ -117,7 +117,7 @@
         @modify="modifyHandle"
       />
       <!-- 新增四种题型 -->
-      <!-- <MatrixSingleDropdown
+      <MatrixSingleDropdown
         v-if="item.type==='matrix_single_dropdown'"
         v-show="!item.exist_relation_items||relationIds.includes(item.id)"
         :id="customQuestionId?customQuestionId+'_'+item.id:''"
@@ -160,7 +160,7 @@
         :is-editing="isEditing"
         :question-index="index"
         @modify="modifyHandle"
-      /> -->
+      />
     </template>
   </div>
 </template>
@@ -177,10 +177,10 @@ import MatrixMultipleChoice from '#/matrix-multiple-choice'
 import MatrixInput from '#/matrix-input'
 import MatrixSingleChoice from '#/matrix-single-choice'
 
-// import MatrixSingleDropdown from '#/matrix-single-dropdown'
-// import MatrixMultipleDropdown from '#/matrix-multiple-dropdown'
-// import MatrixComplexList from '#/matrix-complex-list'
-// import MatrixComplex from '#/matrix-complex'
+import MatrixSingleDropdown from '#/matrix-single-dropdown'
+import MatrixMultipleDropdown from '#/matrix-multiple-dropdown'
+import MatrixComplexList from '#/matrix-complex-list'
+import MatrixComplex from '#/matrix-complex'
 export default {
   name: 'DeePreviewModel',
   components: {
@@ -193,12 +193,12 @@ export default {
     Desp,
     MatrixMultipleChoice,
     MatrixInput,
-    MatrixSingleChoice
+    MatrixSingleChoice,
 
-    // MatrixSingleDropdown,
-    // MatrixMultipleDropdown,
-    // MatrixComplexList,
-    // MatrixComplex
+    MatrixSingleDropdown,
+    MatrixMultipleDropdown,
+    MatrixComplexList,
+    MatrixComplex
   },
   props: {
     dimData: {

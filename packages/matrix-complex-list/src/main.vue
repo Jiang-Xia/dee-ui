@@ -19,34 +19,52 @@
           </tr>
         </thead>
         <tbody class="dee-matrix__body">
-          <tr v-for="(itemRow,rowIndex) in dimLayout.matrix_rows" :key="rowIndex">
+          <tr v-for="(rowItem,rowIndex) in rowList" :key="rowIndex">
             <td>
-              {{ itemRow.name }}
+              <el-popconfirm
+                confirm-button-type="text"
+                title="确定删除这一行数据吗？"
+                @confirm="delRowHandle(rowIndex)"
+              >
+                <span slot="reference" class="el-icon-delete-solid" />
+              </el-popconfirm>
             </td>
             <td v-for="(itemCol,colIndex) in dimLayout.matrix_cols" :key="colIndex">
-              <el-input
-                v-if="itemCol.text_check==='no_limit'||itemCol.text_check==='number'"
-                v-model="tableData[itemRow.en_name+'#'+itemCol.en_name]"
-                :type="itemCol.text_check==='number'?itemCol.text_check:''"
-                :maxlength="itemCol.max_length"
-                size="mini"
-                style="width:98%;"
-                :disabled="!isEditing"
-                :option-en="itemRow.en_name+'#'+itemCol.en_name"
-                @change="changeHandle(itemRow,itemCol)"
+              <!-- 短文本 -->
+              <ShortText
+                v-if="itemCol.col_type==='short_text'"
+                :is-editing="isEditing"
+                :dim-layout="itemCol"
+                :dim-data="rowItem"
+                :row-index="rowIndex"
+                @modify="inputHandle"
               />
-              <el-date-picker
-                v-if="itemCol.text_check==='date'||itemCol.text_check==='datetime'"
-                v-model="tableData[itemRow.en_name+'#'+itemCol.en_name]"
-                :option-en="itemRow.en_name+'#'+itemCol.en_name"
-                :editable="false"
-                :type="itemCol.text_check"
-                size="mini"
-                :style="{width:itemCol.text_check==='date'?'8rem':'11rem'}"
-                :disabled="!isEditing"
-                :placeholder="itemCol.text_check==='date'?'例：2008-08-08':'例：2008-08-08 00:00:00'"
-                @change="changeHandle(itemRow,itemCol)"
+
+              <!-- 单选题 -->
+              <SingleDropdown
+                v-if="itemCol.col_type==='single_dropdown'"
+                :is-editing="isEditing"
+                :dim-layout="itemCol"
+                :dim-data="rowItem"
+                :row-index="rowIndex"
+                @modify="singleHandle"
               />
+
+              <!-- 多选题 -->
+              <MultipleDropdown
+                v-if="itemCol.col_type==='multiple_dropdown'"
+                :is-editing="isEditing"
+                :dim-layout="itemCol"
+                :dim-data="rowItem"
+                :row-index="rowIndex"
+                @modify="multipleHandle"
+              />
+            </td>
+          </tr>
+          <!-- 增加一行 -->
+          <tr>
+            <td :colspan="dimLayout.matrix_cols.length+1" @click="addRowHandle">
+              <el-button size="mini" type="text" icon="el-icon-plus">继续填写</el-button>
             </td>
           </tr>
         </tbody>
@@ -57,12 +75,22 @@
 
 <script>
 import { commonMixins } from '#/mixins/question-common'
+import ShortText from './short-text'
+import SingleDropdown from './single-dropdown'
+import MultipleDropdown from './multiple-dropdown'
+
 export default {
   name: 'DeeMatrixComplexList',
+  components: {
+    ShortText,
+    SingleDropdown,
+    MultipleDropdown
+  },
   mixins: [commonMixins],
   data() {
     return {
-      tableData: {}
+      tableData: {},
+      rowList: []
     }
   },
   computed: {
@@ -86,7 +114,7 @@ export default {
   watch: {
     dimData: {
       handler: function(n) {
-        // this.setTableData(n)
+        this.setTableData(n)
       },
       immediate: true
     }
@@ -95,31 +123,66 @@ export default {
   },
   methods: {
     setTableData(n) {
-      const cols = this.dimLayout.matrix_cols
-      const rows = this.dimLayout.matrix_rows
-      const obj = {}
-      rows.map(v => {
-        cols.map(v2 => {
-          obj[v.en_name + '#' + v2.en_name] = n[v.en_name + '#' + v2.en_name]
-        })
-      })
-      this.tableData = obj
-      // console.log(obj)
+      this.rowList = n[this.dimLayout.en_name] || []
     },
-    changeHandle(itemRow, itemCol) {
-      const show_text = itemRow.name + itemCol.name + ':' + this.tableData[en]
-      const en = itemRow.en_name + '#' + itemCol.en_name
+    inputHandle(data) {
+      this.emitHandle(data)
+    },
+    singleHandle(data) {
+      this.emitHandle(data)
+    },
+    multipleHandle(data) {
+      this.emitHandle(data)
+    },
+    emitHandle(data) {
+      // console.log(data)
+      const { rowIndex, other } = data
+      this.rowList[rowIndex] = { ...this.rowList[rowIndex], ...data.value }
+      const valueObj = {
+        valueItem: this.rowList[rowIndex],
+        index: rowIndex
+      }
       this.$emit('modify', {
         type: 'matrix_complex_list',
-        value: this.tableData,
+        value: {
+          [this.dimLayout.en_name]: this.rowList
+        },
+        value_dict: valueObj,
+        question_en_name: this.dimLayout.en_name,
         other: {
-          en_name: en,
+          en_name: other.valueKey,
           question_name: this.dimLayout.name,
           question_id: this.dimLayout.id,
-          value: this.tableData[en],
-          show_text
+          value: other.value,
+          show_text: other.value.show_text
         }
       })
+    },
+    // 增加一行
+    addRowHandle() {
+      if (this.dimLayout.max_col > 0 && this.rowList.length >= this.dimLayout.max_col) {
+        this.$message.warning(`最大行数为${this.dimLayout.max_col}`)
+        return
+      }
+      this.rowList.push({})
+    },
+    // 删除一行
+    delRowHandle(rowIndex) {
+      const valueObj = {
+        valueItem: this.rowList[rowIndex],
+        index: rowIndex
+      }
+      this.$emit('modify', {
+        type: 'matrix_complex_list',
+        value: {
+          [this.dimLayout.en_name]: this.rowList
+        },
+        value_dict: valueObj,
+        question_en_name: this.dimLayout.en_name,
+        other: {
+        }
+      })
+      this.rowList.splice(rowIndex, 1)
     }
   }
 }

@@ -1,55 +1,58 @@
 <template>
-  <div
-    class="dee-question-wrap dee-short-text"
-    :type="dimLayout.type"
-    :question-en="dimLayout.en_name"
-    :style="questionStyle"
-    :data-value="verifyValue"
-  >
-    <div class="dee-question-heading">
-      <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
-      <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
-      <span class="dee-question-name">{{ dimLayout.name }}</span>
-    </div>
-    <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
-    <div class="dee-control-wrap">
-      <!-- 文本验证 ：no_limit/number/date/time/datetime/idcard -->
-      <el-input
-        v-if="cType==='no_limit'||cType==='number'"
-        v-model="input"
-        :type="cType==='number'?cType:''"
-        :maxlength="dimLayout.max_length"
-        size="small"
-        :disabled="!isEditing"
-        @change="changeHandle"
-      />
-      <el-input
-        v-else-if="cType==='idcard'"
-        v-model="input"
-        :maxlength="dimLayout.max_length"
-        size="small"
-        :disabled="!isEditing"
-        @change="changeHandle"
-      />
-      <el-date-picker
-        v-if="cType==='date'||cType==='datetime'"
-        v-model="input"
-        :editable="false"
-        :type="dimLayout.text_check"
-        size="small"
-        :disabled="!isEditing"
-        :placeholder="dimLayout.text_check==='date'?'例：2008-08-08':'例：2008-08-08 00:00:00'"
-        @change="changeHandle"
-      />
-    </div>
+  <div style="width:98%">
+    <!-- 文本验证 ：no_limit/number/date/time/datetime/idcard -->
+    <el-input
+      v-if="cType==='no_limit'||cType==='number'"
+      v-model="input"
+      :type="cType==='number'?cType:''"
+      :maxlength="dimLayout.max_length"
+      size="small"
+      :disabled="!isEditing"
+      @change="changeHandle"
+    />
+    <el-input
+      v-else-if="cType==='idcard'"
+      v-model="input"
+      :maxlength="dimLayout.max_length"
+      size="small"
+      :disabled="!isEditing"
+      @change="changeHandle"
+    />
+    <el-date-picker
+      v-if="cType==='date'||cType==='datetime'"
+      v-model="input"
+      :editable="false"
+      :type="dimLayout.text_check"
+      size="small"
+      :disabled="!isEditing"
+      :placeholder="dimLayout.text_check==='date'?'例：2008-08-08':'例：2008-08-08 00:00:00'"
+      @change="changeHandle"
+    />
   </div>
 </template>
 
 <script>
-import { commonMixins } from '#/mixins/question-common'
 export default {
-  name: 'DeeShortText',
-  mixins: [commonMixins],
+  name: 'ShortText',
+  props: {
+    isEditing: {
+      default: false,
+      type: Boolean
+    },
+    dimData: {
+      default: () => { return {} },
+      type: Object
+    },
+    dimLayout: {
+      default: () => { return {} },
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      default: 0,
+      type: Number
+    }
+  },
   data() {
     return {
       input: ''
@@ -58,10 +61,6 @@ export default {
   computed: {
     cType() {
       return this.dimLayout.text_check
-    },
-    /* 判断空值（即一道题是否一填）*/
-    verifyValue() {
-      return this.input ? 'value' : 'no_value'
     }
   },
   watch: {
@@ -116,6 +115,7 @@ export default {
         value: {
           [en]: this.input
         },
+        rowIndex: this.rowIndex,
         other: {
           en_name: en,
           question_name: this.dimLayout.name,
@@ -128,5 +128,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-</style>

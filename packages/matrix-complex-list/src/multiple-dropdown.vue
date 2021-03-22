@@ -1,45 +1,47 @@
 <template>
-  <div
-    class="dee-question-wrap dee-multiple-dropdown"
-    :style="questionStyle"
-    :type="dimLayout.type"
-    :data-value="verifyValue"
+  <el-select
+    v-model="deeSelects"
+    size="mini"
+    multiple
+    placeholder=""
+    style="width:98%;"
+    popper-class="dee-select-dropdown"
   >
-    <div class="dee-question-heading">
-      <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
-      <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
-      <span class="dee-question-name">{{ dimLayout.name }}</span>
-    </div>
-    <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
-    <div class="dee-control-wrap">
-      <el-select
-        v-model="deeSelects"
-        size="mini"
-        :disabled="!isEditing"
-        multiple
-        placeholder=""
-        popper-class="dee-select-dropdown"
-      >
-        <el-option
-          v-for="(oItem,index) of dimLayout.options"
-          :key="index"
-          :value="oItem.option_value"
-          :label="oItem.option_name"
-          @click.native="clickMultipleHandle(oItem)"
-        >
-          <span class="check" />
-          <span style="margin-left: 8px">{{ oItem.option_name }}</span>
-        </el-option>
-      </el-select>
-    </div>
-  </div>
+    <el-option
+      v-for="(oItem,index) of dimLayout.options"
+      :key="index"
+      :value="oItem.option_value"
+      :label="oItem.option_name"
+      @click.native="clickMultipleHandle(oItem)"
+    >
+      <span class="check" />
+      <span style="margin-left: 8px">{{ oItem.option_name }}</span>
+    </el-option>
+  </el-select>
 </template>
 
 <script>
-import { commonMixins } from '#/mixins/question-common'
 export default {
-  name: 'DeeMultipleDropdown',
-  mixins: [commonMixins],
+  name: 'MultipleDropdown',
+  props: {
+    isEditing: {
+      default: false,
+      type: Boolean
+    },
+    dimData: {
+      default: () => { return {} },
+      type: Object
+    },
+    dimLayout: {
+      default: () => { return {} },
+      type: Object,
+      required: true
+    },
+    rowIndex: {
+      default: 0,
+      type: Number
+    }
+  },
   data() {
     return {
       deeSelects: []
@@ -47,7 +49,8 @@ export default {
   },
   computed: {
     optionMax() {
-      return this.dimLayout.option_max_choice
+    //   return this.dimLayout.option_max_choice
+      return 2
     },
     /* 判断空值（即一道题是否一填）*/
     verifyValue() {
@@ -110,6 +113,7 @@ export default {
       this.$emit('modify', {
         type: 'multiple_dropdown',
         value: valueObj,
+        rowIndex: this.rowIndex,
         other: {
           en_name: oItem.option_en_name,
           question_name: this.dimLayout.name,
@@ -122,5 +126,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-</style>

@@ -83,8 +83,54 @@ export default {
           'enzymology_ast#one': 1,
           'follow_first#follow_h_abd_pain': 2,
           'follow_second#follow_h_abd_pain': 2,
-          'follow_third#follow_h_abd_pain': 2
+          'follow_third#follow_h_abd_pain': 2,
+          // // 'enzymology_ast_dropdown#total#total': 1,
+          'enzymology_ast_dropdown#total#total': 2,
+          'enzymology_alt_dropdown#total#total': 4,
+          'enzymology_alt_dropdown#level#level': 4,
+          'enzymology_ggt_dropdown#attitude#attitude': 4,
+          symptom_bhchange: 5,
+          // 矩阵下拉多选
+          'follow_first_dropdown#sym#follow_h_diarrhea_dropdown': 4,
+          'follow_first_dropdown#sym#follow_h_nausea_dropdown': 5,
+          'follow_second_dropdown#exam#exam_ct': 2,
+          'follow_second_dropdown#exam#exam_us': 4,
+          'follow_third_dropdown#lis#lis_2': 3,
+          'follow_third_dropdown#lis#lis_3': 4,
 
+          // 复合矩阵
+          'tumor2#size': '很大',
+          'tumor1#tumor_main_path_type#tumor_main_path_type1': 1,
+          'tumor1#tumor_main_path_type#tumor_main_path_type2': 2,
+          'tumor1#tumor_main_path_type#tumor_main_path_type3': 3,
+          'tumor2#tumor_main_path_type#tumor_main_path_type4': 4,
+          'tumor2#tumor_main_path_type#tumor_main_path_type5': 5,
+          'tumor1#texture#texture_2': 2,
+          'tumor2#texture#texture_1': 1,
+          // 自增型复合矩阵
+          'matrix_complex_list_chem': [
+            {
+              chem_med1: '',
+              chem_med2: 2,
+              chem_med3: 3,
+              chem_med4: '',
+              chem_med5: '',
+              chem_med6: '',
+              chem_plan: 2,
+              over_date: '2021-03-16'
+            },
+            {
+              begin_date: '2021-03-20',
+              chem_med1: '',
+              chem_med2: '',
+              chem_med3: '',
+              chem_med4: 4,
+              chem_med5: '',
+              chem_med6: 6,
+              chem_plan: 3,
+              over_date: '2021-03-27'
+            }
+          ]
         }
       }, 1000)
     },
@@ -97,6 +143,8 @@ export default {
       this.dimData = obj
       // console.warn('===============')
       console.log(data)
+      // console.warn('===============')
+      // console.log(this.dimData)
       // console.warn('===============')
     },
     // 控制关联题显示隐藏事件回调

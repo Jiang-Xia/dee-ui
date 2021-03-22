@@ -164,7 +164,7 @@
                             "option_value": 1,
                             "option_value_type": "int",
                             "option_en_name": "symptom_thin",
-                            "is_exclude_option": 0,
+                            "is_exclude_option": 1,
                             "option_other_is_editable": 0,
                             "option_other_is_required": 0,
                             "option_other_max_length": -1,
@@ -218,7 +218,7 @@
                             "option_value": 4,
                             "option_value_type": "int",
                             "option_en_name": "symptom_abd_distension",
-                            "is_exclude_option": 0,
+                            "is_exclude_option": 1,
                             "option_other_is_editable": 0,
                             "option_other_is_required": 0,
                             "option_other_max_length": -1,
@@ -336,7 +336,7 @@
                     ],
                     "is_required": 0,
                     "line_option_count": 5,
-                    "option_max_choice": 0,
+                    "option_max_choice": 3,
                     "row_behavior": 0
                 },
                 {
@@ -2027,7 +2027,7 @@
                                 }
                             ],
                             "is_required": 0,
-                            "option_max_choice": 0
+                            "option_max_choice": 3
                         },
                         {
                             "id": "137",
@@ -2592,7 +2592,7 @@
                             "remark": "",
                             "type": "matrix_col",
                             "en_name": "tumor_main_path_type",
-                            "col_type": "single_dropdown",
+                            "col_type": "multiple_dropdown",
                             "options": [
                                 {
                                     "id": "175",
