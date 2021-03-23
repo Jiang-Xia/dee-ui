@@ -97,11 +97,13 @@ export default {
           show_text: ''
         }
       }
+      if (this.rowIndex !== null) {
+        modifyObj.rowIndex = this.rowIndex
+      }
       // console.log(obj)
       this.$emit('modify', modifyObj)
     },
     changeHandle(val) {
-      console.log(val)
       if (val === '' || val === null) {
         return
       }
@@ -115,7 +117,6 @@ export default {
       options.forEach(v => { valueObj[v.option_en_name] = '' })
       options.forEach(v => {
         if (oItem.option_value === v.option_value) {
-          console.log(v.option_value)
           valueObj[v.option_en_name] = v.option_value
         }
       })

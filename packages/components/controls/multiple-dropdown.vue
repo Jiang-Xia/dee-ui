@@ -2,6 +2,7 @@
   <el-select
     v-model="deeSelects"
     :size="size"
+    :disabled="!isEditing"
     multiple
     placeholder=""
     popper-class="dee-select-dropdown"
@@ -53,16 +54,7 @@ export default {
   },
   computed: {
     optionMax() {
-    //   return this.dimLayout.option_max_choice
-      return 2
-    },
-    /* 判断空值（即一道题是否一填）*/
-    verifyValue() {
-      const data = this.dimData
-      const checked = this.dimLayout.options.every(v => {
-        return data[v.option_en_name] === '' || data[v.option_en_name] === undefined
-      })
-      return checked ? 'no_value' : 'value'
+      return this.dimLayout.option_max_choice
     }
   },
   watch: {
