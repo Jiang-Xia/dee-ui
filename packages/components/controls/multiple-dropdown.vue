@@ -68,14 +68,14 @@ export default {
   watch: {
     dimData: {
       handler: function(n) {
-        this.setBindTableData(n)
+        this.setTableData(n)
       },
       immediate: true
     }
   },
   methods: {
     // 渲染绑定数据
-    setBindTableData(n) {
+    setTableData(n) {
       const options = this.dimLayout.options
       const arr = []
       options.map(v => {

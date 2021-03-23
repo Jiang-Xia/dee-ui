@@ -24,25 +24,15 @@
               {{ itemRow.name }}
             </td>
             <td v-for="(itemCol,colIndex) in dimLayout.matrix_cols" :key="colIndex">
-              <el-select
-                v-model="tableData[itemRow.en_name+'#'+itemCol.en_name]"
+              <MultipleDropdown
+                :is-editing="isEditing"
+                :item-col="itemCol"
+                :item-row="itemRow"
+                :dim-data="dimData"
+                style="width:98%;"
                 size="mini"
-                :disabled="!isEditing"
-                multiple
-                placeholder=""
-                popper-class="dee-select-dropdown"
-              >
-                <el-option
-                  v-for="(oItem,index) of itemCol.options"
-                  :key="index"
-                  :value="oItem.option_value"
-                  :label="oItem.option_name"
-                  @click.native="clickMultipleHandle(oItem,itemRow, itemCol)"
-                >
-                  <span class="check" />
-                  <span style="margin-left: 8px">{{ oItem.option_name }}</span>
-                </el-option>
-              </el-select>
+                @modify="multipleHandle"
+              />
             </td>
           </tr>
         </tbody>
@@ -53,8 +43,13 @@
 
 <script>
 import { commonMixins } from '#/mixins/question-common'
+import MultipleDropdown from '#/components/matrix-controls/multiple-dropdown'
+
 export default {
   name: 'DeeMatrixMultipleDropdown',
+  components: {
+    MultipleDropdown
+  },
   mixins: [commonMixins],
   data() {
     return {
@@ -78,92 +73,15 @@ export default {
       return checked ? 'no_value' : 'value'
     }
   },
-  watch: {
-    dimData: {
-      handler: function(n) {
-        this.setTableData(n)
-      },
-      immediate: true
-    }
-  },
-  created() {
-  },
   methods: {
-    getKey(v, v2, v3) {
-      return v.en_name + '#' + v2.en_name + '#' + v3.option_en_name
-    },
-    setTableData(n) {
-      const cols = this.dimLayout.matrix_cols
-      const rows = this.dimLayout.matrix_rows
-      const obj = {}
-      rows.map(v => {
-        cols.map(v2 => {
-          const arr = []
-          v2.options.map(v3 => {
-            // 行英文名+列英文名+选项
-            const key = this.getKey(v, v2, v3)
-            if (v3.option_value === n[key] && !arr.includes(v3.option_value)) {
-              arr.push(v3.option_value)
-            }
-          })
-          obj[v.en_name + '#' + v2.en_name] = arr
-        })
-      })
-      this.tableData = obj
-      // console.log(obj)
-    },
-    clickMultipleHandle(oItem, itemRow, itemCol) {
-      const val = oItem.option_value
-      const modelKey = itemRow.en_name + '#' + itemCol.en_name
-      /*  排他选项 互斥处理 */
-      const options = itemCol.options
-      const deeSelects = this.tableData[modelKey]
-      if (!oItem.is_exclude_option && this.optionMax && deeSelects.length > this.optionMax) {
-        deeSelects.splice(deeSelects.indexOf(val), 1)
-        this.$set(this.tableData, modelKey, [...deeSelects])
-        this.$message.warning(`选项不能超过${this.optionMax}`)
-        return
+    multipleHandle(data) {
+      data.type = 'matrix_ multiple_dropdown'
+      const obj = {
+        question_id: this.dimLayout.id,
+        question_name: this.dimLayout.name
       }
-      // 选了排他项 清空其他项的值
-      if (oItem.is_exclude_option && deeSelects.includes(val)) {
-        const newArr = deeSelects.filter(v => v === val)
-        this.$set(this.tableData, modelKey, [...newArr])
-      } else if (!oItem.is_exclude_option && deeSelects.includes(val)) {
-        //  选其他项 清除排他项的值
-        options.forEach(v => {
-          if (v.is_exclude_option === 1 && deeSelects.includes(v.option_value)) {
-            deeSelects.splice(deeSelects.indexOf(v.option_value), 1)
-            this.$set(this.tableData, modelKey, [...deeSelects])
-          }
-        })
-      }
-      let show_text = itemRow.name + itemCol.name + ':'
-      // 提取有行英文名加选项英文名，进行传输
-      const valueObj = {}
-      options.forEach(v => {
-        const key = itemRow.en_name + '#' + itemCol.en_name + '#' + v.option_en_name
-        if (this.tableData[modelKey].includes(v.option_value)) {
-          valueObj[key] = v.option_value
-          show_text += v.option_name + ','
-        } else {
-          valueObj[key] = ''
-        }
-      })
-      show_text = show_text.substring(0, show_text.length - 1)
-      // console.log(valueObj)
-      // 当前选择的一项
-      const valueKey = itemRow.en_name + '#' + itemCol.en_name + '#' + oItem.option_en_name
-      this.$emit('modify', {
-        type: 'matrix_multiple_dropdown',
-        value: valueObj,
-        other: {
-          en_name: valueKey,
-          question_name: this.dimLayout.name,
-          question_id: this.dimLayout.id,
-          value: valueObj[valueKey],
-          show_text: show_text
-        }
-      })
+      data.other = { ...data.other, ...obj }
+      this.$emit('modify', data)
     }
   }
 }

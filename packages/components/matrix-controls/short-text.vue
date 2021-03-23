@@ -5,7 +5,7 @@
       v-if="cType==='no_limit'||cType==='number'"
       v-model="input"
       :type="cType==='number'?cType:''"
-      :maxlength="dimLayout.max_length"
+      :maxlength="itemCol.max_length"
       :size="size"
       :disabled="!isEditing"
       @change="changeHandle"
@@ -13,7 +13,7 @@
     <el-input
       v-else-if="cType==='idcard'"
       v-model="input"
-      :maxlength="dimLayout.max_length"
+      :maxlength="itemCol.max_length"
       :size="size"
       :disabled="!isEditing"
       @change="changeHandle"
@@ -22,10 +22,10 @@
       v-if="cType==='date'||cType==='datetime'"
       v-model="input"
       :editable="false"
-      :type="dimLayout.text_check"
+      :type="itemCol.text_check"
       :size="size"
       :disabled="!isEditing"
-      :placeholder="dimLayout.text_check==='date'?'例：2008-08-08':'例：2008-08-08 00:00:00'"
+      :placeholder="itemCol.text_check==='date'?'例：2008-08-08':'例：2008-08-08 00:00:00'"
       @change="changeHandle"
     />
   </div>
@@ -43,7 +43,7 @@ export default {
       default: () => { return {} },
       type: Object
     },
-    dimLayout: {
+    itemCol: {
       default: () => { return {} },
       type: Object,
       required: true
@@ -65,7 +65,7 @@ export default {
   },
   computed: {
     cType() {
-      return this.dimLayout.text_check
+      return this.itemCol.text_check
     }
   },
   watch: {
@@ -80,7 +80,7 @@ export default {
   },
   methods: {
     getKey() {
-      return this.itemRow.en_name + '#' + this.dimLayout.en_name
+      return this.itemRow.en_name + '#' + this.itemCol.en_name
     },
     // 自定义日期格式
     p(s) {
@@ -116,6 +116,7 @@ export default {
         this.input = this.getCustomDateFormat(v)
       }
       const en = this.getKey()
+      const show_text = this.itemRow.name + this.itemCol.name + ':' + this.input
       const modifyObj = {
         type: 'short_text',
         value: {
@@ -123,10 +124,10 @@ export default {
         },
         other: {
           en_name: en,
-          question_name: this.dimLayout.name,
-          question_id: this.dimLayout.id,
+          question_name: this.itemCol.name,
+          question_id: this.itemCol.id,
           value: this.input,
-          show_text: this.input
+          show_text
         }
       }
       this.$emit('modify', modifyObj)

@@ -24,23 +24,15 @@
               {{ itemRow.name }}
             </td>
             <td v-for="(itemCol,colIndex) in dimLayout.matrix_cols" :key="colIndex">
-              <el-select
-                v-if="itemCol.col_type==='single_dropdown'"
-                v-model="tableData[itemRow.en_name+'#'+itemCol.en_name]"
-                size="mini"
+              <SingleDropdown
+                :is-editing="isEditing"
+                :item-col="itemCol"
+                :item-row="itemRow"
+                :dim-data="dimData"
                 style="width:98%;"
-                :disabled="!isEditing"
-                placeholder=""
-                :option-en="itemRow.en_name+'#'+itemCol.en_name"
-              >
-                <el-option
-                  v-for="(oItem,index) of itemCol.options"
-                  :key="index"
-                  :value="oItem.option_value"
-                  :label="oItem.option_name"
-                  @click.native="clickSingleHandle(oItem,itemRow, itemCol)"
-                />
-              </el-select>
+                size="mini"
+                @modify="singleHandle"
+              />
             </td>
           </tr>
         </tbody>
@@ -51,12 +43,16 @@
 
 <script>
 import { commonMixins } from '#/mixins/question-common'
+import SingleDropdown from '#/components/matrix-controls/single-dropdown'
+
 export default {
   name: 'DeeMatrixSingleDropdown',
+  components: {
+    SingleDropdown
+  },
   mixins: [commonMixins],
   data() {
     return {
-      tableData: {}
     }
   },
   computed: {
@@ -76,68 +72,15 @@ export default {
       return checked ? 'no_value' : 'value'
     }
   },
-  watch: {
-    dimData: {
-      handler: function(n) {
-        this.setTableData(n)
-      },
-      immediate: true
-    }
-  },
-  created() {
-  },
   methods: {
-    getKey(v, v2, v3) {
-      return v.en_name + '#' + v2.en_name + '#' + v3.option_en_name
-    },
-    setTableData(n) {
-      const cols = this.dimLayout.matrix_cols
-      const rows = this.dimLayout.matrix_rows
-      const obj = {}
-      rows.map(v => {
-        cols.map(v2 => {
-          v2.options.map(v3 => {
-            // 行英文名+列英文名+选项
-            const key = this.getKey(v, v2, v3)
-            if (v3.option_value === n[key]) {
-              // 不用else 用则会取值最后一个了
-              obj[v.en_name + '#' + v2.en_name] = v3.option_value
-            }
-          })
-        })
-      })
-      this.tableData = obj
-      // console.log(obj)
-    },
-    clickSingleHandle(oItem, itemRow, itemCol) {
-      const modelKey = itemRow.en_name + '#' + itemCol.en_name
-      const options = itemCol.options
-      let show_text = itemRow.name + itemCol.name + ':'
-      // 提取有行英文名加选项英文名，进行传输
-      const valueObj = {}
-      options.forEach(v => {
-        const key = itemRow.en_name + '#' + itemCol.en_name + '#' + v.option_en_name
-        if (this.tableData[modelKey] === v.option_value) {
-          valueObj[key] = v.option_value
-          show_text += v.option_name + ','
-        }
-      })
-      show_text = show_text.substring(0, show_text.length - 1)
-      // 当前选择的一项
-      const valueKey = itemRow.en_name + '#' + itemCol.en_name + '#' + oItem.option_en_name
-      // console.log(valueObj, valueKey)
-      // return
-      this.$emit('modify', {
-        type: 'matrix_single_dropdown',
-        value: valueObj,
-        other: {
-          en_name: valueKey,
-          question_name: this.dimLayout.name,
-          question_id: this.dimLayout.id,
-          value: valueObj[valueKey],
-          show_text: show_text
-        }
-      })
+    singleHandle(data) {
+      data.type = 'matrix_single_dropdown'
+      const obj = {
+        question_id: this.dimLayout.id,
+        question_name: this.dimLayout.name
+      }
+      data.other = { ...data.other, ...obj }
+      this.$emit('modify', data)
     }
   }
 }

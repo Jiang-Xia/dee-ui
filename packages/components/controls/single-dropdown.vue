@@ -3,20 +3,22 @@
     v-model="select"
     clearable
     :size="size"
+    :disabled="!isEditing"
+    placeholder=""
     @change="changeHandle"
+    @clear="clearHandle"
   >
     <el-option
-      v-for="(item,index) in dimLayout.options"
+      v-for="(oItem,index) of dimLayout.options"
       :key="index"
-      :value="item.option_value"
-      :label="item.option_name"
-      :option-en="item.option_en_name"
+      :value="oItem.option_value"
+      :label="oItem.option_name"
+      :option-en="oItem.option_en_name"
     >
       <span
         class="dee-dropdown-span"
-        @click="clickOptionHandle(item.option_en_name)"
       >
-        {{ item.option_name }}
+        {{ oItem.option_name }}
       </span>
     </el-option>
   </el-select>
@@ -51,22 +53,13 @@ export default {
   },
   data() {
     return {
-      select: '',
-      option_en_name: ''
+      select: ''
     }
   },
   watch: {
     dimData: {
       handler: function(n) {
-        const options = this.dimLayout.options
-        const values = options.map(v => v.option_value)
-        options.map(v => {
-          if (values.includes(n[v.option_en_name])) {
-            this.select = n[v.option_en_name]
-          } else {
-            this.select = ''
-          }
-        })
+        this.setTableData(n)
       },
       immediate: true
     }
@@ -74,29 +67,66 @@ export default {
   created() {
   },
   methods: {
-    clickOptionHandle(v) {
-      this.option_en_name = v
-    },
-    changeHandle(v) {
+    setTableData(n) {
       const options = this.dimLayout.options
-      const en = this.option_en_name
-      let show_text
-      const obj = {}
-      options.forEach(v => {
-        if (v.option_en_name === en) {
-          show_text = v.option_name
+      for (const item of options) {
+        // 行英文名+列英文名+选项
+        // console.log(key)
+        if (item.option_value === n[item.option_en_name]) {
+          this.select = item.option_value
+          break
         }
-        obj[v.option_en_name] = ''
+      }
+    },
+    clearHandle() {
+      const { dimLayout } = this
+      const options = dimLayout.options
+      const valueObj = {}
+      options.forEach(v => {
+        // 全部清空
+        valueObj[v.option_en_name] = ''
       })
-      obj[en] = this.select
       const modifyObj = {
         type: 'single_dropdown',
-        value: obj,
+        value: valueObj,
         other: {
-          en_name: en,
-          question_name: this.dimLayout.name,
-          question_id: this.dimLayout.id,
-          value: this.select,
+          en_name: '',
+          question_name: dimLayout.name,
+          question_id: dimLayout.id,
+          value: '',
+          show_text: ''
+        }
+      }
+      // console.log(obj)
+      this.$emit('modify', modifyObj)
+    },
+    changeHandle(val) {
+      console.log(val)
+      if (val === '' || val === null) {
+        return
+      }
+      const { dimLayout } = this
+      const options = dimLayout.options
+      const oItem = options.filter(v => v.option_value === val)[0] || {}
+      const show_text = oItem.option_name
+      const valueKey = oItem.option_en_name
+      const valueObj = {}
+      // 需要先置空 再赋值
+      options.forEach(v => { valueObj[v.option_en_name] = '' })
+      options.forEach(v => {
+        if (oItem.option_value === v.option_value) {
+          console.log(v.option_value)
+          valueObj[v.option_en_name] = v.option_value
+        }
+      })
+      const modifyObj = {
+        type: 'single_dropdown',
+        value: valueObj,
+        other: {
+          en_name: oItem.option_en_name,
+          question_name: dimLayout.name,
+          question_id: dimLayout.id,
+          value: valueObj[valueKey],
           show_text: show_text
         }
       }

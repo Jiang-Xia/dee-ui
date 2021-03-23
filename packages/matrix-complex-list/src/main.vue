@@ -145,22 +145,22 @@ export default {
       const { rowIndex, other } = data
       this.rowList[rowIndex] = { ...this.rowList[rowIndex], ...data.value }
       const valueObj = {
-        valueItem: this.rowList[rowIndex],
-        index: rowIndex
+        rowItem: this.rowList[rowIndex],
+        rowIndex: rowIndex
       }
       this.$emit('modify', {
         type: 'matrix_complex_list',
         value: {
           [this.dimLayout.en_name]: this.rowList
         },
-        value_dict: valueObj,
+        row_dict: valueObj,
         question_en_name: this.dimLayout.en_name,
         other: {
-          en_name: other.valueKey,
+          en_name: other.en_name,
           question_name: this.dimLayout.name,
           question_id: this.dimLayout.id,
           value: other.value,
-          show_text: other.value ? other.value.show_text : ''
+          show_text: other.show_text ? other.show_text : ''
         }
       })
     },

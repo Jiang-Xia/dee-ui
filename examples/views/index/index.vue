@@ -99,13 +99,14 @@ export default {
           'follow_third_dropdown#lis#lis_3': 4,
 
           // 复合矩阵
+          'tumor1#size': '很小',
           'tumor2#size': '很大',
           'tumor1#tumor_main_path_type#tumor_main_path_type1': 1,
           'tumor1#tumor_main_path_type#tumor_main_path_type2': 2,
           'tumor1#tumor_main_path_type#tumor_main_path_type3': 3,
           'tumor2#tumor_main_path_type#tumor_main_path_type4': 4,
           'tumor2#tumor_main_path_type#tumor_main_path_type5': 5,
-          'tumor1#texture#texture_2': 2,
+          'tumor1#texture#texture_1': 2,
           'tumor2#texture#texture_1': 1,
           // 自增型复合矩阵
           'matrix_complex_list_chem': [
@@ -144,11 +145,12 @@ export default {
         obj[k] = data.value[k]
       }
       this.dimData = obj
-      // console.warn('===============')
+      // console.clear()
+
       console.log(data)
-      // console.warn('===============')
-      // console.log(this.dimData)
-      // console.warn('===============')
+      console.warn('===============')
+      console.log(data.other.show_text)
+      console.warn('===============')
     },
     // 控制关联题显示隐藏事件回调
     changeRelationIdHandle(data) {

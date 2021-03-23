@@ -71,8 +71,6 @@ export default {
   watch: {
     dimData: {
       handler: function(n) {
-        // console.log('============')
-        // console.log(n[this.dimLayout.en_name])
         this.input = n[this.dimLayout.en_name]
       },
       immediate: true
