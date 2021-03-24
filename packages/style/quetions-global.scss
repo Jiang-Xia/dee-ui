@@ -1,4 +1,5 @@
 @import "~@/styles/scss/_mixins";
+@import "~@/styles/element-variables.scss";
 // 修改elementui 样式
 .dee-preview-model-container{
     .el-textarea.is-disabled .el-textarea__inner
@@ -29,7 +30,7 @@
         border-color: #909399;
       }
       .el-checkbox__inner:hover {
-        border-color: $main-color;
+        border-color: $--color-primary;
       }
     /* dim-radio */
       .el-radio__input.is-disabled.is-checked .el-radio__inner{
@@ -47,7 +48,7 @@
           border-color: #909399;
         }
         .el-radio__inner:hover{
-          border-color: $main-color;
+          border-color: $--color-primary;
         }
     /* dim-textarea */
       .el-textarea__inner{

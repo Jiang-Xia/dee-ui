@@ -1,4 +1,5 @@
 @import "~@/styles/scss/_mixins";
+@import "~@/styles/element-variables.scss";
 
 /* 所有题型公用样式 开始 */
 .dee-question-wrap{
@@ -76,7 +77,7 @@
 }
 
 .dee-matrix__header{
-    // background-color: rgba($color: $main-color, $alpha: 0.1)
+    // background-color: rgba($color: $--color-primary, $alpha: 0.1)
 }
 /* 量表 matrix table  结束*/
 
@@ -243,8 +244,8 @@
   display: none;
 }
 .dee-select-dropdown.is-multiple .el-select-dropdown__item.selected .check{
-  background-color: $main-color;
-  border-color: $main-color;
+  background-color: $--color-primary;
+  border-color: $--color-primary;
 }
 .dee-select-dropdown.is-multiple .el-select-dropdown__item.selected .check:after{
   transform: rotate(45deg) scaleY(1);
