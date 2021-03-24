@@ -37,13 +37,14 @@ export default {
     }
   },
   computed: {
-    /* 判断空值（即一道题是否一填）*/
+    /* 判断空值（即一道题是否已填）*/
     verifyValue() {
       const data = this.dimData
-      const checked = this.dimLayout.options.every(v => {
-        return data[v.option_en_name] === '' || data[v.option_en_name] === undefined
+      // 有一个成立即返回true
+      const checked = this.dimLayout.options.some(v => {
+        return !['', null, undefined].includes(data[v.option_en_name])
       })
-      return checked ? 'no_value' : 'value'
+      return checked ? 'value' : 'no_value'
     }
   },
   created() {

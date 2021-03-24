@@ -2735,7 +2735,7 @@
                             "type": "matrix_col",
                             "en_name": "over_date",
                             "col_type": "short_text",
-                            "is_required": 0,
+                            "is_required": 1,
                             "max_length": -1,
                             "text_check": "date"
                         },

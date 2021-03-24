@@ -63,14 +63,17 @@ export default {
       const list = []
       item.matrix_rows.forEach(row => {
         item.matrix_cols.forEach(col => {
-          list.push([row.en_name + '#' + col.en_name])
+          col.options.forEach(v => {
+            const key = row.en_name + '#' + col.en_name + '#' + v.option_en_name
+            list.push(key)
+          })
         })
       })
       const data = this.dimData
-      const checked = list.every(v => {
-        return data[v] === '' || data[v] === undefined
+      const checked = list.some(v => {
+        return !['', null, undefined].includes(data[v])
       })
-      return checked ? 'no_value' : 'value'
+      return checked ? 'value' : 'no_value'
     }
   },
   methods: {

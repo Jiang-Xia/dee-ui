@@ -73,8 +73,5 @@ export default {
 }
 </script>
 <style lang="scss">
-// .dee-long-text-wrap{
-//   // float: left;
-//   width: 100%;
-// }
+
 </style>

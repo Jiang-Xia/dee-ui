@@ -56,7 +56,7 @@ export default {
     }
   },
   computed: {
-    /* 判断空值（即一道题是否一填）matrix-input matrix-multiple-choice matrix-single-choice 一样*/
+    /* 判断空值（即一道题是否已填）matrix-input matrix-multiple-choice matrix-single-choice 一样*/
     verifyValue() {
       const item = this.dimLayout
       const list = []
@@ -66,10 +66,10 @@ export default {
         })
       })
       const data = this.dimData
-      const checked = list.every(v => {
-        return data[v] === '' || data[v] === undefined
+      const checked = list.some(v => {
+        return !['', null, undefined].includes(data[v])
       })
-      return checked ? 'no_value' : 'value'
+      return checked ? 'value' : 'no_value'
     }
   },
   methods: {

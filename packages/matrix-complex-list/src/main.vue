@@ -100,21 +100,22 @@ export default {
     }
   },
   computed: {
-    /* 判断空值（即一道题是否一填）matrix-input matrix-multiple-choice matrix-single-choice 一样*/
+    /* 判断空值（即一道题是否已填）matrix-input matrix-multiple-choice matrix-single-choice 一样*/
     verifyValue() {
-      // const item = this.dimLayout
-      // const list = []
-      // item.matrix_rows.forEach(row => {
-      //   item.matrix_cols.forEach(col => {
-      //     list.push([row.en_name + '#' + col.en_name])
-      //   })
-      // })
-      // const data = this.dimData
-      // const checked = list.every(v => {
-      //   return data[v] === '' || data[v] === undefined
-      // })
-      // return checked ? 'no_value' : 'value'
-      return 'no_value'
+      const data = this.dimData
+      const rowList = data[this.dimLayout.en_name] || []
+      if (!rowList.length) {
+        return 'no_value'
+      } else {
+        const checked = rowList.some(item => {
+          const keys = Object.keys(item)
+          // 判断所有的key value有一个为有值的
+          return keys.some(v => {
+            return !['', null, undefined].includes(item[v])
+          })
+        })
+        return checked ? 'value' : 'no_value'
+      }
     }
   },
   watch: {
@@ -164,8 +165,52 @@ export default {
         }
       })
     },
+    /*
+     * 新增校验
+     * 返回值 为当前校验的控件属性
+    */
+    addVerifyValue() {
+      // 行内key校验 必填时并且有没有填值时 返回true
+      const cb = (rowItem) => {
+        const cols = this.dimLayout.matrix_cols
+        for (const item of cols) {
+          if (item.is_required) {
+            if (item.col_type === 'short_text') {
+              if (!rowItem[item.en_name]) {
+                return item
+              }
+            } else if (item.col_type === 'single_dropdown') {
+              const bool = item.options.every(v => {
+                return ['', null, undefined].includes(rowItem[v.option_en_name])
+              })
+              if (bool) {
+                return item
+              }
+            } else if (item.col_type === 'multiple_dropdown') {
+              const bool = item.options.every(v => {
+                return ['', null, undefined].includes(rowItem[v.option_en_name])
+              })
+              if (bool) {
+                return item
+              }
+            }
+          }
+        }
+      }
+      // 多行校验
+      for (const rowItem of this.rowList) {
+        const bool = cb(rowItem)
+        if (bool) {
+          return bool
+        }
+      }
+    },
     // 增加一行
     addRowHandle() {
+      if (this.addVerifyValue()) {
+        this.$message.warning('请先完成添加！')
+        return
+      }
       if (this.dimLayout.max_col > 0 && this.rowList.length >= this.dimLayout.max_col) {
         this.$message.warning(`最大行数为${this.dimLayout.max_col}`)
         return
