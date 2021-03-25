@@ -24,7 +24,7 @@
               <el-popconfirm
                 confirm-button-type="text"
                 title="确定删除这一行数据吗？"
-                @confirm="delRowHandle(rowIndex)"
+                @onConfirm="delRowHandle(rowIndex)"
               >
                 <span slot="reference" class="el-icon-delete-solid" />
               </el-popconfirm>
@@ -223,8 +223,6 @@ export default {
         valueItem: this.rowList[rowIndex],
         index: rowIndex
       }
-      console.log(rowIndex, '11111111111')
-      this.rowList.splice(rowIndex, 1)
       this.$emit('modify', {
         type: 'matrix_complex_list',
         value: {
@@ -235,7 +233,7 @@ export default {
         other: {
         }
       })
-      console.log(rowIndex, '2222222222222')
+      this.rowList.splice(rowIndex, 1)
     }
   }
 }
