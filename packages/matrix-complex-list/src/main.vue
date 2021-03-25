@@ -69,8 +69,8 @@
           </tr>
           <!-- 增加一行 -->
           <tr>
-            <td :colspan="dimLayout.matrix_cols.length+1" @click="addRowHandle">
-              <el-button size="mini" type="text" icon="el-icon-plus">继续填写</el-button>
+            <td :colspan="dimLayout.matrix_cols.length+1">
+              <el-button size="mini" type="text" icon="el-icon-plus" @click="addRowHandle">继续填写</el-button>
             </td>
           </tr>
         </tbody>
@@ -223,6 +223,8 @@ export default {
         valueItem: this.rowList[rowIndex],
         index: rowIndex
       }
+      console.log(rowIndex, '11111111111')
+      this.rowList.splice(rowIndex, 1)
       this.$emit('modify', {
         type: 'matrix_complex_list',
         value: {
@@ -233,7 +235,7 @@ export default {
         other: {
         }
       })
-      this.rowList.splice(rowIndex, 1)
+      console.log(rowIndex, '2222222222222')
     }
   }
 }
