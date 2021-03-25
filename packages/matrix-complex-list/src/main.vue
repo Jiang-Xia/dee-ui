@@ -24,7 +24,7 @@
               <el-popconfirm
                 confirm-button-type="text"
                 title="确定删除这一行数据吗？"
-                @onConfirm="delRowHandle(rowIndex)"
+                @confirm="delRowHandle(rowIndex)"
               >
                 <span slot="reference" class="el-icon-delete-solid" />
               </el-popconfirm>
