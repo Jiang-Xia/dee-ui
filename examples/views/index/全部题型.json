@@ -39,7 +39,7 @@
                     "en_name": "pat_age",
                     "is_required": 0,
                     "max_length": -1,
-                    "text_check": "number",
+                    "text_check": "integer",
                     "row_behavior": 0
                 },
                 {
@@ -129,7 +129,7 @@
                     "id": "11",
                     "pid": "1",
                     "name": "初次入院现病史",
-                    "remark": "",
+                    "remark": "初次入院现病史<br><img src='aaa.png'>",
                     "type": "long_text",
                     "form_id": null,
                     "en_name": "hnow_first",
@@ -462,11 +462,11 @@
                             "option_value_type": "int",
                             "option_en_name": "h_cerebral_apoplexy",
                             "is_exclude_option": 0,
-                            "option_other_is_editable": 0,
+                            "option_other_is_editable": 1,
                             "option_other_is_required": 0,
                             "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit",
-                            "option_other_en_name": ""
+                            "option_other_text_check": "integer",
+                            "option_other_en_name": "diag_cancer_text"
                         }
                     ],
                     "is_required": 0,
@@ -873,7 +873,7 @@
                             "option_other_is_editable": 1,
                             "option_other_is_required": 0,
                             "option_other_max_length": -1,
-                            "option_other_text_check": "no_limit",
+                            "option_other_text_check": "integer",
                             "option_other_en_name": "diag_cancer_text"
                         }
                     ],
@@ -1087,7 +1087,7 @@
                             "col_type": "short_text",
                             "is_required": 0,
                             "max_length": -1,
-                            "text_check": "no_limit"
+                            "text_check": "integer"
                         },
                         {
                             "id": "67",
@@ -1832,7 +1832,7 @@
                     "pid": "58",
                     "name": "生育情况",
                     "remark": "",
-                    "type": "multiple_choice",
+                    "type": "multiple_dropdown",
                     "form_id": null,
                     "options": [
                         {

@@ -4,6 +4,7 @@
     :size="size"
     :disabled="!isEditing"
     multiple
+    filterable
     placeholder=""
     popper-class="dee-select-dropdown"
   >
@@ -65,7 +66,25 @@ export default {
       immediate: true
     }
   },
+  mounted() {
+    this.disableKeyDeletion()
+  },
+
   methods: {
+    // 此方法解决 多选下拉开启联想时多选控件可以通过按键删除已选选项，无法触发所需事件回调
+    //  让了删除tag操作无效
+    disableKeyDeletion() {
+      const dom = this.$el.querySelector('.el-select__input')
+      // 该事件在捕获的时候执行回调，并且阻止事件的冒泡
+      dom.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace') {
+          e.stopImmediatePropagation()
+          e.stopPropagation()
+          e.preventDefault()
+          this.deeSelects = [...this.deeSelects]
+        }
+      }, true)
+    },
     getKey(v, v2, v3) {
       return v.en_name + '#' + v2.en_name + '#' + v3.option_en_name
     },

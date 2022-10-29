@@ -1,28 +1,47 @@
-// import { isMobile } from '#/utils/common'
+/*
+ * @Author: 酱
+ * @LastEditors: 酱
+ * @Date: 2021-03-31 17:35:27
+ * @LastEditTime: 2021-08-06 18:50:07
+ * @Description:
+ * @FilePath: \dee-ui\packages\mixins\question-common.js
+ */
+import { getMultiQuestionLogic } from '#/utils/common'
+import ImgLook from '#/components/img-look'
 // import Quill from 'quill'
 /* 即所有题型都公用的 个别单独写 */
 export const commonMixins = {
   props: {
+    // 是否编辑
     isEditing: {
       default: false,
       type: Boolean
     },
+    // 题型数据
     dimData: {
       default: () => { return {} },
       type: Object
     },
+    // 题型布局信息
     dimLayout: {
       default: () => { return {} },
       type: Object,
       required: true
     },
+    // 题型序号
     questionIndex: {
       default: null,
       type: Number,
       required: true
+    },
+    // 题型参数用于控制功能的开关
+    featureParams: {
+      default: () => { return {} },
+      type: Object
     }
   },
   computed: {
+    // 题型排列样式
     questionStyle() {
       // const layout = this.dimLayout
       const obj = {}
@@ -39,10 +58,33 @@ export const commonMixins = {
       obj.width = '100%'
       return obj
     },
+    // 题型序号
     questionNo() {
       // const index = this.questionIndex
       // return (index < 9) ? (0 + String(index + 1)) : index + 1
       return ''
+    },
+    // 控制日志气泡的显示
+    showLog({ $parent }) {
+      // console.log($parent)
+      return $parent.showLog
+    }
+  },
+  mounted() {
+    // this.bindRemarkImgHandle()
+  },
+  methods: {
+    // 给备注的图片绑定点击事件
+    bindRemarkImgHandle() {
+      if (this.dimLayout.remark) {
+        if (!this.$refs.remark) { return }
+        const imgs = this.$refs.remark.querySelectorAll('img')
+        for (let i = 0; i < imgs.length; i++) {
+          imgs[i].addEventListener('click', (e) => {
+            ImgLook({ dom: e.target })
+          })
+        }
+      }
     }
   }
 }
@@ -50,19 +92,29 @@ export const commonMixins = {
 /* 单选选择和多选选择的联动题 */
 export const relationMixins = {
   methods: {
-    // 获取关联题目
-    $__calcRelationHandle() {
-      const id = this.dimLayout.id
-      const ids = this.relationKeys[id]
+
+    /**
+     * @description: 获取关联题目 1.要根据数据来是否显示关联题，即渲染的时候要找id 2.手动修改之后动态控制关联题的显示和隐藏
+     * @param {Boolean}  isFirst 是否为初始化渲染
+     * @return {*}
+     */
+    $__calcRelationHandle(isFirst = true) {
+      const { relation_dict, relation_keys } = this.metaTemplate
+      const id = this.dimLayout.id// 题目id
+      const qName = this.dimLayout.name// 题目名
+      const ids = relation_keys[id]
       if (ids) {
-        // console.log(ids)
         for (const id_ of ids) {
-          const obj = this.relationDict[id_].relation_items
-          const relation = this.relationDict[id_].relation
-          if (getMultiQuestionLogic(obj, relation, this.dimData)) {
-            this.$emit('change-id', { id: id_, type: 'add' })
+          const obj = relation_dict[id_].relation_items
+          const relation = relation_dict[id_].relation
+          // 关联题名
+          const name = relation_dict[id_].name
+          // id_ 关联题id
+          const bool = getMultiQuestionLogic(obj, relation, this.dimData)
+          if (bool) {
+            this.$emit('change-id', { id: id_, name, qName, qId: id, type: 'add' })
           } else {
-            this.$emit('change-id', { id: id_, type: 'remove' })
+            this.$emit('change-id', { id: id_, name, qName, qId: id, type: 'remove' })
           }
         }
       }
@@ -74,54 +126,4 @@ export const relationMixins = {
     }
   }
 }
-/*
-  * 返回值 就是判断多题逻辑的结果 (一道题和多道题控制 一样使用)
-*/
-export function getMultiQuestionLogic(relation_items, relation, dimData) {
-  const boolObj = {}
-  for (const k in relation_items) {
-    boolObj[k] = isSatisfyCondition(relation_items[k], dimData)
-  }
-  if (relation === 'and') {
-    // 有一个不为true 就返回false
-    for (const k in relation_items) {
-      if (!boolObj[k]) {
-        return false
-      }
-    }
-    return true
-  } else if (relation === 'or') {
-    // 有一个为true 就返回 true
-    for (const k in relation_items) {
-      if (boolObj[k]) {
-        return true
-      }
-    }
-    return false
-  }
-}
-// 计算关联题是否满足显示条件
-export function isSatisfyCondition(relation_item, dimData) {
-  const { any_or_all, checked_or_unchecked, option_list } = relation_item
-  if (checked_or_unchecked === 'checked') {
-    if (any_or_all === 'any') {
-      return option_list.some((v) => {
-        return dimData[v.option_en_name] === v.option_value
-      })
-    } else if (any_or_all === 'all') {
-      return option_list.every((v) => {
-        return dimData[v.option_en_name] === v.option_value
-      })
-    }
-  } else if (checked_or_unchecked === 'unchecked') {
-    if (any_or_all === 'any') {
-      return option_list.some((v) => {
-        return dimData[v.option_en_name] !== v.option_value
-      })
-    } else if (any_or_all === 'all') {
-      return option_list.every((v) => {
-        return dimData[v.option_en_name] !== v.option_value
-      })
-    }
-  }
-}
+

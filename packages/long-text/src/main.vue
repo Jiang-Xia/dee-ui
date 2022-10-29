@@ -1,3 +1,11 @@
+<!--
+ * @Author: 酱
+ * @LastEditors: 酱
+ * @Date: 2021-03-31 17:35:26
+ * @LastEditTime: 2021-08-06 18:05:53
+ * @Description:
+ * @FilePath: \dee-ui\packages\long-text\src\main.vue
+-->
 <template>
   <div
     class="dee-question-wrap dee-long-text"
@@ -9,6 +17,9 @@
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
       <span class="dee-question-name">{{ dimLayout.name }}</span>
+      <slot name="header" :layout="dimLayout">
+        <DeeLogPopper v-if="showLog" :dim-layout="dimLayout" v-bind="$attrs" v-on="$listeners" />
+      </slot>
     </div>
     <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">
@@ -25,10 +36,16 @@
 </template>
 
 <script>
-import { commonMixins } from '#/mixins/question-common'
+import { commonMixins, relationMixins } from '#/mixins/question-common'
 export default {
   name: 'DeeLongText',
-  mixins: [commonMixins],
+  mixins: [commonMixins, relationMixins],
+  props: {
+    metaTemplate: {
+      default: () => { return {} },
+      type: Object
+    }
+  },
   data() {
     return {
       textarea: ''
@@ -67,6 +84,9 @@ export default {
           value: this.textarea,
           show_text: this.textarea
         }
+      })
+      this.$nextTick(() => {
+        this.$__calcRelationHandle(false)
       })
     }
   }

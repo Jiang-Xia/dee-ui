@@ -1,3 +1,11 @@
+<!--
+ * @Author: 酱
+ * @LastEditors: 酱
+ * @Date: 2021-03-31 17:35:27
+ * @LastEditTime: 2021-07-15 14:00:34
+ * @Description:
+ * @FilePath: \dee-ui\packages\matrix-multiple-dropdown\src\main.vue
+-->
 <template>
   <div
     class="dee-question-wrap dee-matrix-multiple-dropdown"
@@ -7,7 +15,9 @@
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
       <span class="dee-question-name">{{ dimLayout.name }}</span>
-
+      <slot name="header" :layout="dimLayout">
+        <DeeLogPopper v-if="showLog" :dim-layout="dimLayout" v-bind="$attrs" v-on="$listeners" />
+      </slot>
     </div>
     <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">
@@ -78,7 +88,7 @@ export default {
   },
   methods: {
     multipleHandle(data) {
-      data.type = 'matrix_ multiple_dropdown'
+      data.type = 'matrix_multiple_dropdown'
       const obj = {
         question_id: this.dimLayout.id,
         question_name: this.dimLayout.name

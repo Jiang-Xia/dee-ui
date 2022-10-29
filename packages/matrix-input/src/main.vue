@@ -1,3 +1,11 @@
+<!--
+ * @Author: 酱
+ * @LastEditors: 酱
+ * @Date: 2021-03-31 17:35:27
+ * @LastEditTime: 2021-07-13 09:39:41
+ * @Description:
+ * @FilePath: \dee-ui\packages\matrix-input\src\main.vue
+-->
 <template>
   <div
     class="dee-question-wrap dee-matrix-input"
@@ -7,7 +15,9 @@
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
       <span class="dee-question-name">{{ dimLayout.name }}</span>
-
+      <slot name="header" :layout="dimLayout">
+        <DeeLogPopper v-if="showLog" :dim-layout="dimLayout" v-bind="$attrs" v-on="$listeners" />
+      </slot>
     </div>
     <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">

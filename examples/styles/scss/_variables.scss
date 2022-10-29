@@ -19,13 +19,20 @@ $font-size-l: $font-size-base + 2;
 //size
 $navbar-height: 60px;
 
-// $label-color:#909399;
-// $form-color: #606266;
-
-// 表单控件主要颜色
-// $dim-bg-c:#f5f7fa;
-// $dim-border-c:#e4e7ed;
 $label-color:rgba(0,0,0,0.54);
-// $dim-color:#56585f;
-//  color #606266
-// border #dcdfe6
+
+/* 
+ * sass变量只要不是选择器里面都是全局变量
+ * 根据医院判断使用
+*/
+$main-gradient-color:'';
+$themeType:'blue';
+@if $themeType=='blue' {
+    $main-color: #0096FF;
+    $--color-primary: #0096FF;
+    $main-gradient-color:linear-gradient(-270deg, #57B3F6 0%, #2C7CE9 100%);
+} @else if($themeType=='green'){
+    $main-color: #14C07F;
+    $--color-primary: #14C07F;
+    $main-gradient-color:linear-gradient(-270deg, #51C1CB 0%, #0DC076 100%);
+}

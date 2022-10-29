@@ -9,7 +9,9 @@
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
       <span class="dee-question-name">{{ dimLayout.name }}</span>
-
+      <slot name="header" :layout="dimLayout">
+        <DeeLogPopper v-if="showLog" :dim-layout="dimLayout" v-bind="$attrs" v-on="$listeners" />
+      </slot>
     </div>
     <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">
@@ -25,15 +27,14 @@
       >
         <span>{{ item.option_name }}</span>
         <!-- 其他选项 -->
-        <input
-          v-if="item.option_other_is_editable"
-          v-model="option_other_value"
-          :option-en="item.option_other_en_name"
-          :disabled="!isEditing"
-          class="dee-input__underline"
-          @click.stop=""
-          @change="otherChangeHandle(item)"
-        >
+        <template v-if="item.option_other_is_editable">
+          <OtherShortText
+            :is-editing="isEditing"
+            :dim-layout="item"
+            :value="option_other_value"
+            @modify="otherChangeHandle"
+          />
+        </template>
       </el-checkbox>
     </div>
   </div>
@@ -41,16 +42,14 @@
 
 <script>
 import { commonMixins, relationMixins } from '#/mixins/question-common'
+import OtherShortText from '#/components/controls/other-short-text'
 import { isMobile } from '#/utils/common'
 export default {
   name: 'DeeMultipleChoice',
+  components: { OtherShortText },
   mixins: [commonMixins, relationMixins],
   props: {
-    relationDict: {
-      default: () => { return {} },
-      type: Object
-    },
-    relationKeys: {
+    metaTemplate: {
       default: () => { return {} },
       type: Object
     }
@@ -113,7 +112,7 @@ export default {
         }
       })
       this.bindTableData = obj
-      this.$__calcRelationHandle()
+      // this.$__calcRelationHandle()
       // console.log(this.bindTableData)
     },
     // 根据绑定的对象装填需要发送的数据
@@ -130,7 +129,9 @@ export default {
       })
       return obj
     },
-    otherChangeHandle(item) {
+    otherChangeHandle(data) {
+      this.option_other_value = data.other.value
+      const { item } = data
       // 选择其他项时 return
       if (!this.bindTableData[item.option_en_name]) return
       const obj = { [item.option_other_en_name]: this.option_other_value }
@@ -193,7 +194,10 @@ export default {
           show_text: show_text ? oItem.option_name + show_text : oItem.option_name
         }
       })
-      this.$__calcRelationHandle()
+      // 会先触发事件的回调，再改变子组件的数据
+      this.$nextTick(() => {
+        this.$__calcRelationHandle(false)
+      })
     }
   }
 }

@@ -9,6 +9,9 @@
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
       <span class="dee-question-name">{{ dimLayout.name }}</span>
+      <slot name="header" :layout="dimLayout">
+        <DeeLogPopper v-if="showLog" :dim-layout="dimLayout" v-bind="$attrs" v-on="$listeners" />
+      </slot>
     </div>
     <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">
@@ -27,16 +30,14 @@
         >
           <span>{{ item.option_name }}</span>
           <!-- 其他选项 -->
-          <input
-            v-if="item.option_other_is_editable"
-            v-model="option_other_value"
-            :disabled="!isEditing"
-            class="dee-input__underline"
-            :option-en="item.option_other_en_name"
-            size="mini"
-            @click.stop=""
-            @change="otherChangeHandle(item.option_value,item)"
-          >
+          <template v-if="item.option_other_is_editable">
+            <OtherShortText
+              :is-editing="isEditing"
+              :dim-layout="item"
+              :value="option_other_value"
+              @modify="otherChangeHandle"
+            />
+          </template>
         </el-radio>
       </el-radio-group>
     </div>
@@ -45,16 +46,14 @@
 
 <script>
 import { commonMixins, relationMixins } from '#/mixins/question-common'
+import OtherShortText from '#/components/controls/other-short-text'
 import { isMobile } from '#/utils/common'
 export default {
   name: 'DeeSingleChoice',
+  components: { OtherShortText },
   mixins: [commonMixins, relationMixins],
   props: {
-    relationDict: {
-      default: () => { return {} },
-      type: Object
-    },
-    relationKeys: {
+    metaTemplate: {
       default: () => { return {} },
       type: Object
     }
@@ -105,7 +104,7 @@ export default {
             this.option_other_value = n[v.option_other_en_name]
           }
         })
-        this.$__calcRelationHandle()
+        // this.$__calcRelationHandle()
         // console.log(this.radio)
       },
       immediate: true
@@ -114,10 +113,13 @@ export default {
   created() {
   },
   methods: {
-    otherChangeHandle(rV, item) {
+    otherChangeHandle(data) {
+      const { item } = data
+      const rV = item.option_value
+      this.option_other_value = data.other.value
       // 选择其他项时 return
       if (this.radio !== rV) return
-      const obj = this.getParams(rV, item).value
+      const obj = this.getParams(rV, item)
       this.$emit('modify', {
         type: 'single_choice',
         value: obj.value,
@@ -140,7 +142,7 @@ export default {
         if (oItem.option_other_is_editable && oItem.option_value === v) {
           obj[oItem.option_other_en_name] = this.option_other_value
         }
-        if (item.option_en_name === oItem.option_en_name) {
+        if (item.option_en_name === oItem.option_en_name && oItem.option_value === v) {
           show_text = item.option_name
         }
       })
@@ -168,7 +170,9 @@ export default {
           show_text: this.option_other_value ? obj.show_text + this.option_other_value : obj.show_text
         }
       })
-      this.$__calcRelationHandle()
+      this.$nextTick(() => {
+        this.$__calcRelationHandle(false)
+      })
     }
   }
 }

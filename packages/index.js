@@ -1,3 +1,11 @@
+/*
+ * @Author: 酱
+ * @LastEditors: 酱
+ * @Date: 2021-03-31 17:35:26
+ * @LastEditTime: 2021-08-02 11:37:48
+ * @Description:
+ * @FilePath: \dee-ui\packages\index.js
+ */
 
 // 引入编写的组件
 import Desp from './desp'
@@ -16,8 +24,14 @@ import MatrixMultipleDropdown from './matrix-multiple-dropdown'
 import MatrixComplexList from './matrix-complex-list'
 import MatrixComplex from './matrix-complex'
 
+/* 共用组件 */
+import DeeLogPopper from './components/dee-log-popper'
+
 import './style/common.scss'
 import './style/quetions-global.scss'
+
+// 工具方法
+import * as questionUtils from './utils/common'
 
 /*
  * common import start
@@ -48,7 +62,9 @@ const components = [
   MatrixMultipleDropdown,
   MatrixComplexList,
   MatrixComplex,
-  PreviewModel
+  PreviewModel,
+  // 相当于注册全局组件
+  DeeLogPopper
 ]
 
 // 定义 install 方法，接收 Vue 作为参数
@@ -60,6 +76,8 @@ const install = function(Vue) {
   components.map(component => Vue.component(component.name, component))
   // 下面这个写法也可以
   // components.map(component => Vue.use(component))
+  // 挂载方法
+  Vue.prototype.$questionUtils = questionUtils
 }
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)

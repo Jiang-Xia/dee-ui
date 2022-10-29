@@ -7,20 +7,27 @@
     width: 100%;
 }
 .dee-question-heading{
-    font-size: 14px;
-    color: #000015;
-    line-height: 2;
+    font-size: 13px;
+    color: #333;
+    font-weight: 600;
+    line-height: 20px;
+    padding-bottom: 15px;
+}
+.dee-question-name__icon{
+    margin-left: 12px;
+    font-size: 15px;
+    cursor: pointer;
 }
 @media (min-width: 1200px){
     .dee-question-heading{
-        font-size: 15px;
-        margin: .8rem 0 0.2rem;
+        font-size: 13px;
+        // margin: .8rem 0 0.2rem;
     }
 }
 @media (min-width: 800){
     .dee-question-heading{
-        font-size: 17px;
-        margin: .8rem 0 0.2rem;
+        font-size: 13px;
+        // margin: .8rem 0 0.2rem;
     }
 }
 .dee-question-sign{
@@ -44,11 +51,19 @@
 }
 .dee-question-remark{
     color: #909399;
-    line-height: 1;
-    margin-bottom: 5px;
+    background-color: #f3f3f3;
+    line-height: 22px;
+    font-size: 13px;
+    padding: 10px 15px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    width: 95%;
+    img{
+        height: 70px;
+    }
 }
 .dee-control-wrap{
-    margin-left: .5rem;
+    // margin-left: .5rem;
 }
 /* 所有题型公用样式 结束 */
 
@@ -56,12 +71,21 @@
 /* 量表 matrix table  开始*/
 .dee-matrix-table{
     width:100%;
-    color: #606266;
+    color: #666666;
+    th{
+        background-color: #f7f7f7;
+    }
+    td{
+        border-bottom: 1px dotted #dedede;
+    }
+    tr td:nth-child(1){
+        text-align: left;
+    }
     th,td{
-        padding:1rem .5rem;
+        height: 36px;
         text-align:center;
+        padding: 5px;
         min-width: 5rem;
-        border-bottom: 1px solid #DCDFE6;
     }
 }
 .dee-matrix__body{
@@ -88,7 +112,7 @@
 .dee-input__underline{
     border-bottom: 1px solid #606266;
     width: 4.5rem;
-    color: #606266;
+    color: #666666;
     margin-left: .3rem;
 }
 /* 
@@ -101,6 +125,21 @@
     width: 100%;
     float: left;
     font-weight: 600;
+    border-bottom: 1px dashed #ccc;
+    .dee-question-heading{
+        display: flex;
+        align-items: center;
+        color: #333333;
+        font-size: 14px;
+    }
+    .dee-question-lump{
+        display: inline-block;
+        height: 15px;
+        width: 5px;
+        margin-right: 8px;
+        border-radius: 1px;
+        background-color: $main-color;
+    }
 }
 // 长文本
 .dee-long-text{
@@ -287,4 +326,20 @@
 .dee-preview-model-container{
     border-radius: 5px;
     padding: 1.2rem;
+}
+
+
+
+/* 自定义组件 */
+.el-popover.dee-question-popper{
+    width: 33rem;
+    max-width: 730px;
+    min-width: 260px;
+    padding: 0;
+    // left: 295px !important;
+}
+.dee-question-popper__content{
+    padding: 12px;
+    max-height: 156px;
+    color: #9b9b9b;
 }

@@ -7,6 +7,9 @@
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
       <span class="dee-question-name">{{ dimLayout.name }}</span>
+      <slot name="header" :layout="dimLayout">
+        <DeeLogPopper v-if="showLog" :dim-layout="dimLayout" v-bind="$attrs" v-on="$listeners" />
+      </slot>
     </div>
     <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">
@@ -90,6 +93,24 @@ export default {
       this.tableData = obj
       // console.log(obj)
     },
+    // 根据绑定的对象装填需要发送的数据
+    getTableData(tableData, itemRow) {
+      const cols = this.dimLayout.matrix_cols
+      // 只要当前行（即当前题）
+      const rows = this.dimLayout.matrix_rows.filter(v => v.en_name === itemRow.en_name)
+      const obj = {}
+      rows.map(v => {
+        cols.map(v2 => {
+          const key = v.en_name + '#' + v2.en_name
+          if (tableData[key]) {
+            obj[key] = v2.option_value
+          } else {
+            obj[key] = ''
+          }
+        })
+      })
+      return obj
+    },
     clickHandle(v, itemRow, itemCol) {
       const en = itemRow.en_name + '#' + itemCol.en_name
       const show_text = itemRow.name + ':' + itemCol.name
@@ -103,12 +124,13 @@ export default {
         }
       }
       this.tableData[en] = this.tableData[en] === v ? '' : v
-      this.changeHandle(en, show_text)
+      this.changeHandle(en, show_text, itemRow)
     },
-    changeHandle(en, show_text) {
+    changeHandle(en, show_text, itemRow) {
+      const valueObj = this.getTableData(this.tableData, itemRow)
       this.$emit('modify', {
         type: 'matrix_single_choice',
-        value: this.tableData,
+        value: valueObj,
         other: {
           en_name: en,
           question_name: this.dimLayout.name,

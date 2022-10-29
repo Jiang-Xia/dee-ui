@@ -8,6 +8,7 @@
       :maxlength="dimLayout.max_length"
       :size="size"
       :disabled="!isEditing"
+      :placeholder="dimLayout.hint_text"
       @change="changeHandle"
     />
     <el-input
@@ -16,16 +17,27 @@
       :maxlength="dimLayout.max_length"
       :size="size"
       :disabled="!isEditing"
+      :placeholder="dimLayout.hint_text"
+      @change="changeHandle"
+    />
+    <el-input
+      v-else-if="cType==='integer'"
+      v-model="input"
+      type="number"
+      :maxlength="dimLayout.max_length"
+      :size="size"
+      :disabled="!isEditing"
+      :placeholder="dimLayout.hint_text"
       @change="changeHandle"
     />
     <el-date-picker
       v-if="cType==='date'||cType==='datetime'"
       v-model="input"
-      :editable="false"
-      :type="dimLayout.text_check"
+      :editable="true"
+      :type="cType"
       :size="size"
       :disabled="!isEditing"
-      :placeholder="dimLayout.text_check==='date'?'例：2008-08-08':'例：2008-08-08 00:00:00'"
+      :placeholder="cType==='date'?'例：2008-08-08':'例：2008-08-08 00:00:00'"
       @change="changeHandle"
     />
   </div>
@@ -111,6 +123,16 @@ export default {
         if (!this.validatorIDCard(v)) return
       } else if (type === 'date' || type === 'datetime') {
         this.input = this.getCustomDateFormat(v)
+      } else if (type === 'number' && this.input) {
+        this.input = Number(this.input)
+      } else if (type === 'integer' && this.input) {
+        this.input = Number(this.input)
+        const reg = /^-?[0-9]\d*$/
+        if (!reg.test(this.input)) {
+          this.$message.warning('请输入整数')
+          this.input = ''
+          return
+        }
       }
       const en = this.dimLayout.en_name
       const modifyObj = {

@@ -5,6 +5,7 @@
     :size="size"
     :disabled="!isEditing"
     placeholder=""
+    filterable
     @change="changeHandle"
     @clear="clearHandle"
   >

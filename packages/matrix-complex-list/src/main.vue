@@ -7,7 +7,7 @@
       <span v-if="dimLayout.is_required" class="dee-question-sign">*</span>
       <span v-show="questionNo" class="dee-question-no">{{ questionNo }}</span>
       <span class="dee-question-name">{{ dimLayout.name }}</span>
-
+      <slot name="header" :layout="dimLayout" />
     </div>
     <div v-if="dimLayout.remark" class="dee-question-remark" v-html="dimLayout.remark" />
     <div class="dee-control-wrap">
@@ -69,7 +69,7 @@
           </tr>
           <!-- 增加一行 -->
           <tr>
-            <td :colspan="dimLayout.matrix_cols.length+1">
+            <td :colspan="dimLayout.matrix_cols.length+1" style="text-align:center;">
               <el-button size="mini" type="text" icon="el-icon-plus" @click="addRowHandle">继续填写</el-button>
             </td>
           </tr>
@@ -231,6 +231,8 @@ export default {
         value_dict: valueObj,
         question_en_name: this.dimLayout.en_name,
         other: {
+          question_name: this.dimLayout.name,
+          question_id: this.dimLayout.id
         }
       })
       this.rowList.splice(rowIndex, 1)

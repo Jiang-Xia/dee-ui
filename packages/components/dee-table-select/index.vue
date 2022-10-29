@@ -1,7 +1,22 @@
+<!--
+ * @Author: 酱
+ * @LastEditors: 酱
+ * @Date: 2021-03-31 17:35:26
+ * @LastEditTime: 2021-07-29 17:58:45
+ * @Description:
+ * @FilePath: \dee-ui\packages\components\dee-table-select\index.vue
+-->
 <template>
   <div class="model-list-wrap">
     <p class="check-model-btn" @click.stop="isShow=!isShow">
-      <el-input :value="inputNames" :placeholder="placeholder" readonly size="small" />
+      <el-input
+        v-model="value"
+        :placeholder="placeholder"
+        size="small"
+      />
+      <span class="xia-tags">
+        <span class="xia-tags" />
+      </span>
     </p>
     <i class="el-icon-arrow-down fr" :style="{transform: !isShow?'translateY(-50%) rotateZ(0deg)':'translateY(-50%) rotateZ(-180deg)'}" />
     <transition name="el-fade-in-linear">
@@ -14,13 +29,12 @@
   </div>
 </template>
 <script>
+// 未使用
 export default {
   name: 'DeeTableSelect',
+  components: {
+  },
   props: {
-    inputNames: {
-      default: () => '',
-      type: String
-    },
     placeholder: {
       default: () => '',
       type: String
@@ -33,6 +47,16 @@ export default {
   data() {
     return {
       isShow: false
+    }
+  },
+  computed: {
+    value: {
+      get: function() { return this.$attrs.value },
+      set: function(val) { this.$emit('input', val) }
+    },
+    tags() {
+      const list = this.$slots.default.filter(v => v.data.model)
+      return list
     }
   },
   mounted() {
@@ -69,7 +93,7 @@ export default {
         width: 100%;
         position: absolute;
         background-color: #fff;
-        min-height: 4rem;
+        min-height: 5rem;
         max-height: 20rem;
         // overflow: auto;
         padding: 8px 0;

@@ -10,27 +10,43 @@
         :relation-dict="relationDict"
         :relation-keys="relationKeys"
         :relation-ids="relationIds"
+        :calculation-dict="calculationDict"
+        :calculation-keys="calculationKeys"
+        :constants-dict="constantsDict"
         :real-time="realTime"
         :dim-data="dimData"
+        :meta-template="metaTemplate"
+        :show-log="true"
         :is-editing="true"
         custom-question-id="q"
         @modify="modifyHandle"
         @change-id="changeRelationIdHandle"
       />
+      <!-- <DeeModel
+        :field-temp="item.items"
+        :relation-dict="relationDict"
+        :relation-keys="relationKeys"
+        :relation-ids="relationIds"
+        :real-time="realTime"
+        :dim-data="dimData"
+        :show-log="true"
+        :is-editing="true"
+        custom-question-id="q"
+        @modify="modifyHandle"
+        @change-id="changeRelationIdHandle"
+      /> -->
     </section>
   </div>
 </template>
 <script>
-// import FieldTemp from './睡眠呼吸监测.json' // 所有题型
-
-// import FieldTemp from './基线.json'
-import FieldTemp from './全部题型.json'
-
-// import FieldTemp from './睡眠呼吸监测问卷.json'
-// import FieldTemp from './new.json'
-// import FieldTemp from './档案信息.json'
-
+// import FieldTemp from './乳腺癌字段修订（早&晚）0717.json'
+// import FieldTemp from './全部题型.json'
+import FieldTemp from './计算赋值题.json'
+import DeeModel from './dee-model'
 export default {
+  components: {
+    DeeModel
+  },
   data() {
     return {
       previewVisible: false,
@@ -40,7 +56,9 @@ export default {
       relationKeys: {},
       userAgent: '',
       relationIds: [],
-      realTime: true
+      realTime: false,
+      injectData: {},
+      metaTemplate: {}
     }
   },
   created() {
@@ -51,14 +69,24 @@ export default {
       const {
         group_list,
         relation_dict,
-        relation_keys
+        relation_keys,
+        calculation_dict,
+        calculation_keys,
+        constants_dict
       } = FieldTemp
+      this.metaTemplate = FieldTemp
       this.previewVisible = true
       this.group_list = group_list
+      this.$set(this.injectData, 'group_list', group_list)
+      // this.group_list = group_list.filter(v => v.name === '首次进展事件')
       this.relationDict = relation_dict
       this.relationKeys = relation_keys
+      this.calculationDict = calculation_dict
+      this.calculationKeys = calculation_keys
+      this.constantsDict = constants_dict
       setTimeout(() => {
         this.dimData = {
+          diag_bronchitis: 2,
           pat_name: '江夏',
           pat_work: '程序汪',
           pat_sex: 2,
@@ -136,6 +164,12 @@ export default {
           // 统一组件化
           h_hypertension: 1
         }
+        this.relationIds = this.$questionUtils.findRelationIds({
+          group_list,
+          relation_dict,
+          relation_keys,
+          dimData: this.dimData
+        })
       }, 1000)
     },
     // 总数据修改回调
@@ -146,15 +180,15 @@ export default {
       }
       this.dimData = obj
       // console.clear()
-
       console.log(data)
-      console.warn('===============')
-      console.log(data.other.show_text)
-      console.warn('===============')
+      // console.warn('===============')
+      // console.log(this.dimData)
+      // console.warn('===============')
     },
     // 控制关联题显示隐藏事件回调
     changeRelationIdHandle(data) {
-      const { id, type } = data
+      const { id, name, type, qName } = data
+      console.log(id, type, qName)
       const relationIds = [...this.relationIds]
       if (type === 'add' && !relationIds.includes(id)) {
         relationIds.push(id)
@@ -162,12 +196,19 @@ export default {
       } else if (type === 'remove' && relationIds.includes(id)) {
         relationIds.splice(relationIds.indexOf(id), 1)
         this.relationIds = relationIds
+        this.$alert(`由于 [${qName}] 的答案改变， [${name}] 将会被隐藏`, '提示', {
+          confirmButtonText: '确认',
+          showCancelButton: false,
+          showClose: false,
+          callback: action => {
+          }
+        })
         // 是实时交互的话，就清空
         if (this.realTime) {
           this.clearDimData(id)
         }
       }
-      // console.log(data, relationIds)
+      // console.log(relationIds, '==============')
     },
     // 清空dimData 触发事件和后台交互
     clearDimData(id) {
@@ -197,6 +238,14 @@ export default {
         clearObj.value = obj
       }
       this.modifyHandle(clearObj)
+    },
+    // 找关联题的name
+    getName(id) {
+      let name = ''
+      for (const item of this.group_list) {
+        name = item.items.find((item2) => item2.id === id)?.name
+      }
+      return name
     }
   }
 }
@@ -208,6 +257,6 @@ export default {
     font-weight: 600;
     font-size: 17px;
     color: $main-color;
-    margin-left: -0.5rem;
+    margin-left: 0.5rem;
   }
 </style>
